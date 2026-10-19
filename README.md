@@ -35,6 +35,8 @@ npm run dev:api                # API en el puerto 3000 (Vite la expone en /api)
 
 Sin la API, la página de contacto muestra un aviso claro en lugar de fallar en silencio.
 
+Los tests de la API (`cd api && npm test`) levantan `server.mjs` contra un servidor SMTP falso: no mandan mails reales ni leen `api/.env`.
+
 ## Cuentas de demostración
 
 En `/ingresar` hay accesos rápidos (sin contraseña):

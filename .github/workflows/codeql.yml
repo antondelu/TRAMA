@@ -1,0 +1,49 @@
+# CodeQL: análisis estático de seguridad del JavaScript (SPA y API).
+# Los hallazgos aparecen en Security › Code scanning y como anotaciones en el PR.
+# También corre una vez por semana, para detectar en código que no cambió
+# vulnerabilidades que las nuevas consultas de CodeQL encuentran.
+name: CodeQL
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    name: CodeQL analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      # Necesario para subir los resultados a Code scanning.
+      security-events: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # JavaScript no necesita compilarse para analizarse (build-mode: none).
+      - uses: github/codeql-action/init@24c54180a607b1449ed407dd24f251e4e9147c8d # v4.38.3
+        with:
+          languages: javascript-typescript
+          build-mode: none
+          queries: security-extended
+          config: |
+            paths-ignore:
+              - dist
+              - node_modules
+              - api/node_modules
+
+      - uses: github/codeql-action/analyze@24c54180a607b1449ed407dd24f251e4e9147c8d # v4.38.3
+        with:
+          category: /language:javascript-typescript
