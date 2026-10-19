@@ -76,7 +76,7 @@ docker/           nginx endurecido, reutilizado de BOLD y adaptado a SPA
 - [Limitaciones del modo demo](docs/LIMITACIONES-DEMO.md)
 - [Pruebas y resultados](docs/PRUEBAS.md)
 
-## Qué se reutilizó del proyecto base (BOLD)
+## Qué se reutilizó del proyecto base
 
 - Stack: Vite 6, React 18, Tailwind CSS 4, lucide-react, react-hook-form.
 - API de contacto (`api/server.mjs`): SMTP, desafío anti-spam firmado y campo trampa. Se quitaron correos y dominios de BOLD.
