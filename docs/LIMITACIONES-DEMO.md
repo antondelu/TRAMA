@@ -13,3 +13,4 @@
 - **Permisos.** Se comprueban en la capa de servicios del navegador. Cualquier persona con conocimientos técnicos podría saltearlos. Para usuarios reales hace falta backend (ver ARQUITECTURA.md).
 - **Publicación programada.** Un recurso programado aparece cuando llega la fecha, según el reloj del navegador.
 - **Recuperar contraseña.** No envía correos.
+- **Sponsors.** Las marcas del plano de platea (Café Bambalina, Imprenta Proscenio, etc.) son ficticias. Se reemplazan en `src/config/sponsors.js` antes de publicar.

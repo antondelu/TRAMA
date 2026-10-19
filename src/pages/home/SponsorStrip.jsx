@@ -104,6 +104,7 @@ export function SponsorStrip() {
             Auspiciá una butaca<ArrowRight aria-hidden className="size-4" />
           </Link>
         </div>
+        {SPONSORS.some((s) => s.demo) && <p className="mt-3 text-center text-xs text-ink-soft">Marcas ficticias de demostración.</p>}
       </PageContainer>
     </section>
   )
