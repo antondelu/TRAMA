@@ -25,6 +25,10 @@
   --color-accent-strong: #2C5078;
   --color-accent-soft: #E3EDF7;
 
+  --color-curtain: #8E1F2F;     /* bordó de telón: cortinas del footer */
+  --color-curtain-strong: #4E0F19;
+  --color-curtain-tie: #C9A04A; /* dorado del lazo que ata el telón */
+
   --color-success: #2E6B4A;
   --color-success-soft: #E3F2E9;
   --color-warning: #8A5A00;

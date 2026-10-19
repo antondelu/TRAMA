@@ -4,6 +4,7 @@
 export const APP = {
   name: 'TRAMA',
   descriptor: 'Mercado profesional de las artes escénicas',
+  owner: 'Marco De Luca', // titular y responsable del sitio
   // Modo demo: los datos son ficticios y viven en la memoria de esta pestaña.
   // Cuando exista una API, poner VITE_API_URL y cambiar el adaptador en services/adapter.
   demoMode: !import.meta.env.VITE_API_URL,
