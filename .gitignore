@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.local
+api/.env
+*.log
+.DS_Store
+.vscode/
+.idea/
+certs/*.pem
+certs/*.key

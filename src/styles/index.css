@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/instrument-sans";
+
+/*
+ * Tokens de diseño de TRAMA. Cambiar un color acá lo cambia en toda la app:
+ * Tailwind genera las clases (bg-brand, text-ink-soft, border-line...) a
+ * partir de estas variables.
+ */
+@theme {
+  --color-canvas: #F8F7F4;
+  --color-surface: #FFFFFF;
+  --color-ink: #242321;
+  --color-ink-soft: #706D68;
+  --color-line: #E6E2DC;
+  --color-line-strong: #CFC9C0;
+
+  --color-brand: #743B45;
+  --color-brand-strong: #5C2D36;
+  --color-brand-soft: #F3E9EA;
+  --color-accent: #31584F;
+  --color-accent-strong: #234139;
+  --color-accent-soft: #E5EEEB;
+
+  --color-success: #2F6B3F;
+  --color-success-soft: #E4F1E7;
+  --color-warning: #8A5A00;
+  --color-warning-soft: #FBF0D9;
+  --color-danger: #A3261F;
+  --color-danger-soft: #FBE7E5;
+  --color-info: #2C5282;
+  --color-info-soft: #E6EEF8;
+
+  --font-serif: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --font-sans: "Instrument Sans Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --radius-card: 0.75rem;
+  --shadow-card: 0 1px 2px rgb(36 35 33 / 0.04), 0 4px 16px rgb(36 35 33 / 0.05);
+  --shadow-pop: 0 12px 40px rgb(36 35 33 / 0.16);
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+  ::selection { background: var(--color-brand-soft); }
+}
+
+@layer components {
+  /* Trama: el patrón de hilos cruzados que da identidad a las portadas sin foto. */
+  .weave {
+    background-color: var(--weave-bg, var(--color-brand));
+    background-image:
+      repeating-linear-gradient(0deg, rgb(255 255 255 / 0.10) 0 2px, transparent 2px 14px),
+      repeating-linear-gradient(90deg, rgb(255 255 255 / 0.06) 0 2px, transparent 2px 14px);
+  }
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--color-ink-soft);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

@@ -1,0 +1,35 @@
+# Reutilizado del proyecto base (BOLD): nginx endurecido + API de contacto.
+services:
+  web:
+    build: { context: ., dockerfile: Dockerfile }
+    image: trama-web:latest
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1777,size=32m
+      - /var/cache/nginx:mode=0755,size=16m
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    ports:
+      - "80:8080"
+      - "443:8443"
+    volumes:
+      # Certificados propios: certs/fullchain.pem y certs/privkey.pem
+      - ./certs:/etc/nginx/certs:ro
+    networks: [webnet]
+    depends_on: [api]
+
+  # API del formulario de contacto (SMTP). Sin puertos públicos: solo nginx la alcanza.
+  api:
+    build: { context: ./api, dockerfile: Dockerfile }
+    image: trama-contact-api:latest
+    restart: unless-stopped
+    env_file: [./api/.env]
+    read_only: true
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    networks: [webnet]
+
+networks:
+  webnet:
+    driver: bridge

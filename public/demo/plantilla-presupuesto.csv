@@ -1,0 +1,9 @@
+﻿Rubro;Concepto;Cantidad;Costo unitario (UYU);Total (UYU)
+Honorarios;Elenco (por función);3;3000;=C2*D2
+Honorarios;Técnica (por función);1;2500;=C3*D3
+Sala;Alquiler por función;1;9000;=C4*D4
+Difusión;Diseño de afiche;1;6000;=C5*D5
+Difusión;Redes sociales;1;4000;=C6*D6
+Producción;Escenografía y utilería;1;15000;=C7*D7
+Imprevistos;10 % del total;1;0;=SUMA(E2:E7)*0,1
+;;;Total;=SUMA(E2:E8)
