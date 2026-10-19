@@ -36,7 +36,7 @@ function Seat({ row, index, sponsor, active, onHover }) {
   const curve = { transform: `translateY(${-(d * d) * 0.35}px)` }
   const number = `${row}${index + 1}`
   const delay = ROWS.indexOf(row) * 250 + d * 45
-  const aisle = index === SEATS_PER_ROW / 2 ? 'ml-6 sm:ml-10' : ''
+  const aisle = index === SEATS_PER_ROW / 2 ? 'seat-aisle' : ''
 
   return (
     <Reveal as="li" delay={delay} className={aisle}>
@@ -107,8 +107,8 @@ export function SponsorStrip() {
           <h2 id="sponsors-title" className="mt-2 font-display text-xl font-bold">Sponsors de la temporada</h2>
         </Reveal>
 
-        <div className="mx-auto mt-8 max-w-2xl overflow-x-auto pb-2">
-          <div className="mx-auto w-max px-2 pt-10">
+        <div className="seat-map mx-auto mt-8 max-w-2xl pb-2">
+          <div className="seat-map-inner mx-auto w-max px-2 pt-10">
             {/* Escenario */}
             <div aria-hidden className="relative mx-auto mb-8 h-10 w-[85%]">
               <svg viewBox="0 0 400 40" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
@@ -121,7 +121,7 @@ export function SponsorStrip() {
               {ROWS.map((row) => (
                 <div key={row} className="flex items-center gap-3">
                   <span aria-hidden className="w-4 text-xs font-bold text-ink-soft">{row}</span>
-                  <ul className="flex gap-1.5 sm:gap-2" aria-label={`Fila ${row}`}>
+                  <ul className="seat-row flex" aria-label={`Fila ${row}`}>
                     {map[row].map((sponsor, i) => (
                       <Seat key={`${row}${i}`} row={row} index={i} sponsor={sponsor} active={sponsor && hovered === sponsor.id} onHover={setHovered} />
                     ))}
