@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ExternalLink, MapPin } from 'lucide-react'
-import { Cover } from '@/components/media/Cover'
+import { LogoMark } from '@/components/navigation/Logo'
 import { LOCALE } from '@/config/app'
 import { cn } from '@/utils/format'
 
@@ -20,11 +20,33 @@ function placeLabel(item) {
   return [item.city, item.countryName].filter(Boolean).join(', ') || null
 }
 
-// Imagen del medio si la publica en su feed; si no hay o no carga, la portada
-// de marca. Sin referrer, para no enviarle al medio desde qué página se pidió.
+// Hilos ondulados que se cruzan, como el nudo del logo: el tejido de fondo
+// de la imagen de respaldo.
+const THREADS = Array.from({ length: 7 }, (_, i) => {
+  const y = 14 + i * 12
+  const dir = i % 2 ? -1 : 1
+  return `M-10 ${y} C 40 ${y - 9 * dir}, 80 ${y + 9 * dir}, 130 ${y} S 220 ${y - 9 * dir}, 250 ${y}`
+})
+
+// Sin imagen del medio: el logo de TRAMA sobre un tejido de hilos.
+function NewsFallback({ className }) {
+  return (
+    <div aria-hidden className={cn('relative flex aspect-[16/9] w-full flex-col items-center justify-center gap-2 overflow-hidden bg-brand-strong', className)}>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,var(--color-accent-strong)_0,transparent_60%),radial-gradient(circle_at_85%_90%,var(--color-brand)_0,transparent_55%)] opacity-80" />
+      <svg viewBox="0 0 240 100" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 size-full">
+        {THREADS.map((d) => <path key={d} d={d} fill="none" stroke="white" strokeOpacity="0.08" strokeWidth="1.5" />)}
+      </svg>
+      <LogoMark inverted className="relative size-12 drop-shadow-[0_6px_16px_rgb(0_0_0/0.35)]" />
+      <span className="relative font-display text-2xl font-bold tracking-tight text-white">trama</span>
+    </div>
+  )
+}
+
+// Imagen del medio si la publica en su feed; si no hay o no carga, el logo de
+// TRAMA. Sin referrer, para no enviarle al medio desde qué página se pidió.
 function NewsImage({ item, className }) {
   const [failed, setFailed] = useState(false)
-  if (!item.image || failed) return <Cover alt="" kind="article" seed={item.source.name} className={className} ratio="aspect-[16/9]" />
+  if (!item.image || failed) return <NewsFallback className={className} />
   return (
     <img src={item.image} alt="" loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)}
       className={cn('aspect-[16/9] w-full object-cover', className)} />
