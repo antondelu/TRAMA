@@ -1,0 +1,38 @@
+# CI: compila y corre los tests en cada pull request y en cada push a main.
+# El job "Build & test" es el check obligatorio de la protección de main.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+# Si llega un push nuevo a la misma rama, se cancela la corrida anterior.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    name: Build & test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      # Misma versión de Node que el Dockerfile.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+
+      # La API no tiene tests: al menos se verifica que el archivo sea válido.
+      - name: Check API syntax
+        run: node --check api/server.mjs
