@@ -45,7 +45,7 @@ const CASES = [
   ['/publicar/sala?id=v-urdimbre', 'u-lucia', 'Editar sala'],
   ['/publicar/espectaculo', 'u-joaquin', 'Publicá tu espectáculo'],
   ['/publicar/espectaculo?id=s-andamio', 'u-mateo', 'Editar espectáculo'],
-  ['/publicar/servicio', 'u-joaquin', 'Sumate al directorio'],
+  ['/publicar/servicio', 'u-joaquin', 'Tu talento merece ser visto.'],
   ['/publicar/convocatoria', 'u-lucia', 'Publicá una convocatoria'],
   ['/admin', 'u-andres', 'Resumen'],
   ['/admin/usuarios', 'u-andres', 'Usuarios'],

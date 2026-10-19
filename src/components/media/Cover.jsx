@@ -1,5 +1,6 @@
 import { Building2, Drama, Wrench, BookOpen, Megaphone, Video, Headphones, FileText, Book, GraduationCap, LayoutTemplate, Newspaper } from 'lucide-react'
 import { cn } from '@/utils/format'
+import { focusStyle } from '@/utils/image'
 
 const ICONS = {
   venue: Building2, show: Drama, service: Wrench, resource: BookOpen, opportunity: Megaphone,
@@ -25,11 +26,17 @@ function toneFor(seed = '') {
 
 // Imagen de portada. Sin foto, muestra un degradé de la paleta con un ícono:
 // así la demo no usa fotos ajenas ni de stock sin licencia.
-export function Cover({ src, alt, kind = 'venue', seed, tone, label, ratio = 'aspect-[4/3]', className }) {
+// `focus` es el encuadre que eligió quien subió la foto (ver utils/image.js).
+// `icon` reemplaza al ícono del tipo (ej. el de la especialidad de un servicio).
+export function Cover({ src, alt, kind = 'venue', icon, seed, tone, label, focus, ratio = 'aspect-[4/3]', className }) {
   if (src) {
-    return <img src={src} alt={alt} loading="lazy" className={cn('w-full object-cover', ratio, className)} />
+    return (
+      <div className={cn('w-full overflow-hidden', ratio, className)}>
+        <img src={src} alt={alt} loading="lazy" style={focusStyle(focus)} className="size-full object-cover" />
+      </div>
+    )
   }
-  const Icon = ICONS[kind] ?? BookOpen
+  const Icon = icon ?? ICONS[kind] ?? BookOpen
   const t = COVER_TONES[tone] ?? COVER_TONES[toneFor(seed ?? alt)]
   return (
     <div role="img" aria-label={alt}

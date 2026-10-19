@@ -2,6 +2,7 @@ import { MapPin } from 'lucide-react'
 import { EntityCard, CardMeta } from './EntityCard'
 import { Badge } from '@/components/ui/StatusBadge'
 import { useTaxonomies } from '@/hooks/useTaxonomies'
+import { specialtyIcon } from '@/constants/specialtyIcons'
 
 export const SERVICE_AVAILABILITY_TONE = { disponible: 'success', 'agenda-limitada': 'warning', 'sin-disponibilidad': 'neutral' }
 
@@ -14,7 +15,9 @@ export function ProfessionalCard({ pro }) {
       title={pro.name}
       eyebrow={labels('specialties', pro.specialties.slice(0, 2)).join(' · ')}
       image={pro.images?.[0]?.url}
+      imageFocus={pro.images?.[0]?.focus}
       kind="service"
+      icon={specialtyIcon(pro.specialties)}
       favorite={{ type: 'service', id: pro.id }}
       badges={pro.availability && <Badge tone={SERVICE_AVAILABILITY_TONE[pro.availability]}>{label('serviceAvailability', pro.availability)}</Badge>}
       cta="Ver perfil"

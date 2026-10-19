@@ -14,6 +14,7 @@ export function VenueCard({ venue }) {
       title={venue.name}
       eyebrow={label('venueTypes', venue.venueType)}
       image={venue.images?.[0]?.url}
+      imageFocus={venue.images?.[0]?.focus}
       kind="venue"
       favorite={{ type: 'venue', id: venue.id }}
       badges={venue.hasOpenCall && <Badge tone="accent">Convocatoria abierta</Badge>}
