@@ -43,6 +43,7 @@ export const routes = [
       { path: 'oportunidades/:slug', lazy: lazy(() => import('@/pages/opportunities/OpportunityDetailPage')) },
       { path: 'recursos', lazy: lazy(() => import('@/pages/resources/ResourcesPage')) },
       { path: 'recursos/:slug', lazy: lazy(() => import('@/pages/resources/ResourceDetailPage')) },
+      { path: 'noticias', lazy: lazy(() => import('@/pages/news/NewsPage')) },
 
       { path: 'planes', lazy: lazy(() => import('@/pages/info/PlansPage')) },
       { path: 'como-funciona', lazy: lazy(() => import('@/pages/info/HowItWorksPage')) },

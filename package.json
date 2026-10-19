@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "vite",
+    "start": "node scripts/dev.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "dev:api": "node api/server.mjs",
+    "dev:news": "PORT=3001 node news/server.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint .",

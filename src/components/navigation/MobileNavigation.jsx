@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom'
 import { Drawer } from '@/components/ui/Drawer'
 import { Button } from '@/components/ui/Button'
-import { CATEGORIES, OPPORTUNITIES_NAV } from '@/constants/navigation'
+import { CATEGORIES, OPPORTUNITIES_NAV, NEWS_NAV } from '@/constants/navigation'
 import { useAuth } from '@/context/AuthContext'
 import { cn } from '@/utils/format'
 
 export function MobileNavigation({ open, onClose }) {
   const { user, can, logout } = useAuth()
-  const items = [...CATEGORIES, OPPORTUNITIES_NAV]
+  const items = [...CATEGORIES, OPPORTUNITIES_NAV, NEWS_NAV]
   const linkClass = ({ isActive }) => cn('flex min-h-12 items-center gap-3 rounded-lg px-3 text-base font-semibold', isActive ? 'bg-brand-soft text-brand' : 'hover:bg-ink/5')
 
   return (

@@ -1,4 +1,4 @@
-import { Building2, Drama, Wrench, BookOpen, Megaphone } from 'lucide-react'
+import { Building2, Drama, Wrench, BookOpen, Megaphone, Newspaper } from 'lucide-react'
 
 // Las cuatro áreas principales de TRAMA, más Oportunidades.
 export const CATEGORIES = [
@@ -23,6 +23,11 @@ export const CATEGORIES = [
 export const OPPORTUNITIES_NAV = {
   id: 'oportunidades', label: 'Oportunidades', to: '/oportunidades', icon: Megaphone,
   description: 'Convocatorias de salas, festivales, instituciones y programadores.',
+}
+
+export const NEWS_NAV = {
+  id: 'noticias', label: 'Noticias', to: '/noticias', icon: Newspaper,
+  description: 'Noticias de artes escénicas de Uruguay y del mundo.',
 }
 
 export const SEARCH_SCOPES = [

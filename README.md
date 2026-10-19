@@ -21,7 +21,7 @@ npm run lint       # ESLint (React, hooks, accesibilidad)
 npm run format     # formatea con Prettier (todavía no lo exige la CI)
 ```
 
-`npm start` es un alias de `npm run dev`.
+`npm start` levanta la web y el servicio de Noticias juntos (ver más abajo); `npm run dev` levanta solo la web.
 
 ### Formulario de contacto (opcional)
 
@@ -36,6 +36,19 @@ npm run dev:api                # API en el puerto 3000 (Vite la expone en /api)
 Sin la API, la página de contacto muestra un aviso claro en lugar de fallar en silencio.
 
 Los tests de la API (`cd api && npm test`) levantan `server.mjs` contra un servidor SMTP falso: no mandan mails reales ni leen `api/.env`.
+
+### Noticias (opcional)
+
+La sección `/noticias` muestra noticias reales de artes escénicas, que junta el servicio `news/`: consulta los feeds de [`news/sources.json`](news/sources.json) cada 12 horas desde el servidor y las guarda en disco.
+
+`npm start` lo levanta junto con la web. La primera vez instala sus dependencias y trae las noticias (quedan en `news/data/`). En desarrollo no se actualizan solas; para refrescarlas:
+
+```bash
+cd news && npm run ingest   # trae las noticias de nuevo
+npm run dev:news            # solo el servicio, en el puerto 3001 (si usás npm run dev)
+```
+
+Sin el servicio, la página muestra un aviso de error en lugar de noticias inventadas. Detalle en [docs/NOTICIAS.md](docs/NOTICIAS.md).
 
 ## Cuentas de demostración
 
