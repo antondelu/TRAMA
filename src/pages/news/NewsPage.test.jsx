@@ -63,7 +63,17 @@ describe('Noticias', () => {
     const intl = section('Internacional')
     expect(await within(intl).findByText('Noticia c')).toBeInTheDocument()
     expect(within(intl).getByText('Argentina')).toBeInTheDocument()
-    expect(screen.getByText(/Última actualización/)).toBeInTheDocument()
+    expect(screen.getByText(/Buscaremos nuevas noticias/)).toBeInTheDocument()
+  })
+
+  it('muestra cuánto falta para la próxima búsqueda de noticias', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true, now: new Date('2026-10-19T14:15:00.000Z') })
+    mockNews((p) => json(page(p.get('section'), [item(`${p.get('section')}-1`)])))
+    renderPage()
+    // Última búsqueda a las 12:00 UTC: la próxima es 12 horas después.
+    expect(await screen.findByText('9 h 45 min')).toBeInTheDocument()
+    expect(screen.getByText(/Buscaremos nuevas noticias para ti en/)).toBeInTheDocument()
+    vi.useRealTimers()
   })
 
   it('usa la portada de marca cuando la noticia no trae imagen o la imagen falla', async () => {
