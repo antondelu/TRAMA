@@ -25,6 +25,7 @@ export function Stage({ as: Tag = 'section', follow = true, className, children,
   }
 
   function onPointerLeave() {
+    if (!follow) return
     ref.current?.style.removeProperty('--sx')
     ref.current?.style.removeProperty('--sy')
   }

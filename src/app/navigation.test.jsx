@@ -91,7 +91,7 @@ describe('navegación', () => {
 
   it('una ruta inexistente muestra la página 404', async () => {
     renderAt('/no-existe')
-    expect(await screen.findByText('Se cortó el hilo.')).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { level: 1, name: 'Esta página eligió no ser.' })).toBeInTheDocument()
   })
 
   it('un detalle inexistente muestra "no encontrado"', async () => {

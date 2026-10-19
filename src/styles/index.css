@@ -208,6 +208,79 @@
     pointer-events: none;
   }
   .stage-lit { color: rgb(var(--light)); text-shadow: 0 0 40px rgb(var(--light) / 0.35); }
+  /* Sin borde ni luz en el piso: el fondo se funde con el color del footer. */
+  .stage-blend {
+    background:
+      radial-gradient(120% 70% at 50% 0%, #22364d 0%, transparent 60%),
+      linear-gradient(180deg, #121c28 0%, #0d151f 55%, var(--color-brand-strong) 100%);
+  }
+  .stage-blend .stage-pool { background: radial-gradient(28rem 20rem at var(--sx) var(--sy), rgb(var(--light) / 0.16), transparent 70%); }
+  .stage-blend .stage-edge { display: none; }
+}
+
+/* --- Error: Hamlet cae de rodillas bajo el foco ------------------------ */
+/* Pose de pie → arrodillado. Cada grupo gira sobre su articulación; las
+   coordenadas de transform-origin son las del viewBox de HamletScene. */
+@keyframes hamlet-body {
+  from { transform: none; }
+  to { transform: translateY(60px) rotate(14deg); }
+}
+@keyframes hamlet-thigh-back { to { transform: translateY(60px); } }
+@keyframes hamlet-shin-back { to { transform: rotate(100deg); } }
+@keyframes hamlet-thigh-front { to { transform: translateY(60px) rotate(-84deg); } }
+@keyframes hamlet-shin-front { to { transform: rotate(84deg); } }
+@keyframes hamlet-head {
+  from { transform: rotate(-8deg); }
+  to { transform: rotate(24deg); }
+}
+@keyframes hamlet-arm-front {
+  from { transform: rotate(-80deg); }
+  to { transform: rotate(-35deg); }
+}
+@keyframes hamlet-forearm-front {
+  from { transform: rotate(-39deg); }
+  to { transform: rotate(-10deg); }
+}
+@keyframes hamlet-arm-back {
+  from { transform: rotate(-10deg); }
+  to { transform: rotate(6deg); }
+}
+@keyframes hamlet-forearm-back {
+  from { transform: rotate(-95deg); }
+  to { transform: rotate(-15deg); }
+}
+/* La calavera se suelta, cae, rebota y rueda hasta quedar quieta. */
+@keyframes hamlet-skull {
+  0% { transform: none; animation-timing-function: cubic-bezier(0.5, 0, 1, 1); }
+  45% { transform: translate(28px, 207px) rotate(60deg); animation-timing-function: ease-out; }
+  58% { transform: translate(36px, 196px) rotate(85deg); animation-timing-function: ease-in; }
+  70% { transform: translate(42px, 207px) rotate(110deg); animation-timing-function: ease-out; }
+  100% { transform: translate(60px, 207px) rotate(200deg); }
+}
+@keyframes hamlet-shadow { to { transform: scaleX(1.5); opacity: 0.8; } }
+
+@layer components {
+  .hamlet {
+    --fall: 1.6s;
+    --fall-ease: cubic-bezier(0.55, 0, 0.3, 1.12);
+    fill: #070b11;
+    filter: drop-shadow(0 0 1.5px rgb(var(--light) / 0.45));
+    animation: lights-up 1.2s 0.6s ease-out both;
+  }
+  .hamlet g, .hamlet-shadow { transform-box: view-box; }
+  .hamlet-shadow { fill: rgb(0 0 0 / 0.55); transform-origin: 112px 291px; animation: hamlet-shadow 0.75s var(--fall) var(--fall-ease) both; }
+  .hamlet-socket { fill: rgb(var(--light) / 0.4); }
+  .hamlet-body { transform-origin: 101px 168px; animation: hamlet-body 0.75s var(--fall) var(--fall-ease) both; }
+  .hamlet-head { transform-origin: 101px 86px; animation: hamlet-head 0.9s var(--fall) ease-in-out both; }
+  .hamlet-arm-front { transform-origin: 112px 100px; animation: hamlet-arm-front 0.75s var(--fall) var(--fall-ease) both; }
+  .hamlet-forearm-front { transform-origin: 112px 132px; animation: hamlet-forearm-front 0.75s var(--fall) var(--fall-ease) both; }
+  .hamlet-arm-back { transform-origin: 90px 100px; animation: hamlet-arm-back 0.75s var(--fall) var(--fall-ease) both; }
+  .hamlet-forearm-back { transform-origin: 90px 132px; animation: hamlet-forearm-back 0.75s var(--fall) var(--fall-ease) both; }
+  .hamlet-thigh-back { transform-origin: 95px 168px; animation: hamlet-thigh-back 0.75s var(--fall) var(--fall-ease) both; }
+  .hamlet-shin-back { transform-origin: 95px 226px; animation: hamlet-shin-back 0.75s var(--fall) var(--fall-ease) both; }
+  .hamlet-thigh-front { transform-origin: 107px 168px; animation: hamlet-thigh-front 0.75s var(--fall) var(--fall-ease) both; }
+  .hamlet-shin-front { transform-origin: 107px 226px; animation: hamlet-shin-front 0.75s var(--fall) var(--fall-ease) both; }
+  .hamlet-skull { transform-origin: 171px 72px; animation: hamlet-skull 1.3s calc(var(--fall) + 0.05s) both; }
 }
 
 /* --- Animaciones ------------------------------------------------------- */
