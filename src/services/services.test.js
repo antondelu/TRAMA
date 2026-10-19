@@ -221,6 +221,14 @@ describe('publicaciones y moderación', () => {
     await expect(venuesService.save({ name: 'Otra', slug: 'sala-urdimbre' })).rejects.toMatchObject({ code: 'validation', details: { slug: expect.any(String) } })
   })
 
+  it('sin slug, se arma uno libre al crear y se conserva al editar', async () => {
+    loginAs('u-joaquin')
+    const nueva = await venuesService.save({ name: 'Sala Urdimbre' })
+    expect(nueva.slug).not.toBe('sala-urdimbre')
+    const editada = await venuesService.save({ id: nueva.id, name: 'Sala Urdimbre Renovada' })
+    expect(editada.slug).toBe(nueva.slug)
+  })
+
   it('una publicación eliminada desaparece del catálogo y de los favoritos', async () => {
     loginAs('u-sofia')
     expect((await favoritesService.list()).some((f) => f.entityId === 's-lona')).toBe(true)

@@ -46,8 +46,9 @@ export function savePublication(type, data, { submit = false } = {}) {
   const title = data[c.titleKey]?.trim()
   if (!title) throw invalid('Falta el nombre o título.')
 
-  const requestedSlug = slugify(data.slug || title)
   const existing = data.id ? findPublication(type, data.id) : null
+  // Sin slug pedido: se conserva el actual o se arma uno libre a partir del título.
+  const requestedSlug = data.slug ? slugify(data.slug) : existing?.slug ?? ''
   if (existing) requireOwner({ ownerId: existing[c.ownerKey ?? 'ownerId'] })
   if (requestedSlug && isSlugTaken(type, requestedSlug, existing?.id)) {
     throw invalid('Esa dirección (slug) ya está en uso. Elegí otra.', { slug: 'Ya está en uso' })

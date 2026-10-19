@@ -281,6 +281,40 @@
   .hamlet-skull { transform-origin: 171px 72px; animation: hamlet-skull 1.3s calc(var(--fall) + 0.05s) both; }
 }
 
+/* --- Foco seguidor sobre una frase (components/ui/SpotlightText.jsx) ----- */
+/* El círculo arranca a la izquierda, recorre la frase y se queda sobre las
+   palabras iluminadas; el resto pasa de tenue a su color normal. */
+@keyframes spot-sweep {
+  0% { opacity: 0; transform: translate(-9em, -50%) scale(0.8); }
+  15% { opacity: 1; }
+  75% { transform: translate(0, -50%) scale(1.05); }
+  100% { opacity: 1; transform: translate(0, -50%) scale(1); }
+}
+@keyframes spot-dim { from { opacity: 0.25; } to { opacity: 1; } }
+@keyframes spot-lit {
+  0%, 55% { color: var(--color-ink); opacity: 0.25; }
+  100% { color: var(--color-brand); opacity: 1; }
+}
+
+@layer components {
+  .spot-dim { animation: spot-dim 1.2s 0.2s ease-out both; }
+  /* "ser visto." no se corta en dos líneas: el foco tiene que caer entero. */
+  .spot-lit { position: relative; isolation: isolate; display: inline-block; white-space: nowrap; animation: spot-lit 1.5s 0.2s ease-out both; }
+  .spot-beam {
+    position: absolute;
+    z-index: -1;
+    top: 52%;
+    left: -0.45em;
+    right: -0.45em;
+    height: 1.5em;
+    border-radius: 9999px;
+    background: radial-gradient(closest-side, rgb(255 205 120 / 0.8), rgb(255 220 160 / 0.4) 60%, transparent);
+    filter: blur(8px);
+    animation: spot-sweep 1.5s 0.2s cubic-bezier(0.3, 0.6, 0.2, 1) both;
+    pointer-events: none;
+  }
+}
+
 /* --- Animaciones ------------------------------------------------------- */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(18px); }

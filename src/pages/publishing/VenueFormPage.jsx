@@ -56,7 +56,7 @@ const num = (v) => (v === '' ? null : Number(v))
 const toPayload = (d) => ({
   name: d.name.trim(), slug: d.slug, description: d.description.trim(), country: 'UY', department: d.department, city: d.city,
   address: { area: emptyToNull(d.area.trim()) }, capacity: Number(d.capacity), venueType: d.venueType,
-  // Las fotos no se suben en la demo: solo se guardan las que ya tenían URL.
+  // Solo las fotos con URL (las que tienen vista previa); ver utils/image.js.
   images: d.photos.filter((p) => p.url),
   technicalSpecs: {
     dimensions: { width: num(d.width), depth: num(d.depth), height: num(d.height) }, stageType: d.stageType,
@@ -74,7 +74,7 @@ export default function VenueFormPage() {
   useDocumentTitle(ctl.editId ? 'Editar sala' : 'Registrar una sala')
   const { tax } = useTaxonomies()
   const uy = configService.countries()[0]
-  const { register, control, watch, formState: { errors } } = ctl.form
+  const { register, control, watch, setValue, formState: { errors } } = ctl.form
   const department = watch('department')
   const cities = uy.cities.filter((c) => !department || c.department === department)
 
@@ -86,14 +86,14 @@ export default function VenueFormPage() {
         <FormField label="Dirección en TRAMA (slug)" hint={`trama.uy/salas/${watch('slug') || 'nombre-de-la-sala'}`} error={errors.slug?.message}><Input {...register('slug')} /></FormField>
         <FormField label="Descripción" required error={errors.description?.message}><Textarea rows={4} {...register('description')} /></FormField>
         <div className="grid gap-4 sm:grid-cols-2">
-          <FormField label="Departamento" required error={errors.department?.message}><Select placeholder="Elegí" options={uy.departments.map((d) => ({ id: d, label: d }))} {...register('department')} /></FormField>
+          <FormField label="Departamento" required error={errors.department?.message}><Select placeholder="Elegí" options={uy.departments.map((d) => ({ id: d, label: d }))} {...register('department', { onChange: () => setValue('city', '') })} /></FormField>
           <FormField label="Ciudad" required error={errors.city?.message}><Select placeholder="Elegí" options={cities.map((c) => ({ id: c.name, label: c.name }))} {...register('city')} /></FormField>
           <FormField label="Zona o barrio" hint="Ubicación general. La dirección exacta se comparte al confirmar." error={errors.area?.message}><Input {...register('area')} /></FormField>
           <FormField label="Capacidad (personas)" required error={errors.capacity?.message}><Input type="number" min={1} {...register('capacity')} /></FormField>
           <FormField label="Tipo de espacio" required error={errors.venueType?.message}><Select placeholder="Elegí" options={tax.venueTypes} {...register('venueType')} /></FormField>
         </div>
         <Controller control={control} name="photos" render={({ field }) => (
-          <FileUpload label="Fotografías" value={field.value} onChange={field.onChange} hint="JPG, PNG o WebP de hasta 5 MB. En la demo las fotos no se suben." />
+          <FileUpload label="Fotografías" value={field.value} onChange={field.onChange} hint="JPG, PNG o WebP de hasta 5 MB. En la demo quedan guardadas solo en esta pestaña." />
         )} />
       </FormSection>
 

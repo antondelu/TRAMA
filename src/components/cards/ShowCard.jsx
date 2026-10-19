@@ -20,6 +20,7 @@ export function ShowCard({ show }) {
       title={show.title}
       eyebrow={`${label('disciplines', show.discipline)} · ${show.company}`}
       image={show.media?.poster ?? show.media?.photos?.[0]?.url}
+      imageFocus={show.media?.poster ? undefined : show.media?.photos?.[0]?.focus}
       kind="show"
       favorite={{ type: 'show', id: show.id }}
       badges={availability && <Badge tone={availability.tone}>{availability.label}</Badge>}

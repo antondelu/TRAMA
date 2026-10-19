@@ -7,11 +7,11 @@ import { cn } from '@/utils/format'
 // Estructura visual compartida por las tarjetas del catálogo. Cada tipo
 // (sala, espectáculo, servicio...) decide qué datos poner adentro.
 // Toda la tarjeta es clickeable a través del enlace del título.
-export function EntityCard({ to, title, eyebrow, image, kind, badges, children, footer, cta, favorite, className }) {
+export function EntityCard({ to, title, eyebrow, image, imageFocus, kind, icon, badges, children, footer, cta, favorite, className }) {
   return (
     <article className={cn('lift group relative flex flex-col rounded-[var(--radius-card)] bg-surface p-2 shadow-[var(--shadow-card)]', className)}>
       <div className="relative overflow-hidden rounded-[calc(var(--radius-card)-0.375rem)]">
-        <Cover src={image} alt={title} kind={kind} seed={title} className="transition-transform duration-500 group-hover:scale-[1.04]" />
+        <Cover src={image} focus={imageFocus} alt={title} kind={kind} icon={icon} seed={title} className="transition-transform duration-500 group-hover:scale-[1.04]" />
         {badges && <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">{badges}</div>}
         {favorite && <FavoriteButton {...favorite} title={title} className="absolute right-3 top-3 z-10" />}
       </div>

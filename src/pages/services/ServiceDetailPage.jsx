@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { MapPin, Laptop, Receipt, MessageSquare } from 'lucide-react'
+import { MapPin, Laptop, Receipt, MessageSquare, Download } from 'lucide-react'
 import { DetailLayout, DetailState, ActionPanel } from '@/components/layout/DetailLayout'
 import { Section, DataList } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/StatusBadge'
@@ -18,6 +18,7 @@ import { useTaxonomies } from '@/hooks/useTaxonomies'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 import { useRequireAuth } from '@/hooks/useRequireAuth'
 import { useAuth } from '@/context/AuthContext'
+import { specialtyIcon } from '@/constants/specialtyIcons'
 
 export default function ServiceDetailPage() {
   const { slug } = useParams()
@@ -37,7 +38,7 @@ export default function ServiceDetailPage() {
       breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Servicios', to: '/servicios' }, { label: pro.name }]}
       hero={(
         <div className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-line bg-surface p-6 sm:flex-row sm:items-center">
-          <Avatar name={pro.name} src={pro.images?.[0]?.url} size="xl" />
+          <Avatar name={pro.name} src={pro.images?.[0]?.url} focus={pro.images?.[0]?.focus} size="xl" />
           <div className="flex-1">
             <p className="eyebrow text-brand">{labels('specialties', pro.specialties).join(' · ')}</p>
             <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight sm:text-4xl">{pro.name}</h1>
@@ -83,17 +84,10 @@ export default function ServiceDetailPage() {
       </Section>
 
       <Section id="portfolio" title="Portfolio">
-        {pro.portfolio.length ? (
-          <ul className="divide-y divide-line rounded-[var(--radius-card)] border border-line bg-surface">
-            {pro.portfolio.map((p) => (
-              <li key={`${p.title}-${p.year}`} className="flex flex-wrap items-baseline justify-between gap-2 px-4 py-3">
-                <span className="font-semibold">{p.title}</span>
-                <span className="text-sm text-ink-soft">{p.role} · {p.year}</span>
-              </li>
-            ))}
-          </ul>
-        ) : <p className="text-sm text-ink-soft">Todavía no cargó trabajos en su portfolio.</p>}
-        <div className="mt-4"><ImageGallery images={pro.images} title={pro.name} kind="service" seed={pro.name} /></div>
+        {pro.cv?.url && (
+          <Button variant="secondary" icon={Download} href={pro.cv.url} download={pro.cv.name ?? `CV ${pro.name}.pdf`} className="mb-4">Descargar CV (PDF)</Button>
+        )}
+        <div><ImageGallery images={pro.images} title={pro.name} kind="service" icon={specialtyIcon(pro.specialties)} seed={pro.name} /></div>
       </Section>
 
       <Section id="resenas" title="Reseñas">
