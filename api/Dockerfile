@@ -1,15 +1,19 @@
 # syntax=docker/dockerfile:1
 
-# Contact-form API. Same pinned Node base image as the site's build stage
-# (see ../Dockerfile for how to refresh the digest).
-FROM node:22-bookworm-slim@sha256:83f487e0a63425e5b4d146fb5e5be574bcbe1b7b843d3ebafdd95eaf7767a7e5
+# Contact-form API. Alpine (no perl or other Debian extras) on the same Node
+# major as the site's build stage. Pinned by tag and digest; Dependabot opens
+# a PR when a newer digest is published, and CI scans the result with Trivy.
+FROM node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402
 
 ENV NODE_ENV=production
 WORKDIR /app
 
 # npm ci refuses to install if package-lock.json is missing or out of sync.
+# npm itself is removed afterwards: the server never needs it at runtime, and
+# the copy bundled in the base image is where most of its CVEs come from.
 COPY package.json package-lock.json ./
-RUN npm ci --omit=dev && npm cache clean --force
+RUN npm ci --omit=dev && npm cache clean --force \
+  && rm -rf /usr/local/lib/node_modules/npm /usr/local/bin/npm /usr/local/bin/npx
 
 COPY server.mjs ./
 

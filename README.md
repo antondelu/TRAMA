@@ -17,6 +17,8 @@ npm run dev        # servidor de desarrollo → http://127.0.0.1:5173
 npm run build      # compilación de producción en dist/
 npm run preview    # sirve dist/ localmente
 npm test           # pruebas (Vitest + Testing Library)
+npm run lint       # ESLint (React, hooks, accesibilidad)
+npm run format     # formatea con Prettier (todavía no lo exige la CI)
 ```
 
 `npm start` es un alias de `npm run dev`.

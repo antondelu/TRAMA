@@ -56,7 +56,7 @@ export default function LoginPage() {
           <Link to="/recuperar-contrasena" className="font-semibold text-brand hover:underline">Olvidé mi contraseña</Link>
         </div>
         <FormError error={error} />
-        <DemoNotice>Modo demo: la contraseña no se verifica ni se guarda. "Recordar sesión" no está disponible: la sesión dura hasta cerrar la pestaña.</DemoNotice>
+        <DemoNotice>Modo demo: la contraseña no se verifica ni se guarda. &quot;Recordar sesión&quot; no está disponible: la sesión dura hasta cerrar la pestaña.</DemoNotice>
         <Button type="submit" size="lg" className="w-full" loading={isSubmitting}>Ingresar</Button>
         <p className="text-center text-sm text-ink-soft">¿No tenés cuenta? <Link to="/registro" className="font-semibold text-brand hover:underline">Registrate gratis</Link></p>
       </form>

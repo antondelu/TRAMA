@@ -1,5 +1,9 @@
 # CI: compila y corre los tests en cada pull request y en cada push a main.
-# El job "Build & test" es el check obligatorio de la protección de main.
+# Los jobs "Build & test", "Security audit" y "Docker images" deberían ser
+# checks obligatorios de la protección de main.
+#
+# Las actions se fijan por SHA de commit (con la versión en el comentario):
+# un tag se puede mover, un SHA no. Dependabot las mantiene actualizadas.
 name: CI
 
 on:
@@ -21,18 +25,147 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       # Misma versión de Node que el Dockerfile.
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            api/package-lock.json
 
       - run: npm ci
+      - run: npm run lint
       - run: npm test
       - run: npm run build
 
-      # La API no tiene tests: al menos se verifica que el archivo sea válido.
-      - name: Check API syntax
-        run: node --check api/server.mjs
+      # La API no tiene tests: al menos se instala y se verifica que el archivo sea válido.
+      - name: Check API
+        working-directory: api
+        run: |
+          npm ci
+          node --check server.mjs
+
+  security:
+    name: Security audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+
+      # Falla si hay vulnerabilidades high o critical (incluye devDependencies:
+      # el entorno de build también es superficie de ataque).
+      - name: Audit SPA dependencies
+        run: npm audit --audit-level=high
+
+      - name: Audit API dependencies
+        working-directory: api
+        run: npm audit --audit-level=high
+
+  docker:
+    name: Docker images
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
+
+      # Se construyen las mismas imágenes que levanta docker-compose.yml, sin publicarlas.
+      - name: Build web image
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: .
+          load: true
+          tags: trama-web:ci
+          cache-from: type=gha,scope=web
+          cache-to: type=gha,scope=web,mode=max
+
+      - name: Build API image
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: api
+          load: true
+          tags: trama-contact-api:ci
+          cache-from: type=gha,scope=api
+          cache-to: type=gha,scope=api,mode=max
+
+      # Levanta las dos imágenes como en docker-compose.yml (misma red, mismo
+      # endurecimiento) con un certificado autofirmado y verifica que nginx
+      # arranque, sirva la SPA y le pase /api a la API.
+      - name: Smoke test containers
+        run: |
+          certs="$RUNNER_TEMP/certs"
+          mkdir -p "$certs"
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 -subj "/CN=localhost" \
+            -keyout "$certs/privkey.pem" -out "$certs/fullchain.pem"
+          chmod 644 "$certs"/*.pem
+
+          docker network create webnet
+          docker run -d --name api --network webnet \
+            --read-only --cap-drop ALL --security-opt no-new-privileges:true \
+            trama-contact-api:ci
+          docker run -d --name web --network webnet \
+            --read-only --cap-drop ALL --security-opt no-new-privileges:true \
+            --tmpfs /tmp:mode=1777,size=32m --tmpfs /var/cache/nginx:mode=0755,size=16m \
+            -v "$certs:/etc/nginx/certs:ro" -p 8080:8080 -p 8443:8443 \
+            trama-web:ci
+
+          for i in $(seq 1 30); do
+            curl -fsS http://localhost:8080/healthz && break
+            sleep 1
+          done
+          curl -fsS http://localhost:8080/healthz
+          # HTTP redirige a HTTPS.
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/)" = 301
+          # La SPA y el fallback de rutas a index.html.
+          curl -fsSk https://localhost:8443/ | grep -q 'id="root"'
+          curl -fsSk https://localhost:8443/salas | grep -q 'id="root"'
+          # nginx llega a la API por la red interna.
+          curl -fsSk https://localhost:8443/api/challenge | grep -q '{'
+
+      - name: Container logs
+        if: failure()
+        run: |
+          docker logs web || true
+          docker logs api || true
+
+      # Malas prácticas en los Dockerfiles.
+      - name: Scan Docker config
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: config
+          scan-ref: .
+          severity: HIGH,CRITICAL
+          exit-code: "1"
+
+      # CVEs con parche disponible en los paquetes del sistema y de Node de cada imagen.
+      - name: Scan web image
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: trama-web:ci
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+          skip-setup-trivy: true
+
+      - name: Scan API image
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: trama-contact-api:ci
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+          skip-setup-trivy: true

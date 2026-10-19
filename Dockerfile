@@ -2,8 +2,8 @@
 # Reutilizado del proyecto base (BOLD) y adaptado a npm.
 
 # --- Build: compila la SPA con Vite ---------------------------------------
-# Imagen fijada por tag y digest (ver api/Dockerfile para actualizarla).
-FROM node:22-bookworm-slim@sha256:83f487e0a63425e5b4d146fb5e5be574bcbe1b7b843d3ebafdd95eaf7767a7e5 AS build
+# Imagen fijada por tag y digest; Dependabot abre un PR cuando sale uno nuevo.
+FROM node:22-bookworm-slim@sha256:c3de60bf2f9dd0ac6370e6117950ff62d6e339527e7472301c9c78a017978392 AS build
 WORKDIR /app
 
 # npm ci falla si package-lock.json falta o no coincide con package.json.
@@ -17,7 +17,7 @@ ENV VITE_API_URL=$VITE_API_URL
 RUN npm run build
 
 # --- Runtime: nginx sin privilegios ---------------------------------------
-FROM nginxinc/nginx-unprivileged:1.27-alpine@sha256:65e3e85dbaed8ba248841d9d58a899b6197106c23cb0ff1a132b7bfe0547e4c0
+FROM nginxinc/nginx-unprivileged:1.30-alpine@sha256:f5116ed4606f3eb015dd4a8e28cb9b351476dc0ad4bc6e9f93b19cec130cdf03
 
 COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY docker/nginx/security-headers.conf /etc/nginx/security-headers.conf

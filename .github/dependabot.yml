@@ -1,0 +1,34 @@
+# Dependabot: PRs semanales con actualizaciones de dependencias.
+# Los updates menores y de parche se agrupan en un solo PR por ecosistema;
+# los mayores llegan sueltos para revisarlos de a uno.
+version: 2
+updates:
+  # SPA (raíz del repo).
+  - package-ecosystem: npm
+    directory: /
+    schedule: { interval: weekly, day: monday }
+    open-pull-requests-limit: 5
+    groups:
+      npm-minor-patch:
+        update-types: [minor, patch]
+
+  # API de contacto (tiene su propio package-lock.json).
+  - package-ecosystem: npm
+    directory: /api
+    schedule: { interval: weekly, day: monday }
+    groups:
+      api-minor-patch:
+        update-types: [minor, patch]
+
+  # Actions de la CI: mantiene al día los SHA fijados en los workflows.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: weekly, day: monday }
+    groups:
+      actions:
+        patterns: ["*"]
+
+  # Imágenes base (por tag y digest) de los dos Dockerfiles.
+  - package-ecosystem: docker
+    directories: [/, /api]
+    schedule: { interval: weekly, day: monday }
