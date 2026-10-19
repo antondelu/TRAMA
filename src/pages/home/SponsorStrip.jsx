@@ -35,11 +35,12 @@ function Seat({ row, index, sponsor, active, onHover }) {
   // Curva de la platea: las butacas de los costados quedan más cerca del escenario.
   const curve = { transform: `translateY(${-(d * d) * 0.35}px)` }
   const number = `${row}${index + 1}`
-  const delay = ROWS.indexOf(row) * 250 + d * 45
-  const aisle = index === SEATS_PER_ROW / 2 ? 'seat-aisle' : ''
+  const aisle = index === SEATS_PER_ROW / 2 ? 'seat-aisle' : undefined
 
+  // Sin animación de entrada: las butacas se ven siempre junto con el escenario
+  // y las letras de fila, así el plano nunca queda vacío al hacer scroll.
   return (
-    <Reveal as="li" delay={delay} className={aisle}>
+    <li className={aisle}>
       <span className="block" style={curve}>
         {sponsor ? (
           <a href={sponsor.url} target="_blank" rel="noopener noreferrer sponsored"
@@ -57,7 +58,7 @@ function Seat({ row, index, sponsor, active, onHover }) {
           </Link>
         )}
       </span>
-    </Reveal>
+    </li>
   )
 }
 

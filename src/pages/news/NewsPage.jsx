@@ -1,12 +1,31 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { RefreshCw } from 'lucide-react'
 import { PageHeader, PageContainer } from '@/components/layout/PageContainer'
+import { Hourglass } from '@/components/ui/Hourglass'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
-import { LOCALE } from '@/config/app'
 import { NewsSection } from './NewsSection'
 
-const updatedFmt = new Intl.DateTimeFormat(LOCALE.language, { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZone: LOCALE.timezone })
+// Cada cuánto el servidor de noticias vuelve a consultar las fuentes.
+const REFRESH_HOURS = 12
+const MINUTE = 60_000
+
+// Tiempo que falta, en horas y minutos (ej. "9 h 45 min").
+function formatRemaining(ms) {
+  const total = Math.ceil(ms / MINUTE)
+  const h = Math.floor(total / 60)
+  const m = total % 60
+  return [h && `${h} h`, m && `${m} min`].filter(Boolean).join(' ')
+}
+
+// Hora actual, refrescada cada minuto para la cuenta regresiva.
+function useNow() {
+  const [now, setNow] = useState(() => Date.now())
+  useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), MINUTE)
+    return () => clearInterval(id)
+  }, [])
+  return now
+}
 
 // Filtros de cada bloque en la URL, con nombres propios, para poder compartir
 // la vista filtrada y que "atrás" funcione.
@@ -36,6 +55,8 @@ export default function NewsPage() {
   const [intlFilters, setIntlFilters] = useSectionFilters('intl')
   const [updatedAt, setUpdatedAt] = useState(null)
   const onUpdatedAt = useCallback((at) => setUpdatedAt((prev) => (!prev || at > prev ? at : prev)), [])
+  const now = useNow()
+  const remaining = updatedAt && new Date(updatedAt).getTime() + REFRESH_HOURS * 60 * MINUTE - now
 
   return (
     <>
@@ -44,11 +65,13 @@ export default function NewsPage() {
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Noticias' }]} />
       <PageContainer className="space-y-16 py-10">
         <p className="flex items-center gap-2 text-sm text-ink-soft">
-          <RefreshCw aria-hidden className="size-4" />
+          <Hourglass />
           <span>
-            {updatedAt
-              ? <>Última actualización: <time dateTime={updatedAt}>{updatedFmt.format(new Date(updatedAt))}</time>. Se actualiza cada 12 horas.</>
-              : 'Se actualiza automáticamente cada 12 horas.'}
+            {!updatedAt
+              ? `Se actualiza automáticamente cada ${REFRESH_HOURS} horas.`
+              : remaining > 0
+                ? <>Buscaremos nuevas noticias para ti en <strong className="font-semibold text-ink">{formatRemaining(remaining)}</strong>.</>
+                : 'En breve buscaremos nuevas noticias.'}
           </span>
         </p>
         <NewsSection section="uy" featured title="Uruguay"
