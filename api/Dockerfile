@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
 
 # Contact-form API. Alpine (no perl or other Debian extras) on the same Node
-# major as the site's build stage. Pinned by tag and digest; Dependabot opens
-# a PR when a newer digest is published, and CI scans the result with Trivy.
+# major as the site's build stage. Pinned by tag and digest and refreshed by
+# hand; CI scans the result with Trivy every week and on every PR.
 FROM node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402
 
 ENV NODE_ENV=production

@@ -2,7 +2,7 @@
 # Reutilizado del proyecto base (BOLD) y adaptado a npm.
 
 # --- Build: compila la SPA con Vite ---------------------------------------
-# Imagen fijada por tag y digest; Dependabot abre un PR cuando sale uno nuevo.
+# Imagen fijada por tag y digest; se actualiza a mano cuando Trivy avisa.
 FROM node:22-bookworm-slim@sha256:c3de60bf2f9dd0ac6370e6117950ff62d6e339527e7472301c9c78a017978392 AS build
 WORKDIR /app
 

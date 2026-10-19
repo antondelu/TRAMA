@@ -1,15 +1,21 @@
 # CI: compila y corre los tests en cada pull request y en cada push a main.
+# También corre cada lunes sobre main, para que npm audit y Trivy detecten
+# vulnerabilidades nuevas aunque el código no haya cambiado: si algo falla,
+# GitHub avisa por mail y la actualización se hace a mano, en una rama propia.
 # Los jobs "Build & test", "Security audit", "Secret scan" y "Docker images"
 # deberían ser checks obligatorios de la protección de main.
 #
 # Las actions se fijan por SHA de commit (con la versión en el comentario):
-# un tag se puede mover, un SHA no. Dependabot las mantiene actualizadas.
+# un tag se puede mover, un SHA no. Se actualizan a mano (no hay Dependabot
+# version updates: no se crean ramas ni PRs automáticos).
 name: CI
 
 on:
   pull_request:
   push:
     branches: [main]
+  schedule:
+    - cron: "0 9 * * 1"
 
 permissions:
   contents: read
