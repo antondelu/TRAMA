@@ -61,20 +61,29 @@ function Seat({ row, index, sponsor, active, onHover }) {
   )
 }
 
+// Cuántas veces se repite la lista en la cinta: al menos ~16 tarjetas para
+// cubrir pantallas anchas, y siempre un número par (la animación corre -50%).
+function marqueeReps(count) {
+  const reps = Math.max(2, Math.ceil(16 / count))
+  return reps % 2 ? reps + 1 : reps
+}
+
 // Tarjeta de sponsor: logo, nombre y butaca. Conectada con el plano.
-function SponsorCard({ sponsor, seat, active, onHover }) {
+// `copy`: repetición para que la cinta sea continua (oculta a lectores de pantalla).
+function SponsorCard({ sponsor, seat, active, onHover, copy = false }) {
   return (
     <a href={sponsor.url} target="_blank" rel="noopener noreferrer sponsored"
+      aria-hidden={copy || undefined} tabIndex={copy ? -1 : undefined}
       onMouseEnter={() => onHover(sponsor.id)} onMouseLeave={() => onHover(null)} onFocus={() => onHover(sponsor.id)} onBlur={() => onHover(null)}
-      className={cn('sponsor-card group flex h-full flex-col items-center justify-between gap-3 rounded-[var(--radius-card)] bg-surface px-4 py-5 text-center shadow-[var(--shadow-card)]', active && 'is-active')}>
-      <span className="flex h-12 items-center">
+      className={cn('sponsor-card group flex w-40 shrink-0 flex-col items-center gap-2 rounded-2xl bg-surface px-3 py-3 text-center shadow-[var(--shadow-card)]', active && 'is-active')}>
+      <span className="flex h-9 w-full items-center justify-center">
         {sponsor.logo
-          ? <img src={sponsor.logo} alt={`Logo de ${sponsor.name}`} className="max-h-12 w-auto max-w-[10rem] object-contain" />
-          : <span className="font-display text-lg font-bold">{sponsor.name}</span>}
+          ? <img src={sponsor.logo} alt={`Logo de ${sponsor.name}`} className="h-9 w-auto max-w-full object-contain" />
+          : <span className="font-display text-base font-bold">{sponsor.name}</span>}
       </span>
       <span>
-        <span className="block text-sm font-semibold">{sponsor.name}</span>
-        <span className="mt-1 inline-flex items-center gap-1.5 text-xs text-ink-soft">
+        <span className="block text-xs font-semibold">{sponsor.name}</span>
+        <span className="mt-0.5 inline-flex items-center gap-1.5 text-[0.7rem] text-ink-soft">
           <span aria-hidden className="map-seat taken !h-3 !w-3.5" />Butaca {seat}
         </span>
       </span>
@@ -125,14 +134,17 @@ export function SponsorStrip() {
         </div>
 
         {/* Sponsors con logo */}
+        {/* Cinta de sponsors: avanza despacio hacia el costado y se frena al pasar
+            el mouse. Así entran todas las marcas aunque se llene la platea. */}
         {SPONSORS.length > 0 && (
-          <ul className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
-            {SPONSORS.map((s, i) => (
-              <Reveal as="li" key={s.id} delay={300 + i * 80}>
-                <SponsorCard sponsor={s} seat={seatOf[s.id]} active={hovered === s.id} onHover={setHovered} />
-              </Reveal>
-            ))}
-          </ul>
+          <Reveal className="sponsor-marquee mt-10">
+            <div className="sponsor-track" style={{ '--marquee-duration': `${Math.max(20, SPONSORS.length * 6)}s` }}>
+              {Array.from({ length: marqueeReps(SPONSORS.length) }, (_, rep) =>
+                SPONSORS.map((s) => (
+                  <SponsorCard key={`${rep}-${s.id}`} copy={rep > 0} sponsor={s} seat={seatOf[s.id]} active={hovered === s.id} onHover={setHovered} />
+                )))}
+            </div>
+          </Reveal>
         )}
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
