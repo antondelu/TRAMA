@@ -15,6 +15,8 @@ export default defineConfig({
   },
   build: { assetsInlineLimit: 0 },
   test: {
+    // Solo los tests de la SPA: api/ tiene los suyos con node:test (cd api && npm test).
+    include: ['src/**/*.test.{js,jsx}'],
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.js'],
     css: false,
