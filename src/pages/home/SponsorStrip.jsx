@@ -52,7 +52,7 @@ function Seat({ row, index, sponsor, active, onHover }) {
           </a>
         ) : (
           // Las butacas libres repiten el enlace "Auspiciá una butaca": fuera del orden de tabulación.
-          <Link to="/contacto" tabIndex={-1} aria-hidden className="map-seat free">
+          <Link to="/contacto?tema=butaca" tabIndex={-1} aria-hidden className="map-seat free">
             <span className="seat-tip">{number} · Disponible · Auspiciá esta butaca</span>
           </Link>
         )}
@@ -104,7 +104,7 @@ export function SponsorStrip() {
       <PageContainer className="relative">
         <Reveal className="text-center">
           <p className="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-ink-soft">Temporada {year}</p>
-          <h2 id="sponsors-title" className="mt-2 font-display text-xl font-bold">Sponsors de la temporada</h2>
+          <h2 id="sponsors-title" className="mt-2 font-display text-xl font-bold">El teatro lo hacemos juntos</h2>
         </Reveal>
 
         <div className="seat-map mx-auto mt-8 max-w-2xl pb-2">
@@ -151,7 +151,7 @@ export function SponsorStrip() {
           <span className="flex items-center gap-2 text-ink-soft">
             <span aria-hidden className="map-seat free !h-3.5 !w-4" />Butaca disponible
           </span>
-          <Link to="/contacto" className="inline-flex items-center gap-1 font-semibold text-[#743B45] hover:underline">
+          <Link to="/contacto?tema=butaca" className="inline-flex items-center gap-1 font-semibold text-[#743B45] hover:underline">
             Auspiciá una butaca<ArrowRight aria-hidden className="size-4" />
           </Link>
         </div>
