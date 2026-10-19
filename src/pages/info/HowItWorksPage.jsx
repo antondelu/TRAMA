@@ -1,7 +1,9 @@
 import { PageHeader, PageContainer } from '@/components/layout/PageContainer'
 import { Accordion, AccordionItem } from '@/components/ui/Accordion'
 import { Button } from '@/components/ui/Button'
+import { Reveal } from '@/components/ui/Reveal'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
+import { cn } from '@/utils/format'
 
 const STEPS = [
   { n: '01', title: 'Creá tu cuenta', text: 'Es gratis. Elegí tus intereses para ver primero lo que más te sirve; igual tenés acceso a todo.' },
@@ -26,13 +28,23 @@ export default function HowItWorksPage() {
         description="TRAMA reúne la oferta y la demanda de las artes escénicas: espacios, obras, profesionales, oportunidades y conocimiento."
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Cómo funciona' }]} />
       <PageContainer className="py-12">
-        <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {STEPS.map((s) => (
-            <li key={s.n} className="rounded-[var(--radius-card)] border border-line bg-surface p-6">
-              <span className="font-display text-3xl text-brand">{s.n}</span>
-              <h2 className="mt-3 text-lg font-semibold">{s.title}</h2>
-              <p className="mt-1 text-sm text-ink-soft">{s.text}</p>
-            </li>
+        {/* Un hilo une los números de los pasos: corre dentro de cada tarjeta y,
+            en pantallas anchas, también por el espacio entre ellas. */}
+        <ol className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <span aria-hidden className="absolute inset-x-6 top-[calc(2.625rem+1px)] hidden h-px bg-brand/20 lg:block" />
+          {STEPS.map((s, i) => (
+            <Reveal as="li" key={s.n} delay={i * 120} className="relative flex">
+              <div className="group w-full rounded-[var(--radius-card)] border border-line bg-surface p-6 transition-colors hover:border-brand/40">
+                <div className="flex items-center gap-3">
+                  <span className="font-display text-3xl text-brand">{s.n}</span>
+                  {/* En una columna el hilo se desvanece; en fila se une con la tarjeta siguiente. */}
+                  <span aria-hidden className={cn('h-px flex-1 bg-gradient-to-r from-brand/25 to-transparent',
+                    i < STEPS.length - 1 && 'lg:-mr-6 lg:bg-none lg:bg-brand/20 lg:transition-colors lg:group-hover:bg-brand/50')} />
+                </div>
+                <h2 className="mt-3 text-lg font-semibold">{s.title}</h2>
+                <p className="mt-1 text-sm text-ink-soft">{s.text}</p>
+              </div>
+            </Reveal>
           ))}
         </ol>
         <h2 className="mb-4 mt-14 font-display text-3xl font-semibold">Preguntas frecuentes</h2>
