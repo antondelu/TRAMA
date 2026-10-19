@@ -10,8 +10,10 @@ export default defineConfig({
   },
   server: {
     host: '127.0.0.1',
-    // El formulario de contacto usa la API de api/server.mjs (npm run dev:api).
-    proxy: { '/api': 'http://127.0.0.1:3000' },
+    // El formulario de contacto usa la API de api/server.mjs (npm run dev:api) y
+    // Noticias, el servicio de news/server.mjs (npm run dev:news). El más
+    // específico va primero.
+    proxy: { '/api/news': 'http://127.0.0.1:3001', '/api': 'http://127.0.0.1:3000' },
   },
   build: { assetsInlineLimit: 0 },
   test: {

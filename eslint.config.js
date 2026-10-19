@@ -6,7 +6,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 
 export default [
-  { ignores: ['dist', 'node_modules', 'api/node_modules'] },
+  { ignores: ['dist', 'node_modules', 'api/node_modules', 'news/node_modules', 'news/data'] },
 
   // SPA (React + Vite).
   {
@@ -48,9 +48,9 @@ export default [
     languageOptions: { globals: { ...globals.node, ...globals.vitest } },
   },
 
-  // API y archivos de configuración (Node).
+  // API, servicio de noticias, scripts y archivos de configuración (Node).
   {
-    files: ['api/**/*.mjs', '*.config.js'],
+    files: ['api/**/*.mjs', 'news/**/*.mjs', 'scripts/**/*.mjs', '*.config.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',

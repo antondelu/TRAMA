@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import { Logo } from '@/components/navigation/Logo'
 import { PageContainer } from './PageContainer'
-import { CATEGORIES, OPPORTUNITIES_NAV } from '@/constants/navigation'
+import { CATEGORIES, OPPORTUNITIES_NAV, NEWS_NAV } from '@/constants/navigation'
 import { APP } from '@/config/app'
 import { cn } from '@/utils/format'
 
 const COLUMNS = [
-  { title: 'Explorar', links: [...CATEGORIES, OPPORTUNITIES_NAV].map((c) => ({ to: c.to, label: c.label })) },
+  { title: 'Explorar', links: [...CATEGORIES, OPPORTUNITIES_NAV, NEWS_NAV].map((c) => ({ to: c.to, label: c.label })) },
   { title: 'TRAMA', links: [{ to: '/como-funciona', label: 'Cómo funciona' }, { to: '/nosotros', label: 'Nosotros' }, { to: '/planes', label: 'Membresías' }, { to: '/publicar', label: 'Publicar' }] },
   { title: 'Ayuda', links: [{ to: '/contacto', label: 'Contacto' }, { to: '/terminos', label: 'Términos y condiciones' }, { to: '/privacidad', label: 'Política de privacidad' }] },
 ]

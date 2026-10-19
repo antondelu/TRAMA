@@ -43,6 +43,7 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             api/package-lock.json
+            news/package-lock.json
 
       - run: npm ci
       - run: npm run lint
@@ -52,6 +53,14 @@ jobs:
       # Tests de integración de la API contra un servidor SMTP falso (api/server.test.mjs).
       - name: Test API
         working-directory: api
+        run: |
+          npm ci
+          npm test
+
+      # Ingesta de noticias contra feeds falsos: clasificación, duplicados,
+      # actualizaciones, fallas de fuentes, candado y retención (news/test).
+      - name: Test news service
+        working-directory: news
         run: |
           npm ci
           npm test
@@ -76,6 +85,10 @@ jobs:
 
       - name: Audit API dependencies
         working-directory: api
+        run: npm audit --audit-level=high
+
+      - name: Audit news dependencies
+        working-directory: news
         run: npm audit --audit-level=high
 
   # Busca credenciales en todo el historial de git (complementa el Secret
@@ -138,6 +151,15 @@ jobs:
           cache-from: type=gha,scope=api
           cache-to: type=gha,scope=api,mode=max
 
+      - name: Build news image
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: news
+          load: true
+          tags: trama-news:ci
+          cache-from: type=gha,scope=news
+          cache-to: type=gha,scope=news,mode=max
+
       # Levanta las dos imágenes como en docker-compose.yml (misma red, mismo
       # endurecimiento) con un certificado autofirmado y verifica que nginx
       # arranque, sirva la SPA y le pase /api a la API.
@@ -153,6 +175,11 @@ jobs:
           docker run -d --name api --network webnet \
             --read-only --cap-drop ALL --security-opt no-new-privileges:true \
             trama-contact-api:ci
+          # Sin la tarea programada: el smoke test no sale a internet a buscar feeds.
+          docker run -d --name news --network webnet \
+            --read-only --cap-drop ALL --security-opt no-new-privileges:true \
+            -e NEWS_SCHEDULER=off -v news-data:/data \
+            trama-news:ci
           docker run -d --name web --network webnet \
             --read-only --cap-drop ALL --security-opt no-new-privileges:true \
             --tmpfs /tmp:mode=1777,size=32m --tmpfs /var/cache/nginx:mode=0755,size=16m \
@@ -171,12 +198,16 @@ jobs:
           curl -fsSk https://localhost:8443/salas | grep -q 'id="root"'
           # nginx llega a la API por la red interna.
           curl -fsSk https://localhost:8443/api/challenge | grep -q '{'
+          # nginx llega al servicio de noticias y solo deja pasar GET.
+          curl -fsSk "https://localhost:8443/api/news?section=uy" | grep -q '"section":"uy"'
+          test "$(curl -sk -o /dev/null -w '%{http_code}' -X POST https://localhost:8443/api/news)" = 403
 
       - name: Container logs
         if: failure()
         run: |
           docker logs web || true
           docker logs api || true
+          docker logs news || true
 
       # Malas prácticas en los Dockerfiles.
       - name: Scan Docker config
@@ -201,6 +232,15 @@ jobs:
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
           image-ref: trama-contact-api:ci
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+          skip-setup-trivy: true
+
+      - name: Scan news image
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: trama-news:ci
           severity: HIGH,CRITICAL
           ignore-unfixed: true
           exit-code: "1"

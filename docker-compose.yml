@@ -17,7 +17,7 @@ services:
       # Certificados propios: certs/fullchain.pem y certs/privkey.pem
       - ./certs:/etc/nginx/certs:ro
     networks: [webnet]
-    depends_on: [api]
+    depends_on: [api, news]
 
   # API del formulario de contacto (SMTP). Sin puertos públicos: solo nginx la alcanza.
   api:
@@ -30,6 +30,27 @@ services:
     cap_drop: [ALL]
     networks: [webnet]
 
+  # Noticias de artes escénicas: consulta las fuentes cada 12 h (tarea
+  # programada dentro del servicio) y sirve GET /api/news. Sin puertos
+  # públicos. Las noticias se guardan en el volumen news-data, que sobrevive
+  # a reinicios y actualizaciones de la imagen.
+  news:
+    build: { context: ./news, dockerfile: Dockerfile }
+    image: trama-news:latest
+    restart: unless-stopped
+    env_file:
+      - path: ./news/.env
+        required: false
+    read_only: true
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    volumes:
+      - news-data:/data
+    networks: [webnet]
+
 networks:
   webnet:
     driver: bridge
+
+volumes:
+  news-data:
