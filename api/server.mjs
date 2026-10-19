@@ -92,6 +92,7 @@ setInterval(() => {
 
 // Single-line fields end up in the subject/Reply-To, so strip anything that
 // could break the header or the layout.
+// eslint-disable-next-line no-control-regex -- matching control characters is the point
 const oneLine = (s) => s.replace(/[\u0000-\u001f\u007f]+/g, " ").trim()
 
 function validate(body) {
