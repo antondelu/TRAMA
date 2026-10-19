@@ -2,6 +2,7 @@ import { HeroSection } from './HeroSection'
 import { CategoryCards } from './CategoryCards'
 import { FeaturedTabs } from './FeaturedTabs'
 import { JoinSection } from './JoinSection'
+import { SponsorStrip } from './SponsorStrip'
 import { PageContainer } from '@/components/layout/PageContainer'
 import { Reveal } from '@/components/ui/Reveal'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
@@ -13,6 +14,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <SponsorStrip />
       <section aria-labelledby="categories-title" className="py-14 sm:py-20">
         <PageContainer>
           <Reveal className="mb-12">
