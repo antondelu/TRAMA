@@ -1,13 +1,34 @@
+import { useState } from 'react'
+import { ChevronDown } from 'lucide-react'
 import { FilterField } from './FilterFields'
 import { Drawer } from '@/components/ui/Drawer'
 import { Button } from '@/components/ui/Button'
+import { toList } from '@/services/query'
+import { cn } from '@/utils/format'
 
+// Muestra los filtros marcados como `primary`; el resto queda en "Más filtros"
+// (abierto si alguno de ellos está activo). Sin marcas, se ven todos.
 function FilterList({ defs, values, onChange }) {
+  const hasPrimary = defs.some((d) => d.primary)
+  const main = hasPrimary ? defs.filter((d) => d.primary) : defs
+  const more = hasPrimary ? defs.filter((d) => !d.primary) : []
+  const activeMore = more.filter((d) => toList(values[d.key]).length > 0).length
+  const [open, setOpen] = useState(activeMore > 0)
+  const field = (def) => <FilterField key={def.key} def={def} value={values[def.key] ?? ''} onChange={(v) => onChange({ [def.key]: v })} />
+
   return (
     <div className="space-y-5">
-      {defs.map((def) => (
-        <FilterField key={def.key} def={def} value={values[def.key] ?? ''} onChange={(v) => onChange({ [def.key]: v })} />
-      ))}
+      {main.map(field)}
+      {more.length > 0 && (
+        <div className="border-t border-line pt-4">
+          <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open}
+            className="flex w-full items-center justify-between text-sm font-semibold text-brand">
+            {open ? 'Menos filtros' : `Más filtros${activeMore ? ` (${activeMore} activo${activeMore > 1 ? 's' : ''})` : ''}`}
+            <ChevronDown aria-hidden className={cn('size-4 transition-transform duration-300', open && 'rotate-180')} />
+          </button>
+          {open && <div className="enter mt-5 space-y-5">{more.map(field)}</div>}
+        </div>
+      )}
     </div>
   )
 }
@@ -17,10 +38,10 @@ export function FilterSidebar({ defs, values, onChange, onClear, activeCount, mo
   return (
     <>
       <aside aria-label="Filtros" className="hidden lg:block">
-        <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto rounded-[var(--radius-card)] border border-line bg-surface p-5">
+        <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto rounded-[var(--radius-card)] bg-surface p-5 shadow-[var(--shadow-card)]">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-semibold">Filtros</h2>
-            {activeCount > 0 && <Button variant="link" size="sm" onClick={onClear}>Limpiar filtros</Button>}
+            <h2 className="font-display text-lg font-bold">Filtros</h2>
+            {activeCount > 0 && <Button variant="link" size="sm" onClick={onClear}>Limpiar</Button>}
           </div>
           <FilterList defs={defs} values={values} onChange={onChange} />
         </div>

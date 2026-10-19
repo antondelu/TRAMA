@@ -1,12 +1,13 @@
-import { MapPin, Users, Wrench, CalendarCheck } from 'lucide-react'
+import { MapPin, Users } from 'lucide-react'
 import { EntityCard, CardMeta } from './EntityCard'
 import { Badge } from '@/components/ui/StatusBadge'
 import { PriceDisplay } from '@/components/ui/PriceDisplay'
 import { useTaxonomies } from '@/hooks/useTaxonomies'
-import { formatShortDate } from '@/utils/format'
 
+// Versión minimalista: tipo, ciudad, capacidad y precio. El equipamiento y
+// la disponibilidad se ven en la ficha de la sala.
 export function VenueCard({ venue }) {
-  const { label, labels } = useTaxonomies()
+  const { label } = useTaxonomies()
   return (
     <EntityCard
       to={`/salas/${venue.slug}`}
@@ -17,13 +18,12 @@ export function VenueCard({ venue }) {
       favorite={{ type: 'venue', id: venue.id }}
       badges={venue.hasOpenCall && <Badge tone="accent">Convocatoria abierta</Badge>}
       cta="Ver sala"
-      footer={<PriceDisplay from={venue.priceFrom} to={venue.priceTo} unit={venue.priceUnit} currency={venue.currency} />}
+      footer={<PriceDisplay from={venue.priceFrom} unit={venue.priceUnit} currency={venue.currency} />}
     >
-      <CardMeta icon={MapPin}>{venue.city}{venue.address?.area ? ` · ${venue.address.area}` : ''}</CardMeta>
-      <CardMeta icon={Users}>Hasta {venue.capacity} personas</CardMeta>
-      <CardMeta icon={Wrench}>{labels('equipment', venue.equipment.slice(0, 3)).join(', ')}</CardMeta>
-      {/* Solo si la sala cargó disponibilidad */}
-      {venue.nextAvailable && <CardMeta icon={CalendarCheck}>Próxima fecha libre: {formatShortDate(venue.nextAvailable)}</CardMeta>}
+      <div className="flex flex-wrap gap-x-4 gap-y-1">
+        <CardMeta icon={MapPin}>{venue.city}</CardMeta>
+        <CardMeta icon={Users}>{venue.capacity} personas</CardMeta>
+      </div>
     </EntityCard>
   )
 }

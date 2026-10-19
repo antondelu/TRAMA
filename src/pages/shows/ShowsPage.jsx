@@ -22,15 +22,15 @@ export default function ShowsPage() {
   const countries = configService.countries()
 
   const filterDefs = useMemo(() => [
-    { key: 'discipline', label: 'Disciplina', type: 'select', options: tax.disciplines },
+    { key: 'discipline', primary: true, label: 'Disciplina', type: 'select', options: tax.disciplines },
     { key: 'genre', label: 'Género', type: 'select', placeholder: 'Todos', options: tax.genres },
-    { key: 'durationMax', label: 'Duración máxima (min)', chipLabel: 'Hasta', unit: 'min', type: 'number', placeholder: 'Ej. 60' },
+    { key: 'durationMax', primary: true, label: 'Duración máxima (min)', chipLabel: 'Hasta', unit: 'min', type: 'number', placeholder: 'Ej. 60' },
     { key: 'castMax', label: 'Intérpretes (máximo)', chipLabel: 'Hasta', unit: 'intérpretes', type: 'number', placeholder: 'Ej. 4' },
     { key: 'audience', label: 'Público', type: 'select', placeholder: 'Todos', options: tax.audiences },
     { key: 'technicalNeeds', label: 'Necesidades técnicas', type: 'select', options: tax.technicalNeeds },
     { key: 'stagingFormat', label: 'Formato de montaje', type: 'select', placeholder: 'Todos', options: tax.stagingFormats },
-    { key: 'bookingMode', label: 'Modalidad de contratación', type: 'select', options: tax.bookingModes },
-    { key: 'touring', label: 'Disponible para giras', type: 'toggle' },
+    { key: 'bookingMode', primary: true, label: 'Modalidad de contratación', type: 'select', options: tax.bookingModes },
+    { key: 'touring', primary: true, label: 'Disponible para giras', type: 'toggle' },
     { key: 'country', label: 'País', type: 'select', placeholder: 'Todos', options: countries.map((c) => ({ id: c.code, label: c.name })) },
     { key: 'city', label: 'Ciudad', type: 'select', options: countries[0].cities.map((c) => ({ id: c.name, label: c.name })) },
     { key: 'availability', label: 'Disponibilidad', type: 'select', options: Object.entries(SHOW_AVAILABILITY).map(([id, v]) => ({ id, label: v.label })) },
@@ -39,7 +39,7 @@ export default function ShowsPage() {
   return (
     <>
       <PageHeader eyebrow="Espectáculos" title="Obras para programar."
-        description="Catálogo profesional de espectáculos disponibles para salas, festivales y giras. No es una cartelera: acá se contratan funciones y temporadas."
+        description="Espectáculos disponibles para salas, festivales y giras."
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Espectáculos' }]}
         actions={<Button variant="secondary" to="/publicar/espectaculo">Publicar un espectáculo</Button>} />
       <CatalogView filterDefs={filterDefs} sortOptions={SORTS} fetcher={showsService.list}

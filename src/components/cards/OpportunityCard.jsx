@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CalendarClock, MapPin, Building, Coins } from 'lucide-react'
+import { CalendarClock, Building } from 'lucide-react'
 import { StatusBadge, Badge } from '@/components/ui/StatusBadge'
 import { FavoriteButton } from '@/features/favorites/FavoriteButton'
 import { CardMeta } from './EntityCard'
@@ -27,8 +27,6 @@ export function OpportunityCard({ opportunity: o }) {
       </h3>
       <div className="mt-3 space-y-1.5 text-sm text-ink-soft">
         <CardMeta icon={Building}>{o.organizationName}</CardMeta>
-        <CardMeta icon={MapPin}>{o.location.scope}</CardMeta>
-        <CardMeta icon={Coins}>{label('compensation', o.compensation.type)}</CardMeta>
       </div>
       <p className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-soft px-3 py-1.5 text-sm font-semibold text-brand">
         <CalendarClock aria-hidden className="size-4 text-brand" />

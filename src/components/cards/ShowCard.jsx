@@ -1,4 +1,4 @@
-import { Clock, Users, Handshake, MapPin } from 'lucide-react'
+import { Clock, Users } from 'lucide-react'
 import { EntityCard, CardMeta } from './EntityCard'
 import { Badge } from '@/components/ui/StatusBadge'
 import { useTaxonomies } from '@/hooks/useTaxonomies'
@@ -10,8 +10,9 @@ export const SHOW_AVAILABILITY = {
   'no-disponible': { label: 'Sin fechas por ahora', tone: 'neutral' },
 }
 
+// Versión minimalista: disciplina, compañía, duración e intérpretes.
 export function ShowCard({ show }) {
-  const { label, labels } = useTaxonomies()
+  const { label } = useTaxonomies()
   const availability = SHOW_AVAILABILITY[show.availability]
   return (
     <EntityCard
@@ -23,15 +24,12 @@ export function ShowCard({ show }) {
       favorite={{ type: 'show', id: show.id }}
       badges={availability && <Badge tone={availability.tone}>{availability.label}</Badge>}
       cta="Ver espectáculo"
-      footer={<span className="text-xs">{show.touring ? 'Disponible para giras' : `Con base en ${show.city}`}</span>}
-    >
-      <p className="line-clamp-2 text-ink">{show.synopsis}</p>
-      <div className="flex flex-wrap gap-x-4 gap-y-1">
-        <CardMeta icon={Clock}>{formatDuration(show.durationMinutes)}</CardMeta>
-        <CardMeta icon={Users}>{show.castSize} {show.castSize === 1 ? 'intérprete' : 'intérpretes'}</CardMeta>
-      </div>
-      <CardMeta icon={Handshake}>{labels('bookingModes', show.bookingModes).join(', ')}</CardMeta>
-      <CardMeta icon={MapPin}>{show.city}</CardMeta>
-    </EntityCard>
+      footer={(
+        <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-ink-soft">
+          <CardMeta icon={Clock}>{formatDuration(show.durationMinutes)}</CardMeta>
+          <CardMeta icon={Users}>{show.castSize} {show.castSize === 1 ? 'intérprete' : 'intérpretes'}</CardMeta>
+        </div>
+      )}
+    />
   )
 }

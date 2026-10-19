@@ -29,17 +29,17 @@ export default function ResourcesPage() {
   const browsing = [...params.keys()].length === 0
 
   const filterDefs = useMemo(() => [
-    { key: 'type', label: 'Formato', type: 'select', placeholder: 'Todos', options: tax.resourceTypes },
-    { key: 'category', label: 'Categoría', type: 'select', options: tax.resourceCategories },
+    { key: 'type', primary: true, label: 'Formato', type: 'select', placeholder: 'Todos', options: tax.resourceTypes },
+    { key: 'category', primary: true, label: 'Categoría', type: 'select', options: tax.resourceCategories },
     { key: 'topic', label: 'Tema', type: 'select', placeholder: 'Todos', options: TOPICS },
     { key: 'author', label: 'Autor', type: 'select', placeholder: 'Todos', options: authors.map((a) => ({ id: a, label: a })) },
-    { key: 'access', label: 'Acceso', type: 'select', placeholder: 'Todos', options: [{ id: 'free', label: 'Gratuito' }, { id: 'exclusive', label: 'Exclusivo para miembros' }] },
+    { key: 'access', primary: true, label: 'Acceso', type: 'select', placeholder: 'Todos', options: [{ id: 'free', label: 'Gratuito' }, { id: 'exclusive', label: 'Exclusivo para miembros' }] },
   ], [tax, authors])
 
   return (
     <>
       <PageHeader eyebrow="Recursos" title="Biblioteca profesional."
-        description="Guías, entrevistas, podcasts, plantillas y formación para quienes trabajan en artes escénicas. Una parte es abierta y otra es exclusiva para miembros."
+        description="Guías, entrevistas, plantillas y formación."
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Recursos' }]}
         actions={<Button variant="secondary" to="/planes">Ver membresías</Button>} />
       {browsing && <PageContainer className="pt-10"><ResourceCollections /></PageContainer>}

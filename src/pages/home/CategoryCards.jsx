@@ -19,8 +19,7 @@ export function CategoryCards() {
               {label}
               <ArrowRight aria-hidden className="size-5 -translate-x-2 text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </span>
-            <span className="mt-2 max-w-xs text-sm leading-relaxed text-ink-soft">{description}</span>
-            <span aria-hidden className="mt-5 h-0.5 w-10 rounded-full bg-accent/30 transition-all duration-500 group-hover:w-24 group-hover:bg-accent" />
+            <span className="mt-1.5 max-w-[16rem] text-sm text-ink-soft">{description}</span>
           </Link>
         </Reveal>
       ))}

@@ -22,15 +22,15 @@ export default function VenuesPage() {
   const uy = configService.countries()[0]
 
   const filterDefs = useMemo(() => [
-    { key: 'department', label: 'Departamento', type: 'select', placeholder: 'Todos', options: uy.departments.map((d) => ({ id: d, label: d })) },
+    { key: 'department', primary: true, label: 'Departamento', type: 'select', placeholder: 'Todos', options: uy.departments.map((d) => ({ id: d, label: d })) },
     { key: 'city', label: 'Ciudad', type: 'select', options: uy.cities.map((c) => ({ id: c.name, label: c.name })) },
-    { key: 'capMin', label: 'Capacidad mínima', chipLabel: 'Desde', unit: 'personas', type: 'number', placeholder: 'Ej. 50' },
+    { key: 'capMin', primary: true, label: 'Capacidad mínima', chipLabel: 'Desde', unit: 'personas', type: 'number', placeholder: 'Ej. 50' },
     { key: 'capMax', label: 'Capacidad máxima', chipLabel: 'Hasta', unit: 'personas', type: 'number', placeholder: 'Ej. 300' },
-    { key: 'type', label: 'Tipo de espacio', type: 'select', placeholder: 'Todos', options: tax.venueTypes },
+    { key: 'type', primary: true, label: 'Tipo de espacio', type: 'select', placeholder: 'Todos', options: tax.venueTypes },
     { key: 'rentalMode', label: 'Modalidad de alquiler', type: 'select', options: tax.rentalModes },
     { key: 'priceMin', label: 'Precio desde (UYU)', chipLabel: 'Precio desde', unit: 'UYU', type: 'number' },
     { key: 'priceMax', label: 'Precio hasta (UYU)', chipLabel: 'Precio hasta', unit: 'UYU', type: 'number' },
-    { key: 'date', label: 'Disponible el día', chipLabel: 'Libre el', type: 'date', min: todayISO(), hint: 'Solo salas que confirmaron esa fecha como libre.' },
+    { key: 'date', primary: true, label: 'Disponible el día', chipLabel: 'Libre el', type: 'date', min: todayISO(), hint: 'Solo salas que confirmaron esa fecha como libre.' },
     { key: 'openCalls', label: 'Con convocatorias abiertas', type: 'toggle' },
     { key: 'equipment', label: 'Equipamiento técnico', type: 'multi', options: tax.equipment },
     { key: 'accessibility', label: 'Accesibilidad', type: 'multi', options: tax.accessibility },
@@ -39,7 +39,7 @@ export default function VenuesPage() {
   return (
     <>
       <PageHeader eyebrow="Salas" title="Encontrá tu próximo escenario."
-        description="Espacios para presentar, ensayar o producir, con ficha técnica, condiciones y calendario. Alquilar una sala es distinto de que una sala programe tu obra: para eso están las convocatorias."
+        description="Espacios para presentar, ensayar o producir."
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Salas' }]}
         actions={(
           <>
