@@ -1,6 +1,8 @@
 import { LegalPage } from './LegalPage'
+import { APP } from '@/config/app'
 
 const SECTIONS = [
+  { title: 'Responsable', body: [`El responsable del sitio y de la base de datos de ${APP.name} es ${APP.owner}. Para cualquier consulta sobre tus datos, escribinos desde Contacto.`] },
   { title: 'Qué datos guardamos', body: ['Los datos de tu cuenta (nombre, correo, país, ciudad e intereses), lo que publicás y las solicitudes y mensajes que enviás dentro de TRAMA.'] },
   { title: 'Qué es público', body: ['Tu nombre, biografía, ciudad y especialidades, si tu perfil es público. Tu correo y teléfono solo se muestran si los marcás como públicos.'] },
   { title: 'Para qué los usamos', body: ['Para que la plataforma funcione: mostrar tus publicaciones, hacer llegar tus solicitudes y avisarte de novedades según tus preferencias.'] },
