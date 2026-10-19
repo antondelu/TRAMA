@@ -19,7 +19,7 @@ export function MembershipGate({ locked, accessLevel, children }) {
   return (
     <div className="rounded-[var(--radius-card)] border border-brand/25 bg-brand-soft p-6 text-center sm:p-10">
       <Lock aria-hidden className="mx-auto size-8 text-brand" />
-      <h2 className="mt-3 font-serif text-2xl font-semibold">Contenido exclusivo</h2>
+      <h2 className="mt-3 font-display text-2xl font-semibold">Contenido exclusivo</h2>
       <p className="mx-auto mt-2 max-w-md text-sm text-ink-soft">
         {req.text} Accedés con el plan <strong className="text-ink">{req.plan}</strong>.
       </p>

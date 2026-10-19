@@ -30,7 +30,7 @@ export function Section({ id, title, description, children, className, actions }
     <section id={id} aria-labelledby={id ? `${id}-title` : undefined} className={cn('scroll-mt-24', className)}>
       <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 id={id ? `${id}-title` : undefined} className="font-serif text-2xl font-semibold">{title}</h2>
+          <h2 id={id ? `${id}-title` : undefined} className="font-display text-2xl font-semibold">{title}</h2>
           {description && <p className="mt-1 text-sm text-ink-soft">{description}</p>}
         </div>
         {actions}

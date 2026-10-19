@@ -52,7 +52,7 @@ export default function ResourceDetailPage() {
               <Badge>{label('resourceTypes', r.resourceType)}</Badge>
               <Badge>{label('resourceCategories', r.category)}</Badge>
             </div>
-            <h1 className="mt-3 font-serif text-3xl font-semibold tracking-tight sm:text-5xl">{r.title}</h1>
+            <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-5xl">{r.title}</h1>
             <p className="mt-3 text-lg text-ink-soft">{r.description}</p>
             <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm text-ink-soft">
               <span className="flex items-center gap-1.5"><User aria-hidden className="size-4" />{r.author}</span>

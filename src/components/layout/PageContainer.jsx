@@ -27,13 +27,15 @@ export function Breadcrumbs({ items }) {
 
 export function PageHeader({ eyebrow, title, description, breadcrumbs, actions, children, className }) {
   return (
-    <header className={cn('border-b border-line bg-surface', className)}>
-      <PageContainer className="py-8 sm:py-12">
+    <header className={cn('relative overflow-hidden', className)}>
+      {/* Luz de color suave detrás del título */}
+      <div aria-hidden className="pointer-events-none absolute -right-32 -top-40 size-[30rem] rounded-full bg-accent-soft blur-3xl" />
+      <PageContainer className="relative pb-6 pt-8 sm:pb-8 sm:pt-12">
         {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-3xl">
-            {eyebrow && <p className="eyebrow mb-2 text-brand">{eyebrow}</p>}
-            <h1 className="font-serif text-3xl font-semibold tracking-tight sm:text-5xl">{title}</h1>
+            {eyebrow && <p className="tag mb-4">{eyebrow}</p>}
+            <h1 className="font-display text-4xl font-bold tracking-tight sm:text-6xl">{title}</h1>
             {description && <p className="mt-3 text-base text-ink-soft sm:text-lg">{description}</p>}
           </div>
           {actions && <div className="flex flex-wrap gap-2">{actions}</div>}

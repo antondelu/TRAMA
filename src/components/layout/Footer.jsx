@@ -12,7 +12,7 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="mt-auto bg-ink text-white/80">
+    <footer className="mt-auto bg-brand-strong text-white/80">
       <PageContainer className="grid gap-10 py-12 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div className="space-y-3">
           <Logo inverted />

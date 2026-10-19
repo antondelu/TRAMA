@@ -60,7 +60,7 @@ export default function ContactPage() {
         {sent ? (
           <div role="status" className="rounded-[var(--radius-card)] border border-success/30 bg-success-soft p-8 text-center">
             <CheckCircle2 aria-hidden className="mx-auto size-8 text-success" />
-            <h2 className="mt-3 font-serif text-2xl font-semibold">Mensaje enviado</h2>
+            <h2 className="mt-3 font-display text-2xl font-semibold">Mensaje enviado</h2>
             <p className="mt-1 text-sm">Te respondemos al correo que nos dejaste.</p>
             <Button variant="secondary" className="mt-5" onClick={() => { setSent(false); loadChallenge() }}>Enviar otro mensaje</Button>
           </div>

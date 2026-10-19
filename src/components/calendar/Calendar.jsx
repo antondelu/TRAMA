@@ -63,7 +63,7 @@ export function Calendar({ days = {}, mode = 'view', selected, onSelect, canSele
         <button type="button" onClick={() => setMonth((m) => addMonths(m, -1))} className="rounded-lg p-2 hover:bg-ink/5" aria-label="Mes anterior">
           <ChevronLeft aria-hidden className="size-5" />
         </button>
-        <h3 className="font-serif text-lg font-semibold" aria-live="polite">{monthLabel(month.year, month.month)}</h3>
+        <h3 className="font-display text-lg font-semibold" aria-live="polite">{monthLabel(month.year, month.month)}</h3>
         <button type="button" onClick={() => setMonth((m) => addMonths(m, 1))} className="rounded-lg p-2 hover:bg-ink/5" aria-label="Mes siguiente">
           <ChevronRight aria-hidden className="size-5" />
         </button>

@@ -14,7 +14,7 @@ export function FormSection({ title, description, children }) {
     <fieldset className="space-y-4 rounded-[var(--radius-card)] border border-line bg-surface p-5 sm:p-6">
       <legend className="sr-only">{title}</legend>
       <div aria-hidden>
-        <h2 className="font-serif text-xl font-semibold">{title}</h2>
+        <h2 className="font-display text-xl font-semibold">{title}</h2>
         {description && <p className="mt-0.5 text-sm text-ink-soft">{description}</p>}
       </div>
       {children}

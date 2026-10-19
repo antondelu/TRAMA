@@ -10,6 +10,7 @@ import { PageContainer } from '@/components/layout/PageContainer'
 import { useUrlFilters } from '@/hooks/useUrlFilters'
 import { useServiceQuery } from '@/hooks/useServiceQuery'
 import { inputClasses } from '@/components/forms/FormField'
+import { Reveal } from '@/components/ui/Reveal'
 import { cn } from '@/utils/format'
 
 // Buscador interno del catálogo: se aplica al enviar, no en cada tecla.
@@ -72,7 +73,7 @@ export function CatalogView({ filterDefs, sortOptions, fetcher, renderItem, sear
               ) : (
                 <>
                   <ul className={cn('grid gap-5', gridClass, query.loading && 'opacity-60 transition-opacity')}>
-                    {data.items.map((item) => <li key={item.id} className="flex [&>*]:w-full">{renderItem(item)}</li>)}
+                    {data.items.map((item, i) => <Reveal as="li" key={item.id} delay={(i % 3) * 80} className="flex [&>*]:w-full">{renderItem(item)}</Reveal>)}
                   </ul>
                   <Pagination page={data.page} pageCount={data.pageCount} onChange={changePage} />
                 </>

@@ -104,14 +104,14 @@ export default function CalendarPage() {
       <DemoNotice className="mb-5">Modo demo: las reservas no son reales. En producción, el servidor tiene que impedir dobles reservas aunque dos personas acepten a la vez.</DemoNotice>
       <ManageDates key={current} venueId={current} />
       <section className="mt-10" aria-labelledby="pend-title">
-        <h2 id="pend-title" className="mb-3 font-serif text-2xl font-semibold">Solicitudes por responder ({open.length})</h2>
+        <h2 id="pend-title" className="mb-3 font-display text-2xl font-semibold">Solicitudes por responder ({open.length})</h2>
         {bookings.error ? <ErrorState error={bookings.error} onRetry={bookings.reload} /> : !bookings.data ? <LoadingSkeleton variant="list" count={2} />
           : open.length ? <ul className="space-y-3">{open.map((r) => <RequestItem key={r.id} request={r} />)}</ul>
             : <p className="text-sm text-ink-soft">No hay solicitudes pendientes para esta sala.</p>}
       </section>
       {rest.length > 0 && (
         <section className="mt-10" aria-labelledby="hist-title">
-          <h2 id="hist-title" className="mb-3 font-serif text-2xl font-semibold">Historial</h2>
+          <h2 id="hist-title" className="mb-3 font-display text-2xl font-semibold">Historial</h2>
           <ul className="space-y-3">{rest.map((r) => <RequestItem key={r.id} request={r} />)}</ul>
         </section>
       )}

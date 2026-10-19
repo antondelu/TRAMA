@@ -33,7 +33,7 @@ export default function AdminDashboardPage() {
           const inner = (
             <>
               <Icon aria-hidden className={highlight ? 'size-5 text-warning' : 'size-5 text-accent'} />
-              <p className="mt-3 font-serif text-4xl font-semibold">{value}</p>
+              <p className="mt-3 font-display text-4xl font-semibold">{value}</p>
               <p className="text-sm text-ink-soft">{label}</p>
               {sub && <p className="text-xs text-ink-soft">{sub}</p>}
             </>

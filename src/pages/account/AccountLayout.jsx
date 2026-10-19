@@ -58,7 +58,7 @@ export function AccountHeader({ title, description, actions }) {
   return (
     <div className="mb-6 flex flex-wrap items-end justify-between gap-4 border-b border-line pb-5">
       <div>
-        <h1 className="font-serif text-3xl font-semibold tracking-tight">{title}</h1>
+        <h1 className="font-display text-3xl font-semibold tracking-tight">{title}</h1>
         {description && <p className="mt-1 text-sm text-ink-soft">{description}</p>}
       </div>
       {actions && <div className="flex flex-wrap gap-2">{actions}</div>}

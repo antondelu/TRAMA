@@ -48,7 +48,7 @@ export default function ShowDetailPage() {
           <ImageGallery images={show.media.poster ? [{ url: show.media.poster, alt: `Afiche de ${show.title}` }] : show.media.photos} title={show.title} kind="show" seed={show.title} />
           <div>
             <p className="eyebrow text-brand">{label('disciplines', show.discipline)} · {label('genres', show.genre)}</p>
-            <h1 className="mt-1 font-serif text-4xl font-semibold tracking-tight sm:text-5xl">{show.title}</h1>
+            <h1 className="mt-1 font-display text-4xl font-semibold tracking-tight sm:text-5xl">{show.title}</h1>
             <p className="mt-2 text-lg text-ink-soft">{show.company}</p>
             <div className="mt-4 flex flex-wrap items-center gap-3 text-sm">
               {availability && <Badge tone={availability.tone}>{availability.label}</Badge>}

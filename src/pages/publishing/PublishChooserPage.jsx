@@ -24,7 +24,7 @@ export default function PublishChooserPage() {
               <Link to={to} className="group flex h-full items-start gap-4 rounded-[var(--radius-card)] border border-line bg-surface p-6 shadow-[var(--shadow-card)] hover:border-brand">
                 <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand"><Icon aria-hidden className="size-6" /></span>
                 <span>
-                  <span className="flex items-center gap-1 font-serif text-2xl font-semibold">{title}<ArrowRight aria-hidden className="size-5 transition-transform group-hover:translate-x-0.5" /></span>
+                  <span className="flex items-center gap-1 font-display text-2xl font-semibold">{title}<ArrowRight aria-hidden className="size-5 transition-transform group-hover:translate-x-0.5" /></span>
                   <span className="mt-1 block text-sm text-ink-soft">{text}</span>
                 </span>
               </Link>

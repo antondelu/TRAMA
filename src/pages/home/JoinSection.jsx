@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Megaphone, Drama, Wrench, Building2, ArrowRight } from 'lucide-react'
+import { Megaphone, Drama, Wrench, Building2, ArrowUpRight } from 'lucide-react'
 import { PageContainer } from '@/components/layout/PageContainer'
 
 const OPTIONS = [
@@ -11,21 +11,30 @@ const OPTIONS = [
 
 export function JoinSection() {
   return (
-    <section aria-labelledby="join-title" className="bg-brand text-white">
-      <PageContainer className="py-16 sm:py-24">
-        <h2 id="join-title" className="font-serif text-4xl font-semibold tracking-tight sm:text-5xl">Formá parte de la red.</h2>
-        <p className="mt-3 max-w-xl text-white/80">TRAMA crece con cada sala, obra y profesional que se suma. Publicar es gratis.</p>
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {OPTIONS.map(({ to, label, icon: Icon, text }) => (
-            <li key={to}>
-              <Link to={to} className="group flex h-full flex-col rounded-[var(--radius-card)] border border-white/20 bg-white/5 p-5 transition-colors hover:bg-white/10">
-                <Icon aria-hidden className="size-6 text-white/80" />
-                <span className="mt-4 flex items-center gap-1 font-semibold">{label}<ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5" /></span>
-                <span className="mt-1 text-sm text-white/70">{text}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+    <section aria-labelledby="join-title" className="py-12 sm:py-16">
+      <PageContainer>
+        <div className="relative overflow-hidden rounded-[2rem] bg-brand px-6 py-12 text-white sm:px-12 sm:py-16">
+          <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-accent/50 blur-3xl" />
+          <div aria-hidden className="pointer-events-none absolute -bottom-32 left-1/3 size-72 rounded-full bg-accent-strong/60 blur-3xl" />
+          <div className="relative">
+            <h2 id="join-title" className="font-display text-4xl font-bold tracking-tight sm:text-6xl">Formá parte de la red.</h2>
+            <p className="mt-3 max-w-xl text-lg text-white/75">TRAMA crece con cada sala, obra y profesional que se suma. Publicar es gratis.</p>
+            <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {OPTIONS.map(({ to, label, icon: Icon, text }) => (
+                <li key={to}>
+                  <Link to={to} className="group flex h-full flex-col rounded-[var(--radius-card)] bg-white/10 p-5 backdrop-blur-sm transition-colors hover:bg-white hover:text-brand">
+                    <span className="flex items-center justify-between">
+                      <Icon aria-hidden className="size-6" strokeWidth={1.75} />
+                      <ArrowUpRight aria-hidden className="size-5 opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </span>
+                    <span className="mt-6 font-semibold">{label}</span>
+                    <span className="mt-1 text-sm opacity-70">{text}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </PageContainer>
     </section>
   )

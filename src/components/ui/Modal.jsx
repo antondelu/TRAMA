@@ -20,7 +20,7 @@ export function Modal({ open, onClose, title, description, children, footer, siz
         className={cn('relative flex max-h-[92vh] w-full flex-col rounded-t-2xl bg-surface shadow-[var(--shadow-pop)] sm:rounded-2xl', WIDTHS[size])}>
         <header className="flex items-start justify-between gap-4 border-b border-line px-5 py-4 sm:px-6">
           <div>
-            <h2 id={titleId} className="font-serif text-xl font-semibold">{title}</h2>
+            <h2 id={titleId} className="font-display text-xl font-semibold">{title}</h2>
             {description && <p id={descId} className="mt-1 text-sm text-ink-soft">{description}</p>}
           </div>
           <button type="button" onClick={onClose} className="-mr-2 rounded-lg p-2 text-ink-soft hover:bg-ink/5 hover:text-ink" aria-label="Cerrar">

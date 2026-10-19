@@ -12,7 +12,7 @@ export function PublicHeader() {
   const { user, loading } = useAuth()
   const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-canvas/92 backdrop-blur supports-[backdrop-filter]:bg-canvas/80">
+    <header className="sticky top-0 z-30 border-b border-line/70 bg-canvas/85 backdrop-blur-md">
       <PageContainer className="flex h-16 items-center justify-between gap-4">
         <div className="flex items-center gap-6">
           <Logo />

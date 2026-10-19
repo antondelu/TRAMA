@@ -1,26 +1,28 @@
 import { Link } from 'react-router-dom'
-import { ArrowUpRight } from 'lucide-react'
-import { Cover } from '@/components/media/Cover'
+import { ArrowRight } from 'lucide-react'
+import { Reveal } from '@/components/ui/Reveal'
 import { CATEGORIES } from '@/constants/navigation'
 
-const KINDS = { salas: 'venue', espectaculos: 'show', servicios: 'service', recursos: 'resource' }
-
+// Las cuatro áreas como íconos grandes, sin tarjetas ni imágenes.
+// Al pasar el mouse el ícono se llena de color y gira un poco.
 export function CategoryCards() {
   return (
-    <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      {CATEGORIES.map((c, i) => (
-        <li key={c.id}>
-          <Link to={c.to} className="group block h-full overflow-hidden rounded-[var(--radius-card)] border border-line bg-surface shadow-[var(--shadow-card)] transition-shadow hover:shadow-[var(--shadow-pop)]">
-            <Cover kind={KINDS[c.id]} tone={c.tone} alt="" label={`0${i + 1}`} ratio="aspect-[5/3]" />
-            <div className="p-5">
-              <h3 className="flex items-center justify-between font-serif text-2xl font-semibold">
-                {c.label}
-                <ArrowUpRight aria-hidden className="size-5 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand" />
-              </h3>
-              <p className="mt-2 text-sm text-ink-soft">{c.description}</p>
-            </div>
+    <ul className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+      {CATEGORIES.map(({ id, label, to, icon: Icon, description }, i) => (
+        <Reveal as="li" key={id} delay={i * 110}>
+          <Link to={to} className="group flex flex-col items-start">
+            <span className="relative flex size-20 items-center justify-center">
+              <span aria-hidden className="absolute inset-0 rounded-[1.75rem] bg-brand-soft transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 group-hover:bg-brand" />
+              <Icon aria-hidden className="relative size-9 text-brand transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 group-hover:text-white" strokeWidth={1.5} />
+            </span>
+            <span className="mt-6 flex items-center gap-2 font-display text-2xl font-bold">
+              {label}
+              <ArrowRight aria-hidden className="size-5 -translate-x-2 text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+            </span>
+            <span className="mt-2 max-w-xs text-sm leading-relaxed text-ink-soft">{description}</span>
+            <span aria-hidden className="mt-5 h-0.5 w-10 rounded-full bg-accent/30 transition-all duration-500 group-hover:w-24 group-hover:bg-accent" />
           </Link>
-        </li>
+        </Reveal>
       ))}
     </ul>
   )

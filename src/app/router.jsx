@@ -9,7 +9,7 @@ import RouteErrorPage from '@/pages/RouteErrorPage'
 function PageLoading() {
   return (
     <div role="status" className="flex min-h-screen items-center justify-center">
-      <span className="font-serif text-2xl font-semibold tracking-[0.18em] text-ink-soft">TRAMA</span>
+      <span className="font-display text-2xl font-semibold tracking-[0.18em] text-ink-soft">TRAMA</span>
       <span className="sr-only">Cargando…</span>
     </div>
   )

@@ -72,7 +72,7 @@ export default function OpportunityDetailPage() {
             </div>
             <FavoriteButton type="opportunity" id={o.id} title={o.title} variant="button" />
           </div>
-          <h1 className="mt-4 font-serif text-3xl font-semibold tracking-tight sm:text-5xl">{o.title}</h1>
+          <h1 className="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-5xl">{o.title}</h1>
           <p className="mt-3 flex items-center gap-2 text-lg text-ink-soft"><Building aria-hidden className="size-5" />{o.organizationName}</p>
           {!o.originVerified && (
             <p className="mt-4 flex items-start gap-2 text-sm text-ink-soft">

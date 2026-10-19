@@ -9,13 +9,13 @@ export function PlanCard({ plan, billing, current, action, highlighted }) {
   return (
     <article className={cn('flex flex-col rounded-[var(--radius-card)] border bg-surface p-6 shadow-[var(--shadow-card)]', highlighted ? 'border-brand ring-1 ring-brand' : 'border-line')}>
       <div className="flex items-center justify-between gap-2">
-        <h3 className="font-serif text-2xl font-semibold">{plan.name}</h3>
+        <h3 className="font-display text-2xl font-semibold">{plan.name}</h3>
         {current && <Badge tone="accent">Tu plan</Badge>}
         {!plan.isActive && <Badge>Inactivo</Badge>}
       </div>
       <p className="mt-1 text-sm text-ink-soft">{plan.description}</p>
       <p className="mt-5">
-        <span className="font-serif text-4xl font-semibold">{price === 0 ? 'Gratis' : formatMoney(price, plan.currency)}</span>
+        <span className="font-display text-4xl font-semibold">{price === 0 ? 'Gratis' : formatMoney(price, plan.currency)}</span>
         {price > 0 && <span className="text-sm text-ink-soft"> / {billing === 'yearly' ? 'año' : 'mes'}</span>}
       </p>
       {plan.demoPrice && price > 0 && <p className="mt-1 text-xs text-warning">Precio de demostración, no definitivo.</p>}

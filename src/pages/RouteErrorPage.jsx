@@ -8,8 +8,8 @@ export default function RouteErrorPage() {
   if (import.meta.env.DEV) console.error(error)
   return (
     <main className="mx-auto flex min-h-screen max-w-xl flex-col items-center justify-center px-4 text-center">
-      <p className="font-serif text-2xl font-semibold tracking-[0.18em]">TRAMA</p>
-      <h1 className="mt-6 font-serif text-4xl font-semibold">{notFound ? 'Página no encontrada' : 'Algo salió mal'}</h1>
+      <p className="font-display text-2xl font-semibold tracking-[0.18em]">TRAMA</p>
+      <h1 className="mt-6 font-display text-4xl font-semibold">{notFound ? 'Página no encontrada' : 'Algo salió mal'}</h1>
       <p className="mt-3 text-ink-soft">
         {notFound ? 'La dirección no existe.' : 'Tuvimos un problema al mostrar esta página. Probá recargar; si sigue pasando, avisanos.'}
       </p>

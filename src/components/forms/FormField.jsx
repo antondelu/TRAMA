@@ -3,7 +3,7 @@ import { AlertCircle } from 'lucide-react'
 import { cn } from '@/utils/format'
 
 export const inputClasses = (invalid) => cn(
-  'block w-full min-h-11 rounded-lg border bg-surface px-3 py-2 text-sm text-ink placeholder:text-ink-soft/70',
+  'block w-full min-h-11 rounded-xl border bg-surface px-3.5 py-2 text-sm text-ink placeholder:text-ink-soft/70',
   'transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-brand',
   invalid ? 'border-danger' : 'border-line-strong hover:border-ink-soft',
 )

@@ -29,13 +29,13 @@ export default function HowItWorksPage() {
         <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((s) => (
             <li key={s.n} className="rounded-[var(--radius-card)] border border-line bg-surface p-6">
-              <span className="font-serif text-3xl text-brand">{s.n}</span>
+              <span className="font-display text-3xl text-brand">{s.n}</span>
               <h2 className="mt-3 text-lg font-semibold">{s.title}</h2>
               <p className="mt-1 text-sm text-ink-soft">{s.text}</p>
             </li>
           ))}
         </ol>
-        <h2 className="mb-4 mt-14 font-serif text-3xl font-semibold">Preguntas frecuentes</h2>
+        <h2 className="mb-4 mt-14 font-display text-3xl font-semibold">Preguntas frecuentes</h2>
         <Accordion>{FAQ.map(([q, a]) => <AccordionItem key={q} title={q}>{a}</AccordionItem>)}</Accordion>
         <div className="mt-10 flex flex-wrap gap-2"><Button to="/registro">Crear cuenta</Button><Button variant="secondary" to="/contacto">Hacer una consulta</Button></div>
       </PageContainer>

@@ -16,7 +16,7 @@ function Stat({ to, icon: Icon, label, value }) {
   return (
     <Link to={to} className="group rounded-[var(--radius-card)] border border-line bg-surface p-4 transition-shadow hover:shadow-[var(--shadow-card)]">
       <Icon aria-hidden className="size-5 text-brand" />
-      <p className="mt-3 font-serif text-3xl font-semibold">{value}</p>
+      <p className="mt-3 font-display text-3xl font-semibold">{value}</p>
       <p className="text-sm text-ink-soft group-hover:text-ink">{label}</p>
     </Link>
   )

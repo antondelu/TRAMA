@@ -35,7 +35,7 @@ export default function SearchPage() {
                   return (
                     <section key={group.scope} aria-labelledby={`g-${group.scope}`}>
                       <div className="mb-3 flex items-baseline justify-between gap-3">
-                        <h2 id={`g-${group.scope}`} className="font-serif text-2xl font-semibold">{group.label} <span className="text-base font-normal text-ink-soft">({group.total})</span></h2>
+                        <h2 id={`g-${group.scope}`} className="font-display text-2xl font-semibold">{group.label} <span className="text-base font-normal text-ink-soft">({group.total})</span></h2>
                         {group.total > group.items.length && (
                           <Link to={`${catalog.to}?q=${encodeURIComponent(q)}`} className="inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline">
                             Ver los {group.total}<ArrowRight aria-hidden className="size-4" />

@@ -6,35 +6,39 @@ const ICONS = {
   video: Video, audio: Headphones, pdf: FileText, book: Book, course: GraduationCap, template: LayoutTemplate, article: Newspaper,
 }
 
-const TONES = {
-  brand: 'var(--color-brand)',
-  accent: 'var(--color-accent)',
-  ink: '#3A3835',
-  'brand-strong': 'var(--color-brand-strong)',
-  'accent-strong': 'var(--color-accent-strong)',
+// Combinaciones de la paleta: fondo, dos luces y color del ícono.
+export const COVER_TONES = {
+  night: { base: '#263A52', glow: '#3E6A96', glow2: '#192839', fg: 'rgb(255 255 255 / 0.9)' },
+  steel: { base: '#3E6A96', glow: '#7FA7CF', glow2: '#263A52', fg: 'rgb(255 255 255 / 0.92)' },
+  sky: { base: '#DCE6F1', glow: '#FFFFFF', glow2: '#B8CCE2', fg: '#263A52' },
+  ivory: { base: '#ECE7DD', glow: '#FFFFFF', glow2: '#DCD3C3', fg: '#263A52' },
+  deep: { base: '#192839', glow: '#2C5078', glow2: '#263A52', fg: 'rgb(255 255 255 / 0.88)' },
 }
 
 // Tono estable a partir del texto: la misma sala siempre tiene el mismo color.
 function toneFor(seed = '') {
-  const keys = Object.keys(TONES)
+  const keys = Object.keys(COVER_TONES)
   let n = 0
   for (const ch of seed) n = (n + ch.charCodeAt(0)) % 997
   return keys[n % keys.length]
 }
 
-// Imagen de portada. Si no hay foto, muestra el patrón de trama con un ícono:
+// Imagen de portada. Sin foto, muestra un degradé de la paleta con un ícono:
 // así la demo no usa fotos ajenas ni de stock sin licencia.
 export function Cover({ src, alt, kind = 'venue', seed, tone, label, ratio = 'aspect-[4/3]', className }) {
   if (src) {
     return <img src={src} alt={alt} loading="lazy" className={cn('w-full object-cover', ratio, className)} />
   }
   const Icon = ICONS[kind] ?? BookOpen
+  const t = COVER_TONES[tone] ?? COVER_TONES[toneFor(seed ?? alt)]
   return (
     <div role="img" aria-label={alt}
-      style={{ '--weave-bg': TONES[tone ?? toneFor(seed ?? alt)] }}
-      className={cn('weave relative flex w-full items-center justify-center overflow-hidden text-white/90', ratio, className)}>
-      <Icon aria-hidden className="size-10" strokeWidth={1.25} />
-      {label && <span className="absolute bottom-3 left-3 font-serif text-sm italic text-white/80">{label}</span>}
+      style={{ '--cover-base': t.base, '--cover-glow': t.glow, '--cover-glow-2': t.glow2, color: t.fg }}
+      className={cn('cover-art relative flex w-full items-center justify-center overflow-hidden', ratio, className)}>
+      <span className="flex size-16 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm">
+        <Icon aria-hidden className="size-8" strokeWidth={1.5} />
+      </span>
+      {label && <span className="absolute bottom-3 left-4 font-display text-sm font-semibold opacity-80">{label}</span>}
     </div>
   )
 }

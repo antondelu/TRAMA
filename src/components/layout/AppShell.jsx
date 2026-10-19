@@ -8,7 +8,7 @@ import { APP } from '@/config/app'
 function DemoBanner() {
   if (!APP.demoMode) return null
   return (
-    <div className="bg-accent text-white">
+    <div className="bg-brand text-white/85">
       <p className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-1.5 text-center text-xs font-medium">
         <FlaskConical aria-hidden className="size-3.5 shrink-0" />
         Versión de demostración: datos ficticios, sin pagos, reservas ni cuentas reales.
@@ -27,6 +27,7 @@ function FocusOnNavigate() {
 }
 
 export function AppShell() {
+  const { pathname } = useLocation()
   return (
     <div className="flex min-h-screen flex-col">
       <a href="#contenido" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-surface focus:px-4 focus:py-2 focus:shadow">
@@ -35,7 +36,8 @@ export function AppShell() {
       <DemoBanner />
       <PublicHeader />
       <main id="contenido" tabIndex={-1} className="flex-1 focus:outline-none">
-        <Outlet />
+        {/* key: la animación de entrada se repite en cada cambio de página */}
+        <div key={pathname} className="page-enter"><Outlet /></div>
       </main>
       <Footer />
       <ScrollRestoration />

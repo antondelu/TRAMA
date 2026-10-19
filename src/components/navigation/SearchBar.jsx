@@ -28,12 +28,12 @@ export function SearchBar({ initialQuery = '', initialScope = 'all', size = 'md'
   const big = size === 'lg'
   return (
     <form role="search" onSubmit={onSubmit}
-      className={cn('flex w-full flex-col gap-2 rounded-xl border border-line-strong bg-surface p-1.5 shadow-sm sm:flex-row sm:items-center', className)}>
+      className={cn('flex w-full flex-col gap-2 rounded-3xl border border-line bg-surface p-1.5 shadow-[var(--shadow-card)] sm:flex-row sm:items-center sm:rounded-full', className)}>
       {showScope && (
         <label className="sm:w-44">
           <span className="sr-only">Buscar en</span>
           <select value={scope} onChange={(e) => setScope(e.target.value)}
-            className={cn('w-full rounded-lg bg-canvas px-3 text-sm font-semibold focus:outline-none', big ? 'min-h-12' : 'min-h-10')}>
+            className={cn('w-full rounded-full bg-canvas px-4 text-sm font-semibold focus:outline-none', big ? 'min-h-12' : 'min-h-10')}>
             {SEARCH_SCOPES.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}
           </select>
         </label>
@@ -50,7 +50,7 @@ export function SearchBar({ initialQuery = '', initialScope = 'all', size = 'md'
           </button>
         )}
       </div>
-      <button type="submit" className={cn('rounded-lg bg-brand px-5 text-sm font-semibold text-white hover:bg-brand-strong', big ? 'min-h-12' : 'min-h-10')}>
+      <button type="submit" className={cn('rounded-full bg-brand px-6 text-sm font-semibold text-white transition-colors hover:bg-accent', big ? 'min-h-12' : 'min-h-10')}>
         Buscar
       </button>
     </form>

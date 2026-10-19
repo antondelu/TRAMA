@@ -14,7 +14,7 @@ export function LegalPage({ title, updated, sections }) {
         <DemoNotice>Texto provisorio de la versión de demostración. Debe revisarse legalmente antes del lanzamiento.</DemoNotice>
         {sections.map((s) => (
           <section key={s.title}>
-            <h2 className="font-serif text-2xl font-semibold">{s.title}</h2>
+            <h2 className="font-display text-2xl font-semibold">{s.title}</h2>
             <div className="mt-2 space-y-3 leading-relaxed text-ink-soft">{s.body.map((p) => <p key={p}>{p}</p>)}</div>
           </section>
         ))}

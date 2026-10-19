@@ -78,7 +78,7 @@ export default function AdminMembershipsPage() {
           {data.map((p) => (
             <li key={p.id} className="rounded-[var(--radius-card)] border border-line bg-surface p-5">
               <div className="flex items-center justify-between gap-2">
-                <h2 className="font-serif text-xl font-semibold">{p.name}</h2>
+                <h2 className="font-display text-xl font-semibold">{p.name}</h2>
                 <Badge tone={p.isActive ? 'success' : 'neutral'}>{p.isActive ? 'Activo' : 'Inactivo'}</Badge>
               </div>
               <p className="mt-1 text-sm text-ink-soft">{p.description}</p>

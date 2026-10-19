@@ -32,7 +32,7 @@ export function DetailState({ query }) {
 export function ActionPanel({ title, children }) {
   return (
     <div className="space-y-4 rounded-[var(--radius-card)] border border-line bg-surface p-5 shadow-[var(--shadow-card)]">
-      {title && <h2 className="font-serif text-xl font-semibold">{title}</h2>}
+      {title && <h2 className="font-display text-xl font-semibold">{title}</h2>}
       {children}
     </div>
   )

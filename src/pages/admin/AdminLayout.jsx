@@ -41,7 +41,7 @@ export default function AdminLayout() {
   const [open, setOpen] = useState(false)
   return (
     <div className="min-h-screen bg-canvas lg:grid lg:grid-cols-[15rem_1fr]">
-      <aside className="hidden flex-col gap-6 bg-accent-strong p-4 text-white lg:flex">
+      <aside className="hidden flex-col gap-6 bg-brand p-4 text-white lg:flex">
         <div><Logo inverted /><p className="mt-1 text-xs uppercase tracking-[0.14em] text-white/60">Administración</p></div>
         <AdminNav />
         <Link to="/" className="mt-auto flex items-center gap-2 text-sm text-white/70 hover:text-white"><ArrowLeft aria-hidden className="size-4" />Volver al sitio</Link>
@@ -58,7 +58,7 @@ export default function AdminLayout() {
         <main id="contenido" className="px-4 py-6 sm:px-6 lg:px-8"><Outlet /></main>
       </div>
       <Drawer open={open} onClose={() => setOpen(false)} title="Administración">
-        <div className="-mx-5 -my-4 h-full bg-accent-strong p-4"><AdminNav onNavigate={() => setOpen(false)} /><Link to="/" className="mt-6 flex items-center gap-2 text-sm text-white/70"><ArrowLeft aria-hidden className="size-4" />Volver al sitio</Link></div>
+        <div className="-mx-5 -my-4 h-full bg-brand p-4"><AdminNav onNavigate={() => setOpen(false)} /><Link to="/" className="mt-6 flex items-center gap-2 text-sm text-white/70"><ArrowLeft aria-hidden className="size-4" />Volver al sitio</Link></div>
       </Drawer>
       <ScrollRestoration />
     </div>
@@ -69,7 +69,7 @@ export function AdminHeader({ title, description, actions }) {
   return (
     <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
       <div>
-        <h1 className="font-serif text-3xl font-semibold tracking-tight">{title}</h1>
+        <h1 className="font-display text-3xl font-semibold tracking-tight">{title}</h1>
         {description && <p className="mt-1 text-sm text-ink-soft">{description}</p>}
       </div>
       {actions}

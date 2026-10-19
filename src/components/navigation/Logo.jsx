@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom'
 import { cn } from '@/utils/format'
 
-// Logotipo tipográfico: TRAMA en serif, con la "trama" de tres hilos.
+// Logotipo: "trama" en minúscula y bold, con un nudo de dos hilos que se cruzan.
 export function Logo({ className, inverted = false }) {
   return (
     <Link to="/" className={cn('inline-flex items-center gap-2', className)} aria-label="TRAMA, ir al inicio">
-      <svg aria-hidden viewBox="0 0 24 24" className="size-6">
-        <path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" strokeWidth="1.8" className={inverted ? 'text-white' : 'text-brand'} />
-        <path d="M8 3v18M16 3v18" stroke="currentColor" strokeWidth="1.8" className={inverted ? 'text-white/50' : 'text-accent'} />
+      <svg aria-hidden viewBox="0 0 28 28" className="size-7">
+        <rect width="28" height="28" rx="9" className={inverted ? 'fill-white' : 'fill-brand'} />
+        <path d="M7 11.5c4.5-3 9.5 3 14 0M7 16.5c4.5 3 9.5-3 14 0" fill="none" strokeWidth="2.2" strokeLinecap="round"
+          className={inverted ? 'stroke-brand' : 'stroke-white'} />
       </svg>
-      <span className={cn('font-serif text-2xl font-semibold tracking-[0.18em]', inverted ? 'text-white' : 'text-ink')}>TRAMA</span>
+      <span className={cn('font-display text-2xl font-bold tracking-tight', inverted ? 'text-white' : 'text-ink')}>trama</span>
     </Link>
   )
 }

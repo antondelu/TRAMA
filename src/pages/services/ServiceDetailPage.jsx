@@ -40,7 +40,7 @@ export default function ServiceDetailPage() {
           <Avatar name={pro.name} src={pro.images?.[0]?.url} size="xl" />
           <div className="flex-1">
             <p className="eyebrow text-brand">{labels('specialties', pro.specialties).join(' · ')}</p>
-            <h1 className="mt-1 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">{pro.name}</h1>
+            <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight sm:text-4xl">{pro.name}</h1>
             <p className="mt-1 text-ink-soft">{pro.headline}</p>
             <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-ink-soft">
               <span className="flex items-center gap-1.5"><MapPin aria-hidden className="size-4" />{pro.location.city}</span>

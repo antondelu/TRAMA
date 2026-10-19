@@ -13,7 +13,7 @@ export function OpportunityCard({ opportunity: o }) {
   const left = daysUntil(o.deadline)
   const open = o.publicState === 'published'
   return (
-    <article className="group relative flex flex-col rounded-[var(--radius-card)] border border-line bg-surface p-5 shadow-[var(--shadow-card)] transition-shadow hover:shadow-[var(--shadow-pop)]">
+    <article className="lift group relative flex flex-col rounded-[var(--radius-card)] bg-surface p-6 shadow-[var(--shadow-card)]">
       <div className="flex items-start justify-between gap-3">
         <div className="flex flex-wrap gap-1.5">
           <StatusBadge status={o.publicState} label={open ? 'Abierta' : undefined} />
@@ -22,7 +22,7 @@ export function OpportunityCard({ opportunity: o }) {
         <FavoriteButton type="opportunity" id={o.id} title={o.title} className="relative z-10 -mr-1 -mt-1 shadow-none" />
       </div>
       <p className="eyebrow mt-3">{label('opportunityTypes', o.opportunityType)}</p>
-      <h3 className="mt-1 font-serif text-lg font-semibold leading-snug">
+      <h3 className="mt-1 font-display text-xl font-semibold leading-tight">
         <Link to={`/oportunidades/${o.slug}`} className="after:absolute after:inset-0">{o.title}</Link>
       </h3>
       <div className="mt-3 space-y-1.5 text-sm text-ink-soft">
@@ -30,7 +30,7 @@ export function OpportunityCard({ opportunity: o }) {
         <CardMeta icon={MapPin}>{o.location.scope}</CardMeta>
         <CardMeta icon={Coins}>{label('compensation', o.compensation.type)}</CardMeta>
       </div>
-      <p className="mt-4 flex items-center gap-1.5 border-t border-line pt-3 text-sm font-semibold">
+      <p className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-soft px-3 py-1.5 text-sm font-semibold text-brand">
         <CalendarClock aria-hidden className="size-4 text-brand" />
         Fecha límite: {formatDate(o.deadline)}
       </p>

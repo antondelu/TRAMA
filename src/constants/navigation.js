@@ -3,19 +3,19 @@ import { Building2, Drama, Wrench, BookOpen, Megaphone } from 'lucide-react'
 // Las cuatro áreas principales de TRAMA, más Oportunidades.
 export const CATEGORIES = [
   {
-    id: 'salas', label: 'Salas', to: '/salas', icon: Building2, tone: 'brand',
+    id: 'salas', label: 'Salas', to: '/salas', icon: Building2, tone: 'night',
     description: 'Espacios para presentar, ensayar y producir. Con fichas técnicas y disponibilidad.',
   },
   {
-    id: 'espectaculos', label: 'Espectáculos', to: '/espectaculos', icon: Drama, tone: 'accent',
+    id: 'espectaculos', label: 'Espectáculos', to: '/espectaculos', icon: Drama, tone: 'steel',
     description: 'Obras y propuestas disponibles para programación, giras y temporadas.',
   },
   {
-    id: 'servicios', label: 'Servicios', to: '/servicios', icon: Wrench, tone: 'ink',
+    id: 'servicios', label: 'Servicios', to: '/servicios', icon: Wrench, tone: 'sky',
     description: 'Profesionales y proveedores: técnica, diseño, producción, comunicación y más.',
   },
   {
-    id: 'recursos', label: 'Recursos', to: '/recursos', icon: BookOpen, tone: 'brand-strong',
+    id: 'recursos', label: 'Recursos', to: '/recursos', icon: BookOpen, tone: 'ivory',
     description: 'Biblioteca profesional: guías, entrevistas, plantillas y formación.',
   },
 ]

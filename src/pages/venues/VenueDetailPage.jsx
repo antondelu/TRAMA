@@ -45,7 +45,7 @@ export default function VenueDetailPage() {
           <div className="mt-6 flex flex-wrap items-start justify-between gap-4">
             <div>
               <p className="eyebrow text-brand">{label('venueTypes', venue.venueType)}</p>
-              <h1 className="mt-1 font-serif text-4xl font-semibold tracking-tight sm:text-5xl">{venue.name}</h1>
+              <h1 className="mt-1 font-display text-4xl font-semibold tracking-tight sm:text-5xl">{venue.name}</h1>
               <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-ink-soft">
                 <span className="flex items-center gap-1.5"><MapPin aria-hidden className="size-4" />{venue.city}, {venue.department}{venue.address?.area ? ` · ${venue.address.area}` : ''}</span>
                 <span className="flex items-center gap-1.5"><Users aria-hidden className="size-4" />Hasta {venue.capacity} personas</span>

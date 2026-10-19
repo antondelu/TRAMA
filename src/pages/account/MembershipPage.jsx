@@ -64,7 +64,7 @@ export default function MembershipPage() {
       <DemoNotice className="mb-6">Sin pagos reales: activar un plan solo cambia datos de esta demo. {INTEGRATIONS.payments.note}</DemoNotice>
       <div className="mb-8 rounded-[var(--radius-card)] border border-line bg-surface p-5">
         <p className="text-sm text-ink-soft">Plan actual</p>
-        <p className="mt-1 font-serif text-2xl font-semibold">{plan?.name ?? 'Comunidad'}</p>
+        <p className="mt-1 font-display text-2xl font-semibold">{plan?.name ?? 'Comunidad'}</p>
         {membership ? (
           <p className="mt-1 text-sm">
             {membership.billing === 'yearly' ? 'Anual' : 'Mensual'} · activo desde el {formatDate(membership.startAt.slice(0, 10))} hasta el {formatDate(membership.endAt.slice(0, 10))}
@@ -74,7 +74,7 @@ export default function MembershipPage() {
         {membership && <Button variant="secondary" size="sm" className="mt-4" onClick={() => setCancelOpen(true)}>Cancelar membresía</Button>}
       </div>
 
-      <h2 className="mb-4 font-serif text-2xl font-semibold">Cambiar de plan</h2>
+      <h2 className="mb-4 font-display text-2xl font-semibold">Cambiar de plan</h2>
       <div className="grid gap-5 lg:grid-cols-3">
         {plans.data.map((p) => (
           <PlanCard key={p.id} plan={p} billing={choice?.planId === p.id ? choice.billing : 'monthly'} current={(plan?.id ?? 'plan-comunidad') === p.id}

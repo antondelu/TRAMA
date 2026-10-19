@@ -51,7 +51,7 @@ export default function AdminSettingsPage() {
     <>
       <AdminHeader title="Configuración general" description="Catálogos configurables, región e integraciones." />
       <section className="mb-8">
-        <h2 className="mb-3 font-serif text-2xl font-semibold">Catálogos</h2>
+        <h2 className="mb-3 font-display text-2xl font-semibold">Catálogos</h2>
         <p className="mb-3 text-sm text-ink-soft">Los valores nuevos aparecen en filtros y formularios. Los existentes no se borran para no romper publicaciones que los usan.</p>
         <Accordion>
           {Object.entries(EDITABLE_TAXONOMIES).map(([key, label]) => (
