@@ -10,7 +10,7 @@ import { freshDemo } from '@/test/helpers'
 const CASES = [
   ['/', null, /todo lo que necesitás/i],
   ['/buscar?q=luz', null, /Resultados para/],
-  ['/salas', null, 'Encontrá tu próximo escenario.'],
+  ['/salas', null, 'A veces no faltan salas, falta encontrarlas.'],
   ['/salas/sala-urdimbre', null, 'Sala Urdimbre'],
   ['/espectaculos', null, 'Obras para programar.'],
   ['/espectaculos/el-peso-del-andamio', null, 'El peso del andamio'],
