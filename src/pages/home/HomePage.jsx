@@ -18,7 +18,7 @@ export default function HomePage() {
       <section aria-labelledby="categories-title" className="py-14 sm:py-20">
         <PageContainer>
           <Reveal className="mb-12">
-            <h2 id="categories-title" className="font-display text-3xl font-bold tracking-tight sm:text-5xl">Cuatro áreas, un mismo sector.</h2>
+            <h2 id="categories-title" className="text-center font-display text-3xl font-bold tracking-tight sm:text-left sm:text-5xl">Encontrá lo que tu proyecto necesita</h2>
           </Reveal>
           <CategoryCards />
         </PageContainer>
