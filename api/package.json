@@ -8,12 +8,12 @@
     "test": "node --test"
   },
   "dependencies": {
-    "nodemailer": "10.0.13"
+    "nodemailer": "10.1.2"
   },
   "engines": {
     "node": ">=22"
   },
   "devDependencies": {
-    "smtp-server": "3.19.17"
+    "smtp-server": "3.19.23"
   }
 }
