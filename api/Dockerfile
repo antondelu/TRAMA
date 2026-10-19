@@ -3,7 +3,7 @@
 # Contact-form API. Alpine (no perl or other Debian extras) on the same Node
 # major as the site's build stage. Pinned by tag and digest; Dependabot opens
 # a PR when a newer digest is published, and CI scans the result with Trivy.
-FROM node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402
+FROM node:26-alpine@sha256:6f08a523443ddedf52941874c203475b0ad503e859ad70cb26ab8be9a517dbd5
 
 ENV NODE_ENV=production
 WORKDIR /app
