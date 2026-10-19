@@ -28,7 +28,7 @@ export function SearchBar({ initialQuery = '', initialScope = 'all', size = 'md'
   const big = size === 'lg'
   return (
     <form role="search" onSubmit={onSubmit}
-      className={cn('flex w-full flex-col gap-2 rounded-3xl border border-line bg-surface p-1.5 shadow-[var(--shadow-card)] sm:flex-row sm:items-center sm:rounded-full', className)}>
+      className={cn('flex w-full flex-col gap-2 rounded-3xl border border-line bg-surface p-1.5 text-ink shadow-[var(--shadow-card)] sm:flex-row sm:items-center sm:rounded-full', className)}>
       {showScope && (
         <label className="sm:w-44">
           <span className="sr-only">Buscar en</span>
