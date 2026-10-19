@@ -1,6 +1,6 @@
 # CI: compila y corre los tests en cada pull request y en cada push a main.
-# Los jobs "Build & test", "Security audit" y "Docker images" deberían ser
-# checks obligatorios de la protección de main.
+# Los jobs "Build & test", "Security audit", "Secret scan" y "Docker images"
+# deberían ser checks obligatorios de la protección de main.
 #
 # Las actions se fijan por SHA de commit (con la versión en el comentario):
 # un tag se puede mover, un SHA no. Dependabot las mantiene actualizadas.
@@ -43,12 +43,12 @@ jobs:
       - run: npm test
       - run: npm run build
 
-      # La API no tiene tests: al menos se instala y se verifica que el archivo sea válido.
-      - name: Check API
+      # Tests de integración de la API contra un servidor SMTP falso (api/server.test.mjs).
+      - name: Test API
         working-directory: api
         run: |
           npm ci
-          node --check server.mjs
+          npm test
 
   security:
     name: Security audit
@@ -71,6 +71,36 @@ jobs:
       - name: Audit API dependencies
         working-directory: api
         run: npm audit --audit-level=high
+
+  # Busca credenciales en todo el historial de git (complementa el Secret
+  # scanning de GitHub con las reglas genéricas de gitleaks). Se usa el binario
+  # (licencia MIT) verificado por checksum, no la action, que pide licencia en
+  # organizaciones. Para actualizarlo: nueva versión + su SHA-256 de
+  # gitleaks_<versión>_checksums.txt en la release.
+  secrets:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GITLEAKS_VERSION: 8.30.1
+      GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install gitleaks
+        run: |
+          tarball="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          curl -sSfL -o "$RUNNER_TEMP/$tarball" \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/$tarball"
+          echo "$GITLEAKS_SHA256  $RUNNER_TEMP/$tarball" | sha256sum -c
+          tar -xzf "$RUNNER_TEMP/$tarball" -C "$RUNNER_TEMP" gitleaks
+
+      - name: Scan git history
+        run: |
+          "$RUNNER_TEMP/gitleaks" git --redact --no-banner --exit-code 1 .
 
   docker:
     name: Docker images
