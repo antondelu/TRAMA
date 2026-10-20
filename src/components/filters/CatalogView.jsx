@@ -53,8 +53,8 @@ export function CatalogView({ filterDefs, sortOptions, fetcher, renderItem, sear
         <div className="min-w-0 space-y-5">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <CatalogSearch value={filters.q} onSubmit={(q) => update({ q })} placeholder={searchPlaceholder} />
-            <div className="flex items-center justify-between gap-3">
-              <Button variant="secondary" className="lg:hidden" icon={SlidersHorizontal} onClick={() => setDrawerOpen(true)}>
+            <div className="flex min-w-0 items-center justify-between gap-3">
+              <Button variant="secondary" className="shrink-0 lg:hidden" icon={SlidersHorizontal} onClick={() => setDrawerOpen(true)}>
                 Filtros{activeCount ? ` (${activeCount})` : ''}
               </Button>
               <SortControl options={sortOptions} value={filters.sort} onChange={(sort) => update({ sort })} />
