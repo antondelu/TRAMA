@@ -22,7 +22,7 @@ export function PublicHeader() {
           <Button variant="ghost" size="icon" to="/buscar" aria-label="Buscar en TRAMA"><Search aria-hidden className="size-5" /></Button>
           {!loading && (user ? (
             <>
-              <Button variant="secondary" size="sm" to="/publicar" className="hidden sm:inline-flex">Publicar</Button>
+              <Button variant="secondary" size="sm" to="/publicar" className="max-sm:hidden">Publicar</Button>
               <AccountMenu />
             </>
           ) : (

@@ -26,8 +26,8 @@ export default function AccountLayout() {
   ]
   return (
     <PageContainer className="py-8">
-      <div className="grid gap-8 lg:grid-cols-[15rem_1fr]">
-        <aside>
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[15rem_1fr]">
+        <aside className="min-w-0">
           <div className="mb-4 flex items-center gap-3">
             <Avatar name={name} src={user.avatar} />
             <div className="min-w-0">
