@@ -17,6 +17,7 @@ import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 import { useRequireAuth } from '@/hooks/useRequireAuth'
 import { useAuth } from '@/context/AuthContext'
 import { formatDuration } from '@/utils/format'
+import { safeHttpUrl } from '@/utils/url'
 
 const minutes = (m) => (m ? formatDuration(m) : null)
 
@@ -109,8 +110,8 @@ export default function ShowDetailPage() {
 
       <Section id="materiales" title="Materiales">
         <div className="space-y-3">
-          {show.media.videoUrl
-            ? <video controls preload="none" src={show.media.videoUrl} className="w-full rounded-lg" aria-label={`Video promocional de ${show.title}`} />
+          {safeHttpUrl(show.media.videoUrl, { httpsOnly: true })
+            ? <video controls preload="none" src={safeHttpUrl(show.media.videoUrl, { httpsOnly: true })} className="w-full rounded-lg" aria-label={`Video promocional de ${show.title}`} />
             : <p className="flex items-center gap-2 text-sm text-ink-soft"><Video aria-hidden className="size-4" />La compañía todavía no cargó un video promocional.</p>}
           {downloads.length > 0 ? (
             <div className="flex flex-wrap gap-2">

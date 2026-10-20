@@ -287,3 +287,17 @@ describe('conversación de las solicitudes', () => {
     await expect(requestsService.reply(done.kind, done.id, 'Hola')).rejects.toMatchObject({ code: 'validation' })
   })
 })
+
+describe('enlaces que se guardan', () => {
+  it('una convocatoria externa necesita un enlace https', async () => {
+    loginAs('u-lucia')
+    const base = { title: 'Convocatoria de prueba', applicationMode: 'external' }
+    await expect(opportunitiesService.save({ ...base, externalUrl: 'javascript:alert(1)' })).rejects.toMatchObject({ code: 'validation', details: { externalUrl: expect.any(String) } })
+    await expect(opportunitiesService.save({ ...base, externalUrl: 'http://festival.uy' })).rejects.toMatchObject({ code: 'validation' })
+  })
+
+  it('el video de un espectáculo tiene que ser https', async () => {
+    loginAs('u-tomas')
+    await expect(showsService.save({ title: 'Obra de prueba', media: { videoUrl: 'javascript:alert(1)' } })).rejects.toMatchObject({ code: 'validation', details: { videoUrl: expect.any(String) } })
+  })
+})

@@ -1,8 +1,9 @@
 import { getDb, latency, clone } from './adapter/demoStore'
 import { matchesText, relevance, paginate } from './query'
 import { requireOwner, requireUser } from './access'
-import { notFound } from './errors'
+import { invalid, notFound } from './errors'
 import { savePublication, canSeeUnpublished } from './publications'
+import { safeHttpUrl } from '@/utils/url'
 import { todayISO } from '@/utils/dates'
 import { opportunityPublicState } from '@/utils/workflows'
 
@@ -79,6 +80,9 @@ export const opportunitiesService = {
 
   async save(data, options) {
     await latency(200)
+    if (data.applicationMode === 'external' && !safeHttpUrl(data.externalUrl, { httpsOnly: true })) {
+      throw invalid('La URL de postulación tiene que empezar con https://', { externalUrl: 'Tiene que empezar con https://' })
+    }
     return clone(savePublication('opportunity', data, options))
   },
 }
