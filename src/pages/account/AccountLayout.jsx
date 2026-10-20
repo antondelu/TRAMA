@@ -1,29 +1,24 @@
-import { NavLink, Outlet } from 'react-router-dom'
-import { LayoutDashboard, User, Heart, MessageSquare, Inbox, FileStack, Bell, BadgeCheck, Settings, CalendarDays, Library } from 'lucide-react'
+import { useState } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
+import { ChevronDown } from 'lucide-react'
 import { PageContainer } from '@/components/layout/PageContainer'
 import { Avatar } from '@/components/ui/Avatar'
+import { AccountNavList } from '@/components/navigation/AccountNavList'
+import { currentAccountSection } from '@/constants/accountNavigation'
 import { useAuth } from '@/context/AuthContext'
 import { cn } from '@/utils/format'
 
-// Panel de la cuenta con navegación secundaria.
-// Calendario y Gestión de recursos solo aparecen si la persona tiene permiso
-// (y las rutas también lo comprueban, no alcanza con ocultar el enlace).
+// Panel de la cuenta. Las secciones vienen agrupadas de constants/accountNavigation.
+// En escritorio se ven todas en la barra lateral; en celular, un botón con la
+// sección actual despliega la misma lista (antes era una fila que se salía de la pantalla).
 export default function AccountLayout() {
   const { user, can } = useAuth()
+  const { pathname } = useLocation()
+  const [open, setOpen] = useState(false)
   const name = `${user.firstName} ${user.lastName}`
-  const items = [
-    { to: '/mi-cuenta', label: 'Resumen', icon: LayoutDashboard, end: true },
-    { to: '/mi-cuenta/perfil', label: 'Perfil', icon: User },
-    { to: '/mi-cuenta/favoritos', label: 'Favoritos', icon: Heart },
-    { to: '/mi-cuenta/solicitudes', label: 'Solicitudes', icon: Inbox },
-    { to: '/mi-cuenta/mensajes', label: 'Mensajes', icon: MessageSquare },
-    { to: '/mi-cuenta/publicaciones', label: 'Publicaciones', icon: FileStack },
-    ...(can('calendar:manage') ? [{ to: '/mi-cuenta/calendario', label: 'Calendario', icon: CalendarDays }] : []),
-    ...(can('resources:manage') ? [{ to: '/mi-cuenta/recursos/gestion', label: 'Gestión de recursos', icon: Library }] : []),
-    { to: '/mi-cuenta/notificaciones', label: 'Notificaciones', icon: Bell },
-    { to: '/mi-cuenta/membresia', label: 'Membresía', icon: BadgeCheck },
-    { to: '/mi-cuenta/configuracion', label: 'Configuración', icon: Settings },
-  ]
+  const current = currentAccountSection(pathname, can)
+  const CurrentIcon = current.icon
+
   return (
     <PageContainer className="py-8">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[15rem_1fr]">
@@ -32,20 +27,22 @@ export default function AccountLayout() {
             <Avatar name={name} src={user.avatar} />
             <div className="min-w-0">
               <p className="truncate font-semibold">{name}</p>
-              <p className="truncate text-xs text-ink-soft">{user.plan ? `Plan ${user.plan.name}` : 'Plan Comunidad'}</p>
+              <p className="truncate text-sm text-ink-soft">{user.plan ? `Membresía ${user.plan.name}` : 'Membresía Comunidad'}</p>
             </div>
           </div>
           <nav aria-label="Mi cuenta">
-            <ul className="-mx-4 flex gap-1 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0">
-              {items.map(({ to, label, icon: Icon, end }) => (
-                <li key={to} className="shrink-0">
-                  <NavLink to={to} end={end} className={({ isActive }) => cn('flex min-h-10 items-center gap-2.5 whitespace-nowrap rounded-lg px-3 text-sm font-semibold',
-                    isActive ? 'bg-brand-soft text-brand' : 'text-ink-soft hover:bg-ink/5 hover:text-ink')}>
-                    <Icon aria-hidden className="size-4" />{label}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
+            <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls="account-sections"
+              className="flex min-h-12 w-full items-center gap-3 rounded-xl border border-line-strong bg-surface px-4 text-left lg:hidden">
+              <CurrentIcon aria-hidden className="size-5 text-brand" />
+              <span className="min-w-0 flex-1">
+                <span className="block text-xs text-ink-soft">Estás en</span>
+                <span className="block truncate font-semibold">{current.label}</span>
+              </span>
+              <span className="text-sm font-semibold text-brand">{open ? 'Cerrar' : 'Ver secciones'}</span>
+              <ChevronDown aria-hidden className={cn('size-4 text-brand transition-transform', open && 'rotate-180')} />
+            </button>
+            <AccountNavList id="account-sections" idPrefix="account-side" onNavigate={() => setOpen(false)}
+              className={cn('mt-2 rounded-xl border border-line bg-surface p-2 lg:mt-0 lg:block lg:border-0 lg:bg-transparent lg:p-0', !open && 'max-lg:hidden')} />
           </nav>
         </aside>
         <div className="min-w-0"><Outlet /></div>
