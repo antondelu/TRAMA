@@ -39,7 +39,7 @@ Los tests de la API (`cd api && npm test`) levantan `server.mjs` contra un servi
 
 ### Noticias (opcional)
 
-La sección `/noticias` muestra noticias reales de artes escénicas, que junta el servicio `news/`: consulta los feeds de [`news/sources.json`](news/sources.json) cada 12 horas desde el servidor y las guarda en disco.
+La sección `/noticias` muestra noticias reales de artes escénicas, que junta el servicio `news/`: consulta los feeds de [`news/sources.json`](news/sources.json) cada hora desde el servidor y las guarda en disco.
 
 `npm start` lo levanta junto con la web. La primera vez instala sus dependencias y trae las noticias (quedan en `news/data/`). En desarrollo no se actualizan solas; para refrescarlas:
 

@@ -4,7 +4,7 @@ import { newsService } from '@/services'
 // Una sección de noticias con "Cargar más": la primera página se vuelve a
 // pedir cuando cambian los filtros; las siguientes se agregan al final.
 export function useNewsFeed(section, { discipline, location }) {
-  const [state, setState] = useState({ items: [], page: 0, hasMore: false, total: 0, facets: null, lastSuccessAt: null, loading: true, loadingMore: false, error: null, failedPage: null })
+  const [state, setState] = useState({ items: [], page: 0, hasMore: false, total: 0, facets: null, nextRunAt: null, loading: true, loadingMore: false, error: null, failedPage: null })
   const controller = useRef(null)
 
   const load = useCallback(async (page) => {
@@ -17,7 +17,7 @@ export function useNewsFeed(section, { discipline, location }) {
       setState((s) => {
         const seen = new Set(page === 1 ? [] : s.items.map((it) => it.id))
         const items = page === 1 ? data.items : [...s.items, ...data.items.filter((it) => !seen.has(it.id))]
-        return { items, page, hasMore: data.hasMore, total: data.total, facets: data.facets, lastSuccessAt: data.lastSuccessAt, loading: false, loadingMore: false, error: null, failedPage: null }
+        return { items, page, hasMore: data.hasMore, total: data.total, facets: data.facets, nextRunAt: data.nextRunAt ?? null, loading: false, loadingMore: false, error: null, failedPage: null }
       })
     } catch (error) {
       if (error?.name === 'AbortError') return
