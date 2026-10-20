@@ -24,9 +24,9 @@ describe('máquinas de estado de solicitudes', () => {
     expect(canTransitionRequest('application', 'under_review', 'withdrawn', 'sender')).toBe(true)
   })
 
-  it('"Enviada" se ve como "Recibida" del otro lado', () => {
-    expect(stateLabelFor('sent', 'sender')).toBe('Enviada')
-    expect(stateLabelFor('sent', 'receiver')).toBe('Recibida')
+  it('"Esperando respuesta" se ve como "Sin responder" del otro lado', () => {
+    expect(stateLabelFor('sent', 'sender')).toBe('Esperando respuesta')
+    expect(stateLabelFor('sent', 'receiver')).toBe('Sin responder')
   })
 })
 

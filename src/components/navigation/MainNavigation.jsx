@@ -7,7 +7,7 @@ const linkClass = ({ isActive }) => cn(
   isActive ? 'bg-brand text-white' : 'text-ink hover:bg-brand-soft hover:text-brand',
 )
 
-// Navegación principal de escritorio: las cuatro áreas, Oportunidades y Noticias.
+// Navegación principal de escritorio: las cuatro áreas, Convocatorias y Noticias.
 export function MainNavigation() {
   return (
     <nav aria-label="Principal" className="hidden lg:block">

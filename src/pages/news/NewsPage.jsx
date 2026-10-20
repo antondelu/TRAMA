@@ -80,7 +80,7 @@ export default function NewsPage() {
           description="Latinoamérica primero, y lo más relevante del resto del mundo."
           className="border-t border-line pt-12"
           filters={intlFilters} onFiltersChange={setIntlFilters} onNextRunAt={onNextRunAt} />
-        <p className="text-xs text-ink-soft">
+        <p className="text-sm text-ink-soft">
           Los títulos, resúmenes e imágenes son de cada medio, que figura en cada noticia junto al enlace a la publicación original.
           TRAMA no reproduce los artículos completos.
         </p>

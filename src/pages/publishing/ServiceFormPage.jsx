@@ -4,6 +4,7 @@ import { Plus, Trash2 } from 'lucide-react'
 import { PublicationFormShell, FormSection } from '@/features/publishing/PublicationFormShell'
 import { usePublicationForm } from '@/features/publishing/usePublicationForm'
 import { toLines, fromLines, emptyToNull, optionalNumber, slugField, requiredLines } from '@/features/publishing/formHelpers'
+import { LinesInput } from '@/components/forms/LinesInput'
 import { FormField, Input, Textarea, Select, CheckboxGroup } from '@/components/forms/FormField'
 import { FileUpload } from '@/components/forms/FileUpload'
 import { Button } from '@/components/ui/Button'
@@ -96,7 +97,7 @@ export default function ServiceFormPage() {
       </FormSection>
 
       <FormSection title="Servicios y tarifas">
-        <FormField label="Servicios ofrecidos" required hint="Uno por línea" error={errors.servicesOffered?.message}><Textarea rows={4} {...register('servicesOffered')} /></FormField>
+        <FormField label="Servicios ofrecidos" required error={errors.servicesOffered?.message}><Controller control={control} name="servicesOffered" render={({ field }) => <LinesInput {...field} addLabel="Agregar servicio" placeholder="Ej. Diseño de iluminación" />} /></FormField>
         <div className="grid gap-4 sm:grid-cols-2">
           <FormField label="Precio orientativo desde (UYU)" hint="Opcional" error={errors.priceFrom?.message}><Input type="number" min={0} {...register('priceFrom')} /></FormField>
           <FormField label="Unidad"><Select options={['por proyecto', 'por función', 'por hora', 'por día', 'por mes', 'por pieza', 'por página'].map((u) => ({ id: u, label: u }))} {...register('priceUnit')} /></FormField>

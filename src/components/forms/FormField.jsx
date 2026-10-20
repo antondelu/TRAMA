@@ -3,9 +3,9 @@ import { AlertCircle } from 'lucide-react'
 import { cn } from '@/utils/format'
 
 export const inputClasses = (invalid) => cn(
-  'block w-full min-h-11 rounded-xl border bg-surface px-3.5 py-2 text-sm text-ink placeholder:text-ink-soft/70',
+  'block w-full min-h-11 rounded-xl border bg-surface px-3.5 py-2 text-base text-ink placeholder:text-ink-soft/70 sm:text-sm',
   'transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-brand',
-  invalid ? 'border-danger' : 'border-line-strong hover:border-ink-soft',
+  invalid ? 'border-danger' : 'border-field hover:border-ink-soft',
 )
 
 // Envuelve un control con su etiqueta, ayuda y error, y conecta los ids
@@ -27,9 +27,9 @@ export function FormField({ label, hint, error, required, children, className, a
         {required && <span className="sr-only"> (obligatorio)</span>}
       </label>
       {control}
-      {hint && <p id={hintId} className="text-xs text-ink-soft">{hint}</p>}
+      {hint && <p id={hintId} className="text-sm text-ink-soft">{hint}</p>}
       {error && (
-        <p id={errorId} className="flex items-center gap-1 text-xs font-medium text-danger">
+        <p id={errorId} className="flex items-center gap-1 text-sm font-medium text-danger">
           <AlertCircle aria-hidden className="size-3.5" />{error}
         </p>
       )}
@@ -63,7 +63,7 @@ export function CheckboxGroup({ legend, options, value = [], onChange, error, re
       <legend className="text-sm font-semibold">
         {legend}{required && <span className="text-danger" aria-hidden> *</span>}
       </legend>
-      {hint && <p className="text-xs text-ink-soft">{hint}</p>}
+      {hint && <p className="text-sm text-ink-soft">{hint}</p>}
       <div className={cn('grid gap-2', columns === 2 && 'sm:grid-cols-2', columns === 3 && 'sm:grid-cols-3')}>
         {options.map((o) => (
           <label key={o.id} className="flex min-h-11 cursor-pointer items-center gap-2 rounded-lg border border-line bg-surface px-3 text-sm has-[:checked]:border-brand has-[:checked]:bg-brand-soft">
@@ -72,7 +72,7 @@ export function CheckboxGroup({ legend, options, value = [], onChange, error, re
           </label>
         ))}
       </div>
-      {error && <p id={`${id}-error`} className="text-xs font-medium text-danger">{error}</p>}
+      {error && <p id={`${id}-error`} className="text-sm font-medium text-danger">{error}</p>}
     </fieldset>
   )
 }
@@ -86,7 +86,7 @@ export const Checkbox = forwardRef(function Checkbox({ label, error, className, 
           aria-invalid={error ? true : undefined} aria-describedby={error ? `${id}-error` : undefined} {...props} />
         <span>{label}</span>
       </label>
-      {error && <p id={`${id}-error`} className="mt-1 text-xs font-medium text-danger">{error}</p>}
+      {error && <p id={`${id}-error`} className="mt-1 text-sm font-medium text-danger">{error}</p>}
     </div>
   )
 })

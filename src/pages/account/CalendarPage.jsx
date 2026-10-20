@@ -70,7 +70,7 @@ function ManageDates({ venueId }) {
         <FormField label="Acción"><Select options={MARKS} value={mark} onChange={(e) => setMark(e.target.value)} /></FormField>
         {mark === 'internal' && <FormField label="Nota del evento" hint="Solo la ves vos."><Input value={note} onChange={(e) => setNote(e.target.value)} maxLength={120} /></FormField>}
         <Button className="w-full" disabled={!range.start} loading={saving} onClick={apply}>Aplicar</Button>
-        <p className="text-xs text-ink-soft">Las fechas con solicitudes pendientes o reservas confirmadas no cambian: resolvé primero la solicitud.</p>
+        <p className="text-sm text-ink-soft">Las fechas con solicitudes pendientes o reservas confirmadas no cambian: resolvé primero la solicitud.</p>
       </div>
     </div>
   )

@@ -18,17 +18,18 @@ const schema = z.object({
   budget: z.union([z.literal(''), z.coerce.number().min(0, 'No puede ser negativo')]).optional(),
 })
 
-// "Consultar servicio" y "Solicitar presupuesto" usan el mismo formulario.
+// "Hacer una consulta" y "Pedir presupuesto" usan el mismo formulario.
 export function ServiceInquiryModal({ open, onClose, pro, mode = 'inquiry' }) {
   const { register, handleSubmit, reset, formState: { errors } } = useForm({
     resolver: zodResolver(schema), defaultValues: { projectType: '', requestedDate: '', location: '', projectDescription: '', budget: '' },
   })
   const { run, submitting, error } = useSubmit({
-    successTitle: mode === 'quote' ? 'Pedido de presupuesto enviado' : 'Consulta enviada', successText: 'Seguila en Mi cuenta › Solicitudes.',
+    successTitle: mode === 'quote' ? 'Pedido de presupuesto enviado' : 'Consulta enviada', successText: 'La respuesta te llega a Mi cuenta › Solicitudes.',
     onSuccess: () => { reset(); onClose() },
   })
   return (
-    <Modal open={open} onClose={onClose} title={mode === 'quote' ? `Solicitar presupuesto a ${pro.name}` : `Consultar a ${pro.name}`}>
+    <Modal open={open} onClose={onClose} title={mode === 'quote' ? `Pedir presupuesto a ${pro.name}` : `Consulta a ${pro.name}`}
+      description="Responde desde TRAMA. La respuesta te llega a Mi cuenta › Solicitudes.">
       <form noValidate className="space-y-4" onSubmit={handleSubmit((data) => run(() => requestsService.createServiceInquiry({ serviceId: pro.id, ...data, budget: data.budget || null })))}>
         <div className="grid gap-4 sm:grid-cols-2">
           <FormField label="Tipo de proyecto" required error={errors.projectType?.message}><Input placeholder="Ej. Diseño de luces para estreno" {...register('projectType')} /></FormField>

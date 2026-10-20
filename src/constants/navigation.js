@@ -1,6 +1,6 @@
 import { Building2, Drama, Wrench, BookOpen, Megaphone, Newspaper } from 'lucide-react'
 
-// Las cuatro áreas principales de TRAMA, más Oportunidades.
+// Las cuatro áreas principales de TRAMA, más Convocatorias.
 export const CATEGORIES = [
   {
     id: 'salas', label: 'Salas', to: '/salas', icon: Building2, tone: 'night',
@@ -21,7 +21,7 @@ export const CATEGORIES = [
 ]
 
 export const OPPORTUNITIES_NAV = {
-  id: 'oportunidades', label: 'Oportunidades', to: '/oportunidades', icon: Megaphone,
+  id: 'oportunidades', label: 'Convocatorias', to: '/oportunidades', icon: Megaphone,
   description: 'Convocatorias de salas, festivales, instituciones y programadores.',
 }
 
@@ -35,7 +35,7 @@ export const SEARCH_SCOPES = [
   { id: 'salas', label: 'Salas', to: '/salas' },
   { id: 'espectaculos', label: 'Espectáculos', to: '/espectaculos' },
   { id: 'servicios', label: 'Servicios', to: '/servicios' },
-  { id: 'oportunidades', label: 'Oportunidades', to: '/oportunidades' },
+  { id: 'oportunidades', label: 'Convocatorias', to: '/oportunidades' },
   { id: 'recursos', label: 'Recursos', to: '/recursos' },
 ]
 
@@ -51,6 +51,6 @@ export const ENTITY_LABELS = {
   venue: 'Sala',
   show: 'Espectáculo',
   service: 'Servicio',
-  opportunity: 'Oportunidad',
+  opportunity: 'Convocatoria',
   resource: 'Recurso',
 }

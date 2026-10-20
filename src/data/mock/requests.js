@@ -1,8 +1,9 @@
 // DATOS DE DEMOSTRACIÓN. Solicitudes en distintos estados.
-// Cuatro tipos separados, cada uno con su propio modelo:
-// BookingRequest (alquiler de sala), ShowInquiry (contratar un espectáculo),
-// ServiceInquiry (contratar un servicio) y Application (postulación).
-// `history` registra cada cambio de estado.
+// Cinco tipos separados, cada uno con su propio modelo:
+// BookingRequest (alquiler de sala), VenueInquiry (pregunta a una sala),
+// ShowInquiry (contratar un espectáculo), ServiceInquiry (contratar un servicio)
+// y Application (postulación). `history` registra cada cambio de estado y
+// `messages`, la conversación después del primer mensaje.
 
 const h = (at, by, from, to, note = null) => ({ at, by, from, to, note })
 
@@ -50,12 +51,27 @@ export const bookingRequests = [
   },
 ]
 
+const m = (id, at, by, body) => ({ id, at, by, body })
+
+export const venueInquiries = [
+  {
+    id: 'vi-1', venueId: 'v-urdimbre', requesterId: 'u-sofia',
+    message: '¿La sala tiene parrilla de luces fija o hay que traer el equipo? Estamos armando una gira en marzo.',
+    status: 'sent', history: [h('2026-10-18T12:00:00Z', 'u-sofia', 'draft', 'sent')], messages: [],
+    createdAt: '2026-10-18T12:00:00Z', updatedAt: '2026-10-18T12:00:00Z',
+  },
+]
+
 export const showInquiries = [
   {
     id: 'si-1', showId: 's-andamio', requesterId: 'u-sofia', organization: 'Festival Escena Litoral (ficticio)', venueName: 'Patio Proscenio',
     requestedDates: '12 al 14 de febrero de 2027', functionCount: 3, message: 'Nos interesa la obra para la programación del festival.',
     status: 'in_conversation',
     history: [h('2026-10-01T12:00:00Z', 'u-sofia', 'draft', 'sent'), h('2026-10-02T12:00:00Z', 'u-mateo', 'sent', 'in_conversation')],
+    messages: [
+      m('si-1-m1', '2026-10-02T12:00:00Z', 'u-mateo', '¡Gracias! Podemos hacer las tres funciones. ¿El patio tiene piso de madera?'),
+      m('si-1-m2', '2026-10-02T15:00:00Z', 'u-sofia', 'Sí, piso de madera de 8 × 6 m. Te paso la ficha técnica por acá cuando la tenga.'),
+    ],
     createdAt: '2026-10-01T12:00:00Z', updatedAt: '2026-10-02T12:00:00Z',
   },
   {

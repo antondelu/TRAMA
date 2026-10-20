@@ -33,7 +33,7 @@ function PlanEditor({ plan, onClose }) {
       accessMember: plan.accessRules.includes('member'), accessPremium: plan.accessRules.includes('premium'), isActive: plan.isActive,
     },
   })
-  const { run, submitting, error } = useSubmit({ successTitle: 'Plan actualizado', onSuccess: onClose })
+  const { run, submitting, error } = useSubmit({ successTitle: 'Membresía actualizada', onSuccess: onClose })
   const onSubmit = (d) => run(() => membershipsService.savePlan({
     id: plan.id, name: d.name, description: d.description, price: d.price, priceYearly: d.priceYearly,
     billingPeriod: d.price ? 'monthly' : 'free', benefits: fromLines(d.benefits), limits: fromLines(d.limits), isActive: d.isActive,
@@ -57,7 +57,7 @@ function PlanEditor({ plan, onClose }) {
           <Checkbox label="Recursos para miembros" {...register('accessMember')} />
           <Checkbox label="Recursos del plan Profesional (cursos y clases)" {...register('accessPremium')} />
         </fieldset>
-        <Checkbox label="Plan activo (visible en /planes)" {...register('isActive')} />
+        <Checkbox label="Membresía activa (visible para el público)" {...register('isActive')} />
         <FormError error={error} />
         <div className="flex justify-end gap-2"><Button variant="secondary" onClick={onClose}>Cancelar</Button><Button type="submit" loading={submitting}>Guardar</Button></div>
       </form>
@@ -71,7 +71,7 @@ export default function AdminMembershipsPage() {
   const { data, error, reload } = useServiceQuery(() => membershipsService.listPlans({ includeInactive: true }), [])
   return (
     <>
-      <AdminHeader title="Planes y membresías" description="Precios, periodicidad, beneficios, estado y acceso a contenidos." />
+      <AdminHeader title="Membresías" description="Precios, periodicidad, beneficios, estado y acceso a contenidos." />
       <DemoNotice className="mb-6">Los precios son de demostración. Cambiar un plan no genera cobros ni modifica suscripciones reales.</DemoNotice>
       {error ? <ErrorState error={error} onRetry={reload} /> : !data ? <LoadingSkeleton variant="list" count={3} /> : (
         <ul className="grid gap-4 lg:grid-cols-3">

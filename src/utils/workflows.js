@@ -1,5 +1,5 @@
-// Máquinas de estado de TRAMA. Reservas de sala, consultas de contratación y
-// postulaciones son procesos distintos: cada uno tiene sus estados y sus
+// Máquinas de estado de TRAMA. Reservas de sala, consultas (a una sala, de
+// contratación o de servicio) y postulaciones son procesos distintos: cada uno tiene sus estados y sus
 // transiciones válidas, separadas por quién puede ejecutarlas
 // (sender = quien envía, receiver = quien recibe).
 // En producción estas mismas reglas deben validarse en el servidor.
@@ -18,6 +18,8 @@ export const REQUEST_KINDS = {
     // "Proponer otra fecha" lleva la solicitud a conversación con una fecha alternativa.
     transitions: INQUIRY_FLOW,
   },
+  // Una pregunta a la sala, sin pedir fecha: antes iba a Mensajes y ahora es una solicitud más.
+  venueInquiry: { label: 'Consulta a la sala', collection: 'venueInquiries', transitions: INQUIRY_FLOW },
   showInquiry: { label: 'Consulta de contratación', collection: 'showInquiries', transitions: INQUIRY_FLOW },
   serviceInquiry: { label: 'Consulta de servicio', collection: 'serviceInquiries', transitions: INQUIRY_FLOW },
   application: {
@@ -33,8 +35,8 @@ export const REQUEST_KINDS = {
 
 export const REQUEST_STATE_LABELS = {
   draft: 'Borrador',
-  sent: 'Enviada',
-  received: 'Recibida',
+  sent: 'Esperando respuesta',
+  received: 'Sin responder',
   in_conversation: 'En conversación',
   accepted: 'Aceptada',
   rejected: 'Rechazada',
@@ -57,7 +59,7 @@ export const TRANSITION_LABELS = {
   withdrawn: 'Retirar postulación',
 }
 
-// "Enviada" se ve como "Recibida" del lado de quien la recibe.
+// "Esperando respuesta" se ve como "Sin responder" del lado de quien la recibe.
 export function stateLabelFor(state, side) {
   if (state === 'sent' && side === 'receiver') return REQUEST_STATE_LABELS.received
   return REQUEST_STATE_LABELS[state] ?? state

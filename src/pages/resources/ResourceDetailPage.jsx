@@ -69,7 +69,7 @@ export default function ResourceDetailPage() {
           <FavoriteButton type="resource" id={r.id} title={r.title} variant="button" className="w-full justify-center" />
           {!r.locked && r.fileUrl && <Button icon={Download} href={r.fileUrl} download className="w-full">Descargar archivo</Button>}
           {r.locked && r.hasFile && <p className="text-sm text-ink-soft">Incluye un archivo descargable para miembros.</p>}
-          {!user && r.accessLevel === 'public' && <p className="text-xs text-ink-soft">Este recurso es gratuito. Registrate para guardar favoritos y recibir novedades.</p>}
+          {!user && r.accessLevel === 'public' && <p className="text-sm text-ink-soft">Este recurso es gratuito. Registrate para guardar favoritos y recibir novedades.</p>}
         </ActionPanel>
       )}>
       <Section id="contenido" title="Contenido">
@@ -78,7 +78,7 @@ export default function ResourceDetailPage() {
             <Player r={r} />
             {/* Texto plano: React lo escapa, no se interpreta HTML. */}
             <div className="max-w-prose space-y-4 leading-relaxed">{r.body?.map((p, i) => <p key={i}>{p}</p>)}</div>
-            {r.fileUrl && <p className="text-xs text-ink-soft">Material complementario: archivo de ejemplo de la demo.</p>}
+            {r.fileUrl && <p className="text-sm text-ink-soft">Material complementario: archivo de ejemplo de la demo.</p>}
           </div>
         </MembershipGate>
       </Section>

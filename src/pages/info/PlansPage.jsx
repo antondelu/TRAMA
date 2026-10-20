@@ -11,7 +11,7 @@ import { useAuth } from '@/context/AuthContext'
 import { cn } from '@/utils/format'
 
 export default function PlansPage() {
-  useDocumentTitle('Planes')
+  useDocumentTitle('Membresías')
   const { user } = useAuth()
   const [billing, setBilling] = useState('monthly')
   const query = useServiceQuery(() => membershipsService.listPlans(), [])
@@ -25,9 +25,9 @@ export default function PlansPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Membresías" title="Planes para crecer en el sector."
+      <PageHeader eyebrow="Membresías" title="Membresías para crecer en el sector."
         description="Explorar y publicar en TRAMA es gratis. La membresía suma recursos exclusivos, formación y herramientas para profesionales."
-        breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Planes' }]} />
+        breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Membresías' }]} />
       <PageContainer className="py-10">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
           <div role="radiogroup" aria-label="Periodicidad" className="inline-flex rounded-lg border border-line bg-surface p-1">
@@ -36,7 +36,7 @@ export default function PlansPage() {
                 className={cn('min-h-10 rounded-md px-4 text-sm font-semibold', billing === id ? 'bg-brand text-white' : 'text-ink-soft hover:text-ink')}>{label}</button>
             ))}
           </div>
-          <DemoNotice className="max-w-xl">Precios de demostración. Todavía no hay cobros: elegir un plan lo activa en modo demo, sin pago.</DemoNotice>
+          <DemoNotice className="max-w-xl">Precios de demostración. Todavía no hay cobros: elegir una membresía la activa en modo demo, sin pago.</DemoNotice>
         </div>
         {query.error ? <ErrorState error={query.error} onRetry={query.reload} />
           : !query.data ? <LoadingSkeleton count={3} />

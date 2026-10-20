@@ -94,7 +94,7 @@ export function FileUpload({ label, accept = 'image/jpeg,image/png,image/webp', 
         <span className="text-xs text-ink-soft">{hint ?? `Hasta ${maxFiles} archivos de ${maxSizeMB} MB como máximo.`}</span>
       </label>
       <input ref={inputRef} id={id} type="file" multiple={maxFiles > 1} accept={accept} className="sr-only" onChange={(e) => onFiles(e.target.files)} />
-      {error && <p role="alert" className="text-xs font-medium text-danger">{error}</p>}
+      {error && <p role="alert" className="text-sm font-medium text-danger">{error}</p>}
 
       {current && (
         <div className="grid gap-4 rounded-lg border border-line bg-canvas p-3 sm:grid-cols-[minmax(0,18rem)_1fr]">

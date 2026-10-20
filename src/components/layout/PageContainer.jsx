@@ -35,7 +35,7 @@ export function PageHeader({ eyebrow, title, description, breadcrumbs, actions, 
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-3xl">
             {eyebrow && <p className="tag mb-4">{eyebrow}</p>}
-            <h1 className="font-display text-4xl font-bold tracking-tight sm:text-6xl">{title}</h1>
+            <h1 className="font-display text-3xl font-bold tracking-tight sm:text-6xl">{title}</h1>
             {description && <p className="mt-3 text-base text-ink-soft sm:text-lg">{description}</p>}
           </div>
           {actions && <div className="flex flex-wrap gap-2">{actions}</div>}

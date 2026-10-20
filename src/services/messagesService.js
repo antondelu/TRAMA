@@ -85,22 +85,4 @@ export const messagesService = {
     }
     commit()
   },
-
-  // "Enviar consulta" desde una publicación: abre (o reutiliza) una conversación con el dueño.
-  async startWithOwner({ entityType, entityId, ownerId, subject, body }) {
-    await latency(200)
-    const user = requireUser()
-    if (ownerId === user.id) throw forbidden('No podés enviarte una consulta a vos mismo.')
-    const db = getDb()
-    let c = db.conversations.find((x) => x.relatedEntityType === entityType && x.relatedEntityId === entityId &&
-      x.participantIds.includes(user.id) && x.participantIds.includes(ownerId))
-    if (!c) {
-      const now = nowISO()
-      c = { id: newId('c'), participantIds: [user.id, ownerId], relatedEntityType: entityType, relatedEntityId: entityId, subject, createdAt: now, updatedAt: now }
-      db.conversations.push(c)
-    }
-    commit()
-    await this.send(c.id, body)
-    return c.id
-  },
 }

@@ -49,7 +49,7 @@ export const adminService = {
       showsByDiscipline: countBy(db.shows.filter((s) => alive(s) && s.publicationStatus === 'published'), 'discipline'),
       bookingsByStatus: countBy(db.bookingRequests, 'status'),
       applicationsByStatus: countBy(db.applications, 'status'),
-      inquiriesByStatus: countBy([...db.showInquiries, ...db.serviceInquiries], 'status'),
+      inquiriesByStatus: countBy([...(db.venueInquiries ?? []), ...db.showInquiries, ...db.serviceInquiries], 'status'),
       membershipsByPlan: countBy(db.memberships.filter((m) => m.status === 'active'), 'planId'),
       auditLog: db.auditLog.slice(0, 30),
     })

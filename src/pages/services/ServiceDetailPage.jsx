@@ -55,13 +55,14 @@ export default function ServiceDetailPage() {
       aside={(
         <ActionPanel title="Contratar">
           <PriceDisplay from={pro.priceFrom} unit={pro.priceUnit} currency={pro.currency} emptyLabel="Tarifa a consultar" className="block text-base" />
-          <p className="text-xs text-ink-soft">Tarifa orientativa publicada por el profesional.</p>
+          <p className="text-sm text-ink-soft">Tarifa orientativa publicada por el profesional.</p>
           {isOwner
             ? <Button variant="secondary" to={`/publicar/servicio?id=${pro.id}`}>Editar perfil</Button>
             : (
               <div className="grid gap-2">
-                <Button icon={MessageSquare} onClick={() => requireAuth(() => setModal('inquiry'))}>Consultar servicio</Button>
-                <Button variant="secondary" icon={Receipt} onClick={() => requireAuth(() => setModal('quote'))}>Solicitar presupuesto</Button>
+                <Button icon={Receipt} onClick={() => requireAuth(() => setModal('quote'))}>Pedir presupuesto</Button>
+                <Button variant="secondary" icon={MessageSquare} onClick={() => requireAuth(() => setModal('inquiry'))}>Hacer una consulta</Button>
+                <p className="text-sm text-ink-soft">Las respuestas te llegan a Mi cuenta › Solicitudes.</p>
               </div>
             )}
         </ActionPanel>
@@ -80,7 +81,7 @@ export default function ServiceDetailPage() {
           { label: 'Modalidad de trabajo', value: labels('workModes', pro.workModes) },
           { label: 'Disponibilidad', value: pro.availability ? label('serviceAvailability', pro.availability) : 'No informada' },
         ]} />
-        <p className="mt-3 text-xs text-ink-soft">TRAMA todavía no verifica experiencias ni certificaciones: los datos los publica cada profesional.</p>
+        <p className="mt-3 text-sm text-ink-soft">TRAMA todavía no verifica experiencias ni certificaciones: los datos los publica cada profesional.</p>
       </Section>
 
       <Section id="portfolio" title="Portfolio">

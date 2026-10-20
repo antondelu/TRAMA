@@ -102,7 +102,7 @@ export const TAXONOMIES = {
     ['programacion', 'Convocatoria para programar espectáculos'], ['temporada', 'Búsqueda de obras para temporada'],
     ['festival', 'Convocatoria para festivales'], ['residencia', 'Residencia artística'], ['coproduccion', 'Coproducción'],
     ['proyectos', 'Invitación a presentar proyectos'], ['seleccion', 'Selección artística'],
-    ['profesionales', 'Búsqueda de profesionales'], ['colaboracion', 'Oportunidad de colaboración'],
+    ['profesionales', 'Búsqueda de profesionales'], ['colaboracion', 'Propuesta de colaboración'],
   ]),
   organizationTypes: t([
     ['sala', 'Sala'], ['festival', 'Festival'], ['institucion', 'Institución'], ['compania', 'Compañía'], ['programador', 'Programador'],

@@ -24,7 +24,7 @@ export function MembershipGate({ locked, accessLevel, children }) {
         {req.text} Accedés con el plan <strong className="text-ink">{req.plan}</strong>.
       </p>
       <div className="mt-5 flex flex-wrap justify-center gap-2">
-        <Button to="/planes">Ver planes</Button>
+        <Button to="/planes">Ver membresías</Button>
         {!user && <Button variant="secondary" to={`/ingresar?volver=${encodeURIComponent(location.pathname)}`}>Acceder como miembro</Button>}
       </div>
     </div>

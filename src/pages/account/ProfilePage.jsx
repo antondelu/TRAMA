@@ -33,7 +33,7 @@ function SectionTitle({ icon: Icon, title, text }) {
   return (
     <div className="mb-4">
       <h2 className="flex items-center gap-2 font-semibold"><Icon aria-hidden className="size-4 text-ink-soft" />{title}</h2>
-      <p className="text-xs text-ink-soft">{text}</p>
+      <p className="text-sm text-ink-soft">{text}</p>
     </div>
   )
 }

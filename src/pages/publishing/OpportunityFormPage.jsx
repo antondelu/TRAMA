@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { PublicationFormShell, FormSection } from '@/features/publishing/PublicationFormShell'
 import { usePublicationForm } from '@/features/publishing/usePublicationForm'
 import { toLines, fromLines, slugField, httpsUrl } from '@/features/publishing/formHelpers'
+import { LinesInput } from '@/components/forms/LinesInput'
 import { FormField, Input, Textarea, Select, CheckboxGroup } from '@/components/forms/FormField'
 import { OpportunityCard } from '@/components/cards/OpportunityCard'
 import { opportunitiesService, venuesService, configService } from '@/services'
@@ -68,16 +69,15 @@ export default function OpportunityFormPage() {
     <PublicationFormShell ctl={ctl} kindLabel="convocatoria" statusKey="status" title={ctl.editId ? 'Editar convocatoria' : 'Publicá una convocatoria'}
       preview={(d) => <OpportunityCard opportunity={{ ...toPayload(d), id: 'preview', slug: d.slug || 'vista-previa', title: d.title || 'Título', deadline: d.deadline || todayISO(), publicState: 'published' }} />}>
       <FormSection title="La convocatoria">
-        <FormField label="Título" required error={errors.title?.message}><Input {...register('title', { onBlur: ctl.fillSlug })} /></FormField>
-        <FormField label="Dirección en TRAMA (slug)" hint={`trama.uy/oportunidades/${watch('slug') || 'titulo'}`} error={errors.slug?.message}><Input {...register('slug')} /></FormField>
+        <FormField label="Título" required error={errors.title?.message}><Input {...register('title')} /></FormField>
         <div className="grid gap-4 sm:grid-cols-2">
-          <FormField label="Tipo de oportunidad" required error={errors.opportunityType?.message}><Select placeholder="Elegí" options={tax.opportunityTypes} {...register('opportunityType')} /></FormField>
+          <FormField label="Tipo de convocatoria" required error={errors.opportunityType?.message}><Select placeholder="Elegí" options={tax.opportunityTypes} {...register('opportunityType')} /></FormField>
           <FormField label="Organización convocante" required error={errors.organizationName?.message}><Input {...register('organizationName')} /></FormField>
           <FormField label="Tipo de organización" required error={errors.organizationType?.message}><Select placeholder="Elegí" options={tax.organizationTypes} {...register('organizationType')} /></FormField>
           {myVenues.length > 0 && <FormField label="Sala asociada" hint="Opcional: aparece en la ficha de la sala."><Select placeholder="Ninguna" options={myVenues.map((v) => ({ id: v.id, label: v.name }))} {...register('venueId')} /></FormField>}
         </div>
         <FormField label="Descripción" required error={errors.description?.message}><Textarea rows={5} {...register('description')} /></FormField>
-        <FormField label="Requisitos" hint="Uno por línea"><Textarea rows={3} {...register('requirements')} /></FormField>
+        <FormField label="Requisitos"><Controller control={control} name="requirements" render={({ field }) => <LinesInput {...field} addLabel="Agregar requisito" placeholder="Ej. Obra estrenada" />} /></FormField>
         <Controller control={control} name="disciplines" render={({ field }) => (
           <CheckboxGroup legend="Disciplinas admitidas" required columns={3} options={tax.disciplines} value={field.value} onChange={field.onChange} error={errors.disciplines?.message} />
         )} />
@@ -95,7 +95,7 @@ export default function OpportunityFormPage() {
       </FormSection>
 
       <FormSection title="Postulación">
-        <FormField label="Documentación solicitada" hint="Una por línea"><Textarea rows={3} {...register('documents')} /></FormField>
+        <FormField label="Documentación solicitada"><Controller control={control} name="documents" render={({ field }) => <LinesInput {...field} addLabel="Agregar documento" placeholder="Ej. Dossier en PDF" />} /></FormField>
         <FormField label="Procedimiento de postulación" required error={errors.procedure?.message}><Textarea rows={3} {...register('procedure')} /></FormField>
         <FormField label="¿Dónde se postula?" required>
           <Select options={[{ id: 'internal', label: 'Dentro de TRAMA (formulario de postulación)' }, { id: 'external', label: 'En un sitio externo' }]} {...register('applicationMode')} />

@@ -20,7 +20,7 @@ const schema = z.object({
   message: z.string().max(2000, 'Máximo 2000 caracteres').optional(),
 })
 
-// Solicitud de reserva: queda "Enviada" hasta que la sala responda.
+// Solicitud de reserva: queda "Esperando respuesta" hasta que la sala responda.
 // Nunca se confirma sola.
 export function BookingRequestModal({ open, onClose, venue, initialDate }) {
   const { tax } = useTaxonomies()
@@ -36,7 +36,7 @@ export function BookingRequestModal({ open, onClose, venue, initialDate }) {
 
   return (
     <Modal open={open} onClose={onClose} title={`Solicitar reserva en ${venue.name}`}
-      description="La sala recibe tu pedido y responde desde TRAMA. Hasta que lo acepte, no es una reserva confirmada.">
+      description="La sala responde desde TRAMA y la respuesta te llega a Mi cuenta › Solicitudes. Hasta que la acepte, no es una reserva confirmada.">
       <form id="booking-form" noValidate className="space-y-4" onSubmit={handleSubmit((data) => run(() => requestsService.createBooking({ venueId: venue.id, ...data })))}>
         <div className="grid gap-4 sm:grid-cols-2">
           <FormField label="Fecha" required error={errors.date?.message}><Input type="date" min={todayISO()} {...register('date')} /></FormField>

@@ -7,7 +7,7 @@ import { PageContainer } from '@/components/layout/PageContainer'
 import { Reveal } from '@/components/ui/Reveal'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 
-// Home minimalista: cuatro bloques. Las oportunidades tienen su acceso en el
+// Home minimalista: cuatro bloques. Las convocatorias tienen su acceso en el
 // menú principal y en el cierre.
 export default function HomePage() {
   useDocumentTitle(null)

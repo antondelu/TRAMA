@@ -15,12 +15,12 @@ const SORTS = [
 ]
 
 export default function OpportunitiesPage() {
-  useDocumentTitle('Oportunidades')
+  useDocumentTitle('Convocatorias')
   const { tax } = useTaxonomies()
   const countries = configService.countries()
 
   const filterDefs = useMemo(() => [
-    { key: 'type', primary: true, label: 'Tipo de oportunidad', type: 'select', placeholder: 'Todos', options: tax.opportunityTypes },
+    { key: 'type', primary: true, label: 'Tipo de convocatoria', type: 'select', placeholder: 'Todos', options: tax.opportunityTypes },
     { key: 'discipline', primary: true, label: 'Disciplina', type: 'select', options: tax.disciplines },
     { key: 'organizationType', label: 'Quién convoca', type: 'select', placeholder: 'Todos', options: tax.organizationTypes },
     { key: 'country', label: 'País', type: 'select', placeholder: 'Todos', options: countries.map((c) => ({ id: c.code, label: c.name })) },
@@ -31,9 +31,9 @@ export default function OpportunitiesPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Oportunidades" title="Convocatorias abiertas."
+      <PageHeader eyebrow="Convocatorias" title="Convocatorias abiertas."
         description="Programación, festivales, residencias y más."
-        breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Oportunidades' }]}
+        breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Convocatorias' }]}
         actions={<Button variant="secondary" to="/publicar/convocatoria">Publicar una convocatoria</Button>} />
       <CatalogView filterDefs={filterDefs} sortOptions={SORTS} fetcher={opportunitiesService.list}
         searchPlaceholder="Buscar por título u organización" itemNoun={['convocatoria', 'convocatorias']}

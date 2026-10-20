@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { Megaphone, Search } from 'lucide-react'
+import { Megaphone } from 'lucide-react'
 import { PageHeader } from '@/components/layout/PageContainer'
 import { CatalogView } from '@/components/filters/CatalogView'
 import { VenueCard } from '@/components/cards/VenueCard'
@@ -23,7 +23,7 @@ export default function VenuesPage() {
 
   const filterDefs = useMemo(() => [
     { key: 'department', primary: true, label: 'Departamento', type: 'select', placeholder: 'Todos', options: uy.departments.map((d) => ({ id: d, label: d })) },
-    { key: 'city', label: 'Ciudad', type: 'select', options: uy.cities.map((c) => ({ id: c.name, label: c.name })) },
+    { key: 'city', label: 'Ciudad', type: 'select', dependsOn: 'department', options: uy.cities.map((c) => ({ id: c.name, label: c.name, parent: c.department })) },
     { key: 'capMin', primary: true, label: 'Capacidad mínima', chipLabel: 'Desde', unit: 'personas', type: 'number', placeholder: 'Ej. 50' },
     { key: 'capMax', label: 'Capacidad máxima', chipLabel: 'Hasta', unit: 'personas', type: 'number', placeholder: 'Ej. 300' },
     { key: 'type', primary: true, label: 'Tipo de espacio', type: 'select', placeholder: 'Todos', options: tax.venueTypes },
@@ -43,8 +43,8 @@ export default function VenuesPage() {
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Salas' }]}
         actions={(
           <>
-            <Button icon={Search} onClick={() => document.getElementById('catalog-q')?.focus()}>Explorar salas</Button>
-            <Button variant="secondary" icon={Megaphone} to="/oportunidades?type=programacion">Convocatorias de programación</Button>
+            <Button variant="secondary" to="/publicar/sala">Publicar una sala</Button>
+            <Button variant="ghost" icon={Megaphone} to="/oportunidades?type=programacion">Convocatorias de programación</Button>
           </>
         )} />
       <CatalogView filterDefs={filterDefs} sortOptions={SORTS} fetcher={venuesService.list}

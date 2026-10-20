@@ -12,7 +12,7 @@ export function DemoAccounts({ onDone }) {
   return (
     <div className="rounded-[var(--radius-card)] border border-warning/30 bg-warning-soft/60 p-5">
       <h2 className="flex items-center gap-2 font-semibold text-warning"><FlaskConical aria-hidden className="size-4" />Cuentas de demostración</h2>
-      <p className="mt-1 text-xs text-ink-soft">Ingreso sin contraseña, solo para probar. No es un acceso seguro.</p>
+      <p className="mt-1 text-sm text-ink-soft">Ingreso sin contraseña, solo para probar. No es un acceso seguro.</p>
       <ul className="mt-4 space-y-2">
         {accounts.map((a) => (
           <li key={a.id}>

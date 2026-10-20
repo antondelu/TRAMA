@@ -37,7 +37,7 @@ export function MobileNavigation({ open, onClose }) {
         <hr className="my-4 border-line" />
         <ul className="space-y-1">
           <li><NavLink to="/publicar" className={linkClass} onClick={onClose}>Publicar en TRAMA</NavLink></li>
-          <li><NavLink to="/planes" className={linkClass} onClick={onClose}>Planes</NavLink></li>
+          <li><NavLink to="/planes" className={linkClass} onClick={onClose}>Membresías</NavLink></li>
           {can('admin:access') && <li><NavLink to="/admin" className={linkClass} onClick={onClose}>Administración</NavLink></li>}
         </ul>
         {user && (

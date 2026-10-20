@@ -19,7 +19,7 @@ const TABS = [
   { id: 'salas', label: 'Salas', to: '/salas', fetch: () => venuesService.featured(3), render: (x) => <VenueCard venue={x} /> },
   { id: 'espectaculos', label: 'Espectáculos', to: '/espectaculos', fetch: () => showsService.featured(3), render: (x) => <ShowCard show={x} /> },
   { id: 'servicios', label: 'Servicios', to: '/servicios', fetch: () => servicesService.featured(3), render: (x) => <ProfessionalCard pro={x} /> },
-  { id: 'oportunidades', label: 'Oportunidades', to: '/oportunidades', fetch: () => opportunitiesService.featured(3), render: (x) => <OpportunityCard opportunity={x} /> },
+  { id: 'oportunidades', label: 'Convocatorias', to: '/oportunidades', fetch: () => opportunitiesService.featured(3), render: (x) => <OpportunityCard opportunity={x} /> },
   { id: 'recursos', label: 'Recursos', to: '/recursos', fetch: () => resourcesService.featured(3), render: (x) => <ResourceCard resource={x} /> },
 ]
 

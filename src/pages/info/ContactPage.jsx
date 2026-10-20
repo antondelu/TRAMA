@@ -153,7 +153,7 @@ export default function ContactPage() {
               ) : challengeError ? (
                 <div className="space-y-2">
                   <FormError error={challengeError} />
-                  <p className="text-xs text-ink-soft">El formulario necesita la API de contacto (npm run dev:api). Ver README.</p>
+                  <p className="text-sm text-ink-soft">El formulario necesita la API de contacto (npm run dev:api). Ver README.</p>
                   <Button variant="secondary" size="sm" onClick={loadChallenge}>Reintentar</Button>
                 </div>
               ) : <p className="text-sm text-ink-soft">Cargando verificación…</p>}
