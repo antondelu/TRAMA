@@ -60,7 +60,7 @@ function AppsComingSoon() {
 
 export function Footer() {
   return (
-    <footer className="relative mt-auto bg-brand-strong text-white/80 lg:px-20">
+    <footer className="relative mt-auto bg-brand-strong pb-[env(safe-area-inset-bottom)] text-white/80 lg:px-20">
       <Curtain side="left" />
       <Curtain side="right" />
       <PageContainer className="grid gap-10 py-12 md:grid-cols-[1.4fr_repeat(3,1fr)]">

@@ -6,7 +6,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 
 export default [
-  { ignores: ['dist', 'node_modules', 'api/node_modules', 'news/node_modules', 'news/data'] },
+  { ignores: ['dist', 'node_modules', 'api/node_modules', 'news/node_modules', 'news/data', 'android', 'ios'] },
 
   // SPA (React + Vite).
   {

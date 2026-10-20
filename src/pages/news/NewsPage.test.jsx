@@ -63,7 +63,8 @@ describe('Noticias', () => {
     const intl = section('Internacional')
     expect(await within(intl).findByText('Noticia c')).toBeInTheDocument()
     expect(within(intl).getByText('Argentina')).toBeInTheDocument()
-    expect(screen.getByText(/Buscaremos nuevas noticias/)).toBeInTheDocument()
+    // Cuenta regresiva o "En breve…", según la hora en que corra el test.
+    expect(screen.getByText(/buscaremos nuevas noticias/i)).toBeInTheDocument()
   })
 
   it('muestra cuánto falta para la próxima búsqueda de noticias', async () => {
