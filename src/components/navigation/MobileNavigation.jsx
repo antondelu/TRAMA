@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { Drawer } from '@/components/ui/Drawer'
 import { Button } from '@/components/ui/Button'
+import { AccountNavList } from './AccountNavList'
 import { CATEGORIES, OPPORTUNITIES_NAV, NEWS_NAV } from '@/constants/navigation'
 import { useAuth } from '@/context/AuthContext'
 import { cn } from '@/utils/format'
@@ -37,9 +38,15 @@ export function MobileNavigation({ open, onClose }) {
         <ul className="space-y-1">
           <li><NavLink to="/publicar" className={linkClass} onClick={onClose}>Publicar en TRAMA</NavLink></li>
           <li><NavLink to="/planes" className={linkClass} onClick={onClose}>Planes</NavLink></li>
-          {user && <li><NavLink to="/mi-cuenta" end className={linkClass} onClick={onClose}>Mi cuenta</NavLink></li>}
           {can('admin:access') && <li><NavLink to="/admin" className={linkClass} onClick={onClose}>Administración</NavLink></li>}
         </ul>
+        {user && (
+          <>
+            <hr className="my-4 border-line" />
+            <p className="mb-2 px-3 font-display text-lg font-semibold">Mi cuenta</p>
+            <AccountNavList idPrefix="account-drawer" onNavigate={onClose} />
+          </>
+        )}
       </nav>
     </Drawer>
   )
