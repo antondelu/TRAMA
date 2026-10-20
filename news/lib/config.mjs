@@ -22,7 +22,7 @@ export const config = {
   port: number("PORT", 3000, 1),
   dataDir: process.env.NEWS_DATA_DIR || new URL("../data", import.meta.url).pathname,
   sourcesFile: process.env.NEWS_SOURCES_FILE || new URL("../sources.json", import.meta.url).pathname,
-  intervalHours: number("NEWS_INTERVAL_HOURS", 12, 1),
+  intervalHours: number("NEWS_INTERVAL_HOURS", 1, 1),
   retentionDays: number("NEWS_RETENTION_DAYS", 180, 1),
   // Off by default in tests and local dev; the Docker image turns it on.
   scheduler: process.env.NEWS_SCHEDULER === "on",

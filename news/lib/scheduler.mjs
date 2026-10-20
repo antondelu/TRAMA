@@ -9,6 +9,12 @@ export function nextDelayMs(lastRunAt, intervalHours, nowMs = Date.now()) {
   return Math.min(MAX_TIMEOUT_MS, Math.max(0, due - nowMs))
 }
 
+// When the next ingestion is due, for the page's countdown. With no history the
+// first run starts right away.
+export function nextRunAt(lastRunAt, intervalHours, nowMs = Date.now()) {
+  return new Date(nowMs + nextDelayMs(lastRunAt, intervalHours, nowMs)).toISOString()
+}
+
 export function startScheduler({ store, run, intervalHours, log = console.log }) {
   let timer = null
   let stopped = false

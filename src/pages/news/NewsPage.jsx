@@ -5,8 +5,6 @@ import { Hourglass } from '@/components/ui/Hourglass'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 import { NewsSection } from './NewsSection'
 
-// Cada cuánto el servidor de noticias vuelve a consultar las fuentes.
-const REFRESH_HOURS = 12
 const MINUTE = 60_000
 
 // Tiempo que falta, en horas y minutos (ej. "9 h 45 min").
@@ -53,10 +51,11 @@ export default function NewsPage() {
   useDocumentTitle('Noticias')
   const [uyFilters, setUyFilters] = useSectionFilters('uy')
   const [intlFilters, setIntlFilters] = useSectionFilters('intl')
-  const [updatedAt, setUpdatedAt] = useState(null)
-  const onUpdatedAt = useCallback((at) => setUpdatedAt((prev) => (!prev || at > prev ? at : prev)), [])
+  // Cuándo el servidor vuelve a consultar las fuentes (lo informa /api/news).
+  const [nextRunAt, setNextRunAt] = useState(null)
+  const onNextRunAt = useCallback((at) => setNextRunAt((prev) => (!prev || at > prev ? at : prev)), [])
   const now = useNow()
-  const remaining = updatedAt && new Date(updatedAt).getTime() + REFRESH_HOURS * 60 * MINUTE - now
+  const remaining = nextRunAt && new Date(nextRunAt).getTime() - now
 
   return (
     <>
@@ -67,8 +66,8 @@ export default function NewsPage() {
         <p className="flex items-center gap-2 text-sm text-ink-soft">
           <Hourglass />
           <span>
-            {!updatedAt
-              ? `Se actualiza automáticamente cada ${REFRESH_HOURS} horas.`
+            {!nextRunAt
+              ? 'Se actualiza automáticamente cada hora.'
               : remaining > 0
                 ? <>Buscaremos nuevas noticias para ti en <strong className="font-semibold text-ink">{formatRemaining(remaining)}</strong>.</>
                 : 'En breve buscaremos nuevas noticias.'}
@@ -76,11 +75,11 @@ export default function NewsPage() {
         </p>
         <NewsSection section="uy" featured title="Uruguay"
           description="De Montevideo y de todos los departamentos del interior."
-          filters={uyFilters} onFiltersChange={setUyFilters} onUpdatedAt={onUpdatedAt} />
+          filters={uyFilters} onFiltersChange={setUyFilters} onNextRunAt={onNextRunAt} />
         <NewsSection section="intl" title="Internacional"
           description="Latinoamérica primero, y lo más relevante del resto del mundo."
           className="border-t border-line pt-12"
-          filters={intlFilters} onFiltersChange={setIntlFilters} onUpdatedAt={onUpdatedAt} />
+          filters={intlFilters} onFiltersChange={setIntlFilters} onNextRunAt={onNextRunAt} />
         <p className="text-xs text-ink-soft">
           Los títulos, resúmenes e imágenes son de cada medio, que figura en cada noticia junto al enlace a la publicación original.
           TRAMA no reproduce los artículos completos.

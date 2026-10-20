@@ -6,7 +6,7 @@ import http from "node:http"
 import { config, loadSources } from "./lib/config.mjs"
 import { createStore } from "./lib/store.mjs"
 import { runIngest } from "./lib/ingest.mjs"
-import { startScheduler } from "./lib/scheduler.mjs"
+import { startScheduler, nextRunAt } from "./lib/scheduler.mjs"
 import { queryNews, newsStatus } from "./lib/query.mjs"
 
 const sources = loadSources()
@@ -31,7 +31,12 @@ const server = http.createServer((req, res) => {
   if (req.method !== "GET" && req.method !== "HEAD") return send(res, 405, { error: "method_not_allowed" })
   try {
     if (url.pathname === "/healthz") return send(res, 200, { ok: true })
-    if (url.pathname === "/api/news") return send(res, 200, queryNews(cached(), sources, Object.fromEntries(url.searchParams)))
+    if (url.pathname === "/api/news") {
+      const data = cached()
+      // Without the scheduler (local dev) nothing refreshes on its own: no countdown.
+      const next = config.scheduler ? nextRunAt(data.lastRunAt, config.intervalHours) : null
+      return send(res, 200, { ...queryNews(data, sources, Object.fromEntries(url.searchParams)), nextRunAt: next })
+    }
     // Not routed by nginx: for operators, from inside the Docker network.
     if (url.pathname === "/status") return send(res, 200, newsStatus(cached(), sources))
     return send(res, 404, { error: "not_found" })

@@ -1,5 +1,5 @@
 // Noticias de artes escénicas: lee lo que guarda el servicio news/server.mjs,
-// que consulta las fuentes cada 12 horas desde el servidor. Son datos reales
+// que consulta las fuentes cada hora desde el servidor. Son datos reales
 // también en modo demo: si el servicio no responde, se informa el error en
 // lugar de mostrar noticias inventadas.
 
@@ -14,7 +14,7 @@ async function serviceDown(res) {
 }
 
 export const newsService = {
-  // section: 'uy' | 'intl'. Devuelve { items, total, page, pageCount, hasMore, facets, lastSuccessAt }.
+  // section: 'uy' | 'intl'. Devuelve { items, total, page, pageCount, hasMore, facets, lastSuccessAt, nextRunAt }.
   async list({ section, discipline, location, page = 1, pageSize } = {}, { signal } = {}) {
     const params = new URLSearchParams({ section, page: String(page) })
     if (discipline) params.set('discipline', discipline)

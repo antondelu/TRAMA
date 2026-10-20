@@ -5,7 +5,7 @@ La sección `/noticias` muestra noticias reales de teatro, danza, música en viv
 ## Cómo funciona
 
 ```
-fuentes (RSS/Atom)  ──cada 12 h──▶  servicio news (Docker)  ──▶  volumen news-data (news.json)
+fuentes (RSS/Atom)  ──cada 1 h──▶  servicio news (Docker)  ──▶  volumen news-data (news.json)
                                                                         │
 navegador ──GET /api/news──▶ nginx ──▶ servicio news ── lee lo guardado ┘
 ```
@@ -105,7 +105,7 @@ Si se contrata una, va integrada desde el backend, con la clave en una variable 
 
 | Variable | Por defecto | Qué hace |
 | --- | --- | --- |
-| `NEWS_INTERVAL_HOURS` | `12` | Cada cuántas horas se consultan las fuentes. |
+| `NEWS_INTERVAL_HOURS` | `1` | Cada cuántas horas se consultan las fuentes. La página de Noticias muestra la cuenta regresiva hasta la próxima (`nextRunAt` en `/api/news`), así que no hay que cambiar nada más. |
 | `NEWS_RETENTION_DAYS` | `180` | Días que se conserva una noticia desde su publicación. |
 | `NEWS_SCHEDULER` | `on` en la imagen de Docker, apagado en local | Enciende la tarea programada. |
 | `NEWS_DATA_DIR` | `/data` en Docker, `news/data` en local | Dónde se guardan las noticias. |
@@ -121,7 +121,7 @@ Si se contrata una, va integrada desde el backend, con la clave en una variable 
    docker compose up -d --build
    ```
 
-   El servicio `news` arranca, hace la primera corrida en el momento y después corre cada 12 horas. Las noticias quedan en el volumen `news-data`, que sobrevive a reinicios y a actualizaciones de la imagen.
+   El servicio `news` arranca, hace la primera corrida en el momento y después corre cada hora. Las noticias quedan en el volumen `news-data`, que sobrevive a reinicios y a actualizaciones de la imagen.
 
 2. **Verificar:**
 

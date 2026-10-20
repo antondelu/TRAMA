@@ -7,7 +7,7 @@ import { createStore } from "../lib/store.mjs"
 import { runIngest, prune } from "../lib/ingest.mjs"
 import { canonicalUrl, titleSimilarity, findSimilar } from "../lib/dedupe.mjs"
 import { queryNews, prioritizeLatam } from "../lib/query.mjs"
-import { nextDelayMs } from "../lib/scheduler.mjs"
+import { nextDelayMs, nextRunAt } from "../lib/scheduler.mjs"
 import { loadSources } from "../lib/config.mjs"
 
 const NOW = new Date("2026-10-19T15:00:00Z")
@@ -208,6 +208,13 @@ test("the schedule runs at once with no history and otherwise 12 h after the las
   assert.equal(nextDelayMs(null, 12, now), 0)
   assert.equal(nextDelayMs("2026-10-19T06:00:00Z", 12, now), 6 * 3600_000)
   assert.equal(nextDelayMs("2026-10-18T00:00:00Z", 12, now), 0)
+})
+
+test("the next run is one interval after the last run, or now when it is overdue", () => {
+  const now = Date.parse("2026-10-19T12:00:00Z")
+  assert.equal(nextRunAt("2026-10-19T11:15:00Z", 1, now), "2026-10-19T12:15:00.000Z")
+  assert.equal(nextRunAt("2026-10-19T09:00:00Z", 1, now), "2026-10-19T12:00:00.000Z")
+  assert.equal(nextRunAt(null, 1, now), "2026-10-19T12:00:00.000Z")
 })
 
 test("the source registry is valid", () => {

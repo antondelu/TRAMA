@@ -10,7 +10,7 @@
 | **Mensajería en tiempo real** | No existe | WebSockets o un servicio de terceros. Hoy los mensajes se ven al recargar. |
 | **Búsqueda en servidor** | Local | Con más volumen: búsqueda de texto completo en la base de datos (PostgreSQL FTS, Meilisearch). `searchService.search(q, scope)` mantiene la firma. |
 | **Formulario de contacto** | Funciona con `api/server.mjs` | Configurar SMTP en `api/.env`. |
-| **Noticias de artes escénicas** | Funciona con `news/server.mjs` (feeds RSS, tarea cada 12 h, volumen `news-data`) | Desplegar con `docker compose` en el servidor. Ver [NOTICIAS.md](NOTICIAS.md). |
+| **Noticias de artes escénicas** | Funciona con `news/server.mjs` (feeds RSS, tarea cada hora, volumen `news-data`) | Desplegar con `docker compose` en el servidor. Ver [NOTICIAS.md](NOTICIAS.md). |
 | **Fotografía** | Sin fotos | Las portadas usan el patrón de marca. Cargar fotografía escénica con licencia o propia. |
 | **Textos legales** | Provisorios | Revisión legal de términos y privacidad (Ley 18.331). |
 | **Analítica** | No existe | Si se agrega, con consentimiento y actualizando la política de privacidad y la CSP de nginx. |

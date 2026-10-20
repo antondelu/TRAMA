@@ -19,7 +19,7 @@ const page = (section, items, extra = {}) => ({
       ? [{ id: 'montevideo', label: 'Montevideo', count: 2, group: 'area' }, { id: 'interior', label: 'Interior', count: 2, group: 'area' }, { id: 'Salto', label: 'Salto', count: 2, group: 'department' }]
       : [{ id: 'latam', label: 'Latinoamérica', count: 1, group: 'area' }],
   },
-  lastSuccessAt: '2026-10-19T12:00:00.000Z', lastRunAt: '2026-10-19T12:00:00.000Z', ...extra,
+  lastSuccessAt: '2026-10-19T12:00:00.000Z', lastRunAt: '2026-10-19T12:00:00.000Z', nextRunAt: '2026-10-19T13:00:00.000Z', ...extra,
 })
 
 const json = (body, status = 200) => Promise.resolve(new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } }))
@@ -68,11 +68,11 @@ describe('Noticias', () => {
   })
 
   it('muestra cuánto falta para la próxima búsqueda de noticias', async () => {
-    vi.useFakeTimers({ shouldAdvanceTime: true, now: new Date('2026-10-19T14:15:00.000Z') })
+    vi.useFakeTimers({ shouldAdvanceTime: true, now: new Date('2026-10-19T12:15:00.000Z') })
     mockNews((p) => json(page(p.get('section'), [item(`${p.get('section')}-1`)])))
     renderPage()
-    // Última búsqueda a las 12:00 UTC: la próxima es 12 horas después.
-    expect(await screen.findByText('9 h 45 min')).toBeInTheDocument()
+    // El servidor informa la próxima búsqueda a las 13:00 UTC.
+    expect(await screen.findByText('45 min')).toBeInTheDocument()
     expect(screen.getByText(/Buscaremos nuevas noticias para ti en/)).toBeInTheDocument()
     vi.useRealTimers()
   })

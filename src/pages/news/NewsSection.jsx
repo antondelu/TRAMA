@@ -35,9 +35,9 @@ function locationOptions(locations = []) {
 
 // Un bloque de noticias (Uruguay o Internacional) con sus propios filtros,
 // estados de carga, vacío y error, y "Cargar más".
-export function NewsSection({ section, title, description, filters, onFiltersChange, onUpdatedAt, featured = false, className }) {
+export function NewsSection({ section, title, description, filters, onFiltersChange, onNextRunAt, featured = false, className }) {
   const feed = useNewsFeed(section, filters)
-  useEffect(() => { if (feed.lastSuccessAt) onUpdatedAt?.(feed.lastSuccessAt) }, [feed.lastSuccessAt, onUpdatedAt])
+  useEffect(() => { if (feed.nextRunAt) onNextRunAt?.(feed.nextRunAt) }, [feed.nextRunAt, onNextRunAt])
   const headingId = useId()
   const filtered = Boolean(filters.discipline || filters.location)
   const set = (key) => (value) => onFiltersChange({ ...filters, [key]: value })
@@ -65,7 +65,7 @@ export function NewsSection({ section, title, description, filters, onFiltersCha
         {!feed.loading && !feed.error && !feed.items.length && (
           <EmptyState icon={Newspaper}
             title={filtered ? 'No hay noticias con esos filtros' : 'Todavía no hay noticias en esta sección'}
-            description={filtered ? 'Probá con otra disciplina o ubicación.' : 'Se actualiza automáticamente cada 12 horas.'}
+            description={filtered ? 'Probá con otra disciplina o ubicación.' : 'Se actualiza automáticamente cada hora.'}
             action={filtered && <Button variant="secondary" onClick={() => onFiltersChange({})}>Quitar filtros</Button>} />
         )}
         {!feed.loading && feed.items.length > 0 && (
