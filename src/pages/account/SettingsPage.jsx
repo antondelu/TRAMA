@@ -43,7 +43,7 @@ export default function SettingsPage() {
         </Card>
         <Card className="space-y-3 p-5">
           <h2 className="font-semibold">Notificaciones y comunicación</h2>
-          <p className="text-xs text-ink-soft">Los avisos por correo se activan cuando exista el servicio de email. Hoy solo se ven dentro de TRAMA.</p>
+          <p className="text-sm text-ink-soft">Los avisos por correo se activan cuando exista el servicio de email. Hoy solo se ven dentro de TRAMA.</p>
           <Checkbox label="Recibir avisos por correo electrónico" {...register('email')} />
           <Checkbox label="Solicitudes nuevas y respuestas" {...register('requests')} />
           <Checkbox label="Convocatorias por cerrar de mis favoritos" {...register('opportunities')} />
@@ -57,7 +57,7 @@ export default function SettingsPage() {
       </form>
       <Card className="mt-5 space-y-3 p-5">
         <h2 className="font-semibold">Membresía</h2>
-        <p className="text-sm">{user.plan ? `Plan ${user.plan.name}` : 'Plan Comunidad (gratis)'}</p>
+        <p className="text-sm">{user.plan ? `Membresía ${user.plan.name}` : 'Membresía Comunidad (gratis)'}</p>
         <Button variant="link" to="/mi-cuenta/membresia">Gestionar membresía</Button>
       </Card>
       <Card className="mt-5 flex flex-wrap gap-2 p-5">

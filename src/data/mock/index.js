@@ -7,14 +7,14 @@ import { professionals } from './professionals'
 import { opportunities } from './opportunities'
 import { resources } from './resources'
 import { membershipPlans, memberships } from './memberships'
-import { bookingRequests, showInquiries, serviceInquiries, applications } from './requests'
+import { bookingRequests, venueInquiries, showInquiries, serviceInquiries, applications } from './requests'
 import { conversations, messages, notifications, favorites } from './messaging'
 import { TAXONOMIES } from '@/constants/taxonomies'
 
 export function buildSeed() {
   return structuredClone({
     users, venues, venueAvailability: buildAvailability(), shows, professionals, opportunities, resources,
-    membershipPlans, memberships, bookingRequests, showInquiries, serviceInquiries, applications,
+    membershipPlans, memberships, bookingRequests, venueInquiries, showInquiries, serviceInquiries, applications,
     conversations, messages, notifications, favorites,
     taxonomies: TAXONOMIES,
     auditLog: [],

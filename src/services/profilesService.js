@@ -61,12 +61,13 @@ export const profilesService = {
       own(db.opportunities).filter((o) => o.status === 'published').length
     const receivedPending = [
       ...db.bookingRequests.filter((r) => own(db.venues).some((v) => v.id === r.venueId)),
+      ...(db.venueInquiries ?? []).filter((r) => own(db.venues).some((v) => v.id === r.venueId)),
       ...db.showInquiries.filter((r) => own(db.shows).some((s) => s.id === r.showId)),
       ...db.serviceInquiries.filter((r) => own(db.professionals).some((p) => p.id === r.serviceId)),
       ...db.applications.filter((r) => own(db.opportunities).some((o) => o.id === r.opportunityId)),
     ].filter((r) => OPEN_REQUEST_STATES.includes(r.status) && r.status !== 'draft').length
     const sentPending = [
-      ...db.bookingRequests, ...db.showInquiries, ...db.serviceInquiries,
+      ...db.bookingRequests, ...(db.venueInquiries ?? []), ...db.showInquiries, ...db.serviceInquiries,
     ].filter((r) => r.requesterId === user.id && OPEN_REQUEST_STATES.includes(r.status)).length +
       db.applications.filter((a) => a.applicantId === user.id && OPEN_REQUEST_STATES.includes(a.status)).length
     const convIds = new Set(db.conversations.filter((c) => c.participantIds.includes(user.id)).map((c) => c.id))

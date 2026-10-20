@@ -71,8 +71,9 @@ export default function ShowDetailPage() {
           ]} />
           {!isOwner && (
             <div className="grid gap-2">
-              <Button icon={MessageSquare} onClick={() => requireAuth(() => setModal('inquiry'))}>Consultar contratación</Button>
-              <Button variant="secondary" icon={Send} onClick={() => requireAuth(() => setModal('proposal'))}>Enviar propuesta</Button>
+              <Button icon={Send} onClick={() => requireAuth(() => setModal('proposal'))}>Pedir contratación</Button>
+              <Button variant="secondary" icon={MessageSquare} onClick={() => requireAuth(() => setModal('inquiry'))}>Hacer una consulta</Button>
+              <p className="text-sm text-ink-soft">Las respuestas te llegan a Mi cuenta › Solicitudes.</p>
             </div>
           )}
           {isOwner && <Button variant="secondary" to={`/publicar/espectaculo?id=${show.id}`}>Editar espectáculo</Button>}
@@ -116,7 +117,7 @@ export default function ShowDetailPage() {
               {downloads.map((d) => <Button key={d.href} variant="secondary" icon={Download} href={d.href} download>{d.label}</Button>)}
             </div>
           ) : <p className="text-sm text-ink-soft">No hay archivos descargables para este espectáculo.</p>}
-          {downloads.length > 0 && <p className="text-xs text-ink-soft">Archivos de ejemplo de la demo.</p>}
+          {downloads.length > 0 && <p className="text-sm text-ink-soft">Archivos de ejemplo de la demo.</p>}
         </div>
       </Section>
 

@@ -251,8 +251,39 @@ describe('indicadores de la cuenta', () => {
   it('se calculan con los datos reales', async () => {
     loginAs('u-lucia')
     const d = await profilesService.dashboard()
-    // Recibidas abiertas: br-1, br-3, br-4 (sus salas) + ap-1 (su convocatoria)
-    expect(d.receivedPending).toBe(4)
+    // Recibidas abiertas: br-1, br-3, br-4 y vi-1 (sus salas) + ap-1 (su convocatoria)
+    expect(d.receivedPending).toBe(5)
     expect(d.favorites).toBe(2)
+  })
+})
+
+describe('conversación de las solicitudes', () => {
+  it('la consulta a una sala es una solicitud con su conversación', async () => {
+    loginAs('u-mateo')
+    const q = await requestsService.createVenueInquiry({ venueId: 'v-urdimbre', message: '¿Tienen camarines con ducha?' })
+    expect(q.kind).toBe('venueInquiry')
+    expect(q.directionLabel).toBe('Enviaste')
+    expect(q.thread.map((m) => m.body)).toEqual(['¿Tienen camarines con ducha?'])
+    await expect(requestsService.createVenueInquiry({ venueId: 'v-urdimbre', message: '  ' })).rejects.toMatchObject({ code: 'validation' })
+  })
+
+  it('responder escribe en la conversación y pasa a "En conversación"', async () => {
+    loginAs('u-lucia')
+    const [vi] = (await requestsService.list({ box: 'received', kind: 'venueInquiry' }))
+    expect(vi.stateLabel).toBe('Sin responder')
+    expect(vi.actions).not.toContain('in_conversation')
+    const r = await requestsService.reply('venueInquiry', vi.id, 'Sí, la parrilla es fija.')
+    expect(r.status).toBe('in_conversation')
+    expect(r.thread.at(-1)).toMatchObject({ body: 'Sí, la parrilla es fija.', mine: true })
+    loginAs('u-sofia')
+    const [mine] = await requestsService.list({ box: 'sent', kind: 'venueInquiry' })
+    expect(mine.thread.at(-1)).toMatchObject({ body: 'Sí, la parrilla es fija.', mine: false })
+  })
+
+  it('no se puede escribir en una solicitud terminada', async () => {
+    loginAs('u-mateo')
+    const done = (await requestsService.list({ box: 'sent' })).find((r) => r.id === 'br-5') // rechazada
+    expect(done.canReply).toBe(false)
+    await expect(requestsService.reply(done.kind, done.id, 'Hola')).rejects.toMatchObject({ code: 'validation' })
   })
 })

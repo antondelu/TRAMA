@@ -35,7 +35,17 @@ function CatalogSearch({ value, onSubmit, placeholder }) {
 // grilla, paginación y todos los estados (carga, error, vacío).
 export function CatalogView({ filterDefs, sortOptions, fetcher, renderItem, searchPlaceholder, emptyTitle = 'No hay resultados con esos filtros', gridClass = 'sm:grid-cols-2 xl:grid-cols-3', itemNoun = ['resultado', 'resultados'] }) {
   const keys = ['q', 'sort', ...filterDefs.map((d) => d.key)]
-  const { filters, update, clear, activeCount } = useUrlFilters(keys)
+  const { filters, update: setFilters, clear, activeCount } = useUrlFilters(keys)
+  // Filtros que dependen de otro (Ciudad de Departamento): solo muestran las
+  // opciones que corresponden y se borran cuando cambia el filtro del que dependen.
+  const defs = filterDefs.map((d) => (d.dependsOn && filters[d.dependsOn]
+    ? { ...d, options: d.options.filter((o) => o.parent === filters[d.dependsOn]) } : d))
+  const update = (changes, opts) => {
+    const resets = Object.fromEntries(filterDefs
+      .filter((d) => d.dependsOn && d.dependsOn in changes && changes[d.dependsOn] !== filters[d.dependsOn] && !(d.key in changes))
+      .map((d) => [d.key, '']))
+    setFilters({ ...changes, ...resets }, opts)
+  }
   const [drawerOpen, setDrawerOpen] = useState(false)
   const query = useServiceQuery(() => fetcher(filters), [JSON.stringify(filters)])
   const data = query.data
@@ -48,7 +58,7 @@ export function CatalogView({ filterDefs, sortOptions, fetcher, renderItem, sear
   return (
     <PageContainer className="py-8">
       <div className="grid gap-8 lg:grid-cols-[17rem_1fr]">
-        <FilterSidebar defs={filterDefs} values={filters} onChange={update} onClear={() => clear()} activeCount={activeCount}
+        <FilterSidebar defs={defs} values={filters} onChange={update} onClear={() => clear()} activeCount={activeCount}
           mobileOpen={drawerOpen} onMobileClose={() => setDrawerOpen(false)} resultCount={data?.total} />
         <div className="min-w-0 space-y-5">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -60,7 +70,7 @@ export function CatalogView({ filterDefs, sortOptions, fetcher, renderItem, sear
               <SortControl options={sortOptions} value={filters.sort} onChange={(sort) => update({ sort })} />
             </div>
           </div>
-          <FilterChips defs={filterDefs} values={filters} onChange={update} onClear={() => clear()} />
+          <FilterChips defs={defs} values={filters} onChange={update} onClear={() => clear()} />
           <p className="text-sm text-ink-soft" aria-live="polite">
             {data && `${data.total} ${data.total === 1 ? itemNoun[0] : itemNoun[1]}${filters.q ? ` para "${filters.q}"` : ''}`}
           </p>

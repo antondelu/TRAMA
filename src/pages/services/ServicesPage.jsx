@@ -22,7 +22,7 @@ export default function ServicesPage() {
   const filterDefs = useMemo(() => [
     { key: 'specialty', primary: true, label: 'Especialidad', type: 'select', options: tax.specialties },
     { key: 'department', primary: true, label: 'Departamento', type: 'select', placeholder: 'Todos', options: uy.departments.map((d) => ({ id: d, label: d })) },
-    { key: 'city', label: 'Ciudad', type: 'select', options: uy.cities.map((c) => ({ id: c.name, label: c.name })) },
+    { key: 'city', label: 'Ciudad', type: 'select', dependsOn: 'department', options: uy.cities.map((c) => ({ id: c.name, label: c.name, parent: c.department })) },
     { key: 'availability', label: 'Disponibilidad', type: 'select', options: tax.serviceAvailability },
     { key: 'workMode', primary: true, label: 'Modalidad', type: 'select', options: tax.workModes },
     { key: 'priceMax', label: 'Precio orientativo hasta (UYU)', chipLabel: 'Hasta', unit: 'UYU', type: 'number' },

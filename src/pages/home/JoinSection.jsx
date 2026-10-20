@@ -15,7 +15,7 @@ export function JoinSection() {
           <p className="mx-auto mt-3 max-w-md text-white/65">Publicar es gratis.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button to="/publicar" size="lg" className="bg-white !text-brand shadow-none hover:bg-[rgb(255_241_214)]" iconRight={ArrowRight}>Publicar en TRAMA</Button>
-            <Button to="/oportunidades" size="lg" variant="ghost" className="text-white hover:bg-white/10">Ver oportunidades</Button>
+            <Button to="/oportunidades" size="lg" variant="ghost" className="text-white hover:bg-white/10">Ver convocatorias</Button>
           </div>
         </Stage>
       </PageContainer>

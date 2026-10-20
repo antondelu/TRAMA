@@ -36,10 +36,10 @@ export default function MembershipPage() {
     setBusy(true)
     try {
       await membershipsService.activateDemo(choice.planId, choice.billing)
-      success(chosenPlan.price ? `Plan ${chosenPlan.name} activado en modo demo` : 'Volviste al plan Comunidad', 'No se realizó ningún cobro.')
+      success(chosenPlan.price ? `Membresía ${chosenPlan.name} activada en modo demo` : 'Volviste a la membresía Comunidad', 'No se realizó ningún cobro.')
       setChoice(null)
     } catch (e) {
-      showError('No se pudo cambiar el plan', e.message)
+      showError('No se pudo cambiar la membresía', e.message)
     } finally {
       setBusy(false)
     }
@@ -60,10 +60,10 @@ export default function MembershipPage() {
 
   return (
     <>
-      <AccountHeader title="Membresía" description="Tu plan actual, sus beneficios y el historial." />
-      <DemoNotice className="mb-6">Sin pagos reales: activar un plan solo cambia datos de esta demo. {INTEGRATIONS.payments.note}</DemoNotice>
+      <AccountHeader title="Membresía" description="Tu membresía actual, sus beneficios y el historial." />
+      <DemoNotice className="mb-6">Sin pagos reales: activar una membresía solo cambia datos de esta demo. {INTEGRATIONS.payments.note}</DemoNotice>
       <div className="mb-8 rounded-[var(--radius-card)] border border-line bg-surface p-5">
-        <p className="text-sm text-ink-soft">Plan actual</p>
+        <p className="text-sm text-ink-soft">Membresía actual</p>
         <p className="mt-1 font-display text-2xl font-semibold">{plan?.name ?? 'Comunidad'}</p>
         {membership ? (
           <p className="mt-1 text-sm">
@@ -74,7 +74,7 @@ export default function MembershipPage() {
         {membership && <Button variant="secondary" size="sm" className="mt-4" onClick={() => setCancelOpen(true)}>Cancelar membresía</Button>}
       </div>
 
-      <h2 className="mb-4 font-display text-2xl font-semibold">Cambiar de plan</h2>
+      <h2 className="mb-4 font-display text-2xl font-semibold">Cambiar de membresía</h2>
       <div className="grid gap-5 lg:grid-cols-3">
         {plans.data.map((p) => (
           <PlanCard key={p.id} plan={p} billing={choice?.planId === p.id ? choice.billing : 'monthly'} current={(plan?.id ?? 'plan-comunidad') === p.id}

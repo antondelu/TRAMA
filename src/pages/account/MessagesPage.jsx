@@ -66,7 +66,7 @@ function Conversation({ id, onBack }) {
           <label htmlFor="msg-body" className="sr-only">Escribir un mensaje</label>
           <textarea id="msg-body" rows={2} value={body} onChange={(e) => setBody(e.target.value)} placeholder="Escribí un mensaje…" maxLength={4000}
             onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) onSubmit(e) }}
-            className="min-h-11 flex-1 resize-none rounded-lg border border-line-strong bg-surface px-3 py-2 text-sm" />
+            className="min-h-11 flex-1 resize-none rounded-lg border border-field bg-surface px-3 py-2 text-sm" />
           <Button type="submit" size="icon" loading={sending} disabled={!body.trim()} aria-label="Enviar mensaje">{!sending && <Send aria-hidden className="size-4" />}</Button>
         </div>
       </form>
@@ -83,11 +83,11 @@ export default function MessagesPage() {
 
   return (
     <>
-      <AccountHeader title="Mensajes" description="Conversaciones con salas, compañías y profesionales." />
+      <AccountHeader title="Mensajes" description="Conversaciones sueltas. Las consultas, reservas y pedidos tienen su conversación adentro de cada solicitud." actions={<Button variant="secondary" to="/mi-cuenta/solicitudes">Ir a Solicitudes</Button>} />
       <DemoNotice className="mb-4">Mensajes de demostración. No es un chat en tiempo real: en esta versión nadie más recibe lo que escribís.</DemoNotice>
       {error ? <ErrorState error={error} onRetry={reload} /> : !data ? <LoadingSkeleton variant="list" count={3} />
         : data.length === 0 ? (
-          <EmptyState icon={MessageSquare} title="Todavía no tenés conversaciones" description='Usá "Enviar consulta" en una sala, espectáculo o perfil para empezar una.' />
+          <EmptyState icon={MessageSquare} title="Todavía no tenés conversaciones" description="Lo que consultes desde una sala, un espectáculo o un perfil queda en Solicitudes, con su conversación." action={<Button variant="secondary" to="/mi-cuenta/solicitudes">Ir a Solicitudes</Button>} />
         ) : (
           <div className="grid min-h-[32rem] overflow-hidden rounded-[var(--radius-card)] border border-line bg-surface md:grid-cols-[18rem_1fr]">
             <ul className={cn('divide-y divide-line border-line md:border-r', selected && 'hidden md:block')} aria-label="Conversaciones">

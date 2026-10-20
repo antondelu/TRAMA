@@ -1,6 +1,8 @@
-// Solicitudes: reservas de sala, consultas de contratación (espectáculos y
-// servicios) y postulaciones a convocatorias. Cada tipo tiene su colección y
-// su máquina de estados (utils/workflows.js).
+// Solicitudes: reservas de sala, consultas (a una sala, de contratación de un
+// espectáculo o de un servicio) y postulaciones a convocatorias. Cada tipo tiene
+// su colección y su máquina de estados (utils/workflows.js), y cada solicitud
+// tiene su conversación adentro (`messages`): todo lo que se habla sobre un
+// pedido queda en un solo lugar.
 //
 // En la demo nada de esto es una reserva ni una contratación real. Las reglas
 // de concurrencia definitivas (doble reserva) tienen que vivir en el backend.
@@ -27,6 +29,11 @@ const KIND_META = {
     entity: (r) => getDb().venues.find((v) => v.id === r.venueId),
     entityType: 'venue', entityTitle: (e) => e?.name,
   },
+  venueInquiry: {
+    sender: (r) => r.requesterId,
+    entity: (r) => getDb().venues.find((v) => v.id === r.venueId),
+    entityType: 'venue', entityTitle: (e) => e?.name,
+  },
   showInquiry: {
     sender: (r) => r.requesterId,
     entity: (r) => getDb().shows.find((s) => s.id === r.showId),
@@ -45,7 +52,27 @@ const KIND_META = {
 }
 
 const receiverOf = (kind, r) => KIND_META[kind].entity(r)?.ownerId
-const collectionOf = (kind) => getDb()[REQUEST_KINDS[kind].collection]
+// Los datos guardados de antes de existir un tipo no tienen su colección: se crea vacía.
+const collectionOf = (kind) => {
+  const key = REQUEST_KINDS[kind]?.collection
+  if (!key) return undefined
+  const db = getDb()
+  if (!db[key]) db[key] = []
+  return db[key]
+}
+
+// Estados en los que ya no se puede escribir: el pedido terminó.
+const CLOSED_STATES = ['rejected', 'cancelled', 'completed', 'withdrawn']
+
+// Conversación de la solicitud: el mensaje con el que se envió y las respuestas.
+function threadOf(kind, r, userId) {
+  const senderId = KIND_META[kind].sender(r)
+  const first = r.message || r.proposal || r.projectDescription
+  return [
+    ...(first ? [{ id: `${r.id}-first`, by: senderId, body: first, at: r.createdAt }] : []),
+    ...(r.messages ?? []),
+  ].map((m) => ({ ...m, mine: m.by === userId, senderName: fullName(m.by) }))
+}
 
 function sideOf(kind, r, userId) {
   if (KIND_META[kind].sender(r) === userId) return 'sender'
@@ -72,12 +99,16 @@ function view(kind, r, userId) {
     kindLabel: REQUEST_KINDS[kind].label,
     side,
     stateLabel: stateLabelFor(r.status, side),
+    directionLabel: side === 'sender' ? 'Enviaste' : 'Te enviaron',
+    thread: threadOf(kind, r, userId),
+    canReply: Boolean(side) && r.status !== 'draft' && !CLOSED_STATES.includes(r.status),
     entityType: meta.entityType,
     entitySlug: entity?.slug,
     entityTitle: meta.entityTitle(entity) ?? 'Publicación eliminada',
     counterpartName: fullName(counterpartId),
     senderName: fullName(meta.sender(r)),
-    actions,
+    // "Responder" ya no es un cambio de estado suelto: se responde escribiendo (reply).
+    actions: actions.filter((to) => to !== 'in_conversation'),
     canAcceptProposal: kind === 'booking' && side === 'sender' && r.status === 'in_conversation' && Boolean(r.proposedDate),
     conflicts: kind === 'booking' ? bookingConflicts(r).map((x) => ({ id: x.id, status: x.status, requester: fullName(x.requesterId) })) : [],
   }
@@ -123,6 +154,16 @@ export const requestsService = {
       venueId, date, timeSlot, activityType, functionCount: Number(functionCount) || 0, message: message ?? '',
       startDateTime: `${date}T00:00:00-03:00`, endDateTime: `${date}T23:59:00-03:00`, proposedDate: null,
     }, 'requesterId', { asDraft, notifyTitle: `Nueva solicitud de reserva para ${venue.name}` })
+  },
+
+  async createVenueInquiry({ venueId, message }) {
+    await latency(250)
+    const user = requireUser()
+    const venue = getDb().venues.find((v) => v.id === venueId && v.publicationStatus === 'published' && !v.deletedAt)
+    assertNotOwn(venue, user)
+    const text = String(message ?? '').trim()
+    if (!text) throw invalid('Escribí tu consulta.', { message: 'Escribí tu consulta' })
+    return create('venueInquiry', { venueId, message: text }, 'requesterId', { notifyTitle: `Consulta sobre ${venue.name}` })
   },
 
   async createShowInquiry({ showId, organization, venueName, requestedDates, functionCount, message, asDraft }) {
@@ -232,6 +273,31 @@ export const requestsService = {
     pushNotification(otherId, side === 'receiver' ? 'request_response' : 'status_change',
       `${REQUEST_KINDS[kind].label}: ${stateLabelFor(to, side === 'sender' ? 'receiver' : 'sender')}`,
       `${entityTitle}${note ? ` — ${note}` : ''}`, '/mi-cuenta/solicitudes')
+    commit()
+    return clone(view(kind, r, user.id))
+  },
+
+  // Escribir en la conversación de una solicitud. Si responde quien la recibió y
+  // todavía estaba sin responder, pasa a "En conversación".
+  async reply(kind, id, body) {
+    await latency(150)
+    const user = requireUser()
+    const r = collectionOf(kind)?.find((x) => x.id === id)
+    if (!r) throw notFound('La solicitud')
+    const side = sideOf(kind, r, user.id)
+    if (!side) throw forbidden()
+    if (r.status === 'draft') throw invalid('Primero enviá la solicitud.')
+    if (CLOSED_STATES.includes(r.status)) throw invalid('Esta solicitud ya terminó: no se pueden agregar mensajes.')
+    const text = String(body ?? '').trim()
+    if (!text) throw invalid('Escribí un mensaje.', { body: 'Escribí un mensaje' })
+    if (text.length > 4000) throw invalid('El mensaje no puede superar 4000 caracteres.', { body: 'Máximo 4000 caracteres' })
+    const now = nowISO()
+    r.messages = [...(r.messages ?? []), { id: newId('rm'), by: user.id, body: text, at: now }]
+    if (side === 'receiver' && canTransitionRequest(kind, r.status, 'in_conversation', side)) record(r, user.id, r.status, 'in_conversation')
+    r.updatedAt = now
+    const entityTitle = KIND_META[kind].entityTitle(KIND_META[kind].entity(r))
+    const otherId = side === 'sender' ? receiverOf(kind, r) : KIND_META[kind].sender(r)
+    pushNotification(otherId, 'new_message', `${user.firstName} ${user.lastName} te respondió`, entityTitle, '/mi-cuenta/solicitudes')
     commit()
     return clone(view(kind, r, user.id))
   },

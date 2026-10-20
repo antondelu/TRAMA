@@ -52,9 +52,9 @@ export default function AccountOverviewPage() {
             <Card className="p-5">
               <h2 className="font-semibold">Membresía</h2>
               {user.plan ? (
-                <p className="mt-1 text-sm">Plan <strong>{user.plan.name}</strong>, activo hasta el {formatDate(user.membership.endAt.slice(0, 10))}.{user.membership.demo && ' (Activado en modo demo, sin cobro.)'}</p>
-              ) : <p className="mt-1 text-sm text-ink-soft">Estás en el plan Comunidad (gratis).</p>}
-              <Button variant="link" to="/mi-cuenta/membresia" className="mt-3">{user.plan ? 'Ver membresía' : 'Conocer los planes'}</Button>
+                <p className="mt-1 text-sm">Membresía <strong>{user.plan.name}</strong>, activa hasta el {formatDate(user.membership.endAt.slice(0, 10))}.{user.membership.demo && ' (Activado en modo demo, sin cobro.)'}</p>
+              ) : <p className="mt-1 text-sm text-ink-soft">Tenés la membresía Comunidad (gratis).</p>}
+              <Button variant="link" to="/mi-cuenta/membresia" className="mt-3">{user.plan ? 'Ver membresía' : 'Conocer las membresías'}</Button>
             </Card>
           </div>
           <div>

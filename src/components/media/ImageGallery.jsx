@@ -10,8 +10,8 @@ export function ImageGallery({ images = [], title, kind, icon, seed }) {
   if (!images.length) {
     return (
       <figure>
-        <Cover kind={kind} icon={icon} seed={seed} alt={`${title}: sin fotografías cargadas`} ratio="aspect-[16/9] sm:aspect-[21/9]" className="rounded-[var(--radius-card)]" />
-        <figcaption className="mt-2 text-xs text-ink-soft">Todavía no hay fotografías cargadas para esta publicación.</figcaption>
+        {/* Sin foto, la portada es más baja: en celular no empuja hacia abajo el nombre y las acciones. */}
+        <Cover kind={kind} icon={icon} seed={seed} alt={`${title}: sin fotos cargadas`} ratio="aspect-[3/1] sm:aspect-[21/9]" className="rounded-[var(--radius-card)]" />
       </figure>
     )
   }

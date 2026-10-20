@@ -53,6 +53,6 @@ export function StatusBadge({ status, label, className }) {
 // Etiqueta de acceso de un recurso.
 export function AccessBadge({ accessLevel }) {
   if (accessLevel === 'public') return <Badge tone="accent" icon={Unlock}>Gratuito</Badge>
-  if (accessLevel === 'premium') return <Badge tone="brand" icon={Lock}>Plan Profesional</Badge>
+  if (accessLevel === 'premium') return <Badge tone="brand" icon={Lock}>Membresía Profesional</Badge>
   return <Badge tone="brand" icon={Lock}>Miembros</Badge>
 }

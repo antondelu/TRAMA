@@ -11,7 +11,7 @@ export const EDITABLE_TAXONOMIES = {
   specialties: 'Especialidades de servicios',
   venueTypes: 'Tipos de espacio',
   equipment: 'Equipamiento técnico',
-  opportunityTypes: 'Tipos de oportunidad',
+  opportunityTypes: 'Tipos de convocatoria',
   resourceCategories: 'Categorías de recursos',
 }
 

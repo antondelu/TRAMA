@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CalendarClock } from 'lucide-react'
+import { CalendarClock, Reply } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Modal } from '@/components/ui/Modal'
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
@@ -16,7 +16,7 @@ import { formatDate } from '@/utils/format'
 const NEEDS_CONFIRM = ['rejected', 'cancelled', 'withdrawn', 'accepted']
 const DANGER = ['rejected', 'cancelled', 'withdrawn']
 
-export function RequestActions({ request: r }) {
+export function RequestActions({ request: r, onReply }) {
   const { success } = useToast()
   const [pending, setPending] = useState(null) // { to, note }
   const [proposeOpen, setProposeOpen] = useState(false)
@@ -68,11 +68,12 @@ export function RequestActions({ request: r }) {
   }
 
   const canPropose = r.kind === 'booking' && r.side === 'receiver' && ['sent', 'in_conversation'].includes(r.status)
-  if (!r.actions.length && !canPropose && !r.canAcceptProposal) return null
+  if (!r.actions.length && !canPropose && !r.canAcceptProposal && !r.canReply) return null
 
   return (
     <div className="space-y-2">
       <div className="flex flex-wrap gap-2">
+        {r.canReply && onReply && <Button size="sm" variant={r.actions.includes('accepted') ? 'secondary' : 'primary'} icon={Reply} onClick={onReply}>Responder</Button>}
         {r.canAcceptProposal && <Button size="sm" variant="accent" loading={busy} onClick={acceptProposal}>Aceptar fecha propuesta ({formatDate(r.proposedDate)})</Button>}
         {r.actions.map((to) => (
           <Button key={to} size="sm" variant={DANGER.includes(to) ? 'secondary' : to === 'accepted' ? 'primary' : 'secondary'}

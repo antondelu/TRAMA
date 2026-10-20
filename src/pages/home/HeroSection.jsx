@@ -33,7 +33,7 @@ export function HeroSection() {
           ))}
         </nav>
         <div className="enter mt-10 flex flex-wrap justify-center gap-3" style={{ '--d': '1500ms' }}>
-          <Button size="lg" to="/salas" iconRight={ArrowRight} className="bg-white !text-brand shadow-none hover:bg-[rgb(255_241_214)]">Explorar TRAMA</Button>
+          <Button size="lg" to="/salas" iconRight={ArrowRight} className="bg-white !text-brand shadow-none hover:bg-[rgb(255_241_214)]">Ver salas</Button>
           <Button size="lg" variant="ghost" to="/publicar" className="text-white hover:bg-white/10">Publicar en TRAMA</Button>
         </div>
       </PageContainer>

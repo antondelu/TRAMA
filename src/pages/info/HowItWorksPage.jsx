@@ -25,7 +25,7 @@ export default function HowItWorksPage() {
   return (
     <>
       <PageHeader eyebrow="Cómo funciona" title="Un mercado hecho para el sector."
-        description="TRAMA reúne la oferta y la demanda de las artes escénicas: espacios, obras, profesionales, oportunidades y conocimiento."
+        description="TRAMA reúne la oferta y la demanda de las artes escénicas: espacios, obras, profesionales, convocatorias y conocimiento."
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Cómo funciona' }]} />
       <PageContainer className="py-12">
         {/* Un hilo une los números de los pasos: corre dentro de cada tarjeta y,

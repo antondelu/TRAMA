@@ -54,7 +54,7 @@ export function FilterField({ def, value, onChange }) {
       <div className="space-y-1">
         <label htmlFor={id} className="text-sm font-semibold">{def.label}</label>
         <input id={id} type="date" value={value} min={def.min} onChange={(e) => onChange(e.target.value)} className={inputClasses(false)} />
-        {def.hint && <p className="text-xs text-ink-soft">{def.hint}</p>}
+        {def.hint && <p className="text-sm text-ink-soft">{def.hint}</p>}
       </div>
     )
   }

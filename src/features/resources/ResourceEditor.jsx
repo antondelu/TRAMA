@@ -69,7 +69,7 @@ export function ResourceEditor({ open, onClose, resource }) {
           </FormField>
           <FormField label="Dirección (slug)" hint="Se genera del título. Solo minúsculas y guiones." error={errors.slug?.message}><Input {...register('slug')} /></FormField>
           <FormField label="Autor o responsable" required error={errors.author?.message}><Input {...register('author')} /></FormField>
-          <FormField label="Acceso" required><Select options={[{ id: 'public', label: 'Gratuito' }, { id: 'member', label: 'Miembros' }, { id: 'premium', label: 'Plan Profesional' }]} {...register('accessLevel')} /></FormField>
+          <FormField label="Acceso" required><Select options={[{ id: 'public', label: 'Gratuito' }, { id: 'member', label: 'Miembros' }, { id: 'premium', label: 'Membresía Profesional' }]} {...register('accessLevel')} /></FormField>
           <FormField label="Formato" required error={errors.resourceType?.message}><Select placeholder="Elegí" options={tax.resourceTypes} {...register('resourceType')} /></FormField>
           <FormField label="Categoría" required error={errors.category?.message}><Select placeholder="Elegí" options={tax.resourceCategories} {...register('category')} /></FormField>
           <FormField label="Duración (minutos)" hint="Opcional" error={errors.durationMinutes?.message}><Input type="number" min={1} {...register('durationMinutes')} /></FormField>

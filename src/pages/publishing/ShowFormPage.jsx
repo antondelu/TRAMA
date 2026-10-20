@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { PublicationFormShell, FormSection } from '@/features/publishing/PublicationFormShell'
 import { usePublicationForm } from '@/features/publishing/usePublicationForm'
 import { toLines, fromLines, emptyToNull, optionalNumber, requiredNumber, slugField, httpsUrl } from '@/features/publishing/formHelpers'
+import { LinesInput } from '@/components/forms/LinesInput'
 import { FormField, Input, Textarea, Select, CheckboxGroup, Checkbox } from '@/components/forms/FormField'
 import { FileUpload } from '@/components/forms/FileUpload'
 import { ShowCard, SHOW_AVAILABILITY } from '@/components/cards/ShowCard'
@@ -80,14 +81,13 @@ export default function ShowFormPage() {
   useDocumentTitle(ctl.editId ? 'Editar espectáculo' : 'Publicar un espectáculo')
   const { tax } = useTaxonomies()
   const uy = configService.countries()[0]
-  const { register, control, watch, formState: { errors } } = ctl.form
+  const { register, control, formState: { errors } } = ctl.form
 
   return (
     <PublicationFormShell ctl={ctl} kindLabel="espectáculo" title={ctl.editId ? 'Editar espectáculo' : 'Publicá tu espectáculo'}
       preview={(d) => <ShowCard show={{ ...toPayload(d), id: 'preview', slug: d.slug || 'vista-previa', title: d.title || 'Título', durationMinutes: Number(d.durationMinutes) || 0, castSize: Number(d.castSize) || 0 }} />}>
       <FormSection title="La obra">
-        <FormField label="Título" required error={errors.title?.message}><Input {...register('title', { onBlur: ctl.fillSlug })} /></FormField>
-        <FormField label="Dirección en TRAMA (slug)" hint={`trama.uy/espectaculos/${watch('slug') || 'titulo'}`} error={errors.slug?.message}><Input {...register('slug')} /></FormField>
+        <FormField label="Título" required error={errors.title?.message}><Input {...register('title')} /></FormField>
         <div className="grid gap-4 sm:grid-cols-2">
           <FormField label="Compañía o responsable" required error={errors.company?.message}><Input {...register('company')} /></FormField>
           <FormField label="Ciudad de origen" required error={errors.city?.message}><Select placeholder="Elegí" options={uy.cities.map((c) => ({ id: c.name, label: c.name }))} {...register('city')} /></FormField>
@@ -102,7 +102,7 @@ export default function ShowFormPage() {
         <FormField label="Descripción completa" error={errors.description?.message}><Textarea rows={5} {...register('description')} /></FormField>
       </FormSection>
 
-      <FormSection title="Ficha artística" description="En Elenco y Otros créditos, una persona por línea.">
+      <FormSection title="Ficha artística">
         <div className="grid gap-4 sm:grid-cols-2">
           <FormField label="Dirección"><Input {...register('direction')} /></FormField>
           <FormField label="Dramaturgia"><Input {...register('dramaturgy')} /></FormField>
@@ -113,8 +113,8 @@ export default function ShowFormPage() {
           <FormField label="Vestuario"><Input {...register('costume')} /></FormField>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          <FormField label="Elenco"><Textarea rows={3} {...register('cast')} /></FormField>
-          <FormField label="Otros créditos"><Textarea rows={3} {...register('others')} /></FormField>
+          <FormField label="Elenco"><Controller control={control} name="cast" render={({ field }) => <LinesInput {...field} addLabel="Agregar intérprete" placeholder="Nombre y apellido" />} /></FormField>
+          <FormField label="Otros créditos"><Controller control={control} name="others" render={({ field }) => <LinesInput {...field} addLabel="Agregar crédito" placeholder="Ej. Asistencia: Ana Pérez" />} /></FormField>
         </div>
       </FormSection>
 
@@ -133,7 +133,7 @@ export default function ShowFormPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <FormField label="Requerimientos de iluminación"><Textarea rows={2} {...register('lightingReq')} /></FormField>
           <FormField label="Requerimientos de sonido"><Textarea rows={2} {...register('soundReq')} /></FormField>
-          <FormField label="Equipamiento necesario" hint="Uno por línea"><Textarea rows={2} {...register('equipment')} /></FormField>
+          <FormField label="Equipamiento necesario"><Controller control={control} name="equipment" render={({ field }) => <LinesInput {...field} addLabel="Agregar equipo" placeholder="Ej. Máquina de humo" />} /></FormField>
           <FormField label="Transporte"><Textarea rows={2} {...register('transport')} /></FormField>
         </div>
         <FormField label="Condiciones de gira"><Textarea rows={2} {...register('touringConditions')} /></FormField>

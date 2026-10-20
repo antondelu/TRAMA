@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { PublicationFormShell, FormSection } from '@/features/publishing/PublicationFormShell'
 import { usePublicationForm } from '@/features/publishing/usePublicationForm'
 import { toLines, fromLines, emptyToNull, optionalNumber, requiredNumber, slugField } from '@/features/publishing/formHelpers'
+import { LinesInput } from '@/components/forms/LinesInput'
 import { FormField, Input, Textarea, Select, CheckboxGroup } from '@/components/forms/FormField'
 import { FileUpload } from '@/components/forms/FileUpload'
 import { VenueCard } from '@/components/cards/VenueCard'
@@ -82,8 +83,7 @@ export default function VenueFormPage() {
     <PublicationFormShell ctl={ctl} kindLabel="sala" title={ctl.editId ? 'Editar sala' : 'Registrá tu sala'}
       preview={(d) => <VenueCard venue={{ ...toPayload(d), id: 'preview', slug: d.slug || 'vista-previa', name: d.name || 'Nombre de la sala', hasOpenCall: false, nextAvailable: null }} />}>
       <FormSection title="Datos principales">
-        <FormField label="Nombre" required error={errors.name?.message}><Input {...register('name', { onBlur: ctl.fillSlug })} /></FormField>
-        <FormField label="Dirección en TRAMA (slug)" hint={`trama.uy/salas/${watch('slug') || 'nombre-de-la-sala'}`} error={errors.slug?.message}><Input {...register('slug')} /></FormField>
+        <FormField label="Nombre" required error={errors.name?.message}><Input {...register('name')} /></FormField>
         <FormField label="Descripción" required error={errors.description?.message}><Textarea rows={4} {...register('description')} /></FormField>
         <div className="grid gap-4 sm:grid-cols-2">
           <FormField label="Departamento" required error={errors.department?.message}><Select placeholder="Elegí" options={uy.departments.map((d) => ({ id: d, label: d }))} {...register('department', { onChange: () => setValue('city', '') })} /></FormField>
@@ -97,7 +97,7 @@ export default function VenueFormPage() {
         )} />
       </FormSection>
 
-      <FormSection title="Características técnicas" description="Una línea por elemento en las listas.">
+      <FormSection title="Características técnicas">
         <div className="grid gap-4 sm:grid-cols-3">
           <FormField label="Ancho (m)" error={errors.width?.message}><Input type="number" step="0.1" {...register('width')} /></FormField>
           <FormField label="Fondo (m)" error={errors.depth?.message}><Input type="number" step="0.1" {...register('depth')} /></FormField>
@@ -105,10 +105,10 @@ export default function VenueFormPage() {
         </div>
         <FormField label="Tipo de escenario"><Input {...register('stageType')} /></FormField>
         <div className="grid gap-4 sm:grid-cols-2">
-          <FormField label="Iluminación"><Textarea rows={3} {...register('lighting')} /></FormField>
-          <FormField label="Sonido"><Textarea rows={3} {...register('sound')} /></FormField>
+          <FormField label="Iluminación"><Controller control={control} name="lighting" render={({ field }) => <LinesInput {...field} addLabel="Agregar equipo" placeholder="Ej. 12 PC 1 kW" />} /></FormField>
+          <FormField label="Sonido"><Controller control={control} name="sound" render={({ field }) => <LinesInput {...field} addLabel="Agregar equipo" placeholder="Ej. Consola de 16 canales" />} /></FormField>
           <FormField label="Camerinos" error={errors.dressingRooms?.message}><Input type="number" min={0} {...register('dressingRooms')} /></FormField>
-          <FormField label="Otras instalaciones"><Textarea rows={3} {...register('otherFacilities')} /></FormField>
+          <FormField label="Otras instalaciones"><Controller control={control} name="otherFacilities" render={({ field }) => <LinesInput {...field} addLabel="Agregar instalación" placeholder="Ej. Foyer" />} /></FormField>
         </div>
         <Controller control={control} name="equipment" render={({ field }) => <CheckboxGroup legend="Equipamiento" columns={3} options={tax.equipment} value={field.value} onChange={field.onChange} />} />
         <Controller control={control} name="accessibility" render={({ field }) => <CheckboxGroup legend="Accesibilidad" options={tax.accessibility} value={field.value} onChange={field.onChange} />} />
@@ -126,8 +126,8 @@ export default function VenueFormPage() {
         <FormField label="Duración mínima" hint="Ej. 2 funciones, 4 horas"><Input {...register('minDuration')} /></FormField>
         <FormField label="Condiciones de uso"><Textarea rows={3} {...register('conditions')} /></FormField>
         <div className="grid gap-4 sm:grid-cols-2">
-          <FormField label="Servicios incluidos"><Textarea rows={3} {...register('includedServices')} /></FormField>
-          <FormField label="Gastos adicionales"><Textarea rows={3} {...register('extraCosts')} /></FormField>
+          <FormField label="Servicios incluidos"><Controller control={control} name="includedServices" render={({ field }) => <LinesInput {...field} addLabel="Agregar servicio" placeholder="Ej. Técnico de sala" />} /></FormField>
+          <FormField label="Gastos adicionales"><Controller control={control} name="extraCosts" render={({ field }) => <LinesInput {...field} addLabel="Agregar gasto" placeholder="Ej. Limpieza" />} /></FormField>
         </div>
       </FormSection>
 

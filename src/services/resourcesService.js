@@ -13,7 +13,7 @@ import { slugify } from '@/utils/slug'
 export const ACCESS_LEVELS = {
   public: { label: 'Gratuito', permission: null },
   member: { label: 'Miembros', permission: 'resources:member' },
-  premium: { label: 'Plan Profesional', permission: 'resources:premium' },
+  premium: { label: 'Membresía Profesional', permission: 'resources:premium' },
 }
 
 export function canAccess(resource, user = currentUser()) {

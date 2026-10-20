@@ -14,7 +14,7 @@ import { OPPORTUNITY_STATES } from '@/utils/workflows'
 import { formatDate } from '@/utils/format'
 
 export default function AdminOpportunitiesPage() {
-  useDocumentTitle('Oportunidades')
+  useDocumentTitle('Convocatorias')
   const { success, error: showError } = useToast()
   const [status, setStatus] = useState('')
   const [closing, setClosing] = useState(null)
@@ -32,7 +32,7 @@ export default function AdminOpportunitiesPage() {
 
   return (
     <>
-      <AdminHeader title="Oportunidades" description="Todas las convocatorias, con su estado real. Las vencidas se calculan por fecha."
+      <AdminHeader title="Convocatorias" description="Todas las convocatorias, con su estado real. Las vencidas se calculan por fecha."
         actions={(
           <label><span className="sr-only">Estado</span>
             <select value={status} onChange={(e) => setStatus(e.target.value)} className={inputClasses(false)}>

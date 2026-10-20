@@ -51,7 +51,7 @@ export function VenueAvailability({ venueId, onRequest }) {
           <ul className="mt-1 space-y-0.5 text-ink-soft">
             {Object.entries(result.summary).map(([s, n]) => <li key={s}>{DAY_STATUS[s].label}: {n} {n === 1 ? 'día' : 'días'}</li>)}
           </ul>
-          <p className="mt-2 text-xs text-ink-soft">La disponibilidad la informa la sala. Una solicitud no es una reserva hasta que la sala la acepta.</p>
+          <p className="mt-2 text-sm text-ink-soft">La disponibilidad la informa la sala. Una solicitud no es una reserva hasta que la sala la acepta.</p>
         </div>
       )}
     </div>

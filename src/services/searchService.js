@@ -12,7 +12,7 @@ const SOURCES = {
   salas: { service: venuesService, type: 'venue', label: 'Salas', map: (v) => ({ title: v.name, subtitle: `${v.city} · ${v.capacity} personas` }) },
   espectaculos: { service: showsService, type: 'show', label: 'Espectáculos', map: (s) => ({ title: s.title, subtitle: s.company }) },
   servicios: { service: servicesService, type: 'service', label: 'Servicios', map: (p) => ({ title: p.name, subtitle: p.headline }) },
-  oportunidades: { service: opportunitiesService, type: 'opportunity', label: 'Oportunidades', map: (o) => ({ title: o.title, subtitle: o.organizationName }) },
+  oportunidades: { service: opportunitiesService, type: 'opportunity', label: 'Convocatorias', map: (o) => ({ title: o.title, subtitle: o.organizationName }) },
   recursos: { service: resourcesService, type: 'resource', label: 'Recursos', map: (r) => ({ title: r.title, subtitle: r.author }) },
 }
 

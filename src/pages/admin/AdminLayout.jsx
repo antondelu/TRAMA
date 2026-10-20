@@ -10,7 +10,7 @@ const ITEMS = [
   { to: '/admin', label: 'Resumen', icon: LayoutDashboard, end: true, permission: 'admin:access' },
   { to: '/admin/usuarios', label: 'Usuarios', icon: Users, permission: 'admin:users' },
   { to: '/admin/publicaciones', label: 'Moderación', icon: ShieldCheck, permission: 'admin:moderate' },
-  { to: '/admin/oportunidades', label: 'Oportunidades', icon: Megaphone, permission: 'admin:moderate' },
+  { to: '/admin/oportunidades', label: 'Convocatorias', icon: Megaphone, permission: 'admin:moderate' },
   { to: '/admin/recursos', label: 'Recursos', icon: Library, permission: 'resources:manage' },
   { to: '/admin/membresias', label: 'Membresías', icon: BadgeDollarSign, permission: 'admin:plans' },
   { to: '/admin/reportes', label: 'Reportes', icon: BarChart3, permission: 'admin:reports' },

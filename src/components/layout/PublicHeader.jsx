@@ -26,9 +26,10 @@ export function PublicHeader() {
               <AccountMenu />
             </>
           ) : (
-            <div className="hidden items-center gap-1.5 sm:flex">
+            <div className="flex items-center gap-1.5">
+              {/* En celular "Ingresar" queda a la vista; "Registrarme" está en el menú. */}
               <Button variant="ghost" size="sm" to="/ingresar">Ingresar</Button>
-              <Button size="sm" to="/registro">Registrarme</Button>
+              <Button size="sm" to="/registro" className="max-sm:hidden">Registrarme</Button>
             </div>
           ))}
           <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setMenuOpen(true)} aria-label="Abrir menú" aria-expanded={menuOpen}>

@@ -40,7 +40,7 @@ export default function FavoritesPage() {
 
   return (
     <>
-      <AccountHeader title="Favoritos" description="Todo lo que guardaste: salas, espectáculos, servicios, oportunidades y recursos." />
+      <AccountHeader title="Favoritos" description="Todo lo que guardaste: salas, espectáculos, servicios, convocatorias y recursos." />
       <Tabs label="Tipo de favorito" tabs={TABS.map((t) => ({ ...t, count: data?.filter((f) => !t.id || f.entityType === t.id).length }))} value={type} onChange={setType} />
       <div className="mt-5">
         {error ? <ErrorState error={error} onRetry={reload} /> : !items ? <LoadingSkeleton variant="list" count={3} />
@@ -52,7 +52,7 @@ export default function FavoritesPage() {
               {items.map((f) => (
                 <li key={f.id} className="flex items-center gap-4 px-4 py-3">
                   <div className="min-w-0 flex-1">
-                    <p className="text-xs text-ink-soft">{ENTITY_LABELS[f.entityType]} · guardado el {formatShortDate(f.createdAt.slice(0, 10))}</p>
+                    <p className="text-sm text-ink-soft">{ENTITY_LABELS[f.entityType]} · guardado el {formatShortDate(f.createdAt.slice(0, 10))}</p>
                     {f.available
                       ? <Link to={ENTITY_ROUTES[f.entityType](f.slug)} className="font-semibold hover:text-brand hover:underline">{f.title}</Link>
                       : <p className="font-semibold text-ink-soft">{f.title} <Badge>Ya no está publicado</Badge></p>}

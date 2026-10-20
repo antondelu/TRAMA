@@ -37,7 +37,7 @@ function ApplyActions({ o, myApplication, isOwner, onApply }) {
     return (
       <div className="space-y-2">
         <Button href={o.externalUrl} target="_blank" rel="noopener noreferrer" iconRight={ExternalLink} className="w-full">Postularme en el sitio de la organización</Button>
-        <p className="break-all text-xs text-ink-soft">Te lleva a: {o.externalUrl}{o.externalUrl.includes('example.org') ? ' (URL de ejemplo de la demo)' : ''}</p>
+        <p className="break-all text-sm text-ink-soft">Te lleva a: {o.externalUrl}{o.externalUrl.includes('example.org') ? ' (URL de ejemplo de la demo)' : ''}</p>
       </div>
     )
   }
@@ -51,7 +51,7 @@ export default function OpportunityDetailPage() {
   const query = useServiceQuery(() => opportunitiesService.getBySlug(slug), [slug])
   const o = query.data
   const mine = useServiceQuery(() => requestsService.myApplicationFor(o.id), [o?.id, user?.id], { enabled: Boolean(o && user) })
-  useDocumentTitle(o?.title ?? 'Oportunidad')
+  useDocumentTitle(o?.title ?? 'Convocatoria')
   const { label, labels } = useTaxonomies()
   const requireAuth = useRequireAuth()
   const [applyOpen, setApplyOpen] = useState(false)
@@ -62,7 +62,7 @@ export default function OpportunityDetailPage() {
 
   return (
     <DetailLayout isPreview={o.isPreview}
-      breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Oportunidades', to: '/oportunidades' }, { label: o.title }]}
+      breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Convocatorias', to: '/oportunidades' }, { label: o.title }]}
       hero={(
         <div className="rounded-[var(--radius-card)] border border-line bg-surface p-6 sm:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">

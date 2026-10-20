@@ -11,7 +11,7 @@ import { OpportunityCard } from '@/components/cards/OpportunityCard'
 import { FavoriteButton } from '@/features/favorites/FavoriteButton'
 import { VenueAvailability } from '@/features/bookings/VenueAvailability'
 import { BookingRequestModal } from '@/features/bookings/BookingRequestModal'
-import { ContactOwnerModal } from '@/features/inquiries/ContactOwnerModal'
+import { VenueInquiryModal } from '@/features/inquiries/VenueInquiryModal'
 import { venuesService } from '@/services'
 import { useServiceQuery } from '@/hooks/useServiceQuery'
 import { useTaxonomies } from '@/hooks/useTaxonomies'
@@ -61,17 +61,18 @@ export default function VenueDetailPage() {
       aside={(
         <ActionPanel title="Reservar o consultar">
           <PriceDisplay from={venue.priceFrom} to={venue.priceTo} unit={venue.priceUnit} currency={venue.currency} className="block text-base" />
-          <p className="text-xs text-ink-soft">Precio orientativo informado por la sala. Las condiciones finales se acuerdan con la sala.</p>
+          <p className="text-sm text-ink-soft">Precio orientativo informado por la sala. Las condiciones finales se acuerdan con la sala.</p>
           {isOwner ? (
             <Button to="/mi-cuenta/calendario" className="w-full" variant="secondary">Gestionar mi calendario</Button>
           ) : (
             <div className="grid gap-2">
               <Button icon={CalendarPlus} onClick={() => openBooking()}>Solicitar reserva</Button>
-              <Button variant="secondary" icon={MessageSquare} onClick={() => requireAuth(() => setContactOpen(true))}>Enviar consulta</Button>
-              <Button variant="ghost" onClick={() => document.getElementById('calendario')?.scrollIntoView({ behavior: 'smooth' })}>Consultar disponibilidad</Button>
+              <Button variant="secondary" icon={MessageSquare} onClick={() => requireAuth(() => setContactOpen(true))}>Hacer una consulta</Button>
+              <a href="#calendario" className="text-center text-sm font-semibold text-brand hover:underline">Ver las fechas libres en el calendario</a>
+              <p className="text-sm text-ink-soft">Las respuestas te llegan a Mi cuenta › Solicitudes.</p>
             </div>
           )}
-          <p className="border-t border-line pt-3 text-xs text-ink-soft">El contacto se hace dentro de TRAMA: tus datos y los de la sala no se comparten hasta que ustedes lo decidan.</p>
+          <p className="border-t border-line pt-3 text-sm text-ink-soft">El contacto se hace dentro de TRAMA: tus datos y los de la sala no se comparten hasta que ustedes lo decidan.</p>
         </ActionPanel>
       )}>
       <Section id="descripcion" title="Sobre el espacio">
@@ -113,7 +114,7 @@ export default function VenueDetailPage() {
       </Section>
 
       <BookingRequestModal open={booking.open} initialDate={booking.date} venue={venue} onClose={() => setBooking({ open: false, date: null })} />
-      <ContactOwnerModal open={contactOpen} onClose={() => setContactOpen(false)} entityType="venue" entityId={venue.id} ownerId={venue.ownerId} subject={venue.name} />
+      <VenueInquiryModal open={contactOpen} onClose={() => setContactOpen(false)} venue={venue} />
     </DetailLayout>
   )
 }

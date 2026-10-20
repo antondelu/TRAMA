@@ -58,7 +58,7 @@ describe('navegación', () => {
   it('un recurso exclusivo muestra el bloqueo a visitantes', async () => {
     renderAt('/recursos/guia-organizar-gira-interior')
     expect(await screen.findByRole('heading', { name: 'Contenido exclusivo' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Ver planes' })).toHaveAttribute('href', '/planes')
+    expect(screen.getByRole('link', { name: 'Ver membresías' })).toHaveAttribute('href', '/planes')
   })
 
   it('el registro valida los campos y muestra errores accesibles', async () => {

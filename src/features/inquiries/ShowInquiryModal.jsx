@@ -17,7 +17,7 @@ const schema = z.object({
   message: z.string().trim().min(10, 'Escribí al menos 10 caracteres').max(3000, 'Máximo 3000 caracteres'),
 })
 
-// Consulta de contratación ("Consultar contratación" / "Enviar propuesta").
+// Consulta de contratación ("Pedir contratación" / "Hacer una consulta").
 export function ShowInquiryModal({ open, onClose, show, mode = 'inquiry' }) {
   const { register, handleSubmit, reset, getValues, trigger, formState: { errors } } = useForm({
     resolver: zodResolver(schema), defaultValues: { organization: '', venueName: '', requestedDates: '', functionCount: 1, message: '' },
@@ -26,7 +26,7 @@ export function ShowInquiryModal({ open, onClose, show, mode = 'inquiry' }) {
     successTitle: 'Consulta guardada', successText: 'Seguila en Mi cuenta › Solicitudes.',
     onSuccess: () => { reset(); onClose() },
   })
-  const title = mode === 'proposal' ? `Enviar propuesta a ${show.company}` : `Consultar contratación de ${show.title}`
+  const title = mode === 'proposal' ? `Pedir contratación de ${show.title}` : `Consulta sobre ${show.title}`
 
   async function saveDraft() {
     if (!(await trigger(['organization']))) return
@@ -34,7 +34,7 @@ export function ShowInquiryModal({ open, onClose, show, mode = 'inquiry' }) {
   }
 
   return (
-    <Modal open={open} onClose={onClose} title={title} description="La compañía recibe tu consulta y responde desde TRAMA.">
+    <Modal open={open} onClose={onClose} title={title} description="La compañía responde desde TRAMA. La respuesta te llega a Mi cuenta › Solicitudes.">
       <form noValidate className="space-y-4" onSubmit={handleSubmit((data) => run(() => requestsService.createShowInquiry({ showId: show.id, ...data })))}>
         <div className="grid gap-4 sm:grid-cols-2">
           <FormField label="Organización" required error={errors.organization?.message}><Input {...register('organization')} /></FormField>
@@ -42,7 +42,7 @@ export function ShowInquiryModal({ open, onClose, show, mode = 'inquiry' }) {
           <FormField label="Fechas estimadas" required hint="Ej. 12 al 14 de febrero" error={errors.requestedDates?.message}><Input {...register('requestedDates')} /></FormField>
           <FormField label="Cantidad de funciones" required error={errors.functionCount?.message}><Input type="number" min={1} {...register('functionCount')} /></FormField>
         </div>
-        <FormField label={mode === 'proposal' ? 'Propuesta' : 'Mensaje'} required error={errors.message?.message}><Textarea rows={5} {...register('message')} /></FormField>
+        <FormField label={mode === 'proposal' ? 'Tu propuesta' : 'Tu consulta'} required error={errors.message?.message}><Textarea rows={5} {...register('message')} /></FormField>
         <FormError error={error} />
         <DemoNotice>Modo demo: no es una contratación real.</DemoNotice>
         <div className="flex flex-wrap justify-end gap-2">
