@@ -1,8 +1,9 @@
 import { getDb, latency, clone } from './adapter/demoStore'
 import { matchesText, relevance, paginate, toNumber, byText, byPrice, isPublic } from './query'
 import { requireOwner, requireUser } from './access'
-import { notFound } from './errors'
+import { invalid, notFound } from './errors'
 import { savePublication, canSeeUnpublished } from './publications'
+import { safeHttpUrl } from '@/utils/url'
 
 export const showsService = {
   async list(params = {}) {
@@ -69,6 +70,9 @@ export const showsService = {
 
   async save(data, options) {
     await latency(200)
+    if (data.media?.videoUrl && !safeHttpUrl(data.media.videoUrl, { httpsOnly: true })) {
+      throw invalid('El enlace del video tiene que empezar con https://', { videoUrl: 'Tiene que empezar con https://' })
+    }
     return clone(savePublication('show', data, options))
   },
 }

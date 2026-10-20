@@ -15,6 +15,7 @@ import { useRequireAuth } from '@/hooks/useRequireAuth'
 import { useAuth } from '@/context/AuthContext'
 import { formatDate } from '@/utils/format'
 import { daysUntil } from '@/utils/dates'
+import { safeHttpUrl, isHost } from '@/utils/url'
 
 // El botón depende del estado y del tipo de convocatoria:
 // externa -> enlace a la URL configurada; interna -> formulario de postulación.
@@ -34,10 +35,13 @@ function ApplyActions({ o, myApplication, isOwner, onApply }) {
     )
   }
   if (o.applicationMode === 'external') {
+    // Solo enlaces https: un javascript: o un data: guardado en la convocatoria no se usa como enlace.
+    const url = safeHttpUrl(o.externalUrl, { httpsOnly: true })
+    if (!url) return <p className="rounded-lg bg-ink/5 px-3 py-2 text-sm">La convocatoria no tiene un enlace de postulación válido. Consultá a la organización.</p>
     return (
       <div className="space-y-2">
-        <Button href={o.externalUrl} target="_blank" rel="noopener noreferrer" iconRight={ExternalLink} className="w-full">Postularme en el sitio de la organización</Button>
-        <p className="break-all text-sm text-ink-soft">Te lleva a: {o.externalUrl}{o.externalUrl.includes('example.org') ? ' (URL de ejemplo de la demo)' : ''}</p>
+        <Button href={url} target="_blank" rel="noopener noreferrer" iconRight={ExternalLink} className="w-full">Postularme en el sitio de la organización</Button>
+        <p className="break-all text-sm text-ink-soft">Te lleva a: {url}{isHost(url, 'example.org') ? ' (URL de ejemplo de la demo)' : ''}</p>
       </div>
     )
   }
