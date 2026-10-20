@@ -89,6 +89,7 @@ docker/           nginx endurecido, reutilizado de BOLD y adaptado a SPA
 - [Arquitectura, modelo de datos, roles y reglas](docs/ARQUITECTURA.md)
 - [Integraciones pendientes para producción](docs/INTEGRACIONES.md)
 - [Limitaciones del modo demo](docs/LIMITACIONES-DEMO.md)
+- [Apps de Android e iOS (Capacitor)](docs/APPS-MOVILES.md)
 - [Pruebas y resultados](docs/PRUEBAS.md)
 
 ## Qué se reutilizó del proyecto base

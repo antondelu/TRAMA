@@ -54,6 +54,9 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
+  /* Dentro de las apps (ver src/platform/native.js): sin rebote al final de la
+     página ni el resaltado gris al tocar, como en una app nativa. */
+  .is-native-app body { overscroll-behavior: none; -webkit-tap-highlight-color: transparent; }
   h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; }
   p { text-wrap: pretty; }
   :focus-visible {

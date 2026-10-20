@@ -45,7 +45,7 @@ export function PublicationFormShell({ title, kindLabel, ctl, preview, statusKey
         )}
         <form noValidate onSubmit={submit} className="space-y-6">
           {children}
-          <div className="sticky bottom-0 z-20 -mx-4 border-t border-line bg-canvas/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-xl sm:border">
+          <div className="sticky bottom-0 z-20 -mx-4 border-t border-line bg-canvas/95 px-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 backdrop-blur sm:mx-0 sm:rounded-xl sm:border">
             <FormError error={error} />
             {Object.keys(form.formState.errors).length > 0 && !error && (
               <p role="alert" className="mb-2 text-sm font-medium text-danger">Revisá los campos marcados en rojo.</p>

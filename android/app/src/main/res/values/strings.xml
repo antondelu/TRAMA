@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">TRAMA</string>
+    <string name="title_activity_main">TRAMA</string>
+    <string name="package_name">uy.trama.app</string>
+    <string name="custom_url_scheme">uy.trama.app</string>
+</resources>

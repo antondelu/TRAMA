@@ -26,7 +26,7 @@ export function ToastProvider({ children }) {
     <ToastContext.Provider value={value}>
       {children}
       {/* aria-live: los lectores de pantalla anuncian cada aviso */}
-      <div aria-live="polite" className="pointer-events-none fixed inset-x-0 bottom-0 z-[60] flex flex-col items-center gap-2 p-4 sm:items-end">
+      <div aria-live="polite" className="pointer-events-none fixed inset-x-0 bottom-0 z-[60] flex flex-col items-center gap-2 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] sm:items-end">
         {toasts.map((t) => <Toast key={t.id} {...t} onDismiss={() => dismiss(t.id)} />)}
       </div>
     </ToastContext.Provider>
