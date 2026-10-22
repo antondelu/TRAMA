@@ -10,8 +10,8 @@ export function ImageGallery({ images = [], title, kind, icon, seed }) {
   if (!images.length) {
     return (
       <figure>
-        {/* Sin foto, la portada es más baja: en celular no empuja hacia abajo el nombre y las acciones. */}
-        <Cover kind={kind} icon={icon} seed={seed} alt={`${title}: sin fotos cargadas`} ratio="aspect-[3/1] sm:aspect-[21/9]" className="rounded-[var(--radius-card)]" />
+        {/* Sin foto, una franja baja del color del área, sin texto: el nombre y los datos ya están en la ficha, justo debajo. */}
+        <Cover kind={kind} icon={icon} seed={seed} label="" alt={`${title}: sin fotos cargadas`} ratio="aspect-[3/1] sm:aspect-[6/1]" className="rounded-[var(--radius-card)]" />
       </figure>
     )
   }
@@ -23,8 +23,8 @@ export function ImageGallery({ images = [], title, kind, icon, seed }) {
         <img src={current.url} alt={current.alt ?? `${title}, foto ${index + 1}`} style={focusStyle(current.focus)} className="aspect-[16/9] w-full object-cover sm:aspect-[21/9]" />
         {images.length > 1 && (
           <>
-            <button type="button" onClick={() => go(-1)} aria-label="Foto anterior" className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-surface/90 p-2"><ChevronLeft aria-hidden className="size-5" /></button>
-            <button type="button" onClick={() => go(1)} aria-label="Foto siguiente" className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-surface/90 p-2"><ChevronRight aria-hidden className="size-5" /></button>
+            <button type="button" onClick={() => go(-1)} aria-label="Foto anterior" className="absolute left-3 top-1/2 -translate-y-1/2 bg-surface/90 p-2"><ChevronLeft aria-hidden className="size-5" /></button>
+            <button type="button" onClick={() => go(1)} aria-label="Foto siguiente" className="absolute right-3 top-1/2 -translate-y-1/2 bg-surface/90 p-2"><ChevronRight aria-hidden className="size-5" /></button>
           </>
         )}
       </div>

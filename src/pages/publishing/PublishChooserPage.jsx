@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import { Building2, Drama, Wrench, Megaphone, ArrowRight } from 'lucide-react'
+import { Building2, Ticket, Wrench, Megaphone, ArrowRight } from 'lucide-react'
 import { PageHeader, PageContainer } from '@/components/layout/PageContainer'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 
 const OPTIONS = [
   { to: '/publicar/sala', icon: Building2, title: 'Sala', text: 'Un espacio para alquilar: ficha técnica, condiciones y calendario.' },
-  { to: '/publicar/espectaculo', icon: Drama, title: 'Espectáculo', text: 'Una obra disponible para programar, girar o coproducir.' },
+  { to: '/publicar/espectaculo', icon: Ticket, title: 'Espectáculo', text: 'Una obra disponible para programar, girar o coproducir.' },
   { to: '/publicar/servicio', icon: Wrench, title: 'Servicio', text: 'Tu perfil profesional o el de tu empresa en el directorio.' },
   { to: '/publicar/convocatoria', icon: Megaphone, title: 'Convocatoria', text: 'Programación, festival, residencia o búsqueda de profesionales.' },
 ]

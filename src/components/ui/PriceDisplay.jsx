@@ -8,7 +8,7 @@ export function PriceDisplay({ from, to, currency = 'UYU', unit, emptyLabel = 'P
   return (
     <span className={cn('text-sm', className)}>
       {to != null && to !== from ? null : <span className="text-ink-soft">{prefix} </span>}
-      <span className="font-semibold text-ink">{text}</span>
+      <span className="data text-[1.05em] text-ink">{text}</span>
     </span>
   )
 }

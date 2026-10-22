@@ -10,11 +10,13 @@ const TONES = {
   warning: 'bg-warning-soft text-warning border-warning/25',
   danger: 'bg-danger-soft text-danger border-danger/25',
   info: 'bg-info-soft text-info border-info/25',
+  // Etiqueta de convocatoria abierta: el ámbar del área Convocatorias, con texto negro.
+  convocatoria: 'bg-area-convocatorias text-ink border-transparent',
 }
 
 export function Badge({ tone = 'neutral', icon: Icon, className, children }) {
   return (
-    <span className={cn('inline-flex items-center gap-1 whitespace-nowrap rounded-full border px-2.5 py-0.5 text-xs font-semibold', TONES[tone], className)}>
+    <span className={cn('inline-flex items-center gap-1 whitespace-nowrap border px-2 py-0.5 text-sm font-bold', TONES[tone], className)}>
       {Icon && <Icon aria-hidden className="size-3.5" />}
       {children}
     </span>

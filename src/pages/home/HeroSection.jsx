@@ -1,42 +1,26 @@
-import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
-import { SearchBar } from '@/components/navigation/SearchBar'
-import { Button } from '@/components/ui/Button'
 import { PageContainer } from '@/components/layout/PageContainer'
-import { Stage } from '@/components/media/Stage'
-import { CATEGORIES } from '@/constants/navigation'
+import { SearchBar } from '@/components/navigation/SearchBar'
 
-// Hero como escenario: la sala está a oscuras, se enciende el foco y
-// aparece el texto, en ese orden.
+// Hero oscuro en azul noche: el título centrado y el buscador grande. Ver
+// salas y publicar están en los bloques de áreas y en la invitación de abajo.
+// Sin reflector ni escenario: el carácter lo dan la tipografía (ancha arriba,
+// condensada en "hacer teatro.") y el contraste.
 export function HeroSection() {
   return (
-    <Stage aria-labelledby="hero-title">
-      <PageContainer className="relative flex min-h-[38rem] flex-col items-center justify-center py-20 text-center sm:min-h-[44rem]">
-        <p className="enter text-xs font-semibold uppercase tracking-[0.3em] text-white/50" style={{ '--d': '600ms' }}>
-          Mercado profesional de las artes escénicas
-        </p>
-        <h1 id="hero-title" className="enter mt-6 max-w-4xl font-display text-5xl font-bold leading-[0.98] tracking-tight sm:text-7xl lg:text-8xl" style={{ '--d': '800ms' }}>
-          Todo lo que necesitás para <span className="stage-lit">hacer teatro.</span>
+    <section aria-labelledby="hero-title"
+      className="bg-brand-strong bg-[radial-gradient(120%_80%_at_50%_0%,#2C4562_0%,transparent_60%)] text-white">
+      <PageContainer className="flex min-h-[30rem] flex-col items-center justify-center py-16 text-center sm:min-h-[36rem] sm:py-20">
+        <p className="eyebrow enter !text-white/65">Mercado profesional de las artes escénicas</p>
+        <h1 id="hero-title" className="enter mt-5 max-w-5xl font-display text-[clamp(2.6rem,7vw,6rem)] font-extrabold leading-[0.92] [font-stretch:115%]" style={{ '--d': '60ms' }}>
+          Todo lo que necesitás para <span className="block text-[#FFE7B3] [font-stretch:72%] [word-spacing:0.1em]">hacer teatro.</span>
         </h1>
-        <p className="enter mt-7 max-w-xl text-lg text-white/65" style={{ '--d': '1000ms' }}>
+        <p className="enter mt-6 max-w-xl text-lg text-white/80 sm:text-xl" style={{ '--d': '120ms' }}>
           Encontrá espacios, descubrí espectáculos, conectá con profesionales y accedé a recursos para tus proyectos.
         </p>
-        <div className="enter mt-9 w-full max-w-2xl" style={{ '--d': '1200ms' }}>
-          <SearchBar size="lg" className="border-white/10 shadow-[0_20px_60px_-20px_rgb(0_0_0_/_0.6)]" />
-        </div>
-        <nav aria-label="Accesos rápidos" className="enter mt-6 flex flex-wrap justify-center gap-2" style={{ '--d': '1350ms' }}>
-          {CATEGORIES.map(({ id, label, to, icon: Icon }) => (
-            <Link key={id} to={to}
-              className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/15 px-4 text-sm font-semibold text-white/80 transition-colors hover:border-white/40 hover:bg-white/10 hover:text-white">
-              <Icon aria-hidden className="size-4" />{label}
-            </Link>
-          ))}
-        </nav>
-        <div className="enter mt-10 flex flex-wrap justify-center gap-3" style={{ '--d': '1500ms' }}>
-          <Button size="lg" to="/salas" iconRight={ArrowRight} className="bg-white !text-brand shadow-none hover:bg-[rgb(255_241_214)]">Ver salas</Button>
-          <Button size="lg" variant="ghost" to="/publicar" className="text-white hover:bg-white/10">Publicar en TRAMA</Button>
+        <div className="enter mt-9 w-full max-w-2xl text-left" style={{ '--d': '180ms' }}>
+          <SearchBar size="lg" className="border-white" />
         </div>
       </PageContainer>
-    </Stage>
+    </section>
   )
 }

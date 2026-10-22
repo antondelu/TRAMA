@@ -1,21 +1,45 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { CATEGORIES, OPPORTUNITIES_NAV, NEWS_NAV } from '@/constants/navigation'
 import { cn } from '@/utils/format'
 
-const linkClass = ({ isActive }) => cn(
-  'inline-flex min-h-10 items-center rounded-full px-4 text-sm font-semibold transition-colors',
-  isActive ? 'bg-brand text-white' : 'text-ink hover:bg-brand-soft hover:text-brand',
-)
+const SECTIONS = [...CATEGORIES, OPPORTUNITIES_NAV, NEWS_NAV]
 
-// Navegación principal de escritorio: las cuatro áreas, Convocatorias y Noticias.
+// Navegación principal de escritorio: cada sección es una pestaña que cuelga
+// del borde superior. En reposo es clara, con una franja fina del color de su
+// área arriba; al pasar el mouse se llena de ese color. La sección actual queda
+// llena, baja hasta el filete del encabezado y se une a la página, como una
+// pestaña de carpeta. Así el color fuerte aparece una sola vez por pantalla.
 export function MainNavigation() {
   return (
-    <nav aria-label="Principal" className="hidden lg:block">
-      <ul className="flex items-center gap-0.5 rounded-full bg-surface/70 p-1 shadow-[var(--shadow-card)]">
-        {CATEGORIES.map((c) => <li key={c.id}><NavLink to={c.to} className={linkClass}>{c.label}</NavLink></li>)}
-        <li><NavLink to={OPPORTUNITIES_NAV.to} className={linkClass}>{OPPORTUNITIES_NAV.label}</NavLink></li>
-        <li><NavLink to={NEWS_NAV.to} className={linkClass}>{NEWS_NAV.label}</NavLink></li>
+    <nav aria-label="Principal" className="hidden self-stretch lg:flex">
+      <ul className="flex items-stretch gap-px">
+        {SECTIONS.map((c) => (
+          <li key={c.id} className={cn('flex', c.area)}>
+            <NavLink to={c.to} className={({ isActive }) => cn(
+              'flex items-end border-t-4 border-[var(--area)] px-2.5 pb-2.5 text-[0.9rem] font-bold transition-[margin,padding,background-color,color] xl:px-3.5 xl:text-[0.95rem]',
+              isActive
+                ? 'relative z-10 -mb-0.5 bg-[var(--area)] pb-3.5 text-[var(--area-on)]'
+                : 'mb-1.5 text-ink hover:mb-0.5 hover:bg-[var(--area)] hover:text-[var(--area-on)]',
+            )}>
+              {c.label}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
+  )
+}
+
+// En celular, una franja con los seis colores debajo del encabezado; el de la
+// sección actual es más alto. Es decorativa: la navegación está en el menú ☰.
+export function AreaStrip() {
+  const { pathname } = useLocation()
+  return (
+    <div aria-hidden className="flex h-3 items-start lg:hidden">
+      {SECTIONS.map((c) => {
+        const active = pathname === c.to || pathname.startsWith(`${c.to}/`)
+        return <span key={c.id} className={cn('flex-1 bg-[var(--area)]', c.area, active ? 'h-3' : 'h-1.5')} />
+      })}
+    </div>
   )
 }

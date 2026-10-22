@@ -14,7 +14,7 @@ export function Breadcrumbs({ items }) {
           const last = i === items.length - 1
           return (
             <li key={item.label} className="flex items-center gap-1">
-              {item.to && !last ? <Link to={item.to} className="hover:text-ink hover:underline">{item.label}</Link>
+              {item.to && !last ? <Link to={item.to} className="underline decoration-1 underline-offset-2 hover:text-ink hover:decoration-2">{item.label}</Link>
                 : <span aria-current={last ? 'page' : undefined} className={last ? 'text-ink' : ''}>{item.label}</span>}
               {!last && <ChevronRight aria-hidden className="size-3.5" />}
             </li>
@@ -25,18 +25,19 @@ export function Breadcrumbs({ items }) {
   )
 }
 
-export function PageHeader({ eyebrow, title, description, breadcrumbs, actions, children, className }) {
+// Encabezado de página. Con `area` (ej. 'area-salas') lleva una franja y la
+// etiqueta del color de esa área, así el catálogo se reconoce de un vistazo.
+export function PageHeader({ eyebrow, title, description, breadcrumbs, actions, area, children, className }) {
   return (
-    <header className={cn('relative overflow-hidden', className)}>
-      {/* Luz de color suave detrás del título */}
-      <div aria-hidden className="pointer-events-none absolute -right-32 -top-40 size-[30rem] rounded-full bg-accent-soft blur-3xl" />
-      <PageContainer className="relative pb-6 pt-8 sm:pb-8 sm:pt-12">
+    <header className={cn('relative border-b-2 border-ink', area, className)}>
+      {area && <div aria-hidden className="h-2 bg-[var(--area)]" />}
+      <PageContainer className="relative pb-7 pt-7 sm:pb-10 sm:pt-10">
         {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-3xl">
             {eyebrow && <p className="tag mb-4">{eyebrow}</p>}
-            <h1 className="font-display text-3xl font-bold tracking-tight sm:text-6xl">{title}</h1>
-            {description && <p className="mt-3 text-base text-ink-soft sm:text-lg">{description}</p>}
+            <h1 className="font-display text-[2rem] font-extrabold leading-[0.95] sm:text-6xl">{title}</h1>
+            {description && <p className="mt-4 text-lg text-ink-soft">{description}</p>}
           </div>
           {actions && <div className="flex flex-wrap gap-2">{actions}</div>}
         </div>

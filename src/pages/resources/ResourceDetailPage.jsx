@@ -42,7 +42,7 @@ export default function ResourceDetailPage() {
   if (!r) return <DetailState query={query} />
 
   return (
-    <DetailLayout isPreview={r.isPreview}
+    <DetailLayout area="area-recursos" isPreview={r.isPreview}
       breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Recursos', to: '/recursos' }, { label: r.title }]}
       hero={(
         <div className="grid gap-6 md:grid-cols-[1fr_minmax(0,22rem)] md:items-center">

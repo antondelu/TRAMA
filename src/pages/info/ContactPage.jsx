@@ -80,7 +80,6 @@ export default function ContactPage() {
   return (
     <div className="relative overflow-hidden">
       {/* Luz de color suave detrás del título */}
-      <div aria-hidden className="pointer-events-none absolute -left-40 -top-40 size-[30rem] rounded-full bg-accent-soft blur-3xl" />
       <PageContainer className="relative grid max-w-6xl gap-10 pb-16 pt-8 sm:pt-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:grid-rows-[auto_1fr] lg:gap-x-16">
         <header className="lg:col-start-1 lg:row-start-1">
           <Breadcrumbs items={[{ label: 'Inicio', to: '/' }, { label: 'Contacto' }]} />
@@ -128,7 +127,7 @@ export default function ContactPage() {
                 <div className="mt-3 flex flex-wrap gap-2">
                   {TOPICS.map((t) => (
                     <button key={t.id} type="button" aria-pressed={topic === t.id} onClick={() => setTopic(topic === t.id ? null : t.id)}
-                      className={cn('rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors',
+                      className={cn('border px-3.5 py-1.5 text-sm font-medium transition-colors',
                         topic === t.id ? 'border-brand bg-brand text-white' : 'border-line-strong bg-surface hover:border-ink-soft')}>
                       {t.label}
                     </button>

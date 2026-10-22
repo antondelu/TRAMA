@@ -28,7 +28,7 @@ export function AccountMenu() {
   return (
     <div ref={ref} className="relative">
       <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls="account-menu"
-        className="flex min-h-11 items-center gap-2 rounded-full py-1 pl-1 pr-2 hover:bg-ink/5">
+        className="flex min-h-11 items-center gap-2 py-1 pl-1 pr-2 hover:bg-ink/5">
         <Avatar name={name} src={user.avatar} size="sm" />
         <span className="hidden text-sm font-semibold xl:inline">{user.firstName}</span>
         <ChevronDown aria-hidden className="size-4 text-ink-soft" />

@@ -22,7 +22,7 @@ function FilterList({ defs, values, onChange }) {
       {more.length > 0 && (
         <div className="border-t border-line pt-4">
           <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open}
-            className="flex w-full items-center justify-between text-sm font-semibold text-brand">
+            className="flex min-h-11 w-full items-center justify-between text-base font-bold text-ink underline decoration-2 underline-offset-4">
             {open ? 'Menos filtros' : `Más filtros${activeMore ? ` (${activeMore} activo${activeMore > 1 ? 's' : ''})` : ''}`}
             <ChevronDown aria-hidden className={cn('size-4 transition-transform duration-300', open && 'rotate-180')} />
           </button>
@@ -38,9 +38,9 @@ export function FilterSidebar({ defs, values, onChange, onClear, activeCount, mo
   return (
     <>
       <aside aria-label="Filtros" className="hidden lg:block">
-        <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto rounded-[var(--radius-card)] bg-surface p-5 shadow-[var(--shadow-card)]">
+        <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto border-t-4 border-ink bg-surface p-5">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-display text-lg font-bold">Filtros</h2>
+            <h2 className="font-display text-2xl font-extrabold">Filtros</h2>
             {activeCount > 0 && <Button variant="link" size="sm" onClick={onClear}>Limpiar</Button>}
           </div>
           <FilterList defs={defs} values={values} onChange={onChange} />

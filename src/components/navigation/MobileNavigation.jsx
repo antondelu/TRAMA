@@ -9,7 +9,7 @@ import { cn } from '@/utils/format'
 export function MobileNavigation({ open, onClose }) {
   const { user, can, logout } = useAuth()
   const items = [...CATEGORIES, OPPORTUNITIES_NAV, NEWS_NAV]
-  const linkClass = ({ isActive }) => cn('flex min-h-12 items-center gap-3 rounded-lg px-3 text-base font-semibold', isActive ? 'bg-brand-soft text-brand' : 'hover:bg-ink/5')
+  const linkClass = ({ isActive }) => cn('flex min-h-12 items-center gap-3 border-l-4 px-3 text-base font-bold', isActive ? 'border-[var(--area,var(--color-ink))] bg-ink/5' : 'border-transparent hover:bg-ink/5')
 
   return (
     <Drawer open={open} onClose={onClose} title="Menú"
@@ -26,9 +26,9 @@ export function MobileNavigation({ open, onClose }) {
           {items.map((item) => {
             const Icon = item.icon
             return (
-              <li key={item.id}>
+              <li key={item.id} className={item.area}>
                 <NavLink to={item.to} className={linkClass} onClick={onClose}>
-                  <Icon aria-hidden className="size-5 text-ink-soft" />{item.label}
+                  <span aria-hidden className="inline-flex size-8 items-center justify-center bg-[var(--area)] text-[var(--area-on)]"><Icon className="size-4" /></span>{item.label}
                 </NavLink>
               </li>
             )

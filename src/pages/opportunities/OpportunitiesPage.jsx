@@ -31,7 +31,7 @@ export default function OpportunitiesPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Convocatorias" title="Convocatorias abiertas."
+      <PageHeader area="area-convocatorias" eyebrow="Convocatorias" title="Convocatorias abiertas."
         description="Programación, festivales, residencias y más."
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Convocatorias' }]}
         actions={<Button variant="secondary" to="/publicar/convocatoria">Publicar una convocatoria</Button>} />

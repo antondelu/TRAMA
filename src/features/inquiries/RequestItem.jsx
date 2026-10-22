@@ -51,7 +51,7 @@ export function RequestItem({ request: r }) {
   return (
     <li className="rounded-[var(--radius-card)] border border-line bg-surface">
       <div className="flex flex-wrap items-start gap-3 p-4">
-        <span className={cn('mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-full', received ? 'bg-accent-soft text-accent' : 'bg-brand-soft text-brand')}>
+        <span className={cn('mt-0.5 inline-flex size-8 shrink-0 items-center justify-center', received ? 'bg-accent-soft text-accent' : 'bg-brand-soft text-brand')}>
           <DirectionIcon aria-hidden className="size-4" />
         </span>
         <div className="min-w-0 flex-1">

@@ -38,7 +38,7 @@ export default function ShowsPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Espectáculos" title="Obras para programar."
+      <PageHeader area="area-shows" eyebrow="Espectáculos" title="Obras para programar."
         description="Espectáculos disponibles para salas, festivales y giras."
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Espectáculos' }]}
         actions={<Button variant="secondary" to="/publicar/espectaculo">Publicar un espectáculo</Button>} />

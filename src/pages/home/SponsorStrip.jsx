@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { PageContainer } from '@/components/layout/PageContainer'
+import { Button } from '@/components/ui/Button'
 import { Reveal } from '@/components/ui/Reveal'
 import { SPONSORS } from '@/config/sponsors'
 import { cn } from '@/utils/format'
@@ -30,10 +31,6 @@ function buildMap() {
 }
 
 function Seat({ row, index, sponsor, active, onHover }) {
-  const mid = (SEATS_PER_ROW - 1) / 2
-  const d = Math.abs(index - mid)
-  // Curva de la platea: las butacas de los costados quedan más cerca del escenario.
-  const curve = { transform: `translateY(${-(d * d) * 0.35}px)` }
   const number = `${row}${index + 1}`
   const aisle = index === SEATS_PER_ROW / 2 ? 'seat-aisle' : undefined
 
@@ -41,7 +38,7 @@ function Seat({ row, index, sponsor, active, onHover }) {
   // y las letras de fila, así el plano nunca queda vacío al hacer scroll.
   return (
     <li className={aisle}>
-      <span className="block" style={curve}>
+      <span className="block">
         {sponsor ? (
           <a href={sponsor.url} target="_blank" rel="noopener noreferrer sponsored"
             className={cn('map-seat taken', active && 'is-active')} aria-label={`${sponsor.name}, butaca ${number}`}
@@ -76,7 +73,7 @@ function SponsorCard({ sponsor, seat, active, onHover, copy = false }) {
     <a href={sponsor.url} target="_blank" rel="noopener noreferrer sponsored"
       aria-hidden={copy || undefined} tabIndex={copy ? -1 : undefined}
       onMouseEnter={() => onHover(sponsor.id)} onMouseLeave={() => onHover(null)} onFocus={() => onHover(sponsor.id)} onBlur={() => onHover(null)}
-      className={cn('sponsor-card group flex w-40 shrink-0 flex-col items-center gap-2 rounded-2xl bg-surface px-3 py-3 text-center shadow-[var(--shadow-card)]', active && 'is-active')}>
+      className={cn('sponsor-card group flex w-40 shrink-0 flex-col items-center gap-2 border border-line bg-surface px-3 py-3 text-center', active && 'is-active')}>
       <span className="flex h-9 w-full items-center justify-center">
         {sponsor.logo
           ? <img src={sponsor.logo} alt={`Logo de ${sponsor.name}`} className="h-9 w-auto max-w-full object-contain" />
@@ -84,8 +81,8 @@ function SponsorCard({ sponsor, seat, active, onHover, copy = false }) {
       </span>
       <span>
         <span className="block text-xs font-semibold">{sponsor.name}</span>
-        <span className="mt-0.5 inline-flex items-center gap-1.5 text-[0.7rem] text-ink-soft">
-          <span aria-hidden className="map-seat taken !h-3 !w-3.5" />Butaca {seat}
+        <span className="data mt-0.5 inline-flex items-center gap-1.5 text-sm text-ink-soft">
+          <span aria-hidden className="map-seat taken [--seat:0.85rem]" />Butaca {seat}
         </span>
       </span>
     </a>
@@ -100,40 +97,49 @@ export function SponsorStrip() {
   const [hovered, setHovered] = useState(null)
 
   return (
-    <section aria-labelledby="sponsors-title" className="relative overflow-hidden pb-12 pt-12">
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(50%_100%_at_50%_0%,rgb(255_241_214_/_0.6),transparent)]" />
-      <PageContainer className="relative">
-        <Reveal className="text-center">
-          <p className="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-ink-soft">Temporada {year}</p>
-          <h2 id="sponsors-title" className="mt-2 font-display text-xl font-bold">El teatro lo hacemos juntos</h2>
+    <section aria-labelledby="sponsors-title" className="border-y-2 border-ink bg-surface py-12 sm:py-16">
+      <PageContainer className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:items-center">
+        <Reveal>
+          <p className="eyebrow">Temporada {year}</p>
+          <h2 id="sponsors-title" className="mt-2 font-display text-4xl font-extrabold leading-none sm:text-5xl">El teatro lo hacemos juntos</h2>
+          <p className="mt-4 max-w-md text-lg text-ink-soft">Cada butaca ocupada es una marca que apoya a la escena. Pasá el mouse o tocá una para ver quién es.</p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <span className="flex items-center gap-2 text-ink-soft">
+              <span aria-hidden className="map-seat free [--seat:1.1rem]" />Butaca disponible
+            </span>
+            <Button variant="secondary" to="/contacto?tema=butaca" iconRight={ArrowRight}>Auspiciá una butaca</Button>
+          </div>
+          {SPONSORS.some((s) => s.demo) && <p className="mt-3 text-sm text-ink-soft">Marcas ficticias de demostración.</p>}
         </Reveal>
 
-        <div className="seat-map mx-auto mt-8 max-w-2xl pb-2">
-          <div className="seat-map-inner mx-auto w-max px-2 pt-10">
-            {/* Escenario */}
+        <div className="seat-map min-w-0 pb-2">
+          <div className="seat-map-inner mx-auto w-max px-2">
+            {/* Escenario: la boca curva, como en el plano de una boletería. */}
             <div aria-hidden className="relative mx-auto mb-8 h-10 w-[85%]">
               <svg viewBox="0 0 400 40" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
-                <path d="M2 4 Q200 52 398 4" fill="none" stroke="var(--color-ink)" strokeOpacity="0.35" strokeWidth="2" />
+                <path d="M2 4 Q200 52 398 4" fill="none" stroke="var(--color-ink)" strokeOpacity="0.55" strokeWidth="2.5" />
               </svg>
-              <span className="absolute inset-x-0 top-0 text-center text-[0.65rem] font-bold uppercase tracking-[0.35em] text-ink-soft">Escenario</span>
+              <span className="data absolute inset-x-0 top-0 text-center text-sm uppercase text-ink-soft">Escenario</span>
             </div>
             {/* Filas */}
             <div className="space-y-3">
               {ROWS.map((row) => (
                 <div key={row} className="flex items-center gap-3">
-                  <span aria-hidden className="w-4 text-xs font-bold text-ink-soft">{row}</span>
+                  <span aria-hidden className="data w-4 text-sm text-ink-soft">{row}</span>
                   <ul className="seat-row flex" aria-label={`Fila ${row}`}>
                     {map[row].map((sponsor, i) => (
                       <Seat key={`${row}${i}`} row={row} index={i} sponsor={sponsor} active={sponsor && hovered === sponsor.id} onHover={setHovered} />
                     ))}
                   </ul>
-                  <span aria-hidden className="w-4 text-xs font-bold text-ink-soft">{row}</span>
+                  <span aria-hidden className="data w-4 text-sm text-ink-soft">{row}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
+      </PageContainer>
 
+      <PageContainer>
         {/* Sponsors con logo */}
         {/* Cinta de sponsors: avanza despacio hacia el costado y se frena al pasar
             el mouse. Así entran todas las marcas aunque se llene la platea. */}
@@ -148,15 +154,6 @@ export function SponsorStrip() {
           </Reveal>
         )}
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
-          <span className="flex items-center gap-2 text-ink-soft">
-            <span aria-hidden className="map-seat free !h-3.5 !w-4" />Butaca disponible
-          </span>
-          <Link to="/contacto?tema=butaca" className="inline-flex items-center gap-1 font-semibold text-[#743B45] hover:underline">
-            Auspiciá una butaca<ArrowRight aria-hidden className="size-4" />
-          </Link>
-        </div>
-        {SPONSORS.some((s) => s.demo) && <p className="mt-3 text-center text-xs text-ink-soft">Marcas ficticias de demostración.</p>}
       </PageContainer>
     </section>
   )

@@ -3,25 +3,31 @@ import { Link } from 'react-router-dom'
 import { Loader2 } from 'lucide-react'
 import { cn } from '@/utils/format'
 
+// Rectángulos planos: tinta llena para la acción principal, contorno de 2 px
+// para la secundaria. Sin sombras ni esquinas redondeadas (ver tokens en index.css).
 const VARIANTS = {
-  primary: 'bg-brand text-white hover:bg-brand-strong shadow-[0_6px_16px_-6px_rgb(38_58_82_/_0.5)]',
-  accent: 'bg-accent text-white hover:bg-accent-strong shadow-sm',
-  secondary: 'bg-surface text-ink border border-line-strong hover:border-brand hover:text-brand',
-  ghost: 'text-ink hover:bg-ink/5',
+  primary: 'bg-brand text-white hover:bg-brand-strong',
+  accent: 'bg-accent text-white hover:bg-accent-strong',
+  secondary: 'bg-surface text-ink border-2 border-ink hover:bg-ink hover:text-white',
+  ghost: 'text-ink underline-offset-4 hover:bg-ink/5 hover:underline',
   danger: 'bg-danger text-white hover:brightness-90',
-  link: 'text-brand underline-offset-4 hover:underline px-0 min-h-0',
+  // Sobre fondos oscuros (hero, cierre, 404). Variantes propias en lugar de pisar
+  // clases: si no, el hover del primario (azul noche) gana y el botón desaparece.
+  inverse: 'bg-white text-brand hover:bg-[#FFE7B3]',
+  'inverse-outline': 'border-2 border-white text-white hover:bg-white hover:text-brand',
+  link: 'text-ink font-bold underline decoration-2 underline-offset-4 hover:decoration-4 px-0 min-h-0',
 }
 
 const SIZES = {
-  sm: 'min-h-9 px-3 text-sm gap-1.5',
-  md: 'min-h-11 px-5 text-sm gap-2',
-  lg: 'min-h-12 px-6 text-base gap-2',
+  sm: 'min-h-10 px-3.5 text-sm gap-1.5',
+  md: 'min-h-12 px-5 text-base gap-2',
+  lg: 'min-h-14 px-6 text-lg gap-2.5',
   icon: 'size-11 justify-center',
 }
 
 export function buttonClasses({ variant = 'primary', size = 'md', className } = {}) {
   return cn(
-    'inline-flex items-center justify-center rounded-full font-semibold transition-all duration-150 active:scale-[0.98]',
+    'inline-flex items-center justify-center font-bold transition-colors duration-150',
     'disabled:cursor-not-allowed disabled:opacity-55 aria-disabled:pointer-events-none aria-disabled:opacity-55',
     VARIANTS[variant], variant !== 'link' && SIZES[size], className,
   )

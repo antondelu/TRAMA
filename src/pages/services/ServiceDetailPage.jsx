@@ -34,7 +34,7 @@ export default function ServiceDetailPage() {
   const isOwner = user?.id === pro.ownerId
 
   return (
-    <DetailLayout isPreview={pro.isPreview}
+    <DetailLayout area="area-servicios" isPreview={pro.isPreview}
       breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Servicios', to: '/servicios' }, { label: pro.name }]}
       hero={(
         <div className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-line bg-surface p-6 sm:flex-row sm:items-center">

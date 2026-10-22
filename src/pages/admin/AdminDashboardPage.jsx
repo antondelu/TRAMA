@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Users, Building2, Drama, Wrench, Megaphone, BookOpen, ShieldCheck, BadgeDollarSign } from 'lucide-react'
+import { Users, Building2, Ticket, Wrench, Megaphone, BookOpen, ShieldCheck, BadgeDollarSign } from 'lucide-react'
 import { AdminHeader } from './AdminLayout'
 import { DemoNotice } from '@/components/ui/DemoNotice'
 import { ErrorState, LoadingSkeleton } from '@/components/ui/States'
@@ -17,7 +17,7 @@ export default function AdminDashboardPage() {
   const stats = [
     { label: 'Usuarios registrados', value: data.users, sub: `${data.activeUsers} activos`, icon: Users, to: can('admin:users') && '/admin/usuarios' },
     { label: 'Salas publicadas', value: data.venues, icon: Building2, to: '/salas' },
-    { label: 'Espectáculos publicados', value: data.shows, icon: Drama, to: '/espectaculos' },
+    { label: 'Espectáculos publicados', value: data.shows, icon: Ticket, to: '/espectaculos' },
     { label: 'Profesionales publicados', value: data.professionals, icon: Wrench, to: '/servicios' },
     { label: 'Convocatorias activas', value: data.openOpportunities, icon: Megaphone, to: can('admin:moderate') && '/admin/oportunidades' },
     { label: 'Recursos publicados', value: data.resources, icon: BookOpen, to: can('resources:manage') && '/admin/recursos' },

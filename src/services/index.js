@@ -2,6 +2,7 @@
 // a una API real se reemplazan las implementaciones, no las páginas.
 export { venuesService } from './venuesService'
 export { showsService } from './showsService'
+export { performancesService } from './performancesService'
 export { servicesService } from './servicesService'
 export { opportunitiesService } from './opportunitiesService'
 export { resourcesService, ACCESS_LEVELS } from './resourcesService'

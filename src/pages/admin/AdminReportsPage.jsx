@@ -20,7 +20,7 @@ function BarList({ title, data, labelFor = (k) => k }) {
           {entries.map(([key, value]) => (
             <li key={key} className="grid grid-cols-[8rem_1fr_2rem] items-center gap-3 text-sm sm:grid-cols-[10rem_1fr_2rem]">
               <span className="truncate text-ink-soft" title={labelFor(key)}>{labelFor(key)}</span>
-              <span className="h-2.5 overflow-hidden rounded-full bg-ink/5"><span className="block h-full rounded-full bg-accent" style={{ width: `${(value / max) * 100}%` }} /></span>
+              <span className="h-2.5 overflow-hidden bg-ink/5"><span className="block h-full bg-accent" style={{ width: `${(value / max) * 100}%` }} /></span>
               <span className="text-right font-semibold tabular-nums">{value}</span>
             </li>
           ))}

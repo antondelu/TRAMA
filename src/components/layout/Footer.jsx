@@ -3,36 +3,12 @@ import { Logo } from '@/components/navigation/Logo'
 import { PageContainer } from './PageContainer'
 import { CATEGORIES, OPPORTUNITIES_NAV, NEWS_NAV } from '@/constants/navigation'
 import { APP } from '@/config/app'
-import { cn } from '@/utils/format'
 
 const COLUMNS = [
   { title: 'Explorar', links: [...CATEGORIES, OPPORTUNITIES_NAV, NEWS_NAV].map((c) => ({ to: c.to, label: c.label })) },
   { title: 'TRAMA', links: [{ to: '/como-funciona', label: 'Cómo funciona' }, { to: '/nosotros', label: 'Nosotros' }, { to: '/planes', label: 'Membresías' }, { to: '/publicar', label: 'Publicar' }] },
   { title: 'Ayuda', links: [{ to: '/contacto', label: 'Contacto' }, { to: '/terminos', label: 'Términos y condiciones' }, { to: '/privacidad', label: 'Política de privacidad' }] },
 ]
-
-// Telones atados: una cortina bordó a cada costado, recogida a media altura con un lazo,
-// como en la boca de un escenario. Se dibuja la izquierda y la derecha es su espejo.
-// Las franjas repetidas del degradé simulan los pliegues de la tela.
-function Curtain({ side }) {
-  const id = `curtain-folds-${side}`
-  return (
-    <svg aria-hidden="true" viewBox="0 0 100 400" preserveAspectRatio="none"
-      className={cn('absolute inset-y-0 hidden h-full w-20 lg:block', side === 'left' ? 'left-0' : 'right-0 -scale-x-100')}>
-      <defs>
-        <linearGradient id={id} x1="0" x2="0.34" y1="0" y2="0" spreadMethod="repeat">
-          <stop offset="0" stopColor="var(--color-curtain-strong)" />
-          <stop offset="0.5" stopColor="var(--color-curtain)" />
-          <stop offset="1" stopColor="var(--color-curtain-strong)" />
-        </linearGradient>
-      </defs>
-      <path d="M0 0H100C100 90 34 170 24 210C34 255 78 330 70 400H0Z" fill={`url(#${id})`} />
-      <path d="M100 0C100 90 34 170 24 210C34 255 78 330 70 400" fill="none" stroke="rgb(0 0 0 / 0.3)" strokeWidth="3" />
-      <rect x="0" y="202" width="34" height="14" rx="7" fill="var(--color-curtain-tie)" />
-      <path d="M26 214L32 246H20Z" fill="var(--color-curtain-tie)" />
-    </svg>
-  )
-}
 
 // Íconos de Android e iOS (Simple Icons, CC0). Las insignias oficiales de las
 // tiendas solo se pueden usar con la app publicada: hasta entonces, íconos simples.
@@ -45,10 +21,10 @@ const PLATFORMS = [
 function AppsComingSoon() {
   return (
     <div className="pt-1">
-      <p id="footer-apps" className="text-xs font-semibold uppercase tracking-[0.14em] text-white/50">Apps · Próximamente</p>
+      <p id="footer-apps" className="eyebrow !text-white/60">Apps · Próximamente</p>
       <ul aria-labelledby="footer-apps" className="mt-2 flex flex-wrap gap-2">
         {PLATFORMS.map((p) => (
-          <li key={p.id} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1.5 text-xs font-semibold text-white/70">
+          <li key={p.id} className="inline-flex items-center gap-1.5 border border-white/30 px-3 py-1.5 text-sm font-bold text-white/80">
             <svg aria-hidden viewBox="0 0 24 24" className="size-3.5 fill-current"><path d={p.path} /></svg>
             {p.label}
           </li>
@@ -60,26 +36,30 @@ function AppsComingSoon() {
 
 export function Footer() {
   return (
-    <footer className="relative mt-auto bg-brand-strong pb-[env(safe-area-inset-bottom)] text-white/80 lg:px-20">
-      <Curtain side="left" />
-      <Curtain side="right" />
+    <footer className="mt-auto bg-night pb-[env(safe-area-inset-bottom)] text-white/85">
       <PageContainer className="grid gap-10 py-12 md:grid-cols-[1.4fr_repeat(3,1fr)]">
-        <div className="space-y-3">
+        <div className="space-y-4">
           <Logo inverted />
-          <p className="max-w-xs text-sm">{APP.descriptor}. Salas, espectáculos, servicios y recursos en un mismo lugar.</p>
+          <p className="max-w-xs text-base">{APP.descriptor}. Salas, espectáculos, servicios y recursos en un mismo lugar.</p>
           <AppsComingSoon />
         </div>
         {COLUMNS.map((col) => (
           <nav key={col.title} aria-label={col.title}>
-            <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-white/50">{col.title}</h2>
-            <ul className="space-y-2 text-sm">
-              {col.links.map((l) => <li key={l.to}><Link to={l.to} className="hover:text-white hover:underline">{l.label}</Link></li>)}
+            <h2 className="eyebrow mb-3 !text-white/60">{col.title}</h2>
+            <ul className="space-y-2.5 text-base">
+              {col.links.map((l) => <li key={l.to}><Link to={l.to} className="underline-offset-4 hover:text-white hover:underline">{l.label}</Link></li>)}
             </ul>
           </nav>
         ))}
       </PageContainer>
-      <div className="border-t border-white/10">
-        <PageContainer className="flex flex-wrap items-center justify-between gap-2 py-4 text-xs text-white/50">
+      {/* El nombre en grande cierra la página, como el pie de un cartel. */}
+      <div aria-hidden className="overflow-hidden border-t border-white/15">
+        <PageContainer>
+          <p className="select-none font-display text-[clamp(4.5rem,19vw,15rem)] font-extrabold leading-[0.78] tracking-[-0.04em] text-white/[0.08] [font-stretch:125%]">trama</p>
+        </PageContainer>
+      </div>
+      <div className="border-t border-white/15">
+        <PageContainer className="flex flex-wrap items-center justify-between gap-2 py-4 text-sm text-white/65">
           <p>© {new Date().getFullYear()} {APP.name} · {APP.owner}. Uruguay.</p>
           <p>Desarrollado por {APP.owner}.</p>
         </PageContainer>
