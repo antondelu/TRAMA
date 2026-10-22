@@ -177,6 +177,23 @@ async function fromCartelera(today, until) {
   return out
 }
 
+// Sin comprobar antes si existe: se lee y, si no está, se arranca vacío.
+function readJson(file) {
+  try {
+    return JSON.parse(fs.readFileSync(file, 'utf8'))
+  } catch (err) {
+    if (err.code === 'ENOENT') return null
+    throw err
+  }
+}
+
+// Escribe a un temporal y lo renombra: el archivo nunca queda a medio escribir.
+function writeAtomic(file, content) {
+  const tmp = `${file}.${process.pid}.tmp`
+  fs.writeFileSync(tmp, content)
+  fs.renameSync(tmp, file)
+}
+
 // ------------------------------------------------------------- Geolocalizar
 async function geocode(address, cache) {
   const key = normalize(address)
@@ -265,13 +282,13 @@ async function main() {
     }
   }
 
-  const cache = fs.existsSync(GEOCACHE) ? JSON.parse(fs.readFileSync(GEOCACHE, 'utf8')) : {}
+  const cache = readJson(GEOCACHE) ?? {}
   for (const p of places.values()) {
     if (p.lat != null || !p.address) continue
     const g = await geocode(p.address, cache)
     if (g) Object.assign(p, g)
   }
-  fs.writeFileSync(GEOCACHE, `${JSON.stringify(cache, null, 2)}\n`)
+  writeAtomic(GEOCACHE, `${JSON.stringify(cache, null, 2)}\n`)
 
   const performances = [...byKey.values()]
     .sort((a, b) => `${a.date}${a.time}${a.title}`.localeCompare(`${b.date}${b.time}${b.title}`, 'es'))
@@ -286,7 +303,7 @@ async function main() {
     .map(({ id, name, address, lon, lat }) => ({ id, name, address, lon, lat }))
 
   fs.mkdirSync(path.dirname(OUT), { recursive: true })
-  fs.writeFileSync(OUT, `${JSON.stringify({ fetchedAt: new Date().toISOString(), from: today, until, places: usedPlaces, performances }, null, 1)}\n`)
+  writeAtomic(OUT, `${JSON.stringify({ fetchedAt: new Date().toISOString(), from: today, until, places: usedPlaces, performances }, null, 1)}\n`)
   const noGeo = usedPlaces.filter((p) => p.lat == null).map((p) => p.name)
   log(`Listo: ${performances.length} funciones en ${usedPlaces.length} salas -> ${path.relative(ROOT, OUT)}`)
   if (noGeo.length) log(`Sin ubicar (salen en la lista, no en el mapa): ${noGeo.join(', ')}`)
