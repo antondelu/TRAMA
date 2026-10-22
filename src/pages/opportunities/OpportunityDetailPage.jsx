@@ -65,7 +65,7 @@ export default function OpportunityDetailPage() {
   const isOwner = user?.id === o.ownerId
 
   return (
-    <DetailLayout isPreview={o.isPreview}
+    <DetailLayout area="area-convocatorias" isPreview={o.isPreview}
       breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Convocatorias', to: '/oportunidades' }, { label: o.title }]}
       hero={(
         <div className="rounded-[var(--radius-card)] border border-line bg-surface p-6 sm:p-8">

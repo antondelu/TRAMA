@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Menu, Search } from 'lucide-react'
 import { Logo } from '@/components/navigation/Logo'
-import { MainNavigation } from '@/components/navigation/MainNavigation'
+import { MainNavigation, AreaStrip } from '@/components/navigation/MainNavigation'
 import { MobileNavigation } from '@/components/navigation/MobileNavigation'
 import { AccountMenu } from '@/components/navigation/AccountMenu'
 import { Button } from '@/components/ui/Button'
@@ -12,9 +12,9 @@ export function PublicHeader() {
   const { user, loading } = useAuth()
   const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <header className="sticky top-0 z-30 border-b border-line/70 bg-canvas/85 pt-[env(safe-area-inset-top)] backdrop-blur-md">
+    <header className="sticky top-0 z-30 border-ink bg-canvas pt-[env(safe-area-inset-top)] lg:border-b-2">
       <PageContainer className="flex h-16 items-center justify-between gap-4">
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 self-stretch xl:gap-8">
           <Logo />
           <MainNavigation />
         </div>
@@ -37,6 +37,7 @@ export function PublicHeader() {
           </Button>
         </div>
       </PageContainer>
+      <AreaStrip />
       <MobileNavigation open={menuOpen} onClose={() => setMenuOpen(false)} />
     </header>
   )

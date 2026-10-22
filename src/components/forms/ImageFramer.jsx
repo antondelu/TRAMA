@@ -58,7 +58,7 @@ export function ImageFramer({ image, ratio = 'aspect-[4/3]', label, onChange, cl
         onKeyDown={onKeyDown}
         className={cn('group relative cursor-grab touch-none select-none overflow-hidden rounded-[calc(var(--radius-card)-0.375rem)] bg-canvas outline-offset-2 active:cursor-grabbing', ratio)}>
         <img src={image.url} alt="" draggable={false} style={focusStyle(focus)} className="pointer-events-none size-full object-cover" />
-        <span aria-hidden className="pointer-events-none absolute bottom-2 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-black/55 px-3 py-1 text-xs font-medium text-white opacity-90 transition-opacity group-active:opacity-0">
+        <span aria-hidden className="pointer-events-none absolute bottom-2 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap bg-black/55 px-3 py-1 text-xs font-medium text-white opacity-90 transition-opacity group-active:opacity-0">
           <Move className="size-3.5" /> Arrastrá para ubicarla
         </span>
       </div>

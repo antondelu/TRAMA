@@ -104,7 +104,7 @@ export default function MessagesPage() {
                       <span className="block truncate text-xs text-ink-soft">{c.subject}</span>
                       {c.lastMessage && <span className="block truncate text-sm text-ink-soft">{c.lastMessage.mine ? 'Vos: ' : ''}{c.lastMessage.body}</span>}
                     </span>
-                    {c.unread > 0 && <span className="mt-1 rounded-full bg-brand px-2 text-xs font-semibold text-white">{c.unread}<span className="sr-only"> sin leer</span></span>}
+                    {c.unread > 0 && <span className="mt-1 bg-brand px-2 text-xs font-semibold text-white">{c.unread}<span className="sr-only"> sin leer</span></span>}
                   </button>
                 </li>
               ))}

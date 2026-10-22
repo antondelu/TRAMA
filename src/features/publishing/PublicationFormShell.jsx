@@ -12,10 +12,10 @@ import { cn } from '@/utils/format'
 
 export function FormSection({ title, description, children }) {
   return (
-    <fieldset className="space-y-4 rounded-[var(--radius-card)] border border-line bg-surface p-5 sm:p-6">
+    <fieldset className="space-y-4 border-2 border-ink bg-surface p-5 sm:p-6">
       <legend className="sr-only">{title}</legend>
       <div aria-hidden>
-        <h2 className="font-display text-xl font-semibold">{title}</h2>
+        <h2 className="font-display text-2xl font-extrabold leading-none">{title}</h2>
         {description && <p className="mt-0.5 text-sm text-ink-soft">{description}</p>}
       </div>
       {children}
@@ -83,17 +83,17 @@ export function PublicationFormShell({ title, kindLabel, ctl, preview, statusKey
         <form noValidate onSubmit={submit} className="space-y-6">
           <div ref={topRef} className="scroll-mt-24 space-y-3">
             <p className="text-sm font-semibold text-ink-soft" aria-live="polite">Paso {step + 1} de {steps.length}: <span className="text-ink">{steps[step]?.props.title}</span></p>
-            <div className="h-1.5 overflow-hidden rounded-full bg-line" aria-hidden>
-              <div className="h-full rounded-full bg-brand transition-[width] duration-300" style={{ width: `${((step + 1) / steps.length) * 100}%` }} />
+            <div className="h-2 overflow-hidden bg-line" aria-hidden>
+              <div className="h-full bg-ink transition-[width] duration-300" style={{ width: `${((step + 1) / steps.length) * 100}%` }} />
             </div>
             {/* En celular alcanza con "Paso 2 de 5" y la barra: la lista de pasos ocuparía media pantalla. */}
             <ol className="flex flex-wrap gap-2 max-sm:hidden" aria-label="Pasos del formulario">
               {steps.map((s, i) => (
                 <li key={s.props.title}>
                   <button type="button" onClick={() => goTo(i)} aria-current={i === step ? 'step' : undefined}
-                    className={cn('inline-flex min-h-10 items-center gap-2 rounded-full border px-3 text-sm font-semibold',
-                      i === step ? 'border-brand bg-brand text-white' : 'border-line-strong bg-surface text-ink hover:border-brand')}>
-                    <span aria-hidden>{i + 1}</span>{s.props.title}
+                    className={cn('inline-flex min-h-11 items-center gap-2 border-2 px-3 text-sm font-bold',
+                      i === step ? 'border-ink bg-ink text-white' : 'border-line-strong bg-surface text-ink hover:border-ink')}>
+                    <span aria-hidden className="data">{i + 1}</span>{s.props.title}
                   </button>
                 </li>
               ))}

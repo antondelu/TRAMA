@@ -15,11 +15,13 @@ function renderAt(path) {
 beforeEach(() => freshDemo())
 
 describe('navegación', () => {
-  it('la home muestra el hero y las cuatro categorías', async () => {
+  it('la home muestra el hero y las seis áreas', async () => {
     renderAt('/')
     expect(await screen.findByRole('heading', { level: 1, name: /todo lo que necesitás para/i })).toBeInTheDocument()
-    const nav = screen.getByRole('navigation', { name: 'Accesos rápidos' })
-    for (const name of ['Salas', 'Espectáculos', 'Servicios', 'Recursos']) expect(within(nav).getByRole('link', { name })).toBeInTheDocument()
+    const nav = screen.getByRole('navigation', { name: 'Áreas de TRAMA' })
+    for (const name of ['Salas', 'Espectáculos', 'Servicios', 'Convocatorias', 'Recursos', 'Noticias']) {
+      expect(within(nav).getByRole('link', { name: new RegExp(`^${name}`) })).toBeInTheDocument()
+    }
   })
 
   it('los filtros en la URL cambian los resultados del catálogo', async () => {

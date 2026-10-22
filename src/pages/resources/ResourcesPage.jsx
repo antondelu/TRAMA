@@ -38,7 +38,7 @@ export default function ResourcesPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Recursos" title="Biblioteca profesional."
+      <PageHeader area="area-recursos" eyebrow="Recursos" title="Biblioteca profesional."
         description="Guías, entrevistas, plantillas y formación."
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Recursos' }]}
         actions={<Button variant="secondary" to="/planes">Ver membresías</Button>} />

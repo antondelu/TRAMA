@@ -59,7 +59,7 @@ export default function NewsPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Noticias" title="Lo que pasa en la escena."
+      <PageHeader area="area-noticias" eyebrow="Noticias" title="Lo que pasa en la escena."
         description="Teatro, danza, música en vivo, circo y carnaval: noticias de Montevideo, del interior y del mundo, con enlace a cada medio."
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Noticias' }]} />
       <PageContainer className="space-y-16 py-10">

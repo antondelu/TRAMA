@@ -1,23 +1,22 @@
 import { ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
 import { PageContainer } from '@/components/layout/PageContainer'
-import { Stage } from '@/components/media/Stage'
+import { Button } from '@/components/ui/Button'
 
-// Cierre: otro escenario con foco, para que la home abra y cierre como una función.
+// Cierre: un plano azul noche con la invitación a publicar.
 export function JoinSection() {
   return (
-    <section aria-labelledby="join-title" className="pb-16 pt-6 sm:pb-24">
-      <PageContainer>
-        <Stage as="div" className="rounded-[2rem] px-6 py-16 text-center sm:py-24">
-          <h2 id="join-title" className="font-display text-4xl font-bold tracking-tight sm:text-6xl">
-            Formá parte <span className="stage-lit">de la red.</span>
+    <section aria-labelledby="join-title" className="bg-brand-strong text-white">
+      <PageContainer className="grid gap-8 py-16 sm:py-24 lg:grid-cols-[minmax(0,1.4fr)_auto] lg:items-end">
+        <div>
+          <h2 id="join-title" className="font-display text-5xl font-extrabold leading-[0.92] sm:text-7xl">
+            Formá parte <span className="block text-area-convocatorias [font-stretch:72%]">de la red.</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-white/65">Publicar es gratis.</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button to="/publicar" size="lg" className="bg-white !text-brand shadow-none hover:bg-[rgb(255_241_214)]" iconRight={ArrowRight}>Publicar en TRAMA</Button>
-            <Button to="/oportunidades" size="lg" variant="ghost" className="text-white hover:bg-white/10">Ver convocatorias</Button>
-          </div>
-        </Stage>
+          <p className="mt-4 text-lg text-white/80">Publicar es gratis.</p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <Button to="/publicar" size="lg" variant="inverse" iconRight={ArrowRight}>Publicar en TRAMA</Button>
+          <Button to="/oportunidades" size="lg" variant="inverse-outline">Ver convocatorias</Button>
+        </div>
       </PageContainer>
     </section>
   )

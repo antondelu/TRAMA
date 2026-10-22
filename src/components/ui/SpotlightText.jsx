@@ -1,14 +1,11 @@
-// Frase con foco seguidor: arranca tenue, un círculo de luz cálida la recorre
-// y se queda sobre `lit`, que termina iluminado. Pasa una sola vez al cargar.
-// Con "reducir movimiento" se muestra directamente el estado final.
+// Frase con las últimas palabras destacadas: condensadas y subrayadas con un
+// trazo grueso del color de Servicios. Antes era un foco de luz que barría
+// la frase; ahora es tipografía, sin animación.
 export function SpotlightText({ before, lit }) {
   return (
     <>
-      <span className="spot-dim">{before}</span>{' '}
-      <span className="spot-lit">
-        <span aria-hidden className="spot-beam" />
-        {lit}
-      </span>
+      {before}{' '}
+      <span className="whitespace-nowrap underline decoration-area-servicios decoration-[0.14em] underline-offset-[0.12em] [font-stretch:72%]">{lit}</span>
     </>
   )
 }

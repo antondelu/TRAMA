@@ -126,7 +126,7 @@ export function FileUpload({ label, accept = 'image/jpeg,image/png,image/webp', 
                   </button>
                   {i === coverIndex && <span className="pointer-events-none absolute bottom-1 left-1 rounded bg-brand px-1 text-[10px] font-semibold text-white">Portada</span>}
                   <button type="button" onClick={() => remove(i)} aria-label={`Quitar ${f.name ?? `foto ${i + 1}`}`}
-                    className="absolute -right-1.5 -top-1.5 rounded-full border border-line bg-surface p-0.5 text-ink-soft shadow-sm hover:text-danger">
+                    className="absolute -right-1.5 -top-1.5 border border-line bg-surface p-0.5 text-ink-soft shadow-sm hover:text-danger">
                     <X aria-hidden className="size-3.5" />
                   </button>
                 </li>

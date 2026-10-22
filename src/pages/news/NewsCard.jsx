@@ -79,11 +79,11 @@ export function NewsCard({ item, featured = false }) {
         {item.summary && <p className={cn('mt-2 text-sm text-ink-soft', featured ? 'line-clamp-5 md:text-base' : 'line-clamp-3')}>{item.summary}</p>}
         <div className="mt-auto flex flex-wrap items-center gap-1.5 pt-4 text-xs">
           {place && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-brand-soft px-2.5 py-1 font-semibold text-brand">
+            <span className="inline-flex items-center gap-1 bg-brand-soft px-2.5 py-1 font-semibold text-brand">
               <MapPin aria-hidden className="size-3.5" />{place}
             </span>
           )}
-          {item.disciplines.map((d) => <span key={d.id} className="rounded-full bg-canvas px-2.5 py-1 font-semibold text-ink-soft">{d.label}</span>)}
+          {item.disciplines.map((d) => <span key={d.id} className="bg-canvas px-2.5 py-1 font-semibold text-ink-soft">{d.label}</span>)}
           <span className="ml-auto inline-flex items-center gap-1 font-semibold text-brand" aria-hidden>
             Leer en la fuente <ExternalLink className="size-3.5" />
           </span>

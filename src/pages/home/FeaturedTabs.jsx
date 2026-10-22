@@ -16,11 +16,11 @@ import { cn } from '@/utils/format'
 // Un solo bloque de destacados con pestañas, en lugar de una sección por
 // categoría: menos información de golpe en la home.
 const TABS = [
-  { id: 'salas', label: 'Salas', to: '/salas', fetch: () => venuesService.featured(3), render: (x) => <VenueCard venue={x} /> },
-  { id: 'espectaculos', label: 'Espectáculos', to: '/espectaculos', fetch: () => showsService.featured(3), render: (x) => <ShowCard show={x} /> },
-  { id: 'servicios', label: 'Servicios', to: '/servicios', fetch: () => servicesService.featured(3), render: (x) => <ProfessionalCard pro={x} /> },
-  { id: 'oportunidades', label: 'Convocatorias', to: '/oportunidades', fetch: () => opportunitiesService.featured(3), render: (x) => <OpportunityCard opportunity={x} /> },
-  { id: 'recursos', label: 'Recursos', to: '/recursos', fetch: () => resourcesService.featured(3), render: (x) => <ResourceCard resource={x} /> },
+  { id: 'salas', area: 'area-salas', label: 'Salas', to: '/salas', fetch: () => venuesService.featured(3), render: (x) => <VenueCard venue={x} /> },
+  { id: 'espectaculos', area: 'area-shows', label: 'Espectáculos', to: '/espectaculos', fetch: () => showsService.featured(3), render: (x) => <ShowCard show={x} /> },
+  { id: 'servicios', area: 'area-servicios', label: 'Servicios', to: '/servicios', fetch: () => servicesService.featured(3), render: (x) => <ProfessionalCard pro={x} /> },
+  { id: 'oportunidades', area: 'area-convocatorias', label: 'Convocatorias', to: '/oportunidades', fetch: () => opportunitiesService.featured(3), render: (x) => <OpportunityCard opportunity={x} /> },
+  { id: 'recursos', area: 'area-recursos', label: 'Recursos', to: '/recursos', fetch: () => resourcesService.featured(3), render: (x) => <ResourceCard resource={x} /> },
 ]
 
 // Contenido de una pestaña. Se monta de nuevo al cambiar de pestaña (key),
@@ -44,13 +44,14 @@ export function FeaturedTabs() {
   return (
     <section aria-labelledby="featured-title" className="py-14 sm:py-20">
       <PageContainer>
-        <Reveal className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <h2 id="featured-title" className="font-display text-3xl font-bold tracking-tight sm:text-5xl">Destacados</h2>
-          <div role="tablist" aria-label="Categoría de destacados" className="flex max-w-full gap-1 overflow-x-auto rounded-full bg-surface p-1 shadow-[var(--shadow-card)]">
+        <Reveal className="mb-8 flex flex-wrap items-end justify-between gap-x-8 gap-y-4 border-b-2 border-ink">
+          <h2 id="featured-title" className="pb-3 font-display text-4xl font-extrabold leading-none sm:text-6xl">Destacados</h2>
+          {/* Pestañas subrayadas con el color de cada área, como el menú principal. */}
+          <div role="tablist" aria-label="Categoría de destacados" className="-mb-0.5 flex max-w-full gap-5 overflow-x-auto">
             {TABS.map((t) => (
               <button key={t.id} type="button" role="tab" aria-selected={t.id === active} onClick={() => setActive(t.id)}
-                className={cn('min-h-10 shrink-0 rounded-full px-4 text-sm font-semibold transition-colors',
-                  t.id === active ? 'bg-brand text-white' : 'text-ink-soft hover:text-brand')}>
+                className={cn('min-h-12 shrink-0 border-b-[6px] text-base font-bold transition-colors', t.area,
+                  t.id === active ? 'border-[var(--area)] text-ink' : 'border-transparent text-ink-soft hover:text-ink')}>
                 {t.label}
               </button>
             ))}

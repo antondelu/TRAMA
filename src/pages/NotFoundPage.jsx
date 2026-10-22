@@ -22,8 +22,8 @@ export default function NotFoundPage() {
           <SearchBar className="border-white/10 shadow-[0_20px_60px_-20px_rgb(0_0_0_/_0.6)]" />
         </div>
         <div className="enter mt-8 flex flex-wrap justify-center gap-3" style={{ '--d': '2950ms' }}>
-          <Button to="/" className="bg-white !text-brand shadow-none hover:bg-[rgb(255_241_214)]">Ir al inicio</Button>
-          <Button variant="ghost" to="/contacto" className="text-white hover:bg-white/10">Avisarnos</Button>
+          <Button to="/" variant="inverse">Ir al inicio</Button>
+          <Button variant="inverse-outline" to="/contacto">Avisarnos</Button>
         </div>
       </PageContainer>
     </Stage>

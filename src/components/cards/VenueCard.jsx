@@ -17,7 +17,7 @@ export function VenueCard({ venue }) {
       imageFocus={venue.images?.[0]?.focus}
       kind="venue"
       favorite={{ type: 'venue', id: venue.id }}
-      badges={venue.hasOpenCall && <Badge tone="accent">Convocatoria abierta</Badge>}
+      badges={venue.hasOpenCall && <Badge tone="convocatoria">Convocatoria abierta</Badge>}
       cta="Ver sala"
       footer={<PriceDisplay from={venue.priceFrom} unit={venue.priceUnit} currency={venue.currency} />}
     >

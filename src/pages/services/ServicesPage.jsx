@@ -36,7 +36,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Servicios" title="Profesionales para tu proyecto."
+      <PageHeader area="area-servicios" eyebrow="Servicios" title="Profesionales para tu proyecto."
         description="Técnica, diseño, producción y más."
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Servicios' }]}
         actions={<Button variant="secondary" to="/publicar/servicio">Ofrecer mis servicios</Button>} />

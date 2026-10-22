@@ -1,51 +1,48 @@
-import { Building2, Drama, Wrench, BookOpen, Megaphone, Video, Headphones, FileText, Book, GraduationCap, LayoutTemplate, Newspaper } from 'lucide-react'
+import { Building2, Ticket, Wrench, BookOpen, Megaphone, Video, Headphones, FileText, Book, GraduationCap, LayoutTemplate, Newspaper } from 'lucide-react'
 import { cn } from '@/utils/format'
 import { focusStyle } from '@/utils/image'
+import { areaFor } from '@/constants/navigation'
 
 const ICONS = {
-  venue: Building2, show: Drama, service: Wrench, resource: BookOpen, opportunity: Megaphone,
+  venue: Building2, show: Ticket, service: Wrench, resource: BookOpen, opportunity: Megaphone,
   video: Video, audio: Headphones, pdf: FileText, book: Book, course: GraduationCap, template: LayoutTemplate, article: Newspaper,
 }
 
-// Combinaciones de la paleta: fondo, dos luces y color del ícono.
-export const COVER_TONES = {
-  night: { base: '#263A52', glow: '#3E6A96', glow2: '#192839', fg: 'rgb(255 255 255 / 0.9)' },
-  steel: { base: '#3E6A96', glow: '#7FA7CF', glow2: '#263A52', fg: 'rgb(255 255 255 / 0.92)' },
-  sky: { base: '#DCE6F1', glow: '#FFFFFF', glow2: '#B8CCE2', fg: '#263A52' },
-  ivory: { base: '#ECE7DD', glow: '#FFFFFF', glow2: '#DCD3C3', fg: '#263A52' },
-  deep: { base: '#192839', glow: '#2C5078', glow2: '#263A52', fg: 'rgb(255 255 255 / 0.88)' },
-}
-
-// Tono estable a partir del texto: la misma sala siempre tiene el mismo color.
-function toneFor(seed = '') {
-  const keys = Object.keys(COVER_TONES)
+// Variación estable a partir del nombre: la misma publicación siempre tiene
+// el mismo tono y la misma dirección de hilos, y dos vecinas casi nunca coinciden.
+const SHADES = ['0%', '12%', '22%']
+const WEAVES = ['35deg', '62deg', '118deg', '145deg']
+function variantFor(seed = '') {
   let n = 0
-  for (const ch of seed) n = (n + ch.charCodeAt(0)) % 997
-  return keys[n % keys.length]
+  for (const ch of seed) n = (n * 31 + ch.charCodeAt(0)) % 9973
+  return { '--shade': SHADES[n % SHADES.length], '--weave': WEAVES[Math.floor(n / 3) % WEAVES.length] }
 }
 
-// Imagen de portada. Sin foto, muestra un degradé de la paleta con un ícono:
-// así la demo no usa fotos ajenas ni de stock sin licencia.
+// Imagen de portada. Sin foto, es un plano del color del área con el nombre
+// en tipografía grande, como un cartel: la publicación se reconoce por su
+// nombre y su área, sin usar fotos ajenas ni de stock sin licencia.
 // `focus` es el encuadre que eligió quien subió la foto (ver utils/image.js).
 // `icon` reemplaza al ícono del tipo (ej. el de la especialidad de un servicio).
-export function Cover({ src, alt, kind = 'venue', icon, seed, tone, label, focus, ratio = 'aspect-[4/3]', className }) {
+// `label` (opcional) es el texto grande; si no, se usa `seed` o `alt`.
+export function Cover({ src, alt, kind = 'venue', icon, seed, label, focus, ratio = 'aspect-[4/3]', className }) {
   if (src) {
     return (
-      <div className={cn('w-full overflow-hidden', ratio, className)}>
+      <div className={cn('w-full overflow-hidden bg-ink/5', ratio, className)}>
         <img src={src} alt={alt} loading="lazy" style={focusStyle(focus)} className="size-full object-cover" />
       </div>
     )
   }
   const Icon = icon ?? ICONS[kind] ?? BookOpen
-  const t = COVER_TONES[tone] ?? COVER_TONES[toneFor(seed ?? alt)]
+  const text = label ?? seed ?? alt
   return (
-    <div role="img" aria-label={alt}
-      style={{ '--cover-base': t.base, '--cover-glow': t.glow, '--cover-glow-2': t.glow2, color: t.fg }}
-      className={cn('cover-art relative flex w-full items-center justify-center overflow-hidden', ratio, className)}>
-      <span className="flex size-16 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm">
-        <Icon aria-hidden className="size-8" strokeWidth={1.5} />
+    <div role="img" aria-label={alt} style={variantFor(seed ?? alt)}
+      className={cn('cover-art relative flex w-full flex-col justify-end overflow-hidden p-4 [container-type:inline-size]', areaFor(kind), ratio, className)}>
+      {/* El ícono va abajo a la derecha: arriba quedan las etiquetas y el botón de favorito de las tarjetas. */}
+      <Icon aria-hidden className="absolute bottom-4 right-4 size-6 opacity-80" strokeWidth={1.75} />
+      {/* El tamaño sale del ancho de la portada (cqi): el nombre entra entero en una tarjeta y crece en una ficha. */}
+      <span aria-hidden className="line-clamp-3 pr-10 font-display text-[clamp(1.25rem,9cqi,3.25rem)] font-extrabold uppercase leading-[0.92] [font-stretch:112%] [overflow-wrap:break-word]">
+        {text}
       </span>
-      {label && <span className="absolute bottom-3 left-4 font-display text-sm font-semibold opacity-80">{label}</span>}
     </div>
   )
 }

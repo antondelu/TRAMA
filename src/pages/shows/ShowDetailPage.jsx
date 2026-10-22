@@ -42,7 +42,7 @@ export default function ShowDetailPage() {
   ].filter(Boolean)
 
   return (
-    <DetailLayout isPreview={show.isPreview}
+    <DetailLayout area="area-shows" isPreview={show.isPreview}
       breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Espectáculos', to: '/espectaculos' }, { label: show.title }]}
       hero={(
         <div className="grid gap-6 md:grid-cols-[minmax(0,20rem)_1fr] md:items-end">

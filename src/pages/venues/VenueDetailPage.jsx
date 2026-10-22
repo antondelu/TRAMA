@@ -37,7 +37,7 @@ export default function VenueDetailPage() {
   const openBooking = (date = null) => requireAuth(() => setBooking({ open: true, date }))
 
   return (
-    <DetailLayout isPreview={venue.isPreview}
+    <DetailLayout area="area-salas" isPreview={venue.isPreview}
       breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Salas', to: '/salas' }, { label: venue.name }]}
       hero={(
         <>
@@ -52,7 +52,7 @@ export default function VenueDetailPage() {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              {venue.hasOpenCall && <Badge tone="accent" icon={Megaphone}>Convocatoria abierta</Badge>}
+              {venue.hasOpenCall && <Badge tone="convocatoria" icon={Megaphone}>Convocatoria abierta</Badge>}
               <FavoriteButton type="venue" id={venue.id} title={venue.name} variant="button" />
             </div>
           </div>

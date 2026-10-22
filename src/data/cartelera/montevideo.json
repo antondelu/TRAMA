@@ -1,0 +1,5066 @@
+{
+ "fetchedAt": "2026-10-22T12:57:42.422Z",
+ "from": "2026-10-22",
+ "until": "2026-11-05",
+ "places": [
+  {
+   "id": "pl-teatron",
+   "name": "Teatrón",
+   "address": "Av.Gral Rivera 3406",
+   "lon": -56.140804,
+   "lat": -34.902037
+  },
+  {
+   "id": "pl-galpon",
+   "name": "Teatro El Galpón",
+   "address": "Av. 18 de Julio 1618",
+   "lon": -56.181082,
+   "lat": -34.90403
+  },
+  {
+   "id": "pl-arteatro",
+   "name": "Arteatro",
+   "address": "Canelones 1136",
+   "lon": -56.191511,
+   "lat": -34.908833
+  },
+  {
+   "id": "pl-notariado",
+   "name": "Teatro del Notariado",
+   "address": "Guayabo 1729",
+   "lon": -56.178616,
+   "lat": -34.903847
+  },
+  {
+   "id": "pl-stella-d-italia",
+   "name": "Teatro Stella D'Italia. La Gaviota",
+   "address": "Mercedes 1805",
+   "lon": -56.178195,
+   "lat": -34.900541
+  },
+  {
+   "id": "pl-espacio",
+   "name": "Espacio Teatro",
+   "address": "Mercedes 865",
+   "lon": -56.19809,
+   "lat": -34.904366
+  },
+  {
+   "id": "pl-espacio-palermo",
+   "name": "Espacio Palermo",
+   "address": "Isla de Flores 1631",
+   "lon": -56.179747,
+   "lat": -34.910571
+  },
+  {
+   "id": "pl-cretina",
+   "name": "La Cretina",
+   "address": "Soriano 1236",
+   "lon": -56.189303,
+   "lat": -34.907876
+  },
+  {
+   "id": "pl-espacio-cultural-extasia",
+   "name": "Espacio Cultural Extasia",
+   "address": "Piedras 425",
+   "lon": -56.207897,
+   "lat": -34.904648
+  },
+  {
+   "id": "pl-paraguay-1217",
+   "name": "Teatro Alianza",
+   "address": "Paraguay 1217",
+   "lon": -56.192501,
+   "lat": -34.908454
+  },
+  {
+   "id": "pl-acj",
+   "name": "Teatro ACJ",
+   "address": "Colonia 1870",
+   "lon": -56.176327,
+   "lat": -34.901043
+  },
+  {
+   "id": "pl-espacio-zorrilla",
+   "name": "Espacio Zorrilla",
+   "address": "Cerrito 475",
+   "lon": -56.206546,
+   "lat": -34.904859
+  },
+  {
+   "id": "pl-gringa",
+   "name": "La Gringa Teatro",
+   "address": "Galería De Las Américas, 18 de julio 123",
+   "lon": -56.18932,
+   "lat": -34.905914
+  },
+  {
+   "id": "pl-mandragora-escuela-artes",
+   "name": "Teatro MANDRÁGORA Escuela de Artes",
+   "address": "Dr Javier Barrios Amorín 1312",
+   "lon": -56.184418,
+   "lat": -34.906059
+  },
+  {
+   "id": "pl-magnolio",
+   "name": "Magnolio Sala",
+   "address": "Doctor Pablo de María 1015",
+   "lon": -56.170582,
+   "lat": -34.91042
+  },
+  {
+   "id": "pl-esnade",
+   "name": "ESNADE (Escuela Nacional de Declamación)",
+   "address": "José Enrique Rodó 1712",
+   "lon": -56.179245,
+   "lat": -34.905642
+  },
+  {
+   "id": "pl-museo-torres-garcia",
+   "name": "Museo Torres García",
+   "address": "Sarandí 683",
+   "lon": -56.201382,
+   "lat": -34.906464
+  },
+  {
+   "id": "pl-alejandria-cafe-artes",
+   "name": "Alejandria Café de las Artes",
+   "address": "Gaboto 1384",
+   "lon": -56.177825,
+   "lat": -34.903989
+  },
+  {
+   "id": "pl-circular",
+   "name": "Teatro Circular",
+   "address": "Av Gral Rondeau 1388",
+   "lon": -56.191147,
+   "lat": -34.905243
+  },
+  {
+   "id": "pl-sarandi-241",
+   "name": "La Madriguera Refugio Cultural",
+   "address": "Sarandí 241",
+   "lon": -56.21012,
+   "lat": -34.909084
+  },
+  {
+   "id": "pl-candela",
+   "name": "Teatro la Candela",
+   "address": "José Ellauri 308",
+   "lon": -56.160073,
+   "lat": -34.924108
+  },
+  {
+   "id": "pl-lustrino",
+   "name": "Lustrino - Espacio Cultural",
+   "address": "Espacio Cultural - Carlos Roxlo 1359",
+   "lon": -56.181377,
+   "lat": -34.904767
+  },
+  {
+   "id": "pl-castillo-pittamiglio",
+   "name": "Castillo Pittamiglio",
+   "address": "Rbla. Gandhi 633",
+   "lon": -56.149856,
+   "lat": -34.921
+  },
+  {
+   "id": "pl-escuela-actuacion-escuela-actor",
+   "name": "Escuela de Actuación ESCUELA DEL ACTOR. Teatro TELON ROJO",
+   "address": "Soriano 1274",
+   "lon": -56.188392,
+   "lat": -34.907674
+  },
+  {
+   "id": "pl-anglo",
+   "name": "Teatro del Anglo",
+   "address": "S. José 1426",
+   "lon": -56.184888,
+   "lat": -34.906601
+  },
+  {
+   "id": "pl-victoria",
+   "name": "Teatro Victoria",
+   "address": "Río Negro 1477",
+   "lon": -56.193987,
+   "lat": -34.903609
+  },
+  {
+   "id": "pl-valle-inclan",
+   "name": "Sala Valle Inclán",
+   "address": "S. José 870",
+   "lon": -56.197591,
+   "lat": -34.907412
+  },
+  {
+   "id": "pl-radisson-montevideo-victoria-plaza-hotel",
+   "name": "Radisson Montevideo Victoria Plaza Hotel",
+   "address": "Pl. Independencia 759",
+   "lon": -56.199503,
+   "lat": -34.90581
+  },
+  {
+   "id": "pl-camacua",
+   "name": "Sala Camacuá",
+   "address": "Camacuá 575",
+   "lon": -56.202256,
+   "lat": -34.909122
+  },
+  {
+   "id": "pl-colmena",
+   "name": "La Colmena | Espacio de Arte",
+   "address": "Maldonado 2182",
+   "lon": -56.167763,
+   "lat": -34.908117
+  },
+  {
+   "id": "pl-vieja-farmacia-solis",
+   "name": "Vieja Farmacia Solís",
+   "address": "Vieja Farmacia Solís, Av. Agraciada 2623",
+   "lon": -56.194297,
+   "lat": -34.883707
+  },
+  {
+   "id": "pl-carrasco-lawn-tennis-club",
+   "name": "Carrasco Lawn Tennis Club",
+   "address": "4W8Q+5WG, Dr Eduardo Couture",
+   "lon": -56.060176,
+   "lat": -34.884562
+  },
+  {
+   "id": "pl-rondeau",
+   "name": "Sala Rondeau",
+   "address": "Av Gral Rondeau 1904",
+   "lon": -56.192403,
+   "lat": -34.894936
+  },
+  {
+   "id": "pl-asociacion-civil-joventango",
+   "name": "Asociacion Civil Joventango",
+   "address": "Dr. Aquiles R. Lanza 1235",
+   "lon": -56.187849,
+   "lat": -34.907887
+  },
+  {
+   "id": "pl-tinglado",
+   "name": "Teatro El Tinglado",
+   "address": "Colonia 2035",
+   "lon": -56.172319,
+   "lat": -34.898852
+  },
+  {
+   "id": "pl-nuevo-rincon",
+   "name": "El Nuevo Rincón",
+   "address": "Dr. Martín C. Martínez 2147",
+   "lon": -56.173569,
+   "lat": -34.889572
+  },
+  {
+   "id": "pl-undermovie",
+   "name": "UnderMovie",
+   "address": "MovieCenter Montevideo Shopping, Luis A. de Herrera 1290",
+   "lon": -56.1366,
+   "lat": -34.9035
+  },
+  {
+   "id": "pl-odeon",
+   "name": "Teatro Odeón",
+   "address": "Cerrito 750",
+   "lon": -56.201083,
+   "lat": -34.903443
+  },
+  {
+   "id": "pl-sobre-ruedas",
+   "name": "Teatro Sobre Ruedas",
+   "address": "Explanada del Teatro Solís - Buenos Aires s/n",
+   "lon": -56.2057,
+   "lat": -34.9085
+  },
+  {
+   "id": "pl-zavala-muniz",
+   "name": "Sala Zavala Muniz - Teatro Solís",
+   "address": "Buenos Aires s/n esq. Bartolomé Mitre",
+   "lon": -56.205965,
+   "lat": -34.908814
+  },
+  {
+   "id": "pl-solis",
+   "name": "Teatro Solís",
+   "address": "Buenos Aires s/n esq. Bartolomé Mitre",
+   "lon": -56.205965,
+   "lat": -34.908814
+  },
+  {
+   "id": "pl-ensayo-abierto",
+   "name": "Ensayo Abierto",
+   "address": "Piedras 599 esq. Juan Carlos Gómez",
+   "lon": -56.204702,
+   "lat": -34.903575
+  },
+  {
+   "id": "pl-espacio-huella",
+   "name": "Espacio La Huella",
+   "address": "Carlos Quijano 1216 esq. Soriano",
+   "lon": -56.18876,
+   "lat": -34.908226
+  },
+  {
+   "id": "pl-verdi",
+   "name": "Sala Verdi",
+   "address": "Soriano 914",
+   "lon": -56.196445,
+   "lat": -34.908212
+  },
+  {
+   "id": "pl-incorrecta",
+   "name": "La Incorrecta",
+   "address": "Gonzalo Ramírez 1595 esq. Lorenzo Carnelli",
+   "lon": -56.180495,
+   "lat": -34.912278
+  }
+ ],
+ "performances": [
+  {
+   "id": "pf-comerse-un-hipopotamo-2026-10-22-2000",
+   "title": "Comerse un hipopótamo",
+   "genre": "Misterio",
+   "director": "Andrés Terceiro",
+   "durationMinutes": 55,
+   "date": "2026-10-22",
+   "time": "20:00",
+   "placeId": "pl-arteatro",
+   "priceFrom": 330,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Comerse-un-hipopotamo/31960/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34475",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-dani-la-chepi-2026-10-22-2000",
+   "title": "Dani La Chepi",
+   "genre": "Humor",
+   "director": "Noralih Gago",
+   "durationMinutes": 90,
+   "date": "2026-10-22",
+   "time": "20:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 980,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/DANI-LA--CHEPI-Sala-Campodonico/31804/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34551",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-gaucho-influencer-en-no-tiene-goyete-2026-10-22-2000",
+   "title": "El gaucho influencer en \"no tiene goyete\"",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-22",
+   "time": "20:00",
+   "placeId": "pl-teatron",
+   "priceFrom": 660,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-GAUCHO-INFLUENCER-en-NO-TIENE-GOYETE/33763/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-el-teatro-2026-10-22-2000",
+   "title": "El teatro",
+   "genre": "Comedia dramática",
+   "director": "Pascal Rambert",
+   "durationMinutes": 120,
+   "date": "2026-10-22",
+   "time": "20:00",
+   "placeId": "pl-solis",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34628",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-asesino-2026-10-22-2030",
+   "title": "Asesino (la belleza del horror)",
+   "genre": "Thriller psicológico",
+   "director": null,
+   "durationMinutes": 60,
+   "date": "2026-10-22",
+   "time": "20:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/ASESINO-la-belleza-el-horror/33284/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34530",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-besando-a-un-tonto-2026-10-22-2030",
+   "title": "Besando a un tonto",
+   "genre": "Comedia",
+   "director": "Virginia Ramos",
+   "durationMinutes": 65,
+   "date": "2026-10-22",
+   "time": "20:30",
+   "placeId": "pl-candela",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?32733",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-cartografia-sobre-la-identidad-mariana-z-2026-10-22-2030",
+   "title": "Cartografía sobre la identidad - Mariana Zaffaroni",
+   "genre": "Teatro testimonial",
+   "director": "Fernando Parodi",
+   "durationMinutes": 60,
+   "date": "2026-10-22",
+   "time": "20:30",
+   "placeId": "pl-zavala-muniz",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34547",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-bien-2026-10-22-2030",
+   "title": "El bien",
+   "genre": "Unipersonal",
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-22",
+   "time": "20:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-BIEN/33109/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34622",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-omision-de-la-familia-coleman-2026-10-22-2030",
+   "title": "La omisión de la familia Coleman",
+   "genre": "Comedia dramática",
+   "director": "Diego Faturos",
+   "durationMinutes": 80,
+   "date": "2026-10-22",
+   "time": "20:30",
+   "placeId": "pl-notariado",
+   "priceFrom": 485,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LA-OMISION-DE-LA-FAMILIA-COLEMAN/33401/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33981",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-las-camisas-blancas-2026-10-22-2030",
+   "title": "Las camisas blancas",
+   "genre": "Drama",
+   "director": "Sandra Massera",
+   "durationMinutes": 50,
+   "date": "2026-10-22",
+   "time": "20:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 340,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Las-camisas-blancas-Sala-Cero/33256/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34604",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-preludio-final-2026-10-22-2030",
+   "title": "Preludio final",
+   "genre": "Comedia dramática",
+   "director": "Sergio Paglietta",
+   "durationMinutes": 75,
+   "date": "2026-10-22",
+   "time": "20:30",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34514",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ballet-2026-10-22-2100",
+   "title": "Ballet",
+   "genre": null,
+   "director": "Roberto Suárez",
+   "durationMinutes": 90,
+   "date": "2026-10-22",
+   "time": "21:00",
+   "placeId": "pl-odeon",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34624",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-celp-los-incendios-en-la-cretina-2026-10-22-2100",
+   "title": "CELP + Los Incendios en La Cretina",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-22",
+   "time": "21:00",
+   "placeId": "pl-cretina",
+   "priceFrom": 440,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/CELP---Los-Incendios-en-La-Cretina/33678/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-corazon-terraja-2026-10-22-2100",
+   "title": "Corazón terraja",
+   "genre": null,
+   "director": "Luciana Lagisquet",
+   "durationMinutes": 75,
+   "date": "2026-10-22",
+   "time": "21:00",
+   "placeId": "pl-espacio-palermo",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Corazon-Terraja/33374/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34571",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-las-cosas-maravillosas-2026-10-22-2100",
+   "title": "Las cosas maravillosas",
+   "genre": "Comedia",
+   "director": "Jimena Márquez",
+   "durationMinutes": 65,
+   "date": "2026-10-22",
+   "time": "21:00",
+   "placeId": "pl-undermovie",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33867",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-no-te-apures-luisa-2026-10-22-2100",
+   "title": "No te apures Luisa",
+   "genre": "Unipersonal",
+   "director": "Martín García",
+   "durationMinutes": null,
+   "date": "2026-10-22",
+   "time": "21:00",
+   "placeId": "pl-espacio",
+   "priceFrom": 330,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/No-te-apures-Luisa/33833/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34679",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-melchora-y-sus-fuegos-2026-10-22-2115",
+   "title": "Melchora y sus fuegos",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-22",
+   "time": "21:15",
+   "placeId": "pl-arteatro",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/MELCHORA-Y-SUS-FUEGOS/33257/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-cenizas-de-familia-2026-10-23-2000",
+   "title": "Cenizas de familia",
+   "genre": "Comedia",
+   "director": "Franco Balestrino Centeno",
+   "durationMinutes": 110,
+   "date": "2026-10-23",
+   "time": "20:00",
+   "placeId": "pl-paraguay-1217",
+   "priceFrom": 349,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Cenizas-de-Familia--Sala-Dos/33244/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34639",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-desconectados-el-musical-2026-10-23-2000",
+   "title": "Desconectados: el musical",
+   "genre": "Musical",
+   "director": "Lara Berman",
+   "durationMinutes": 90,
+   "date": "2026-10-23",
+   "time": "20:00",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/DESCONECTADOS---El-Musical/28811/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33803",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-teatro-2026-10-23-2000",
+   "title": "El teatro",
+   "genre": "Comedia dramática",
+   "director": "Pascal Rambert",
+   "durationMinutes": 120,
+   "date": "2026-10-23",
+   "time": "20:00",
+   "placeId": "pl-solis",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34628",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-los-nuevos-prometeos-2026-10-23-2000",
+   "title": "Los nuevos Prometeos",
+   "genre": "Comedia absurda",
+   "director": "Maximiliano Farinasso",
+   "durationMinutes": 55,
+   "date": "2026-10-23",
+   "time": "20:00",
+   "placeId": "pl-arteatro",
+   "priceFrom": 385,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Los-Nuevos-Prometeos/33022/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34642",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-no-me-llames-breves-tragedias-virtuales-2026-10-23-2000",
+   "title": "No me llames, breves tragedias virtuales",
+   "genre": "Comedia",
+   "director": "Verónica Vera",
+   "durationMinutes": 60,
+   "date": "2026-10-23",
+   "time": "20:00",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34532",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-sisifo-y-el-elefante-2026-10-23-2000",
+   "title": "Sísifo y el elefante",
+   "genre": null,
+   "director": "Fernando Rodríguez Compare",
+   "durationMinutes": 75,
+   "date": "2026-10-23",
+   "time": "20:00",
+   "placeId": "pl-espacio-cultural-extasia",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Sisifo-y-el-elefante/33298/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34612",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-vuelo-de-locos-pablo-atkinson-petru-vale-2026-10-23-2000",
+   "title": "VUELO DE LOCOS - Pablo Atkinson,  Petru Valenski, Nacho Cardozo, Fito Galli y gran elenco",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-23",
+   "time": "20:00",
+   "placeId": "pl-teatron",
+   "priceFrom": 1070,
+   "soldOut": true,
+   "ticketUrl": "https://redtickets.uy/evento/VUELO-DE-LOCOS--Pablo-Atkinson--Petru-Valenski-Nacho-Cardozo-Fito-Galli-y-gran-elenco/33568/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-cartografia-sobre-la-identidad-mariana-z-2026-10-23-2030",
+   "title": "Cartografía sobre la identidad - Mariana Zaffaroni",
+   "genre": "Teatro testimonial",
+   "director": "Fernando Parodi",
+   "durationMinutes": 60,
+   "date": "2026-10-23",
+   "time": "20:30",
+   "placeId": "pl-zavala-muniz",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34547",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-divas-2026-10-23-2030",
+   "title": "Divas",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-23",
+   "time": "20:30",
+   "placeId": "pl-acj",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/DIVAS/29187/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-estas-ahi-2026-10-23-2030",
+   "title": "Estás ahí?",
+   "genre": "Comedia dramática",
+   "director": "Diego Devincenzi",
+   "durationMinutes": 80,
+   "date": "2026-10-23",
+   "time": "20:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 440,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Estas-ahi-Sala-Atahualpa/32252/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34153",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-las-camisas-blancas-2026-10-23-2030",
+   "title": "Las camisas blancas",
+   "genre": "Drama",
+   "director": "Sandra Massera",
+   "durationMinutes": 50,
+   "date": "2026-10-23",
+   "time": "20:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 340,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Las-camisas-blancas-Sala-Cero/33256/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34604",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-loop-2026-10-23-2030",
+   "title": "Loop",
+   "genre": "Comedia policial",
+   "director": "Diego Devincenzi",
+   "durationMinutes": 100,
+   "date": "2026-10-23",
+   "time": "20:30",
+   "placeId": "pl-paraguay-1217",
+   "priceFrom": 425,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Loop--Sala-China-Zorrilla/29730/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33951",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-soy-todas-2026-10-23-2030",
+   "title": "Soy todas",
+   "genre": "Unipersonal",
+   "director": "Álvaro Ahunchain",
+   "durationMinutes": null,
+   "date": "2026-10-23",
+   "time": "20:30",
+   "placeId": "pl-espacio-zorrilla",
+   "priceFrom": 345,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/SOY-TODAS/33063/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34621",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ballet-2026-10-23-2100",
+   "title": "Ballet",
+   "genre": null,
+   "director": "Roberto Suárez",
+   "durationMinutes": 90,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-odeon",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34624",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-camara-hamlet-2026-10-23-2100",
+   "title": "Cámara Hamlet",
+   "genre": "Drama",
+   "director": "Marcel Sawchik Monegal",
+   "durationMinutes": 80,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-esnade",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Camara-Hamlet/32869/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34519",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-capital-humano-2026-10-23-2100",
+   "title": "Capital humano",
+   "genre": "Comedia",
+   "director": "Micaela Carrión",
+   "durationMinutes": null,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-mandragora-escuela-artes",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/CAPITAL-HUMANO/33355/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34614",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-como-te-mueras-te-mato-2026-10-23-2100",
+   "title": "Como te mueras te mato",
+   "genre": "Comedia",
+   "director": "Rafael Pence",
+   "durationMinutes": 90,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-candela",
+   "priceFrom": 650,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?32266",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-corazon-terraja-2026-10-23-2100",
+   "title": "Corazón terraja",
+   "genre": null,
+   "director": "Luciana Lagisquet",
+   "durationMinutes": 75,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-espacio-palermo",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Corazon-Terraja/33374/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34571",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-silencio-es-un-lenguaje-universal-2026-10-23-2100",
+   "title": "El silencio es un lenguaje universal",
+   "genre": "Unipersonal",
+   "director": "Fabián Collazo",
+   "durationMinutes": null,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-SILENCIO-ES-UN-LENGUAJE-UNIVERSAL/32489/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34393",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-clase-de-piano-2026-10-23-2100",
+   "title": "La clase de piano",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-magnolio",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LA-CLASE-DE-PIANO--Una-obra-de-Leo-Masliah/31843/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34767",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-hora-azul-2026-10-23-2100",
+   "title": "La hora azul",
+   "genre": null,
+   "director": "Malena Urrutia",
+   "durationMinutes": 70,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34788",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-los-ultimos-suicidas-2026-10-23-2100",
+   "title": "Los últimos suicidas",
+   "genre": "Comedia negra",
+   "director": "José Luis Olascuaga",
+   "durationMinutes": 70,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-espacio-huella",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34572",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-no-te-apures-luisa-2026-10-23-2100",
+   "title": "No te apures Luisa",
+   "genre": "Unipersonal",
+   "director": "Martín García",
+   "durationMinutes": null,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-espacio",
+   "priceFrom": 330,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/No-te-apures-Luisa/33833/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34679",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-te-imaginaba-en-el-arbol-2026-10-23-2100",
+   "title": "Te imaginaba en el árbol",
+   "genre": "Comedia dramática",
+   "director": "Martina Ferrería",
+   "durationMinutes": 70,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-museo-torres-garcia",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/TE-IMAGINABA-EN-EL-ARBOL/33483/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34307",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-tu-hija-2026-10-23-2100",
+   "title": "Tu Hija",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-gringa",
+   "priceFrom": 375,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Tu-Hija/33879/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-y-entonces-la-lluvia-2026-10-23-2100",
+   "title": "Y entonces la lluvia",
+   "genre": "Comedia",
+   "director": "Vanessa Cánepa",
+   "durationMinutes": 75,
+   "date": "2026-10-23",
+   "time": "21:00",
+   "placeId": "pl-incorrecta",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34641",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-cronica-de-un-pequeno-milagro-2026-10-23-2130",
+   "title": "Crónica de un pequeño milagro",
+   "genre": "Humor",
+   "director": "El Gran Gustaf",
+   "durationMinutes": 80,
+   "date": "2026-10-23",
+   "time": "21:30",
+   "placeId": "pl-undermovie",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33869",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-elena-2026-10-23-2130",
+   "title": "Elena",
+   "genre": "Drama",
+   "director": "Fabián Soneira",
+   "durationMinutes": 60,
+   "date": "2026-10-23",
+   "time": "21:30",
+   "placeId": "pl-arteatro",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34260",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-mirame-que-nos-miran-2026-10-23-2130",
+   "title": "Mirame que nos miran",
+   "genre": "Comedia romántica",
+   "director": "Julieta Lucena",
+   "durationMinutes": 60,
+   "date": "2026-10-23",
+   "time": "21:30",
+   "placeId": "pl-circular",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/MIRAME-QUE-NOS-MIRAN/34248/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?23792",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-quiero-que-susurres-una-cancion-para-mi--2026-10-23-2200",
+   "title": "Quiero que susurres una canción para mi muerte",
+   "genre": "Comedia dramática",
+   "director": "Analía Torres",
+   "durationMinutes": null,
+   "date": "2026-10-23",
+   "time": "22:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34817",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-chica-almodovar-la-saga-2026-10-23-2230",
+   "title": "Chica Almodóvar - la saga",
+   "genre": "Comedia dramática",
+   "director": "Jesica Maiori Assad",
+   "durationMinutes": 50,
+   "date": "2026-10-23",
+   "time": "22:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 275,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Chica-Almodovar-La-Saga/33239/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?27887",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-conchudas-recargadas-2026-10-23-2230",
+   "title": "CONCHUDAS Recargadas",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-23",
+   "time": "22:30",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/CONCHUDAS-Recargadas/32993/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-pin-y-verde-2026-10-23-2230",
+   "title": "Pin y verde",
+   "genre": "Comedia",
+   "director": "Diana Bresque",
+   "durationMinutes": 60,
+   "date": "2026-10-23",
+   "time": "22:30",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34025",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-uno-2026-10-23-2230",
+   "title": "Uno",
+   "genre": "Teatro Físico",
+   "director": "Juan Calvo",
+   "durationMinutes": null,
+   "date": "2026-10-23",
+   "time": "22:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 330,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Uno/32244/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34492",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-iluminada-y-eterna-2026-10-24-1500",
+   "title": "Iluminada y eterna",
+   "genre": "Tragicomedia",
+   "director": "Ximena Echevarría",
+   "durationMinutes": 120,
+   "date": "2026-10-24",
+   "time": "15:00",
+   "placeId": "pl-sarandi-241",
+   "priceFrom": 550,
+   "soldOut": true,
+   "ticketUrl": "https://redtickets.uy/evento/Iluminada-y-Eterna/29021/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34533",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-eterno-glorioso-y-mas-pequeno-circo-d-2026-10-24-1600",
+   "title": "El eterno, glorioso y más pequeño circo del mundo",
+   "genre": "Teatro infantil",
+   "director": "Beatriz Sayad",
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "16:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/El-eterno-glorioso-y-mas-pequeno-circo-del-mundo-Sala-Atahualpa/33647/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34644",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-puerta-azul-2026-10-24-1600",
+   "title": "La puerta azul",
+   "genre": "Teatro infantil",
+   "director": "Agustín Luque",
+   "durationMinutes": 60,
+   "date": "2026-10-24",
+   "time": "16:00",
+   "placeId": "pl-candela",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LA-PUERTA-AZUL/33837/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34434",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-una-pindo-2026-10-24-1600",
+   "title": "Una pindó",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "16:00",
+   "placeId": "pl-acj",
+   "priceFrom": 330,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/UNA-PINDO/28005/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-el-rey-de-los-hongos-2026-10-24-1630",
+   "title": "El rey de los hongos",
+   "genre": "Títeres",
+   "director": "Tamara Couto",
+   "durationMinutes": 50,
+   "date": "2026-10-24",
+   "time": "16:30",
+   "placeId": "pl-circular",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/El-rey-de-los-hongos/32801/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34490",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-zorro-la-luna-y-cuentos-para-sonar-2026-10-24-1630",
+   "title": "El Zorro, la Luna y Cuentos para soñar",
+   "genre": "Teatro infantil",
+   "director": "Mario Esteban N.",
+   "durationMinutes": 45,
+   "date": "2026-10-24",
+   "time": "16:30",
+   "placeId": "pl-lustrino",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-ZORRO-LA-LUNA-Y-CUENTOS-PARA-SONAR/33116/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?32623",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-tus-cuentos-no-son-mis-cuentos-2026-10-24-1630",
+   "title": "Tus cuentos no son mis cuentos",
+   "genre": "Teatro infantil",
+   "director": "Diana Bresque",
+   "durationMinutes": 60,
+   "date": "2026-10-24",
+   "time": "16:30",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34024",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-vuelo-de-locos-pablo-atkinson-petru-vale-2026-10-24-1630",
+   "title": "VUELO DE LOCOS - Pablo Atkinson,  Petru Valenski, Nacho Cardozo, Fito Galli y gran elenco",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "16:30",
+   "placeId": "pl-teatron",
+   "priceFrom": 1070,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/VUELO-DE-LOCOS--Pablo-Atkinson--Petru-Valenski-Nacho-Cardozo-Fito-Galli-y-gran-elenco/33568/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-martin-cirio-sobre-la-marcha-2026-10-24-1730",
+   "title": "Martín Cirio - Sobre la marcha",
+   "genre": "Humor",
+   "director": "Martín Cirio",
+   "durationMinutes": 120,
+   "date": "2026-10-24",
+   "time": "17:30",
+   "placeId": "pl-undermovie",
+   "priceFrom": null,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34673",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-de-bar-en-bar-2026-10-24-1830",
+   "title": "De bar en bar",
+   "genre": "Comedia",
+   "director": "Enrique Vidal",
+   "durationMinutes": 70,
+   "date": "2026-10-24",
+   "time": "18:30",
+   "placeId": "pl-candela",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?30929",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-necesidad-de-un-quijote-2026-10-24-1900",
+   "title": "La necesidad de un Quijote",
+   "genre": "Comedia dramática",
+   "director": "Gabriela Miraballes",
+   "durationMinutes": 60,
+   "date": "2026-10-24",
+   "time": "19:00",
+   "placeId": "pl-castillo-pittamiglio",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/La-necesidad-de-un-QUIJOTE-Los-scones-de-la-abuela/20486/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?28573",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-barro-negro-2026-10-24-2000",
+   "title": "Barro Negro",
+   "genre": "Comedia grotesca",
+   "director": "Marcelino Duffau",
+   "durationMinutes": 90,
+   "date": "2026-10-24",
+   "time": "20:00",
+   "placeId": "pl-sobre-ruedas",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?3451",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-desaparecer-bien-2026-10-24-2000",
+   "title": "Desaparecer bien",
+   "genre": "Comedia",
+   "director": "Aldo Moreira",
+   "durationMinutes": 55,
+   "date": "2026-10-24",
+   "time": "20:00",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 275,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Desaparecer-bien/33500/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34608",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-teatro-2026-10-24-2000",
+   "title": "El teatro",
+   "genre": "Comedia dramática",
+   "director": "Pascal Rambert",
+   "durationMinutes": 120,
+   "date": "2026-10-24",
+   "time": "20:00",
+   "placeId": "pl-solis",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34628",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-ronda-2026-10-24-2000",
+   "title": "La ronda",
+   "genre": "Comedia",
+   "director": "Matías Laglère",
+   "durationMinutes": 105,
+   "date": "2026-10-24",
+   "time": "20:00",
+   "placeId": "pl-escuela-actuacion-escuela-actor",
+   "priceFrom": 660,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/La-Ronda/33808/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34629",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-las-rockys-2026-10-24-2000",
+   "title": "Las Rockys",
+   "genre": "Comedia",
+   "director": "Chris Bur",
+   "durationMinutes": 60,
+   "date": "2026-10-24",
+   "time": "20:00",
+   "placeId": "pl-ensayo-abierto",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33985",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-pequenas-infidelidades-2026-10-24-2000",
+   "title": "Pequeñas infidelidades",
+   "genre": "Comedia dramática",
+   "director": "Gonchi Fernández",
+   "durationMinutes": 60,
+   "date": "2026-10-24",
+   "time": "20:00",
+   "placeId": "pl-arteatro",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Pequenas-Infidelidades/33770/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34729",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-pupina-plomer-2026-10-24-2000",
+   "title": "Pupina plomer",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "20:00",
+   "placeId": "pl-espacio-zorrilla",
+   "priceFrom": 1360,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/PUPINA-PLOMER/30593/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-sisifo-y-el-elefante-2026-10-24-2000",
+   "title": "Sísifo y el elefante",
+   "genre": null,
+   "director": "Fernando Rodríguez Compare",
+   "durationMinutes": 75,
+   "date": "2026-10-24",
+   "time": "20:00",
+   "placeId": "pl-espacio-cultural-extasia",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Sisifo-y-el-elefante/33298/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34612",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-tu-hija-2026-10-24-2000",
+   "title": "Tu Hija",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "20:00",
+   "placeId": "pl-gringa",
+   "priceFrom": 375,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Tu-Hija/33879/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-un-estupido-cuento-2026-10-24-2000",
+   "title": "Un estúpido cuento",
+   "genre": "Comedia",
+   "director": "Chepe Irisity",
+   "durationMinutes": 75,
+   "date": "2026-10-24",
+   "time": "20:00",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 350,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Un-Estupido-Cuento/33653/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34627",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-actriz-de-metodo-2026-10-24-2030",
+   "title": "Actriz de método",
+   "genre": "Comedia",
+   "director": "Moré",
+   "durationMinutes": 60,
+   "date": "2026-10-24",
+   "time": "20:30",
+   "placeId": "pl-lustrino",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/ACTRIZ-DE-METODO/33377/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34618",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ano-lectivo-2026-10-24-2030",
+   "title": "Año lectivo",
+   "genre": "Comedia",
+   "director": "Carmen Lecueder",
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "20:30",
+   "placeId": "pl-espacio",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34623",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-cartografia-sobre-la-identidad-mariana-z-2026-10-24-2030",
+   "title": "Cartografía sobre la identidad - Mariana Zaffaroni",
+   "genre": "Teatro testimonial",
+   "director": "Fernando Parodi",
+   "durationMinutes": 60,
+   "date": "2026-10-24",
+   "time": "20:30",
+   "placeId": "pl-zavala-muniz",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34547",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-extrana-pareja-2026-10-24-2030",
+   "title": "Extraña pareja",
+   "genre": "Comedia",
+   "director": "Álvaro Ahunchain",
+   "durationMinutes": 100,
+   "date": "2026-10-24",
+   "time": "20:30",
+   "placeId": "pl-paraguay-1217",
+   "priceFrom": 425,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Extrana-Pareja---Sala-China-Zorrilla/29728/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34093",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-napas-subterraneas-2026-10-24-2030",
+   "title": "Napas subterráneas",
+   "genre": "Monólogos",
+   "director": "Nicolás Tapia",
+   "durationMinutes": 60,
+   "date": "2026-10-24",
+   "time": "20:30",
+   "placeId": "pl-circular",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Napas-Subterraneas/33429/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34643",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ojala-sea-candida-ii-2026-10-24-2030",
+   "title": "Ojalá sea Cándida II",
+   "genre": "Comedia",
+   "director": "Lucía Videla",
+   "durationMinutes": 60,
+   "date": "2026-10-24",
+   "time": "20:30",
+   "placeId": "pl-museo-torres-garcia",
+   "priceFrom": 275,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Ojala-Sea-Candida-II/33215/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34605",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-quien-lo-probo-lo-sabe-2026-10-24-2030",
+   "title": "Quien lo probó lo sabe",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "20:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 700,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34625",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-tom-en-la-granja-2026-10-24-2030",
+   "title": "Tom en la granja",
+   "genre": "Drama",
+   "director": "Marcos Acuña",
+   "durationMinutes": 90,
+   "date": "2026-10-24",
+   "time": "20:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/TOM-EN-LA-GRANJA-Sala-Cero/33089/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34493",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-una-flor-para-la-tana-2026-10-24-2030",
+   "title": "Una flor para la Tana",
+   "genre": "Unipersonal",
+   "director": "Horacio Camandulle",
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "20:30",
+   "placeId": "pl-paraguay-1217",
+   "priceFrom": 345,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Una-Flor-para-la-Tana/32029/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34439",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-vuelo-de-locos-pablo-atkinson-petru-vale-2026-10-24-2030",
+   "title": "VUELO DE LOCOS - Pablo Atkinson,  Petru Valenski, Nacho Cardozo, Fito Galli y gran elenco",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "20:30",
+   "placeId": "pl-teatron",
+   "priceFrom": 1070,
+   "soldOut": true,
+   "ticketUrl": "https://redtickets.uy/evento/VUELO-DE-LOCOS--Pablo-Atkinson--Petru-Valenski-Nacho-Cardozo-Fito-Galli-y-gran-elenco/33568/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-agrandado-2026-10-24-2045",
+   "title": "Agrandado",
+   "genre": "Stand up Comedy",
+   "director": "Ernesto Muniz",
+   "durationMinutes": 70,
+   "date": "2026-10-24",
+   "time": "20:45",
+   "placeId": "pl-undermovie",
+   "priceFrom": 840,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34647",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ballet-2026-10-24-2100",
+   "title": "Ballet",
+   "genre": null,
+   "director": "Roberto Suárez",
+   "durationMinutes": 90,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "placeId": "pl-odeon",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34624",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-contarte-el-mundo-2026-10-24-2100",
+   "title": "Contarte el mundo",
+   "genre": null,
+   "director": "Carla Grabino",
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "placeId": "pl-circular",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Contarte-el-mundo/33260/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34640",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-herrero-y-la-muerte-2026-10-24-2100",
+   "title": "El herrero y la muerte",
+   "genre": "Absurdo",
+   "director": "Ismael Da Fonseca",
+   "durationMinutes": 65,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "placeId": "pl-victoria",
+   "priceFrom": 400,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-HERRERO-Y-LA-MUERTE/32174/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34407",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-entre-ella-y-yo-2026-10-24-2100",
+   "title": "Entre ella y yo",
+   "genre": "Comedia",
+   "director": "Juan Luis Granato",
+   "durationMinutes": 75,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "placeId": "pl-anglo",
+   "priceFrom": 390,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/ENTRE-ELLA-Y-YO/27048/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?31750",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-espejo-roto-2026-10-24-2100",
+   "title": "Espejo roto",
+   "genre": "Comedia",
+   "director": "Rafael Pence",
+   "durationMinutes": 80,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "placeId": "pl-candela",
+   "priceFrom": 650,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34170",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-hologramas-el-guardian-de-la-luz-2026-10-24-2100",
+   "title": "Hologramas - El guardián de la luz",
+   "genre": "Experiencia teatral multimedia",
+   "director": "colectiva",
+   "durationMinutes": 60,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "placeId": "pl-castillo-pittamiglio",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Hologramas--El-guardian-de-PUNTA-CARRETAS/25786/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33084",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-clase-de-piano-2026-10-24-2100",
+   "title": "La clase de piano",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "placeId": "pl-magnolio",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LA-CLASE-DE-PIANO--Una-obra-de-Leo-Masliah/31843/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34767",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-habitacion-de-veronica-2026-10-24-2100",
+   "title": "La habitación de Verónica",
+   "genre": "Thriller",
+   "director": "Ruben Coletto",
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "placeId": "pl-mandragora-escuela-artes",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LA-HABITACION-DE-VERONICA-de-Ira-Levin/33356/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34619",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-hora-azul-2026-10-24-2100",
+   "title": "La hora azul",
+   "genre": null,
+   "director": "Malena Urrutia",
+   "durationMinutes": 70,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34788",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-mi-madre-mi-novia-y-yo-2026-10-24-2100",
+   "title": "Mi madre, mi novia y yo",
+   "genre": "Comedia",
+   "director": "Juan Luis Granato",
+   "durationMinutes": 80,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "placeId": "pl-notariado",
+   "priceFrom": 390,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/MI-MADRE-MI-NOVIA-Y-YO/26813/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?30243",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-peng-2026-10-24-2100",
+   "title": "Peng",
+   "genre": "Comedia",
+   "director": "Luciano Cáceres",
+   "durationMinutes": 80,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/PENG--Sala-Campodonico/33499/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34599",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-los-pajaros-tambien-recuerdan-2026-10-24-2130",
+   "title": "Los pájaros también recuerdan",
+   "genre": "Drama",
+   "director": "Iván Aulet",
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "21:30",
+   "placeId": "pl-arteatro",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Los-pajaros-tambien-recuerdan/33828/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34620",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-no-sos-vos-soy-yo-2026-10-24-2130",
+   "title": "No sos vos, soy yo",
+   "genre": "Humor",
+   "director": null,
+   "durationMinutes": 60,
+   "date": "2026-10-24",
+   "time": "21:30",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?29963",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-divorcio-2026-10-24-2200",
+   "title": "El divorcio",
+   "genre": "Comedia",
+   "director": "Álvaro Correa",
+   "durationMinutes": 70,
+   "date": "2026-10-24",
+   "time": "22:00",
+   "placeId": "pl-gringa",
+   "priceFrom": 700,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?32250",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-quiero-que-susurres-una-cancion-para-mi--2026-10-24-2200",
+   "title": "Quiero que susurres una canción para mi muerte",
+   "genre": "Comedia dramática",
+   "director": "Analía Torres",
+   "durationMinutes": null,
+   "date": "2026-10-24",
+   "time": "22:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34817",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-chica-almodovar-la-saga-2026-10-24-2230",
+   "title": "Chica Almodóvar - la saga",
+   "genre": "Comedia dramática",
+   "director": "Jesica Maiori Assad",
+   "durationMinutes": 50,
+   "date": "2026-10-24",
+   "time": "22:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 275,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Chica-Almodovar-La-Saga/33239/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?27887",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-iluminada-y-eterna-2026-10-25-1500",
+   "title": "Iluminada y eterna",
+   "genre": "Tragicomedia",
+   "director": "Ximena Echevarría",
+   "durationMinutes": 120,
+   "date": "2026-10-25",
+   "time": "15:00",
+   "placeId": "pl-sarandi-241",
+   "priceFrom": 275,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Iluminada-y-Eterna/29021/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34533",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-nati-uboldi-presenta-el-ultimo-click-2026-10-25-1500",
+   "title": "NATI UBOLDI presenta El ultimo Click",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "15:00",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 1680,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/NATI-UBOLDI-presenta-El-ultimo-Click/29664/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-el-eterno-glorioso-y-mas-pequeno-circo-d-2026-10-25-1600",
+   "title": "El eterno, glorioso y más pequeño circo del mundo",
+   "genre": "Teatro infantil",
+   "director": "Beatriz Sayad",
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "16:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/El-eterno-glorioso-y-mas-pequeno-circo-del-mundo-Sala-Atahualpa/33647/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34644",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-puerta-azul-2026-10-25-1600",
+   "title": "La puerta azul",
+   "genre": "Teatro infantil",
+   "director": "Agustín Luque",
+   "durationMinutes": 60,
+   "date": "2026-10-25",
+   "time": "16:00",
+   "placeId": "pl-candela",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LA-PUERTA-AZUL/33837/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34434",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-vuelo-de-locos-pablo-atkinson-petru-vale-2026-10-25-1600",
+   "title": "VUELO DE LOCOS - Pablo Atkinson,  Petru Valenski, Nacho Cardozo, Fito Galli y gran elenco",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "16:00",
+   "placeId": "pl-teatron",
+   "priceFrom": 1070,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/VUELO-DE-LOCOS--Pablo-Atkinson--Petru-Valenski-Nacho-Cardozo-Fito-Galli-y-gran-elenco/33568/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-el-rey-de-los-hongos-2026-10-25-1630",
+   "title": "El rey de los hongos",
+   "genre": "Títeres",
+   "director": "Tamara Couto",
+   "durationMinutes": 50,
+   "date": "2026-10-25",
+   "time": "16:30",
+   "placeId": "pl-circular",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/El-rey-de-los-hongos/32801/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34490",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-piu-presenta-rolando-2026-10-25-1630",
+   "title": "PIÚ presenta Rolando",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "16:30",
+   "placeId": "pl-valle-inclan",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/PIU-presenta-Rolando/32944/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-la-ronda-2026-10-25-1800",
+   "title": "La ronda",
+   "genre": "Comedia",
+   "director": "Matías Laglère",
+   "durationMinutes": 105,
+   "date": "2026-10-25",
+   "time": "18:00",
+   "placeId": "pl-escuela-actuacion-escuela-actor",
+   "priceFrom": 660,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/La-Ronda/33808/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34629",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-quien-lo-probo-lo-sabe-2026-10-25-1800",
+   "title": "Quien lo probó lo sabe",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "18:00",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 350,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/QUIEN-LO-PROBO-LO-SABE/33632/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34625",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ojala-sea-candida-ii-2026-10-25-1830",
+   "title": "Ojalá sea Cándida II",
+   "genre": "Comedia",
+   "director": "Lucía Videla",
+   "durationMinutes": 60,
+   "date": "2026-10-25",
+   "time": "18:30",
+   "placeId": "pl-museo-torres-garcia",
+   "priceFrom": 275,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Ojala-Sea-Candida-II/33215/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34605",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-herrero-y-la-muerte-2026-10-25-1900",
+   "title": "El herrero y la muerte",
+   "genre": "Absurdo",
+   "director": "Ismael Da Fonseca",
+   "durationMinutes": 65,
+   "date": "2026-10-25",
+   "time": "19:00",
+   "placeId": "pl-victoria",
+   "priceFrom": 400,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-HERRERO-Y-LA-MUERTE/32174/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34407",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-teatro-2026-10-25-1900",
+   "title": "El teatro",
+   "genre": "Comedia dramática",
+   "director": "Pascal Rambert",
+   "durationMinutes": 120,
+   "date": "2026-10-25",
+   "time": "19:00",
+   "placeId": "pl-solis",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34628",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-extrana-pareja-2026-10-25-1900",
+   "title": "Extraña Pareja  | Sala China Zorrilla",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "19:00",
+   "placeId": "pl-paraguay-1217",
+   "priceFrom": 425,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Extrana-Pareja---Sala-China-Zorrilla/29728/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-napas-subterraneas-2026-10-25-1900",
+   "title": "Napas subterráneas",
+   "genre": "Monólogos",
+   "director": "Nicolás Tapia",
+   "durationMinutes": 60,
+   "date": "2026-10-25",
+   "time": "19:00",
+   "placeId": "pl-circular",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Napas-Subterraneas/33429/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34643",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-tom-en-la-granja-2026-10-25-1900",
+   "title": "Tom en la granja",
+   "genre": "Drama",
+   "director": "Marcos Acuña",
+   "durationMinutes": 90,
+   "date": "2026-10-25",
+   "time": "19:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/TOM-EN-LA-GRANJA-Sala-Cero/33089/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34493",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-un-estupido-cuento-2026-10-25-1900",
+   "title": "Un estúpido cuento",
+   "genre": "Comedia",
+   "director": "Chepe Irisity",
+   "durationMinutes": 75,
+   "date": "2026-10-25",
+   "time": "19:00",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 350,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Un-Estupido-Cuento/33653/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34627",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-cartografia-sobre-la-identidad-mariana-z-2026-10-25-1930",
+   "title": "Cartografía sobre la identidad - Mariana Zaffaroni",
+   "genre": "Teatro testimonial",
+   "director": "Fernando Parodi",
+   "durationMinutes": 60,
+   "date": "2026-10-25",
+   "time": "19:30",
+   "placeId": "pl-zavala-muniz",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34547",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-contarte-el-mundo-2026-10-25-1930",
+   "title": "Contarte el mundo",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "19:30",
+   "placeId": "pl-circular",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Contarte-el-mundo/33260/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-la-hora-azul-2026-10-25-1930",
+   "title": "La hora azul",
+   "genre": null,
+   "director": "Malena Urrutia",
+   "durationMinutes": 70,
+   "date": "2026-10-25",
+   "time": "19:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34788",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-lola-la-coquetera-2026-10-25-1930",
+   "title": "Lola la coquetera",
+   "genre": "Musical",
+   "director": "Avo Pérez",
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "19:30",
+   "placeId": "pl-notariado",
+   "priceFrom": 475,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LOLA-LA-COQUETERA/32002/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34318",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-peng-2026-10-25-1930",
+   "title": "Peng",
+   "genre": "Comedia",
+   "director": "Luciano Cáceres",
+   "durationMinutes": 80,
+   "date": "2026-10-25",
+   "time": "19:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/PENG--Sala-Campodonico/33499/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34599",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-desamparados-2026-10-25-2000",
+   "title": "Desamparados",
+   "genre": "Comedia dramática",
+   "director": "Victoria Cancela",
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "20:00",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Desamparados/33317/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34428",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-divina-sangre-2026-10-25-2000",
+   "title": "Divina sangre",
+   "genre": "Terror-Suspenso",
+   "director": "Gabriela Miraballes",
+   "durationMinutes": 60,
+   "date": "2026-10-25",
+   "time": "20:00",
+   "placeId": "pl-castillo-pittamiglio",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/DIVINA-SANGRE/24301/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?32728",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ezequiel-campa-dije-un-chiste-2026-10-25-2000",
+   "title": "EZEQUIEL CAMPA - Dije un Chiste",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "20:00",
+   "placeId": "pl-radisson-montevideo-victoria-plaza-hotel",
+   "priceFrom": 1460,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EZEQUIEL-CAMPA--Dije-un-Chiste/29105/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-la-hora-vertical-2026-10-25-2000",
+   "title": "La hora vertical",
+   "genre": "Drama",
+   "director": "Graciela Escuder",
+   "durationMinutes": 90,
+   "date": "2026-10-25",
+   "time": "20:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/La-hora-vertical-Sala-Atahualpa/32542/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34366",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-quiero-que-susurres-una-cancion-para-mi--2026-10-25-2000",
+   "title": "Quiero que susurres una canción para mi muerte",
+   "genre": "Comedia dramática",
+   "director": "Analía Torres",
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "20:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34817",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-tu-hija-2026-10-25-2000",
+   "title": "Tu Hija",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "20:00",
+   "placeId": "pl-gringa",
+   "priceFrom": 375,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Tu-Hija/33879/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-ver-el-mundo-arder-2026-10-25-2030",
+   "title": "Ver el mundo arder",
+   "genre": "Comedia dramática",
+   "director": "Guillermo Francia",
+   "durationMinutes": 90,
+   "date": "2026-10-25",
+   "time": "20:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 340,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/VER-EL-MUNDO-ARDER/32007/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34290",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-contarte-el-mundo-2026-10-25-2100",
+   "title": "Contarte el mundo",
+   "genre": null,
+   "director": "Carla Grabino",
+   "durationMinutes": null,
+   "date": "2026-10-25",
+   "time": "21:00",
+   "placeId": "pl-circular",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34640",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-teatro-2026-10-28-2000",
+   "title": "El teatro",
+   "genre": "Comedia dramática",
+   "director": "Pascal Rambert",
+   "durationMinutes": 120,
+   "date": "2026-10-28",
+   "time": "20:00",
+   "placeId": "pl-solis",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34628",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-mambo-2026-10-28-2030",
+   "title": "Mambo",
+   "genre": "Comedia",
+   "director": "Alfredo Goldstein",
+   "durationMinutes": 70,
+   "date": "2026-10-28",
+   "time": "20:30",
+   "placeId": "pl-cretina",
+   "priceFrom": 440,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/MAMBO/33748/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34706",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ballet-2026-10-28-2100",
+   "title": "Ballet",
+   "genre": null,
+   "director": "Roberto Suárez",
+   "durationMinutes": 90,
+   "date": "2026-10-28",
+   "time": "21:00",
+   "placeId": "pl-odeon",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34624",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-hector-rossi-trasnoche-paranormal-en-viv-2026-10-29-0900",
+   "title": "HECTOR ROSSI - Trasnoche Paranormal en vivo",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-29",
+   "time": "09:00",
+   "placeId": "pl-camacua",
+   "priceFrom": 1280,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/HECTOR-ROSSI--Trasnoche-Paranormal-en-vivo/33400/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-el-club-del-despecho-karaoke-show-drag-2026-10-29-2000",
+   "title": "El club del despecho - karaoke show drag",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-29",
+   "time": "20:00",
+   "placeId": "pl-teatron",
+   "priceFrom": 396,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-CLUB-DEL-DESPECHO--KARAOKE-SHOW-DRAG/34423/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-el-teatro-2026-10-29-2000",
+   "title": "El teatro",
+   "genre": "Comedia dramática",
+   "director": "Pascal Rambert",
+   "durationMinutes": 120,
+   "date": "2026-10-29",
+   "time": "20:00",
+   "placeId": "pl-solis",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34628",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-mi-amiga-fantasma-2026-10-29-2000",
+   "title": "Mi amiga fantasma",
+   "genre": null,
+   "director": "Gustavo Kreiman",
+   "durationMinutes": 80,
+   "date": "2026-10-29",
+   "time": "20:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34818",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-asesino-2026-10-29-2030",
+   "title": "Asesino (la belleza del horror)",
+   "genre": "Thriller psicológico",
+   "director": null,
+   "durationMinutes": 60,
+   "date": "2026-10-29",
+   "time": "20:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/ASESINO-la-belleza-el-horror/33284/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34530",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-besando-a-un-tonto-2026-10-29-2030",
+   "title": "Besando a un tonto",
+   "genre": "Comedia",
+   "director": "Virginia Ramos",
+   "durationMinutes": 65,
+   "date": "2026-10-29",
+   "time": "20:30",
+   "placeId": "pl-candela",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?32733",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-julius-2026-10-29-2030",
+   "title": "Julius",
+   "genre": "Drama",
+   "director": "Alfredo Goldstein",
+   "durationMinutes": 60,
+   "date": "2026-10-29",
+   "time": "20:30",
+   "placeId": "pl-esnade",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/JULIUS/33627/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34680",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-omision-de-la-familia-coleman-2026-10-29-2030",
+   "title": "La omisión de la familia Coleman",
+   "genre": "Comedia dramática",
+   "director": "Diego Faturos",
+   "durationMinutes": 80,
+   "date": "2026-10-29",
+   "time": "20:30",
+   "placeId": "pl-notariado",
+   "priceFrom": 485,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LA-OMISION-DE-LA-FAMILIA-COLEMAN/33401/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33981",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-las-camisas-blancas-2026-10-29-2030",
+   "title": "Las camisas blancas",
+   "genre": "Drama",
+   "director": "Sandra Massera",
+   "durationMinutes": 50,
+   "date": "2026-10-29",
+   "time": "20:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 340,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Las-camisas-blancas-Sala-Cero/33256/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34604",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-preludio-final-2026-10-29-2030",
+   "title": "Preludio final",
+   "genre": "Comedia dramática",
+   "director": "Sergio Paglietta",
+   "durationMinutes": 75,
+   "date": "2026-10-29",
+   "time": "20:30",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34514",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ballet-2026-10-29-2100",
+   "title": "Ballet",
+   "genre": null,
+   "director": "Roberto Suárez",
+   "durationMinutes": 90,
+   "date": "2026-10-29",
+   "time": "21:00",
+   "placeId": "pl-odeon",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34624",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-corazon-terraja-2026-10-29-2100",
+   "title": "Corazón terraja",
+   "genre": null,
+   "director": "Luciana Lagisquet",
+   "durationMinutes": 75,
+   "date": "2026-10-29",
+   "time": "21:00",
+   "placeId": "pl-espacio-palermo",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Corazon-Terraja/33374/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34571",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-las-cosas-maravillosas-2026-10-29-2100",
+   "title": "Las cosas maravillosas",
+   "genre": "Comedia",
+   "director": "Jimena Márquez",
+   "durationMinutes": 65,
+   "date": "2026-10-29",
+   "time": "21:00",
+   "placeId": "pl-undermovie",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33867",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-no-te-apures-luisa-2026-10-29-2100",
+   "title": "No te apures Luisa",
+   "genre": "Unipersonal",
+   "director": "Martín García",
+   "durationMinutes": null,
+   "date": "2026-10-29",
+   "time": "21:00",
+   "placeId": "pl-espacio",
+   "priceFrom": 330,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/No-te-apures-Luisa/33833/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34679",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-melchora-y-sus-fuegos-2026-10-29-2115",
+   "title": "Melchora y sus fuegos",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-29",
+   "time": "21:15",
+   "placeId": "pl-arteatro",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/MELCHORA-Y-SUS-FUEGOS/33257/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-rasgar-la-tierra-2026-10-30-1730",
+   "title": "Rasgar la tierra",
+   "genre": null,
+   "director": "Fernando Toja",
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "17:30",
+   "placeId": "pl-zavala-muniz",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34200",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-hasta-aca-llego-mi-amor-2026-10-30-1930",
+   "title": "Hasta acá llegó mi amor",
+   "genre": "Comedia",
+   "director": "Camila Parard",
+   "durationMinutes": 60,
+   "date": "2026-10-30",
+   "time": "19:30",
+   "placeId": "pl-espacio-cultural-extasia",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Hasta-aca-llego-mi-amor/33816/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34365",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-cenizas-de-familia-2026-10-30-2000",
+   "title": "Cenizas de familia",
+   "genre": "Comedia",
+   "director": "Franco Balestrino Centeno",
+   "durationMinutes": 110,
+   "date": "2026-10-30",
+   "time": "20:00",
+   "placeId": "pl-paraguay-1217",
+   "priceFrom": 349,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Cenizas-de-Familia--Sala-Dos/33244/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34639",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-desconectados-el-musical-2026-10-30-2000",
+   "title": "Desconectados: el musical",
+   "genre": "Musical",
+   "director": "Lara Berman",
+   "durationMinutes": 90,
+   "date": "2026-10-30",
+   "time": "20:00",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/DESCONECTADOS---El-Musical/28811/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33803",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-teatro-2026-10-30-2000",
+   "title": "El teatro",
+   "genre": "Comedia dramática",
+   "director": "Pascal Rambert",
+   "durationMinutes": 120,
+   "date": "2026-10-30",
+   "time": "20:00",
+   "placeId": "pl-solis",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34628",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-los-nuevos-prometeos-2026-10-30-2000",
+   "title": "Los nuevos Prometeos",
+   "genre": "Comedia absurda",
+   "director": "Maximiliano Farinasso",
+   "durationMinutes": 55,
+   "date": "2026-10-30",
+   "time": "20:00",
+   "placeId": "pl-arteatro",
+   "priceFrom": 385,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Los-Nuevos-Prometeos/33022/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34642",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-mi-amiga-fantasma-2026-10-30-2000",
+   "title": "Mi amiga fantasma",
+   "genre": null,
+   "director": "Gustavo Kreiman",
+   "durationMinutes": 80,
+   "date": "2026-10-30",
+   "time": "20:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34818",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-no-me-llames-breves-tragedias-virtuales-2026-10-30-2000",
+   "title": "No me llames, breves tragedias virtuales",
+   "genre": "Comedia",
+   "director": "Verónica Vera",
+   "durationMinutes": 60,
+   "date": "2026-10-30",
+   "time": "20:00",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34532",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-noches-de-edgar-allan-poe-2026-10-30-2000",
+   "title": "Noches de Edgar Allan Poe",
+   "genre": "Drama",
+   "director": "Álvaro Loureiro",
+   "durationMinutes": 70,
+   "date": "2026-10-30",
+   "time": "20:00",
+   "placeId": "pl-castillo-pittamiglio",
+   "priceFrom": 900,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/NOCHES-DE-EDGAR-ALLAN-POE--Antesala-Halloween/19570/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?7064",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-divas-2026-10-30-2030",
+   "title": "Divas",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "20:30",
+   "placeId": "pl-acj",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/DIVAS/29187/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-estas-ahi-2026-10-30-2030",
+   "title": "Estás ahí?",
+   "genre": "Comedia dramática",
+   "director": "Diego Devincenzi",
+   "durationMinutes": 80,
+   "date": "2026-10-30",
+   "time": "20:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 440,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Estas-ahi-Sala-Atahualpa/32252/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34153",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-las-camisas-blancas-2026-10-30-2030",
+   "title": "Las camisas blancas",
+   "genre": "Drama",
+   "director": "Sandra Massera",
+   "durationMinutes": 50,
+   "date": "2026-10-30",
+   "time": "20:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 340,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Las-camisas-blancas-Sala-Cero/33256/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34604",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-loop-2026-10-30-2030",
+   "title": "Loop",
+   "genre": "Comedia policial",
+   "director": "Diego Devincenzi",
+   "durationMinutes": 100,
+   "date": "2026-10-30",
+   "time": "20:30",
+   "placeId": "pl-paraguay-1217",
+   "priceFrom": 425,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Loop--Sala-China-Zorrilla/29730/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33951",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-rodri-suarez-una-madre-insoportable-mont-2026-10-30-2030",
+   "title": "RODRI SUÁREZ - Una madre insoportable - MONTEVIDEO",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "20:30",
+   "placeId": "pl-notariado",
+   "priceFrom": 445,
+   "soldOut": true,
+   "ticketUrl": "https://redtickets.uy/evento/RODRI-SUAREZ--Una-madre-insoportable--MONTEVIDEO/32538/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-soy-todas-2026-10-30-2030",
+   "title": "Soy todas",
+   "genre": "Unipersonal",
+   "director": "Álvaro Ahunchain",
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "20:30",
+   "placeId": "pl-espacio-zorrilla",
+   "priceFrom": 345,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/SOY-TODAS/33063/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34621",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ballet-2026-10-30-2100",
+   "title": "Ballet",
+   "genre": null,
+   "director": "Roberto Suárez",
+   "durationMinutes": 90,
+   "date": "2026-10-30",
+   "time": "21:00",
+   "placeId": "pl-odeon",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34624",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-camara-hamlet-2026-10-30-2100",
+   "title": "Cámara Hamlet",
+   "genre": "Drama",
+   "director": "Marcel Sawchik Monegal",
+   "durationMinutes": 80,
+   "date": "2026-10-30",
+   "time": "21:00",
+   "placeId": "pl-esnade",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Camara-Hamlet/32869/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34519",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-capital-humano-2026-10-30-2100",
+   "title": "Capital humano",
+   "genre": "Comedia",
+   "director": "Micaela Carrión",
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "21:00",
+   "placeId": "pl-mandragora-escuela-artes",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/CAPITAL-HUMANO/33355/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34614",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-como-te-mueras-te-mato-2026-10-30-2100",
+   "title": "Como te mueras te mato",
+   "genre": "Comedia",
+   "director": "Rafael Pence",
+   "durationMinutes": 90,
+   "date": "2026-10-30",
+   "time": "21:00",
+   "placeId": "pl-candela",
+   "priceFrom": 650,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?32266",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-corazon-terraja-2026-10-30-2100",
+   "title": "Corazón terraja",
+   "genre": null,
+   "director": "Luciana Lagisquet",
+   "durationMinutes": 75,
+   "date": "2026-10-30",
+   "time": "21:00",
+   "placeId": "pl-espacio-palermo",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Corazon-Terraja/33374/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34571",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-silencio-es-un-lenguaje-universal-2026-10-30-2100",
+   "title": "El silencio es un lenguaje universal",
+   "genre": "Unipersonal",
+   "director": "Fabián Collazo",
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "21:00",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-SILENCIO-ES-UN-LENGUAJE-UNIVERSAL/32489/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34393",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-los-ultimos-suicidas-2026-10-30-2100",
+   "title": "Los últimos suicidas",
+   "genre": "Comedia negra",
+   "director": "José Luis Olascuaga",
+   "durationMinutes": 70,
+   "date": "2026-10-30",
+   "time": "21:00",
+   "placeId": "pl-espacio-huella",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34572",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-no-te-apures-luisa-2026-10-30-2100",
+   "title": "No te apures Luisa",
+   "genre": "Unipersonal",
+   "director": "Martín García",
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "21:00",
+   "placeId": "pl-espacio",
+   "priceFrom": 330,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/No-te-apures-Luisa/33833/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34679",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-tu-hija-2026-10-30-2100",
+   "title": "Tu Hija",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "21:00",
+   "placeId": "pl-gringa",
+   "priceFrom": 375,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Tu-Hija/33879/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-un-cuento-de-otro-planeta-2026-10-30-2100",
+   "title": "Un cuento de otro planeta",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "21:00",
+   "placeId": "pl-camacua",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Un-cuento-de-otro-planeta/33904/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-y-entonces-la-lluvia-2026-10-30-2100",
+   "title": "Y entonces la lluvia",
+   "genre": "Comedia",
+   "director": "Vanessa Cánepa",
+   "durationMinutes": 75,
+   "date": "2026-10-30",
+   "time": "21:00",
+   "placeId": "pl-incorrecta",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34641",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-elena-2026-10-30-2130",
+   "title": "Elena",
+   "genre": "Drama",
+   "director": "Fabián Soneira",
+   "durationMinutes": 60,
+   "date": "2026-10-30",
+   "time": "21:30",
+   "placeId": "pl-arteatro",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34260",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-hasta-aca-llego-mi-amor-2026-10-30-2130",
+   "title": "Hasta acá llegó mi amor",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "21:30",
+   "placeId": "pl-espacio-cultural-extasia",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Hasta-aca-llego-mi-amor/33816/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-mirame-que-nos-miran-2026-10-30-2130",
+   "title": "Mirame que nos miran",
+   "genre": "Comedia romántica",
+   "director": "Julieta Lucena",
+   "durationMinutes": 60,
+   "date": "2026-10-30",
+   "time": "21:30",
+   "placeId": "pl-circular",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/MIRAME-QUE-NOS-MIRAN/34248/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?23792",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-quiero-que-susurres-una-cancion-para-mi--2026-10-30-2200",
+   "title": "Quiero que susurres una canción para mi muerte",
+   "genre": "Comedia dramática",
+   "director": "Analía Torres",
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "22:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34817",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-chica-almodovar-la-saga-2026-10-30-2230",
+   "title": "Chica Almodóvar - la saga",
+   "genre": "Comedia dramática",
+   "director": "Jesica Maiori Assad",
+   "durationMinutes": 50,
+   "date": "2026-10-30",
+   "time": "22:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 275,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Chica-Almodovar-La-Saga/33239/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?27887",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-rodri-suarez-una-madre-insoportable-mont-2026-10-30-2230",
+   "title": "RODRI SUÁREZ - Una madre insoportable - MONTEVIDEO",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "22:30",
+   "placeId": "pl-notariado",
+   "priceFrom": 445,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/RODRI-SUAREZ--Una-madre-insoportable--MONTEVIDEO/32538/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-uno-2026-10-30-2230",
+   "title": "Uno",
+   "genre": "Teatro Físico",
+   "director": "Juan Calvo",
+   "durationMinutes": null,
+   "date": "2026-10-30",
+   "time": "22:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 330,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Uno/32244/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34492",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-magos-brujas-y-hechiceros-en-busca-de-la-2026-10-31-1530",
+   "title": "Magos, brujas y hechiceros: en busca de la piedra filosofal",
+   "genre": "Teatro infantil",
+   "director": "colectiva",
+   "durationMinutes": 70,
+   "date": "2026-10-31",
+   "time": "15:30",
+   "placeId": "pl-castillo-pittamiglio",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/MAGOS-BRUJAS-Y-HECHICEROS--HALLOWEEN/19195/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?11148",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-eterno-glorioso-y-mas-pequeno-circo-d-2026-10-31-1600",
+   "title": "El eterno, glorioso y más pequeño circo del mundo",
+   "genre": "Teatro infantil",
+   "director": "Beatriz Sayad",
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "16:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/El-eterno-glorioso-y-mas-pequeno-circo-del-mundo-Sala-Atahualpa/33647/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34644",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-puerta-azul-2026-10-31-1600",
+   "title": "La puerta azul",
+   "genre": "Teatro infantil",
+   "director": "Agustín Luque",
+   "durationMinutes": 60,
+   "date": "2026-10-31",
+   "time": "16:00",
+   "placeId": "pl-candela",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LA-PUERTA-AZUL/33837/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34434",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-zorro-la-luna-y-cuentos-para-sonar-2026-10-31-1630",
+   "title": "El Zorro, la Luna y Cuentos para soñar",
+   "genre": "Teatro infantil",
+   "director": "Mario Esteban N.",
+   "durationMinutes": 45,
+   "date": "2026-10-31",
+   "time": "16:30",
+   "placeId": "pl-lustrino",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-ZORRO-LA-LUNA-Y-CUENTOS-PARA-SONAR/33116/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?32623",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-tus-cuentos-no-son-mis-cuentos-2026-10-31-1630",
+   "title": "Tus cuentos no son mis cuentos",
+   "genre": "Teatro infantil",
+   "director": "Diana Bresque",
+   "durationMinutes": 60,
+   "date": "2026-10-31",
+   "time": "16:30",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34024",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-hadas-piratas-y-fantasmas-2026-10-31-1730",
+   "title": "Hadas, piratas y fantasmas",
+   "genre": "Teatro infantil",
+   "director": "Sole Rosa",
+   "durationMinutes": 60,
+   "date": "2026-10-31",
+   "time": "17:30",
+   "placeId": "pl-castillo-pittamiglio",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/HADAS-PIRATAS-Y-FANTASMAS-Halloween/24726/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?15167",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-rasgar-la-tierra-2026-10-31-1730",
+   "title": "Rasgar la tierra",
+   "genre": null,
+   "director": "Fernando Toja",
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "17:30",
+   "placeId": "pl-zavala-muniz",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34200",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-de-bar-en-bar-2026-10-31-1830",
+   "title": "De bar en bar",
+   "genre": "Comedia",
+   "director": "Enrique Vidal",
+   "durationMinutes": 70,
+   "date": "2026-10-31",
+   "time": "18:30",
+   "placeId": "pl-candela",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?30929",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-barro-negro-2026-10-31-2000",
+   "title": "Barro Negro",
+   "genre": "Comedia grotesca",
+   "director": "Marcelino Duffau",
+   "durationMinutes": 90,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-sobre-ruedas",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?3451",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-desaparecer-bien-2026-10-31-2000",
+   "title": "Desaparecer bien",
+   "genre": "Comedia",
+   "director": "Aldo Moreira",
+   "durationMinutes": 55,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 275,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Desaparecer-bien/33500/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34608",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-castillo-del-horror-2026-10-31-2000",
+   "title": "El castillo del horror",
+   "genre": "Terror",
+   "director": "Pablo Ferrería",
+   "durationMinutes": 60,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-castillo-pittamiglio",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-CASTILLO-DEL-HORROR-Halloween/25793/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?26405",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-teatro-2026-10-31-2000",
+   "title": "El teatro",
+   "genre": "Comedia dramática",
+   "director": "Pascal Rambert",
+   "durationMinutes": 120,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-solis",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34628",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-ronda-2026-10-31-2000",
+   "title": "La Ronda",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-escuela-actuacion-escuela-actor",
+   "priceFrom": 660,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/La-Ronda/33808/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-las-rockys-2026-10-31-2000",
+   "title": "Las Rockys",
+   "genre": "Comedia",
+   "director": "Chris Bur",
+   "durationMinutes": 60,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-ensayo-abierto",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33985",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-mi-amiga-fantasma-2026-10-31-2000",
+   "title": "Mi amiga fantasma",
+   "genre": null,
+   "director": "Gustavo Kreiman",
+   "durationMinutes": 80,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34818",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-pequenas-infidelidades-2026-10-31-2000",
+   "title": "Pequeñas infidelidades",
+   "genre": "Comedia dramática",
+   "director": "Gonchi Fernández",
+   "durationMinutes": 60,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-arteatro",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Pequenas-Infidelidades/33770/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34729",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-pervertimento-y-otros-gestos-para-nada-2026-10-31-2000",
+   "title": "Pervertimento y otros gestos para nada",
+   "genre": null,
+   "director": "Fernando Amaral",
+   "durationMinutes": 75,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-paraguay-1217",
+   "priceFrom": 339,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Pervertimento/33892/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34808",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-pimpinone-2026-10-31-2000",
+   "title": "Pimpinone",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-colmena",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Pimpinone/32515/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-tu-hija-2026-10-31-2000",
+   "title": "Tu Hija",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-gringa",
+   "priceFrom": 375,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Tu-Hija/33879/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-un-estupido-cuento-2026-10-31-2000",
+   "title": "Un estúpido cuento",
+   "genre": "Comedia",
+   "director": "Chepe Irisity",
+   "durationMinutes": 75,
+   "date": "2026-10-31",
+   "time": "20:00",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 350,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Un-Estupido-Cuento/33653/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34627",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-actriz-de-metodo-2026-10-31-2030",
+   "title": "Actriz de método",
+   "genre": "Comedia",
+   "director": "Moré",
+   "durationMinutes": 60,
+   "date": "2026-10-31",
+   "time": "20:30",
+   "placeId": "pl-lustrino",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/ACTRIZ-DE-METODO/33377/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34618",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ano-lectivo-2026-10-31-2030",
+   "title": "Año lectivo",
+   "genre": "Comedia",
+   "director": "Carmen Lecueder",
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "20:30",
+   "placeId": "pl-espacio",
+   "priceFrom": 500,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34623",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-divas-2026-10-31-2030",
+   "title": "Divas",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "20:30",
+   "placeId": "pl-acj",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/DIVAS/29187/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-extrana-pareja-2026-10-31-2030",
+   "title": "Extraña pareja",
+   "genre": "Comedia",
+   "director": "Álvaro Ahunchain",
+   "durationMinutes": 100,
+   "date": "2026-10-31",
+   "time": "20:30",
+   "placeId": "pl-paraguay-1217",
+   "priceFrom": 425,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Extrana-Pareja---Sala-China-Zorrilla/29728/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34093",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-hora-vertical-2026-10-31-2030",
+   "title": "La hora vertical",
+   "genre": "Drama",
+   "director": "Graciela Escuder",
+   "durationMinutes": 90,
+   "date": "2026-10-31",
+   "time": "20:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/La-hora-vertical-Sala-Atahualpa/32542/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34366",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-napas-subterraneas-2026-10-31-2030",
+   "title": "Napas subterráneas",
+   "genre": "Monólogos",
+   "director": "Nicolás Tapia",
+   "durationMinutes": 60,
+   "date": "2026-10-31",
+   "time": "20:30",
+   "placeId": "pl-circular",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Napas-Subterraneas/33429/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34643",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-quien-lo-probo-lo-sabe-2026-10-31-2030",
+   "title": "Quien lo probó lo sabe",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "20:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 700,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34625",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-tom-en-la-granja-2026-10-31-2030",
+   "title": "Tom en la granja",
+   "genre": "Drama",
+   "director": "Marcos Acuña",
+   "durationMinutes": 90,
+   "date": "2026-10-31",
+   "time": "20:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/TOM-EN-LA-GRANJA-Sala-Cero/33089/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34493",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ballet-2026-10-31-2100",
+   "title": "Ballet",
+   "genre": null,
+   "director": "Roberto Suárez",
+   "durationMinutes": 90,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-odeon",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34624",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-boulevard-sarandi-2026-10-31-2100",
+   "title": "Boulevard sarandí",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-carrasco-lawn-tennis-club",
+   "priceFrom": 650,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/BOULEVARD-SARANDI/33788/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-chama-carra-vieja-loca-2026-10-31-2100",
+   "title": "Chama Carrá - VIEJA LOCA",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-magnolio",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Chama-Carra--VIEJA-LOCA/33023/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-contarte-el-mundo-2026-10-31-2100",
+   "title": "Contarte el mundo",
+   "genre": null,
+   "director": "Carla Grabino",
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-circular",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34640",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-herrero-y-la-muerte-2026-10-31-2100",
+   "title": "El herrero y la muerte",
+   "genre": "Absurdo",
+   "director": "Ismael Da Fonseca",
+   "durationMinutes": 65,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-victoria",
+   "priceFrom": 400,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-HERRERO-Y-LA-MUERTE/32174/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34407",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-entre-ella-y-yo-2026-10-31-2100",
+   "title": "Entre ella y yo",
+   "genre": "Comedia",
+   "director": "Juan Luis Granato",
+   "durationMinutes": 75,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-anglo",
+   "priceFrom": 390,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/ENTRE-ELLA-Y-YO/27048/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?31750",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-espejo-roto-2026-10-31-2100",
+   "title": "Espejo roto",
+   "genre": "Comedia",
+   "director": "Rafael Pence",
+   "durationMinutes": 80,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-candela",
+   "priceFrom": 650,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34170",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-habitacion-de-veronica-2026-10-31-2100",
+   "title": "La habitación de Verónica",
+   "genre": "Thriller",
+   "director": "Ruben Coletto",
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-mandragora-escuela-artes",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LA-HABITACION-DE-VERONICA-de-Ira-Levin/33356/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34619",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-mi-madre-mi-novia-y-yo-2026-10-31-2100",
+   "title": "Mi madre, mi novia y yo",
+   "genre": "Comedia",
+   "director": "Juan Luis Granato",
+   "durationMinutes": 80,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-notariado",
+   "priceFrom": 390,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/MI-MADRE-MI-NOVIA-Y-YO/26813/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?30243",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-peng-2026-10-31-2100",
+   "title": "Peng",
+   "genre": "Comedia",
+   "director": "Luciano Cáceres",
+   "durationMinutes": 80,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/PENG--Sala-Campodonico/33499/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34599",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-politicamente-incorrecto-2-2026-10-31-2100",
+   "title": "Políticamente incorrecto 2",
+   "genre": "Humor",
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-vieja-farmacia-solis",
+   "priceFrom": 760,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/DELGROSSI-POLITICAMENTE-INCORRECTO--2/13860/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?33995",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-sin-berretin-2026-10-31-2100",
+   "title": "Sin Berretin",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-acj",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Sin-Berretin/33481/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-un-cuento-de-otro-planeta-2026-10-31-2100",
+   "title": "Un cuento de otro planeta",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-camacua",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Un-cuento-de-otro-planeta/33904/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-un-lugar-al-que-volver-2026-10-31-2100",
+   "title": "Un lugar al que volver",
+   "genre": null,
+   "director": "Virginia Rodríguez Olveyra",
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "placeId": "pl-circular",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Un-lugar-al-que-volver/33592/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34768",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-castillo-del-horror-halloween-2026-10-31-2130",
+   "title": "EL CASTILLO DEL HORROR. Halloween",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "21:30",
+   "placeId": "pl-castillo-pittamiglio",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-CASTILLO-DEL-HORROR-Halloween/25793/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-los-pajaros-tambien-recuerdan-2026-10-31-2130",
+   "title": "Los pájaros también recuerdan",
+   "genre": "Drama",
+   "director": "Iván Aulet",
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "21:30",
+   "placeId": "pl-arteatro",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Los-pajaros-tambien-recuerdan/33828/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34620",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-no-sos-vos-soy-yo-2026-10-31-2130",
+   "title": "No sos vos, soy yo",
+   "genre": "Humor",
+   "director": null,
+   "durationMinutes": 60,
+   "date": "2026-10-31",
+   "time": "21:30",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?29963",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-divorcio-2026-10-31-2200",
+   "title": "El divorcio",
+   "genre": "Comedia",
+   "director": "Álvaro Correa",
+   "durationMinutes": 70,
+   "date": "2026-10-31",
+   "time": "22:00",
+   "placeId": "pl-gringa",
+   "priceFrom": 700,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?32250",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-quiero-que-susurres-una-cancion-para-mi--2026-10-31-2200",
+   "title": "Quiero que susurres una canción para mi muerte",
+   "genre": "Comedia dramática",
+   "director": "Analía Torres",
+   "durationMinutes": null,
+   "date": "2026-10-31",
+   "time": "22:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34817",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-chica-almodovar-la-saga-2026-10-31-2230",
+   "title": "Chica Almodóvar - la saga",
+   "genre": "Comedia dramática",
+   "director": "Jesica Maiori Assad",
+   "durationMinutes": 50,
+   "date": "2026-10-31",
+   "time": "22:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 275,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Chica-Almodovar-La-Saga/33239/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?27887",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-eterno-glorioso-y-mas-pequeno-circo-d-2026-11-01-1600",
+   "title": "El eterno, glorioso y más pequeño circo del mundo",
+   "genre": "Teatro infantil",
+   "director": "Beatriz Sayad",
+   "durationMinutes": null,
+   "date": "2026-11-01",
+   "time": "16:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/El-eterno-glorioso-y-mas-pequeno-circo-del-mundo-Sala-Atahualpa/33647/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34644",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-puerta-azul-2026-11-01-1600",
+   "title": "La puerta azul",
+   "genre": "Teatro infantil",
+   "director": "Agustín Luque",
+   "durationMinutes": 60,
+   "date": "2026-11-01",
+   "time": "16:00",
+   "placeId": "pl-candela",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LA-PUERTA-AZUL/33837/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34434",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-rasgar-la-tierra-2026-11-01-1630",
+   "title": "Rasgar la tierra",
+   "genre": null,
+   "director": "Fernando Toja",
+   "durationMinutes": null,
+   "date": "2026-11-01",
+   "time": "16:30",
+   "placeId": "pl-zavala-muniz",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34200",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-valor-de-una-decision-2026-11-01-1800",
+   "title": "El valor de una decisión",
+   "genre": "Drama",
+   "director": "Raika",
+   "durationMinutes": 60,
+   "date": "2026-11-01",
+   "time": "18:00",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/El-valor-de-una-decision--Alejandria/33146/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?31334",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-gula-anti-domingo-2026-11-01-1800",
+   "title": "Gula - anti domingo",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-01",
+   "time": "18:00",
+   "placeId": "pl-rondeau",
+   "priceFrom": 350,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/GULA--ANTI-DOMINGO/34042/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-mi-amiga-fantasma-2026-11-01-1800",
+   "title": "Mi amiga fantasma",
+   "genre": null,
+   "director": "Gustavo Kreiman",
+   "durationMinutes": 80,
+   "date": "2026-11-01",
+   "time": "18:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34818",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-quien-lo-probo-lo-sabe-2026-11-01-1800",
+   "title": "Quien lo probó lo sabe",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-01",
+   "time": "18:00",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 350,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/QUIEN-LO-PROBO-LO-SABE/33632/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34625",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-teatro-2026-11-01-1900",
+   "title": "El teatro",
+   "genre": "Comedia dramática",
+   "director": "Pascal Rambert",
+   "durationMinutes": 120,
+   "date": "2026-11-01",
+   "time": "19:00",
+   "placeId": "pl-solis",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34628",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-las-viejas-2026-11-01-1900",
+   "title": "Las viejas",
+   "genre": "Comedia",
+   "director": "Pablo Dive",
+   "durationMinutes": null,
+   "date": "2026-11-01",
+   "time": "19:00",
+   "placeId": "pl-candela",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34678",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-napas-subterraneas-2026-11-01-1900",
+   "title": "Napas subterráneas",
+   "genre": "Monólogos",
+   "director": "Nicolás Tapia",
+   "durationMinutes": 60,
+   "date": "2026-11-01",
+   "time": "19:00",
+   "placeId": "pl-circular",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Napas-Subterraneas/33429/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34643",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-tom-en-la-granja-2026-11-01-1900",
+   "title": "Tom en la granja",
+   "genre": "Drama",
+   "director": "Marcos Acuña",
+   "durationMinutes": 90,
+   "date": "2026-11-01",
+   "time": "19:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/TOM-EN-LA-GRANJA-Sala-Cero/33089/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34493",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-un-estupido-cuento-2026-11-01-1900",
+   "title": "Un estúpido cuento",
+   "genre": "Comedia",
+   "director": "Chepe Irisity",
+   "durationMinutes": 75,
+   "date": "2026-11-01",
+   "time": "19:00",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 350,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Un-Estupido-Cuento/33653/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34627",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-peng-2026-11-01-1930",
+   "title": "Peng",
+   "genre": "Comedia",
+   "director": "Luciano Cáceres",
+   "durationMinutes": 80,
+   "date": "2026-11-01",
+   "time": "19:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/PENG--Sala-Campodonico/33499/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34599",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-pervertimento-y-otros-gestos-para-nada-2026-11-01-1930",
+   "title": "Pervertimento y otros gestos para nada",
+   "genre": null,
+   "director": "Fernando Amaral",
+   "durationMinutes": 75,
+   "date": "2026-11-01",
+   "time": "19:30",
+   "placeId": "pl-paraguay-1217",
+   "priceFrom": 339,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Pervertimento/33892/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34808",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-un-lugar-al-que-volver-2026-11-01-1930",
+   "title": "Un lugar al que volver",
+   "genre": null,
+   "director": "Virginia Rodríguez Olveyra",
+   "durationMinutes": null,
+   "date": "2026-11-01",
+   "time": "19:30",
+   "placeId": "pl-circular",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Un-lugar-al-que-volver/33592/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34768",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-engano-profundo-la-herencia-del-fuego-2026-11-01-2000",
+   "title": "Engaño Profundo : La herencia del fuego",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-01",
+   "time": "20:00",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 440,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Engano-Profundo--La-herencia-del-fuego/33611/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-la-hora-vertical-2026-11-01-2000",
+   "title": "La hora vertical",
+   "genre": "Drama",
+   "director": "Graciela Escuder",
+   "durationMinutes": 90,
+   "date": "2026-11-01",
+   "time": "20:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/La-hora-vertical-Sala-Atahualpa/32542/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34366",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-laberintum-el-castillo-siniestro-2026-11-01-2000",
+   "title": "Laberintum – El Castillo Siniestro",
+   "genre": "Terror",
+   "director": "Pablo Ferrería",
+   "durationMinutes": 60,
+   "date": "2026-11-01",
+   "time": "20:00",
+   "placeId": "pl-castillo-pittamiglio",
+   "priceFrom": 800,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LABERINTUM-Halloween-La-secuela-del-Horror/19650/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?28798",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-peter-pan-y-el-enigma-de-la-masculinidad-2026-11-01-2000",
+   "title": "Peter pan y el enigma de la masculinidad",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-01",
+   "time": "20:00",
+   "placeId": "pl-asociacion-civil-joventango",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/PETER-PAN-Y-EL-ENIGMA-DE-LA-MASCULINIDAD/34304/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-quiero-que-susurres-una-cancion-para-mi--2026-11-01-2000",
+   "title": "Quiero que susurres una canción para mi muerte",
+   "genre": "Comedia dramática",
+   "director": "Analía Torres",
+   "durationMinutes": null,
+   "date": "2026-11-01",
+   "time": "20:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34817",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-tu-hija-2026-11-01-2000",
+   "title": "Tu Hija",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-01",
+   "time": "20:00",
+   "placeId": "pl-gringa",
+   "priceFrom": 375,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Tu-Hija/33879/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-sombras-por-supuesto-2026-11-03-2030",
+   "title": "Sombras, por supuesto",
+   "genre": null,
+   "director": "Romina Paula",
+   "durationMinutes": 60,
+   "date": "2026-11-03",
+   "time": "20:30",
+   "placeId": "pl-zavala-muniz",
+   "priceFrom": 2000,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34689",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-boite-2026-11-04-2000",
+   "title": "Boite",
+   "genre": "Comedia-Drama-Musical",
+   "director": "Ana Frenkel",
+   "durationMinutes": 80,
+   "date": "2026-11-04",
+   "time": "20:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 2480,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/BOITE--GRISELDA-SICILIANI-Y-CARLOS-CASELLA-Sala-Campodonico/33443/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34677",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-mi-amiga-fantasma-2026-11-04-2000",
+   "title": "Mi amiga fantasma",
+   "genre": null,
+   "director": "Gustavo Kreiman",
+   "durationMinutes": 80,
+   "date": "2026-11-04",
+   "time": "20:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34818",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-sombras-por-supuesto-2026-11-04-2030",
+   "title": "Sombras, por supuesto",
+   "genre": null,
+   "director": "Romina Paula",
+   "durationMinutes": 60,
+   "date": "2026-11-04",
+   "time": "20:30",
+   "placeId": "pl-zavala-muniz",
+   "priceFrom": 2000,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34689",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ballet-2026-11-04-2100",
+   "title": "Ballet",
+   "genre": null,
+   "director": "Roberto Suárez",
+   "durationMinutes": 90,
+   "date": "2026-11-04",
+   "time": "21:00",
+   "placeId": "pl-odeon",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34624",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-boite-griselda-siciliani-y-carlos-casell-2026-11-04-2200",
+   "title": "BOITE - GRISELDA SICILIANI Y CARLOS CASELLA (Sala Campodónico)",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-04",
+   "time": "22:00",
+   "placeId": "pl-galpon",
+   "priceFrom": 2480,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/BOITE--GRISELDA-SICILIANI-Y-CARLOS-CASELLA-Sala-Campodonico/33443/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-el-productivista-2026-11-05-2000",
+   "title": "El Productivista",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-05",
+   "time": "20:00",
+   "placeId": "pl-espacio-cultural-extasia",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/El-Productivista/33843/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-el-teatro-2026-11-05-2000",
+   "title": "El teatro",
+   "genre": "Comedia dramática",
+   "director": "Pascal Rambert",
+   "durationMinutes": 120,
+   "date": "2026-11-05",
+   "time": "20:00",
+   "placeId": "pl-solis",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34628",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-mi-amiga-fantasma-2026-11-05-2000",
+   "title": "Mi amiga fantasma",
+   "genre": null,
+   "director": "Gustavo Kreiman",
+   "durationMinutes": 80,
+   "date": "2026-11-05",
+   "time": "20:00",
+   "placeId": "pl-verdi",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34818",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-asesino-2026-11-05-2030",
+   "title": "Asesino (la belleza del horror)",
+   "genre": "Thriller psicológico",
+   "director": null,
+   "durationMinutes": 60,
+   "date": "2026-11-05",
+   "time": "20:30",
+   "placeId": "pl-stella-d-italia",
+   "priceFrom": 550,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/ASESINO-la-belleza-el-horror/33284/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34530",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-besando-a-un-tonto-2026-11-05-2030",
+   "title": "Besando a un tonto",
+   "genre": "Comedia",
+   "director": "Virginia Ramos",
+   "durationMinutes": 65,
+   "date": "2026-11-05",
+   "time": "20:30",
+   "placeId": "pl-candela",
+   "priceFrom": 600,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?32733",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-cartografia-sobre-la-identidad-mariana-z-2026-11-05-2030",
+   "title": "CARTOGRAFÍA SOBRE LA IDENTIDAD - Mariana Zaffaroni",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-05",
+   "time": "20:30",
+   "placeId": "pl-camacua",
+   "priceFrom": 400,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/CARTOGRAFIA-SOBRE-LA-IDENTIDAD--Mariana-Zaffaroni/34375/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-julius-2026-11-05-2030",
+   "title": "Julius",
+   "genre": "Drama",
+   "director": "Alfredo Goldstein",
+   "durationMinutes": 60,
+   "date": "2026-11-05",
+   "time": "20:30",
+   "placeId": "pl-esnade",
+   "priceFrom": 300,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/JULIUS/33627/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34680",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-la-gaviota-ensayo-abierto-2026-11-05-2030",
+   "title": "La gaviota, ensayo abierto (Sala Atahualpa)",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-05",
+   "time": "20:30",
+   "placeId": "pl-galpon",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/La-gaviota-ensayo-abierto-Sala-Atahualpa/34322/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-amo-2026-11-05-2100",
+   "title": "AMO®",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-05",
+   "time": "21:00",
+   "placeId": "pl-victoria",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/AMO/33954/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-ballet-2026-11-05-2100",
+   "title": "Ballet",
+   "genre": null,
+   "director": "Roberto Suárez",
+   "durationMinutes": 90,
+   "date": "2026-11-05",
+   "time": "21:00",
+   "placeId": "pl-odeon",
+   "priceFrom": 1200,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34624",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-corazon-terraja-2026-11-05-2100",
+   "title": "Corazón terraja",
+   "genre": null,
+   "director": "Luciana Lagisquet",
+   "durationMinutes": 75,
+   "date": "2026-11-05",
+   "time": "21:00",
+   "placeId": "pl-espacio-palermo",
+   "priceFrom": 250,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Corazon-Terraja/33374/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34571",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-el-gran-spoiler-2026-11-05-2100",
+   "title": "El gran spoiler",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-05",
+   "time": "21:00",
+   "placeId": "pl-tinglado",
+   "priceFrom": 325,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/EL-GRAN-SPOILER/34026/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-las-cosas-que-mueren-2026-11-05-2100",
+   "title": "Las cosas que mueren",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-05",
+   "time": "21:00",
+   "placeId": "pl-cretina",
+   "priceFrom": 651,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/LAS-COSAS-QUE-MUEREN/22715/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-lluvia-constante-2026-11-05-2100",
+   "title": "Lluvia constante",
+   "genre": "Thriller",
+   "director": "Santiago Ventura",
+   "durationMinutes": 90,
+   "date": "2026-11-05",
+   "time": "21:00",
+   "placeId": "pl-undermovie",
+   "priceFrom": 900,
+   "soldOut": false,
+   "ticketUrl": null,
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?26069",
+   "sources": [
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-no-te-apures-luisa-2026-11-05-2100",
+   "title": "No te apures Luisa",
+   "genre": "Unipersonal",
+   "director": "Martín García",
+   "durationMinutes": null,
+   "date": "2026-11-05",
+   "time": "21:00",
+   "placeId": "pl-espacio",
+   "priceFrom": 330,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/No-te-apures-Luisa/33833/",
+   "sourceUrl": "https://cartelera.montevideo.com.uy/averespectaculo.aspx?34679",
+   "sources": [
+    "redtickets",
+    "cartelera"
+   ]
+  },
+  {
+   "id": "pf-ni-negro-ni-blanco-soy-uruguayo-2026-11-05-2130",
+   "title": "Ni negro, Ni blanco. Soy Uruguayo (Nov)",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-05",
+   "time": "21:30",
+   "placeId": "pl-alejandria-cafe-artes",
+   "priceFrom": 385,
+   "soldOut": false,
+   "ticketUrl": "https://redtickets.uy/evento/Ni-negro-Ni-blanco-Soy-Uruguayo-Nov/33471/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  },
+  {
+   "id": "pf-unipersonal-de-pato-balbis-noche-de-risa-2026-11-05-2130",
+   "title": "Unipersonal de Pato Balbis - Noche de risas historias y Catarsis",
+   "genre": null,
+   "director": null,
+   "durationMinutes": null,
+   "date": "2026-11-05",
+   "time": "21:30",
+   "placeId": "pl-nuevo-rincon",
+   "priceFrom": 297,
+   "soldOut": true,
+   "ticketUrl": "https://redtickets.uy/evento/Unipersonal-de-Pato-Balbis--Noche-de-risas-historias-y-Catarsis/34270/",
+   "sourceUrl": null,
+   "sources": [
+    "redtickets"
+   ]
+  }
+ ]
+}

@@ -38,7 +38,7 @@ export default function VenuesPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Salas" title="A veces no faltan salas, falta encontrarlas."
+      <PageHeader area="area-salas" eyebrow="Salas" title="A veces no faltan salas, falta encontrarlas."
         description="TRAMA reúne espacios y muestra su disponibilidad en un solo lugar para que puedas conocerlos y encontrar el escenario ideal para tu proyecto."
         breadcrumbs={[{ label: 'Inicio', to: '/' }, { label: 'Salas' }]}
         actions={(

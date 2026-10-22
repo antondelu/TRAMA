@@ -39,8 +39,8 @@ export function FavoriteButton({ type, id, title, variant = 'icon', className })
   if (variant === 'button') {
     return (
       <button type="button" onClick={onClick} disabled={busy} aria-pressed={saved}
-        className={cn('inline-flex min-h-11 items-center gap-2 rounded-lg border px-4 text-sm font-semibold transition-colors',
-          saved ? 'border-brand bg-brand-soft text-brand' : 'border-line-strong bg-surface hover:border-ink', className)}>
+        className={cn('inline-flex min-h-11 items-center gap-2 border-2 px-4 text-sm font-bold transition-colors',
+          saved ? 'border-ink bg-ink text-white' : 'border-ink bg-surface hover:bg-ink/5', className)}>
         <Heart aria-hidden className={cn('size-4', saved && 'fill-current')} />
         {saved ? 'Guardado' : 'Guardar'}
       </button>
@@ -48,8 +48,8 @@ export function FavoriteButton({ type, id, title, variant = 'icon', className })
   }
   return (
     <button type="button" onClick={onClick} disabled={busy} aria-pressed={saved} aria-label={label} title={label}
-      className={cn('inline-flex size-10 items-center justify-center rounded-full bg-surface/95 shadow-sm transition-colors hover:text-brand',
-        saved ? 'text-brand' : 'text-ink', className)}>
+      className={cn('inline-flex size-11 items-center justify-center bg-surface transition-colors hover:bg-ink hover:text-white',
+        saved ? 'text-danger' : 'text-ink', className)}>
       <Heart aria-hidden className={cn('size-5', saved && 'fill-current')} />
     </button>
   )

@@ -16,17 +16,17 @@ export function Tabs({ tabs, value, onChange, label }) {
   }
 
   return (
-    <div role="tablist" aria-label={label} className="flex gap-1 overflow-x-auto border-b border-line">
+    <div role="tablist" aria-label={label} className="flex gap-4 overflow-x-auto overflow-y-hidden border-b-2 border-ink">
       {tabs.map((tab, i) => {
         const selected = tab.id === value
         return (
           <button key={tab.id} ref={(el) => { refs.current[i] = el }} type="button" role="tab"
             id={`${id}-${tab.id}`} aria-selected={selected} tabIndex={selected ? 0 : -1}
             onClick={() => onChange(tab.id)} onKeyDown={(e) => onKeyDown(e, i)}
-            className={cn('-mb-px flex min-h-11 items-center gap-2 whitespace-nowrap border-b-2 px-3 text-sm font-semibold transition-colors',
+            className={cn('flex min-h-12 items-center gap-2 whitespace-nowrap border-b-[5px] text-base font-bold transition-colors',
               selected ? 'border-brand text-brand' : 'border-transparent text-ink-soft hover:text-ink')}>
             {tab.label}
-            {tab.count != null && <span className="rounded-full bg-ink/5 px-2 text-xs">{tab.count}</span>}
+            {tab.count != null && <span className="data bg-ink/10 px-1.5 text-sm">{tab.count}</span>}
           </button>
         )
       })}

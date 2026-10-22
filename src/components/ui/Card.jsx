@@ -17,8 +17,8 @@ export function DataList({ items, className }) {
     <dl className={cn('divide-y divide-line', className)}>
       {rows.map((row) => (
         <div key={row.label} className="grid gap-1 py-2.5 sm:grid-cols-[minmax(0,12rem)_1fr] sm:gap-4">
-          <dt className="text-sm text-ink-soft">{row.label}</dt>
-          <dd className="text-sm">{Array.isArray(row.value) ? row.value.join(' · ') : row.value}</dd>
+          <dt className="eyebrow !normal-case !tracking-normal text-[0.95rem]">{row.label}</dt>
+          <dd className="text-base">{Array.isArray(row.value) ? row.value.join(' · ') : row.value}</dd>
         </div>
       ))}
     </dl>
@@ -28,10 +28,10 @@ export function DataList({ items, className }) {
 export function Section({ id, title, description, children, className, actions }) {
   return (
     <section id={id} aria-labelledby={id ? `${id}-title` : undefined} className={cn('scroll-mt-24', className)}>
-      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+      <div className="mb-4 flex flex-wrap items-end justify-between gap-3 border-t-2 border-ink pt-3">
         <div>
-          <h2 id={id ? `${id}-title` : undefined} className="font-display text-2xl font-semibold">{title}</h2>
-          {description && <p className="mt-1 text-sm text-ink-soft">{description}</p>}
+          <h2 id={id ? `${id}-title` : undefined} className="font-display text-3xl font-extrabold leading-none">{title}</h2>
+          {description && <p className="mt-2 text-base text-ink-soft">{description}</p>}
         </div>
         {actions}
       </div>
